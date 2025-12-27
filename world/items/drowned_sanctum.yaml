@@ -1,0 +1,364 @@
+# Drowned Sanctum Items
+# Water/sea themed equipment, deep one relics, and pressure-resistant gear
+
+zone_id: drowned_sanctum
+
+items:
+  # Crafting Materials
+  - id: deep_one_scale
+    vnum: 1300
+    name: a Deep One scale
+    keywords: [deep, one, scale, fish]
+    short_description: An iridescent fish scale lies here.
+    long_description: >
+      This scale came from a Deep One, its surface shifting through
+      colors as light hits it. It is remarkably tough despite its
+      thinness and resists water damage perfectly.
+    item_type: material
+    rarity: common
+    weight: 0.1
+    value: 20
+
+  - id: abyssal_pearl
+    vnum: 1301
+    name: an abyssal pearl
+    keywords: [abyssal, pearl, deep, dark]
+    short_description: A pearl of pure darkness lies here.
+    long_description: >
+      This pearl was formed in the deepest trenches, where no light
+      has ever reached. It is perfectly black, absorbing all light,
+      and is cold to the touch. Deep One priests prize them highly.
+    item_type: material
+    rarity: rare
+    weight: 0.1
+    value: 200
+
+  - id: living_coral
+    vnum: 1302
+    name: a piece of living coral
+    keywords: [living, coral, growing, sea]
+    short_description: A piece of coral that still grows lies here.
+    long_description: >
+      This coral continues to grow even removed from water. It was
+      cultivated by Deep One magic and can be shaped into weapons
+      or armor that repair themselves slowly.
+    item_type: material
+    rarity: uncommon
+    weight: 1.0
+    value: 75
+
+  - id: kraken_ink
+    vnum: 1303
+    name: a vial of kraken ink
+    keywords: [kraken, ink, vial, dark]
+    short_description: A vial of impossibly dark ink lies here.
+    long_description: >
+      This ink came from the kraken god's own servants. It is used
+      in Deep One rituals and can create darkness that even
+      darkvision cannot penetrate.
+    item_type: material
+    rarity: rare
+    weight: 0.3
+    value: 180
+
+  # Weapons
+  - id: coral_dagger
+    vnum: 1310
+    name: a coral dagger
+    keywords: [coral, dagger, knife, sea]
+    short_description: A dagger of sharpened coral lies here.
+    long_description: >
+      This dagger was carved from living coral and magically
+      hardened. Despite its organic origin, it holds an edge
+      as well as steel and never rusts.
+    item_type: weapon
+    rarity: common
+    weight: 0.8
+    value: 45
+    level_requirement: 10
+    weapon_stats:
+      damage_dice: 1d4
+      damage_type: piercing
+      speed: fast
+
+  - id: deep_trident
+    vnum: 1311
+    name: a Deep One trident
+    keywords: [deep, trident, polearm, sea]
+    short_description: A trident of dark metal and bone lies here.
+    long_description: >
+      The Deep Ones craft these tridents from metal salvaged from
+      shipwrecks and the bones of sea creatures. They are designed
+      for underwater combat and are equally effective on land.
+    item_type: weapon
+    rarity: uncommon
+    weight: 5.0
+    value: 280
+    level_requirement: 12
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: piercing
+      speed: medium
+      reach: true
+      magical_properties:
+        - underwater_combat: true
+        - cold_damage_bonus: 1d4
+
+  - id: crushing_depths_staff
+    vnum: 1312
+    name: a Staff of Crushing Depths
+    keywords: [crushing, depths, staff, pressure]
+    short_description: A staff that radiates intense pressure lies here.
+    long_description: >
+      This staff channels the crushing pressure of the deep ocean.
+      Enemies struck by it feel as if tons of water press down upon
+      them. Deep One priests use them to drown foes on dry land.
+    item_type: weapon
+    rarity: rare
+    weight: 4.5
+    value: 480
+    level_requirement: 15
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: bludgeoning
+      speed: medium
+      magical_properties:
+        - pressure_damage: 1d6
+        - drown_on_hit: 10
+        - water_spellpower: 4
+
+  - id: tide_caller
+    vnum: 1313
+    name: a Tide Caller's horn
+    keywords: [tide, caller, horn, instrument]
+    short_description: A horn made from a sea creature's shell lies here.
+    long_description: >
+      This horn can summon the tides themselves. When blown, it
+      creates waves of crushing water even on land. It is both
+      a weapon and a sacred instrument of the Deep Ones.
+    item_type: weapon
+    rarity: rare
+    weight: 3.0
+    value: 400
+    level_requirement: 14
+    weapon_stats:
+      damage_dice: 1d4
+      damage_type: bludgeoning
+      speed: slow
+      magical_properties:
+        - summon_wave: true
+        - water_breathing_aura: true
+        - charisma_bonus: 2
+
+  # Armor
+  - id: fish_scale_armor
+    vnum: 1320
+    name: fish scale armor
+    keywords: [fish, scale, armor, water]
+    short_description: Armor made of overlapping fish scales lies here.
+    long_description: >
+      This armor was crafted from the scales of giant fish. It
+      provides excellent protection while remaining flexible, and
+      the scales are naturally waterproof.
+    item_type: armor
+    rarity: common
+    weight: 15.0
+    value: 100
+    level_requirement: 10
+    armor_stats:
+      armor_class: 14
+      slot: body
+      resistances: [cold]
+      magical_properties:
+        - swim_speed: true
+
+  - id: pressure_suit
+    vnum: 1321
+    name: a pressure suit
+    keywords: [pressure, suit, armor, diving]
+    short_description: A reinforced suit for deep water exploration lies here.
+    long_description: >
+      This suit was designed to withstand the crushing pressure of
+      the deep sanctum. Enchantments keep the wearer safe at any
+      depth and provide breathable air.
+    item_type: armor
+    rarity: rare
+    weight: 25.0
+    value: 500
+    level_requirement: 14
+    armor_stats:
+      armor_class: 16
+      slot: body
+      immunities: [pressure, drowning]
+      magical_properties:
+        - water_breathing: true
+        - depth_immunity: true
+
+  - id: coral_shield
+    vnum: 1322
+    name: a living coral shield
+    keywords: [coral, shield, living, sea]
+    short_description: A shield of living coral lies here.
+    long_description: >
+      This shield was grown rather than forged, a disc of living
+      coral that repairs itself over time. Coral spikes can extend
+      from its surface to punish attackers.
+    item_type: armor
+    rarity: uncommon
+    weight: 8.0
+    value: 250
+    level_requirement: 12
+    armor_stats:
+      armor_class: 2
+      slot: shield
+      magical_properties:
+        - regenerating: true
+        - spike_retaliation: true
+
+  - id: deep_priest_vestments
+    vnum: 1323
+    name: Deep One priest vestments
+    keywords: [deep, priest, vestments, robes]
+    short_description: Dark robes covered in strange symbols lie here.
+    long_description: >
+      These vestments are worn by Deep One priests, covered in
+      symbols sacred to their kraken god. Wearing them grants
+      insight into the mysteries of the deep.
+    item_type: armor
+    rarity: rare
+    weight: 4.0
+    value: 380
+    level_requirement: 13
+    armor_stats:
+      armor_class: 12
+      slot: body
+      resistances: [cold, psychic]
+      magical_properties:
+        - water_spellpower: 4
+        - deep_communion: true
+
+  # Consumables
+  - id: water_breathing_potion
+    vnum: 1330
+    name: a potion of water breathing
+    keywords: [potion, water, breathing, gills]
+    short_description: A blue potion that bubbles gently lies here.
+    long_description: >
+      Drinking this potion grants the ability to breathe underwater
+      for an extended period. The drinker's neck may develop
+      temporary gill-like structures.
+    item_type: consumable
+    rarity: common
+    weight: 0.5
+    value: 35
+    consumable_effect:
+      effect_type: buff
+      duration: 600
+      effects:
+        water_breathing: true
+
+  - id: pressure_ward
+    vnum: 1331
+    name: a pressure ward charm
+    keywords: [pressure, ward, charm, depth]
+    short_description: A charm that protects against crushing pressure lies here.
+    long_description: >
+      This charm creates a bubble of normal pressure around the
+      wearer, protecting them from the crushing depths. It is
+      essential for exploring the deepest parts of the sanctum.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.1
+    value: 60
+    consumable_effect:
+      effect_type: buff
+      duration: 300
+      effects:
+        pressure_immunity: true
+
+  - id: cold_resistance_oil
+    vnum: 1332
+    name: cold resistance oil
+    keywords: [cold, resistance, oil, warming]
+    short_description: A bottle of warming oil lies here.
+    long_description: >
+      Applying this oil to the skin provides protection against
+      the freezing temperatures of the deep water. It also makes
+      the user slightly slippery and harder to grapple.
+    item_type: consumable
+    rarity: common
+    weight: 0.3
+    value: 30
+    consumable_effect:
+      effect_type: buff
+      duration: 300
+      effects:
+        cold_resistance: 50
+        grapple_resistance: 25
+
+  # Boss Drops
+  - id: herald_heart
+    vnum: 1350
+    name: the Abyssal Herald's heart
+    keywords: [abyssal, herald, heart, boss, kraken]
+    short_description: A massive heart that still beats lies here.
+    long_description: >
+      This is the heart of the Abyssal Herald, still beating with
+      the power of the kraken god. It pulses with cold, dark energy
+      and whispers secrets in a language that should not be.
+    item_type: material
+    rarity: legendary
+    weight: 15.0
+    value: 3000
+    flags: [no_drop, quest_item]
+
+  - id: crown_of_depths
+    vnum: 1351
+    name: the Crown of Drowning
+    keywords: [crown, drowning, depths, boss, head]
+    short_description: A crown of dark coral and pearls lies here.
+    long_description: >
+      The Abyssal Herald's crown, formed from abyssal coral and
+      black pearls. Wearing it grants command over water and the
+      creatures of the deep, but the sea claims part of the wearer.
+    item_type: armor
+    rarity: legendary
+    weight: 2.0
+    value: 3800
+    level_requirement: 16
+    armor_stats:
+      armor_class: 4
+      slot: head
+      immunities: [cold, drowning, pressure]
+      magical_properties:
+        - water_command: true
+        - summon_deep_ones: true
+        - water_spellpower: 7
+        - constitution_bonus: 3
+        - gradual_transformation: aquatic
+
+  - id: tentacle_whip
+    vnum: 1352
+    name: the Kraken's Lash
+    keywords: [kraken, lash, whip, tentacle, boss]
+    short_description: A whip made from a kraken's tentacle lies here.
+    long_description: >
+      This weapon was grown from a fragment of the kraken god
+      itself, a writhing tentacle that still lives. It can extend
+      to impossible lengths and drag victims into crushing embrace.
+    item_type: weapon
+    rarity: legendary
+    weight: 5.0
+    value: 4200
+    level_requirement: 16
+    weapon_stats:
+      damage_dice: 2d6
+      damage_type: bludgeoning
+      speed: medium
+      reach: true
+      magical_properties:
+        - constrict: true
+        - cold_damage_bonus: 2d6
+        - grapple_on_hit: true
+        - extend_reach: 15
+        - strength_bonus: 3

@@ -1,0 +1,211 @@
+# Drowned Sanctum Rooms
+# Underwater temple with air pockets and ancient sea gods
+
+zone_id: drowned_sanctum
+
+rooms:
+  - id: drowned_entrance
+    vnum: 1400
+    name: Sunken Causeway
+    short_description: A partially flooded stone path
+    long_description: >
+      The causeway from Coral Bay descends into the waves, ancient stones
+      slick with algae and crusted with barnacles. At low tide, you can
+      walk most of it. At high tide, you must swim. Ahead, the dark
+      outline of the Drowned Sanctum looms beneath the water, its towers
+      reaching toward a surface they will never break.
+    exits:
+      east:
+        destination: ~
+        leads_to_region: sunken_causeway
+      west: drowned_outer_court
+    sector_type: swamp
+    flags: [tidal]
+    ambient_messages:
+      - Waves lap against the ancient stones.
+      - Something large moves in the deeper water.
+      - Bioluminescent fish dart past.
+
+  - id: drowned_outer_court
+    vnum: 1401
+    name: Outer Court
+    short_description: A submerged plaza with pockets of air
+    long_description: >
+      This plaza was once open to the sky, but now water fills most of
+      the space. Trapped air bubbles cling to the ceiling, providing
+      breathing space for air-breathers. Coral has grown over the
+      statues that once decorated the court, giving them strange,
+      organic shapes.
+    exits:
+      east: drowned_entrance
+      west: drowned_temple_hall
+      north: drowned_priestess_quarters
+      south: drowned_tide_pools
+    sector_type: swamp
+    flags: [underwater]
+    mob_spawns:
+      - template_id: deep_one_guard
+        max_count: 2
+      - template_id: giant_crab
+        max_count: 2
+
+  - id: drowned_tide_pools
+    vnum: 1402
+    name: Tide Pools
+    short_description: Shallow pools teeming with life
+    long_description: >
+      These shallow pools are home to countless sea creatures - colorful
+      fish, scuttling crabs, swaying anemones. The Deep Ones harvest
+      food here, and their children play in the warm shallows. Despite
+      the temple's dark purpose, life flourishes in this place.
+    exits:
+      north: drowned_outer_court
+      west: drowned_coral_garden
+    sector_type: swamp
+    flags: [underwater]
+    mob_spawns:
+      - template_id: deep_one_gatherer
+        max_count: 2
+    item_spawns:
+      - template_id: pearl
+        max_count: 3
+      - template_id: sea_shell
+        max_count: 5
+
+  - id: drowned_priestess_quarters
+    vnum: 1403
+    name: Priestess Quarters
+    short_description: Living spaces of the drowned clergy
+    long_description: >
+      These chambers once housed the temple's priests, and now the
+      Deep Ones have made them their own. Strange decorations - bones,
+      shells, glowing orbs - adorn the walls. The air pockets here are
+      maintained by magic, creating a bubble of breathable atmosphere.
+    exits:
+      south: drowned_outer_court
+      west: drowned_ritual_pool
+    sector_type: ruin
+    flags: [underwater, air_pocket]
+    mob_spawns:
+      - template_id: deep_one_priest
+        max_count: 2
+    item_spawns:
+      - template_id: ritual_conch
+        max_count: 1
+
+  - id: drowned_temple_hall
+    vnum: 1404
+    name: Temple Hall
+    short_description: The main hall of the sunken temple
+    long_description: >
+      Massive columns rise from floor to ceiling, carved with images of
+      sea creatures and waves. The water here is darker, colder, pressing
+      in with the weight of the deep. Bioluminescent algae provides the
+      only light, painting everything in shades of blue and green.
+    exits:
+      east: drowned_outer_court
+      west: drowned_inner_sanctum
+      north: drowned_ritual_pool
+      south: drowned_coral_garden
+    sector_type: ruin
+    flags: [underwater]
+    mob_spawns:
+      - template_id: deep_one_warrior
+        max_count: 3
+      - template_id: sea_serpent
+        max_count: 1
+    ambient_messages:
+      - Ancient prayers seem to echo through the water.
+      - Shadows move in the darker depths.
+
+  - id: drowned_coral_garden
+    vnum: 1405
+    name: Coral Garden
+    short_description: A cultivated garden of living coral
+    long_description: >
+      The Deep Ones tend this garden of coral, cultivating formations
+      of stunning beauty and strangeness. Some corals glow, others
+      move like animals, and a few seem almost intelligent. It's
+      beautiful but alien, a reminder that this place belongs to
+      creatures of the deep.
+    exits:
+      north: drowned_temple_hall
+      east: drowned_tide_pools
+    sector_type: ruin
+    flags: [underwater]
+    mob_spawns:
+      - template_id: coral_guardian
+        max_count: 1
+    item_spawns:
+      - template_id: living_coral
+        max_count: 2
+      - template_id: deep_pearl
+        max_count: 1
+
+  - id: drowned_ritual_pool
+    vnum: 1406
+    name: Ritual Pool
+    short_description: Where the Deep Ones perform their rites
+    long_description: >
+      This circular chamber contains a deep pool that descends into
+      darkness. Around its edge, symbols are carved that glow with
+      cold light. The Deep Ones gather here to commune with their
+      god, chanting in a language that predates human speech. The
+      water of the pool is ice cold and seems to pull at you.
+    exits:
+      south: drowned_temple_hall
+      east: drowned_priestess_quarters
+    sector_type: ruin
+    flags: [underwater, ritual_zone]
+    mob_spawns:
+      - template_id: deep_one_oracle
+        max_count: 1
+      - template_id: deep_one_priest
+        max_count: 2
+
+  - id: drowned_inner_sanctum
+    vnum: 1407
+    name: Inner Sanctum
+    short_description: The holy of holies, deep beneath the waves
+    long_description: >
+      The pressure here is immense, the water dark and cold. This
+      chamber was built to honor the sea god, and something of that
+      ancient presence remains. A massive statue dominates the space,
+      a figure half-kraken, half-something else entirely. Before it
+      stands the altar where sacrifices are made.
+    exits:
+      east: drowned_temple_hall
+      down: drowned_abyss
+    sector_type: ruin
+    flags: [underwater, high_pressure]
+    mob_spawns:
+      - template_id: deep_one_high_priest
+        max_count: 1
+      - template_id: deep_one_guardian
+        max_count: 2
+    ambient_messages:
+      - The statue's eyes seem to follow your movement.
+      - Pressure builds in your ears.
+      - Something stirs in the deepest darkness.
+
+  - id: drowned_abyss
+    vnum: 1408
+    name: The Abyss
+    short_description: Where the Abyssal Herald dwells
+    long_description: >
+      A shaft descends into absolute darkness, the pressure here
+      crushing. This is where the Abyssal Herald dwells - a creature
+      touched by the kraken gods, part priest and part monster. The
+      water here is so dark and cold that light itself seems to die.
+      Only the Herald's bioluminescence breaks the darkness.
+    exits:
+      up: drowned_inner_sanctum
+    sector_type: ruin
+    flags: [boss_room, underwater, crushing_depth]
+    mob_spawns:
+      - template_id: abyssal_herald
+        max_count: 1
+    ambient_messages:
+      - Tentacles brush past you in the darkness.
+      - The Herald's presence fills your mind with alien thoughts.
+      - Something vast and terrible watches from below.

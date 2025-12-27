@@ -1,0 +1,326 @@
+# Shimmerwood Mobs
+# Fey creatures and woodland spirits
+
+zone_id: shimmerwood
+
+mobs:
+  # Common Creatures
+  - id: pixie_swarm
+    vnum: 2100
+    name: a pixie swarm
+    keywords: [pixie, swarm, fey, tiny]
+    short_description: A cloud of tiny, glowing pixies darts about.
+    long_description: >
+      These tiny fey creatures move as one, a swirling cloud of light
+      and laughter. Individually harmless, together they can bedevil
+      travelers with pranks, theft, and painful pinches.
+    level: 10
+    health: 60
+    strength: 4
+    dexterity: 20
+    constitution: 6
+    damage_dice: 2d4
+    damage_type: piercing
+    armor_class: 17
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 120
+    abilities: [confusion_dust, steal_item]
+    resistances: [magic]
+    loot_table:
+      - template_id: pixie_dust
+        drop_chance: 0.5
+
+  - id: mushroom_sprite
+    vnum: 2101
+    name: a mushroom sprite
+    keywords: [mushroom, sprite, fey, fungus]
+    short_description: A tiny creature with a mushroom cap head bounces past.
+    long_description: >
+      These fey creatures are born from the magical mushroom rings of
+      the Shimmerwood. They are guardians of the forest's fungal
+      network and can be helpful or hostile depending on their mood.
+    level: 11
+    health: 70
+    strength: 8
+    dexterity: 16
+    constitution: 10
+    damage_dice: 1d6
+    damage_type: poison
+    armor_class: 14
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 140
+    abilities: [spore_cloud, healing_spores]
+    immunities: [poison]
+    loot_table:
+      - template_id: magic_mushroom
+        drop_chance: 0.4
+
+  - id: will_o_wisp
+    vnum: 2102
+    name: a will-o-wisp
+    keywords: [wisp, light, fey, ghost]
+    short_description: A floating orb of ghostly light beckons you.
+    long_description: >
+      These mysterious lights lead travelers astray, guiding them to
+      treasure or doom depending on the wisp's whim. They feed on
+      the life force of those who die following them.
+    level: 13
+    health: 50
+    strength: 2
+    dexterity: 22
+    constitution: 8
+    damage_dice: 2d6
+    damage_type: lightning
+    armor_class: 19
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 5
+    experience_value: 220
+    abilities: [lure, life_drain, invisibility]
+    immunities: [physical]
+    loot_table:
+      - template_id: wisp_essence
+        drop_chance: 0.3
+
+  - id: summer_fey
+    vnum: 2103
+    name: a Summer Court fey
+    keywords: [summer, fey, courtier, beautiful]
+    short_description: A beautiful, golden-haired fey creature regards you.
+    long_description: >
+      This fey of the Summer Court is all warmth and beauty, but
+      their smile hides dangerous whims. They are passionate and
+      cruel in equal measure, offering gifts that carry hidden prices.
+    level: 14
+    health: 100
+    strength: 10
+    dexterity: 18
+    constitution: 12
+    intelligence: 16
+    charisma: 20
+    damage_dice: 1d8
+    damage_type: fire
+    armor_class: 15
+    behavior_type: neutral
+    aggro_radius: 4
+    experience_value: 280
+    abilities: [charm_person, sunburst, fey_bargain]
+    resistances: [fire]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: summer_flower
+        drop_chance: 0.4
+
+  - id: winter_fey
+    vnum: 2104
+    name: a Winter Court fey
+    keywords: [winter, fey, courtier, cold]
+    short_description: A pale, beautiful fey creature watches with cold eyes.
+    long_description: >
+      This fey of the Winter Court is cold beauty incarnate. Their
+      touch brings frost, and their hearts know no warmth. They are
+      calculating and patient, unlike their summer counterparts.
+    level: 14
+    health: 100
+    strength: 10
+    dexterity: 18
+    constitution: 12
+    intelligence: 18
+    charisma: 18
+    damage_dice: 1d8
+    damage_type: cold
+    armor_class: 15
+    behavior_type: neutral
+    aggro_radius: 4
+    experience_value: 280
+    abilities: [frost_touch, ice_storm, fey_bargain]
+    resistances: [cold]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: winter_rose
+        drop_chance: 0.4
+
+  - id: flower_sprite
+    vnum: 2105
+    name: a flower sprite
+    keywords: [flower, sprite, fey, garden]
+    short_description: A tiny winged creature emerges from a blooming flower.
+    long_description: >
+      These delicate fey are born from the magical flowers of the
+      Summer Court garden. They tend the eternal blooms and defend
+      them with surprising ferocity.
+    level: 11
+    health: 50
+    strength: 4
+    dexterity: 18
+    constitution: 8
+    damage_dice: 1d4
+    damage_type: piercing
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 130
+    abilities: [pollen_blast, heal_plants]
+    loot_table:
+      - template_id: flower_petal
+        drop_chance: 0.5
+
+  - id: ice_sprite
+    vnum: 2106
+    name: an ice sprite
+    keywords: [ice, sprite, fey, winter]
+    short_description: A tiny creature of living ice flutters past.
+    long_description: >
+      Born from the frozen beauty of the Winter Court grove, these
+      sprites are as cold and sharp as icicles. Their touch freezes,
+      and they leave trails of frost wherever they fly.
+    level: 11
+    health: 50
+    strength: 4
+    dexterity: 18
+    constitution: 8
+    damage_dice: 1d6
+    damage_type: cold
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 130
+    abilities: [frost_breath, ice_shard]
+    immunities: [cold]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: ice_crystal
+        drop_chance: 0.5
+
+  - id: maze_guardian
+    vnum: 2107
+    name: a maze guardian
+    keywords: [maze, guardian, fey, construct]
+    short_description: A figure woven from living vines blocks the path.
+    long_description: >
+      The Shimmerwood creates these guardians from its own essence.
+      They are not truly fey but living extensions of the forest,
+      tasked with protecting sacred places and testing travelers.
+    level: 13
+    health: 140
+    strength: 16
+    dexterity: 10
+    constitution: 18
+    damage_dice: 1d10
+    damage_type: bludgeoning
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 240
+    abilities: [entangle, regeneration, bark_skin]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: living_wood
+        drop_chance: 0.3
+
+  # NPCs
+  - id: traveling_fey
+    vnum: 2150
+    name: a traveling fey merchant
+    keywords: [merchant, fey, traveler, trader]
+    short_description: A fey merchant displays wares of otherworldly beauty.
+    long_description: >
+      This fey trader moves between the mortal world and Feywild,
+      offering goods from both realms. Their prices are fair, though
+      payment is not always in gold. Names, memories, and years of
+      life are all valid currency.
+    level: 15
+    health: 80
+    behavior_type: friendly
+    shop:
+      markup: 1.3
+      markdown: 0.7
+      inventory:
+        - template_id: fey_wine
+        - template_id: glamour_dust
+        - template_id: moonflower
+
+  - id: fey_merchant
+    vnum: 2151
+    name: Silverbell the Merchant
+    keywords: [silverbell, merchant, fey, crossroads]
+    short_description: A silver-skinned fey tends a magical market stall.
+    long_description: >
+      Silverbell has traded at the crossroads for centuries, offering
+      both mortal and fey goods to travelers of both realms. Their
+      deals are always fair - but "fair" in fey terms can be tricky.
+    level: 16
+    health: 90
+    behavior_type: friendly
+    shop:
+      markup: 1.2
+      markdown: 0.8
+      inventory:
+        - template_id: feywild_map
+        - template_id: true_sight_charm
+        - template_id: iron_ward
+
+  - id: ancient_dryad
+    vnum: 2152
+    name: Grandmother Oak
+    keywords: [grandmother, oak, dryad, ancient, tree]
+    short_description: An impossibly old dryad is one with the great tree.
+    long_description: >
+      This dryad has lived so long she has become one with the
+      ancient tree at the forest's heart. She remembers when the
+      Shimmerwood was young and knows all its secrets. She speaks
+      only to those she deems worthy.
+    level: 25
+    health: 200
+    behavior_type: friendly
+    dialogue:
+      greeting: "Ah, a mortal visitor. How... fleeting you all are. What brings you to my roots?"
+      topics:
+        forest: "The Shimmerwood exists between worlds. Neither fully here nor there. It likes to play."
+        fey_lord: "He rules here, yes, but even he bows to the forest's will. We all do, in time."
+        mortals: "So brief, your lives. Yet you burn so brightly. The fey envy that, though they'd never admit it."
+
+  # Boss
+  - id: fey_lord
+    vnum: 2199
+    name: The Fey Lord of the Shimmerwood
+    keywords: [fey, lord, boss, archfey, king]
+    short_description: A figure of terrible beauty sits upon a throne of living wood.
+    long_description: >
+      The Fey Lord rules the Shimmerwood with capricious grace. His
+      beauty is painful to behold, and his moods shift like the wind.
+      He may offer boons or death, and none can predict which. His
+      power here is absolute, and reality bends to his whims.
+    level: 20
+    health: 700
+    strength: 16
+    dexterity: 22
+    constitution: 18
+    intelligence: 20
+    wisdom: 18
+    charisma: 26
+    damage_dice: 3d8
+    damage_type: force
+    armor_class: 20
+    behavior_type: neutral
+    combat_style: tactician
+    aggro_radius: 8
+    experience_value: 2800
+    gold_min: 250
+    gold_max: 800
+    abilities: [reality_warp, mass_charm, fey_fire, summon_court, word_of_binding]
+    resistances: [magic]
+    loot_table:
+      - template_id: fey_lords_ring
+        drop_chance: 0.6
+      - template_id: crown_of_glamour
+        drop_chance: 0.5
+      - template_id: staff_of_seasons
+        drop_chance: 0.7
+    dialogue:
+      greeting: "A mortal, in my court? How... amusing. Have you come to bargain, or to die?"
+      topics:
+        bargain: "Everything has a price. Your soul, your firstborn, a memory you cherish. What will you pay?"
+        power: "I am the Shimmerwood, and the Shimmerwood is me. You cannot harm one without the other."

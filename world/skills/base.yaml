@@ -1,0 +1,517 @@
+# Base Skills and Spells
+# Defines core abilities for the game's class archetypes
+
+skills:
+  # =========================================================================
+  # Combat Skills (Warrior/All)
+  # =========================================================================
+
+  bash:
+    name: Bash
+    description: Strike your opponent with your shield, potentially stunning them.
+    category: combat
+    target_type: single_enemy
+    stamina_cost: 15
+    cooldown_seconds: 8.0
+    level_requirement: 1
+    class_requirements: []
+    effects:
+      - type: damage
+        base_value: 10
+        scaling_stat: strength
+        scaling_factor: 0.5
+        damage_school: physical
+      - type: stun
+        duration_seconds: 2
+        breaks_on_damage: true
+
+  kick:
+    name: Kick
+    description: Deliver a powerful kick to your opponent.
+    category: combat
+    target_type: single_enemy
+    stamina_cost: 10
+    cooldown_seconds: 4.0
+    level_requirement: 1
+    class_requirements: []
+    effects:
+      - type: damage
+        base_value: 8
+        scaling_stat: dexterity
+        scaling_factor: 0.4
+        damage_school: physical
+
+  rescue:
+    name: Rescue
+    description: Interpose yourself between an ally and their attacker.
+    category: combat
+    target_type: single_ally
+    stamina_cost: 20
+    cooldown_seconds: 12.0
+    level_requirement: 5
+    class_requirements: [warrior, paladin]
+    effects:
+      - type: buff
+        stat_modified: threat
+        base_value: 50
+        duration_seconds: 10
+
+  berserk:
+    name: Berserk
+    description: Enter a berserker rage, increasing damage but lowering defense.
+    category: combat
+    target_type: self
+    stamina_cost: 30
+    cooldown_seconds: 60.0
+    level_requirement: 10
+    class_requirements: [warrior]
+    effects:
+      - type: buff
+        stat_modified: damage_bonus
+        base_value: 25
+        duration_seconds: 30
+      - type: debuff
+        stat_modified: armor_class
+        base_value: 15
+        duration_seconds: 30
+
+  disarm:
+    name: Disarm
+    description: Attempt to knock the weapon from your opponent's grasp.
+    category: combat
+    target_type: single_enemy
+    stamina_cost: 25
+    cooldown_seconds: 20.0
+    level_requirement: 8
+    class_requirements: [warrior, rogue]
+    effects:
+      - type: debuff
+        stat_modified: weapon_damage
+        base_value: 50
+        duration_seconds: 8
+
+  # =========================================================================
+  # Rogue Skills
+  # =========================================================================
+
+  backstab:
+    name: Backstab
+    description: Strike from the shadows for massive damage.
+    category: combat
+    target_type: single_enemy
+    stamina_cost: 25
+    cooldown_seconds: 10.0
+    level_requirement: 3
+    class_requirements: [rogue]
+    effects:
+      - type: damage
+        base_value: 30
+        scaling_stat: dexterity
+        scaling_factor: 1.0
+        damage_school: physical
+        can_crit: true
+        crit_multiplier: 3.0
+
+  sneak:
+    name: Sneak
+    description: Move silently, becoming harder to detect.
+    category: utility
+    target_type: self
+    stamina_cost: 15
+    cooldown_seconds: 30.0
+    level_requirement: 1
+    class_requirements: [rogue]
+    effects:
+      - type: buff
+        stat_modified: stealth
+        base_value: 30
+        duration_seconds: 60
+
+  envenom:
+    name: Envenom
+    description: Coat your weapon with deadly poison.
+    category: combat
+    target_type: self
+    stamina_cost: 20
+    cooldown_seconds: 45.0
+    level_requirement: 7
+    class_requirements: [rogue]
+    effects:
+      - type: buff
+        stat_modified: poison_damage
+        base_value: 10
+        duration_seconds: 120
+
+  # =========================================================================
+  # Magic Skills (Mage)
+  # =========================================================================
+
+  magic_missile:
+    name: Magic Missile
+    description: Fire a bolt of pure arcane energy at your target.
+    category: magic
+    target_type: single_enemy
+    mana_cost: 10
+    cooldown_seconds: 0.0
+    level_requirement: 1
+    class_requirements: [mage]
+    effects:
+      - type: damage
+        base_value: 15
+        scaling_stat: intelligence
+        scaling_factor: 0.7
+        damage_school: arcane
+        can_crit: true
+
+  fireball:
+    name: Fireball
+    description: Hurl a ball of fire that explodes on impact.
+    category: magic
+    target_type: area_enemies
+    mana_cost: 35
+    cooldown_seconds: 6.0
+    level_requirement: 8
+    class_requirements: [mage]
+    effects:
+      - type: damage
+        base_value: 40
+        scaling_stat: intelligence
+        scaling_factor: 1.0
+        damage_school: fire
+        can_crit: true
+
+  frost_bolt:
+    name: Frost Bolt
+    description: Launch a shard of ice that slows your target.
+    category: magic
+    target_type: single_enemy
+    mana_cost: 15
+    cooldown_seconds: 2.0
+    level_requirement: 3
+    class_requirements: [mage]
+    effects:
+      - type: damage
+        base_value: 18
+        scaling_stat: intelligence
+        scaling_factor: 0.6
+        damage_school: cold
+      - type: debuff
+        stat_modified: movement_speed
+        base_value: 30
+        duration_seconds: 8
+
+  lightning_bolt:
+    name: Lightning Bolt
+    description: Call down a bolt of lightning upon your foe.
+    category: magic
+    target_type: single_enemy
+    mana_cost: 25
+    cooldown_seconds: 4.0
+    level_requirement: 6
+    class_requirements: [mage]
+    effects:
+      - type: damage
+        base_value: 35
+        scaling_stat: intelligence
+        scaling_factor: 0.8
+        damage_school: lightning
+
+  arcane_shield:
+    name: Arcane Shield
+    description: Surround yourself with a protective magical barrier.
+    category: magic
+    target_type: self
+    mana_cost: 30
+    cooldown_seconds: 60.0
+    level_requirement: 5
+    class_requirements: [mage]
+    effects:
+      - type: buff
+        stat_modified: magic_resistance
+        base_value: 25
+        duration_seconds: 120
+
+  polymorph:
+    name: Polymorph
+    description: Transform your enemy into a harmless sheep.
+    category: magic
+    target_type: single_enemy
+    mana_cost: 40
+    cooldown_seconds: 30.0
+    level_requirement: 12
+    class_requirements: [mage]
+    effects:
+      - type: stun
+        duration_seconds: 10
+        breaks_on_damage: true
+        diminishing_returns: true
+
+  # =========================================================================
+  # Healing Skills (Cleric)
+  # =========================================================================
+
+  cure_light:
+    name: Cure Light Wounds
+    description: Mend minor wounds with divine energy.
+    category: healing
+    target_type: single_ally
+    mana_cost: 12
+    cooldown_seconds: 0.0
+    level_requirement: 1
+    class_requirements: [cleric, paladin]
+    effects:
+      - type: heal
+        base_value: 20
+        scaling_stat: wisdom
+        scaling_factor: 0.6
+        can_crit: true
+
+  cure_serious:
+    name: Cure Serious Wounds
+    description: Heal significant injuries with divine power.
+    category: healing
+    target_type: single_ally
+    mana_cost: 25
+    cooldown_seconds: 2.0
+    level_requirement: 5
+    class_requirements: [cleric, paladin]
+    effects:
+      - type: heal
+        base_value: 45
+        scaling_stat: wisdom
+        scaling_factor: 0.9
+        can_crit: true
+
+  cure_critical:
+    name: Cure Critical Wounds
+    description: Restore a great deal of health to your target.
+    category: healing
+    target_type: single_ally
+    mana_cost: 50
+    cooldown_seconds: 4.0
+    level_requirement: 10
+    class_requirements: [cleric]
+    effects:
+      - type: heal
+        base_value: 80
+        scaling_stat: wisdom
+        scaling_factor: 1.2
+        can_crit: true
+
+  heal:
+    name: Heal
+    description: A powerful healing spell that restores most wounds.
+    category: healing
+    target_type: single_ally
+    mana_cost: 75
+    cooldown_seconds: 8.0
+    level_requirement: 15
+    class_requirements: [cleric]
+    effects:
+      - type: heal
+        base_value: 150
+        scaling_stat: wisdom
+        scaling_factor: 1.5
+        can_crit: true
+
+  regeneration:
+    name: Regeneration
+    description: Grant the target accelerated healing over time.
+    category: healing
+    target_type: single_ally
+    mana_cost: 35
+    cooldown_seconds: 30.0
+    level_requirement: 8
+    class_requirements: [cleric]
+    effects:
+      - type: hot
+        base_value: 8
+        scaling_stat: wisdom
+        scaling_factor: 0.3
+        duration_seconds: 24
+        tick_interval_seconds: 3
+
+  sanctuary:
+    name: Sanctuary
+    description: Bless your target with divine protection.
+    category: healing
+    target_type: single_ally
+    mana_cost: 40
+    cooldown_seconds: 45.0
+    level_requirement: 7
+    class_requirements: [cleric]
+    effects:
+      - type: buff
+        stat_modified: damage_reduction
+        base_value: 20
+        duration_seconds: 60
+
+  dispel_magic:
+    name: Dispel Magic
+    description: Remove magical effects from the target.
+    category: magic
+    target_type: single_any
+    mana_cost: 25
+    cooldown_seconds: 8.0
+    level_requirement: 6
+    class_requirements: [cleric, mage]
+    effects:
+      - type: damage
+        base_value: 0
+        damage_school: arcane
+
+  smite:
+    name: Smite
+    description: Strike your foe with holy wrath.
+    category: combat
+    target_type: single_enemy
+    mana_cost: 20
+    cooldown_seconds: 6.0
+    level_requirement: 3
+    class_requirements: [cleric, paladin]
+    effects:
+      - type: damage
+        base_value: 25
+        scaling_stat: wisdom
+        scaling_factor: 0.6
+        damage_school: holy
+
+  # =========================================================================
+  # Ranger Skills
+  # =========================================================================
+
+  track:
+    name: Track
+    description: Search for signs of creatures in the area.
+    category: utility
+    target_type: self
+    stamina_cost: 10
+    cooldown_seconds: 10.0
+    level_requirement: 1
+    class_requirements: [ranger]
+    effects:
+      - type: buff
+        stat_modified: perception
+        base_value: 30
+        duration_seconds: 60
+
+  rapid_shot:
+    name: Rapid Shot
+    description: Fire a quick volley of arrows.
+    category: combat
+    target_type: single_enemy
+    stamina_cost: 20
+    cooldown_seconds: 8.0
+    level_requirement: 5
+    class_requirements: [ranger]
+    effects:
+      - type: damage
+        base_value: 12
+        scaling_stat: dexterity
+        scaling_factor: 0.4
+        damage_school: physical
+      - type: damage
+        base_value: 12
+        scaling_stat: dexterity
+        scaling_factor: 0.4
+        damage_school: physical
+
+  aimed_shot:
+    name: Aimed Shot
+    description: Take careful aim for a devastating strike.
+    category: combat
+    target_type: single_enemy
+    stamina_cost: 25
+    cooldown_seconds: 12.0
+    level_requirement: 8
+    class_requirements: [ranger]
+    cast_time_seconds: 2.0
+    effects:
+      - type: damage
+        base_value: 50
+        scaling_stat: dexterity
+        scaling_factor: 1.2
+        damage_school: physical
+        can_crit: true
+        crit_multiplier: 2.5
+
+  entangle:
+    name: Entangle
+    description: Cause vines to erupt from the ground, rooting enemies.
+    category: magic
+    target_type: area_enemies
+    mana_cost: 30
+    cooldown_seconds: 20.0
+    level_requirement: 10
+    class_requirements: [ranger]
+    effects:
+      - type: root
+        duration_seconds: 6
+        breaks_on_damage: false
+
+  # =========================================================================
+  # Paladin Skills
+  # =========================================================================
+
+  lay_on_hands:
+    name: Lay on Hands
+    description: Channel divine energy to heal a massive amount of damage.
+    category: healing
+    target_type: single_ally
+    mana_cost: 0
+    cooldown_seconds: 300.0
+    level_requirement: 1
+    class_requirements: [paladin]
+    effects:
+      - type: heal
+        base_value: 100
+        scaling_stat: charisma
+        scaling_factor: 2.0
+
+  divine_shield:
+    name: Divine Shield
+    description: Become immune to all damage for a short time.
+    category: utility
+    target_type: self
+    mana_cost: 50
+    cooldown_seconds: 300.0
+    level_requirement: 12
+    class_requirements: [paladin]
+    effects:
+      - type: buff
+        stat_modified: damage_immunity
+        base_value: 100
+        duration_seconds: 8
+
+  consecration:
+    name: Consecration
+    description: Consecrate the ground, damaging enemies who stand upon it.
+    category: combat
+    target_type: area_enemies
+    mana_cost: 40
+    cooldown_seconds: 15.0
+    level_requirement: 8
+    class_requirements: [paladin]
+    effects:
+      - type: dot
+        base_value: 10
+        scaling_stat: charisma
+        scaling_factor: 0.3
+        damage_school: holy
+        duration_seconds: 12
+        tick_interval_seconds: 2
+
+  aura_of_protection:
+    name: Aura of Protection
+    description: Radiate an aura that protects nearby allies.
+    category: utility
+    target_type: area_allies
+    mana_cost: 30
+    cooldown_seconds: 120.0
+    level_requirement: 6
+    class_requirements: [paladin]
+    effects:
+      - type: buff
+        stat_modified: armor_class
+        base_value: 15
+        duration_seconds: 180

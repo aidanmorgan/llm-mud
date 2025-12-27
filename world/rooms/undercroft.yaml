@@ -1,0 +1,231 @@
+# The Undercroft Rooms
+# Deep dungeon prison with cursed treasures and sealed horrors
+
+zone_id: undercroft
+
+rooms:
+  - id: undercroft_entrance
+    vnum: 1500
+    name: The Sealed Door
+    short_description: Ancient wards protect a forbidden place
+    long_description: >
+      At the deepest point of the Ironvein Mine, a massive door stands
+      sealed with chains of cold iron and wards of ancient power. The
+      symbols carved into its surface glow faintly, warning away those
+      who would enter. Beyond lies the Undercroft - a prison built
+      before recorded history to contain things that should not exist.
+    exits:
+      up:
+        destination: ~
+        leads_to_region: deep_descent
+      down: undercroft_warden_station
+    sector_type: cave
+    flags: [sealed, ancient]
+    ambient_messages:
+      - The wards pulse with warning energy.
+      - Something beyond the door strains against its bonds.
+      - Whispers of madness seep through the cracks.
+
+  - id: undercroft_warden_station
+    vnum: 1501
+    name: Warden's Station
+    short_description: Where the ghostly wardens still keep watch
+    long_description: >
+      The spectral forms of ancient wardens still patrol this station,
+      their duty extending beyond death. They wear armor of a forgotten
+      empire and carry weapons that shimmer with binding magic. They
+      acknowledge visitors but speak only in cryptic warnings about
+      what lies below.
+    exits:
+      up: undercroft_entrance
+      down: undercroft_upper_cells
+      east: undercroft_armory
+    sector_type: cave
+    flags: [dark]
+    mob_spawns:
+      - template_id: ghost_warden
+        max_count: 3
+    ambient_messages:
+      - The wardens' ghostly forms flicker in and out of visibility.
+      - Ancient duty binds them beyond death.
+
+  - id: undercroft_armory
+    vnum: 1502
+    name: Warden's Armory
+    short_description: Weapons for binding and containing evil
+    long_description: >
+      Racks of specialized weapons line the walls - blades etched with
+      binding runes, chains of consecrated silver, stakes of cold iron.
+      These are tools for dealing with supernatural prisoners. Some
+      still radiate power, while others have corroded beyond use.
+    exits:
+      west: undercroft_warden_station
+    sector_type: cave
+    flags: [dark]
+    mob_spawns:
+      - template_id: armory_guardian
+        max_count: 1
+    item_spawns:
+      - template_id: binding_blade
+        max_count: 1
+      - template_id: warden_chain
+        max_count: 1
+
+  - id: undercroft_upper_cells
+    vnum: 1503
+    name: Upper Cells
+    short_description: Prison cells for lesser horrors
+    long_description: >
+      These cells held the Undercroft's less dangerous prisoners - mad
+      cultists, minor demons, cursed individuals. Some cells still hold
+      their occupants, mummified or spectral. Others have been broken
+      open, their contents long escaped into the depths below.
+    exits:
+      up: undercroft_warden_station
+      down: undercroft_lower_cells
+      east: undercroft_mad_wing
+    sector_type: cave
+    flags: [dark, curse_zone]
+    mob_spawns:
+      - template_id: cell_wraith
+        max_count: 3
+      - template_id: escaped_horror
+        max_count: 2
+
+  - id: undercroft_mad_wing
+    vnum: 1504
+    name: Wing of Madness
+    short_description: Where insanity is contagious
+    long_description: >
+      The prisoners in this wing were driven mad by what they knew or
+      what they were. Their ravings have seeped into the walls over
+      millennia, and spending too long here risks sanity itself. Babbling
+      voices speak prophecies, curses, and secrets best left unknown.
+    exits:
+      west: undercroft_upper_cells
+    sector_type: cave
+    flags: [dark, insanity_zone]
+    mob_spawns:
+      - template_id: mad_prophet
+        max_count: 2
+      - template_id: sanity_devourer
+        max_count: 1
+    ambient_messages:
+      - Incoherent whispers fill your mind.
+      - Something here wants to share its madness.
+      - The walls pulse with trapped insanity.
+
+  - id: undercroft_lower_cells
+    vnum: 1505
+    name: Lower Cells
+    short_description: Deeper cells for greater threats
+    long_description: >
+      The cells here are larger, their wards stronger, their contents
+      more terrible. Each cell is a miniature prison, with multiple
+      layers of binding. Some prisoners still live - if living is the
+      right word - their eyes gleaming with malevolence and patience
+      born of eternal imprisonment.
+    exits:
+      up: undercroft_upper_cells
+      down: undercroft_vault_level
+      west: undercroft_torture_chamber
+    sector_type: cave
+    flags: [dark, high_security]
+    mob_spawns:
+      - template_id: bound_demon
+        max_count: 2
+      - template_id: ancient_prisoner
+        max_count: 2
+
+  - id: undercroft_torture_chamber
+    vnum: 1506
+    name: Torture Chamber
+    short_description: Where information was extracted at any cost
+    long_description: >
+      This chamber contains devices of exquisite cruelty, some designed
+      for flesh and some for spirit. The wardens extracted secrets here,
+      learning what they needed to bind their prisoners more tightly.
+      The echoes of ancient screams still linger, along with darker
+      things that fed on the suffering.
+    exits:
+      east: undercroft_lower_cells
+    sector_type: cave
+    flags: [dark, cursed]
+    mob_spawns:
+      - template_id: pain_specter
+        max_count: 2
+      - template_id: torture_wraith
+        max_count: 1
+    item_spawns:
+      - template_id: cursed_implement
+        max_count: 1
+
+  - id: undercroft_vault_level
+    vnum: 1507
+    name: Vault Level
+    short_description: Where cursed treasures are sealed away
+    long_description: >
+      Not all prisoners are creatures. This level holds objects too
+      dangerous to destroy - weapons that corrupt their wielders,
+      gold that spreads plague, books that drive readers mad. Each
+      vault is sealed, but the treasures call out, promising power
+      to those who would free them.
+    exits:
+      up: undercroft_lower_cells
+      down: undercroft_deepest_vault
+      east: undercroft_cursed_treasury
+    sector_type: cave
+    flags: [dark, high_magic, cursed]
+    mob_spawns:
+      - template_id: vault_guardian
+        max_count: 2
+    ambient_messages:
+      - Cursed treasures whisper promises of power.
+      - The gold in these vaults is tainted with corruption.
+
+  - id: undercroft_cursed_treasury
+    vnum: 1508
+    name: Cursed Treasury
+    short_description: Riches that bring only ruin
+    long_description: >
+      Piles of gold and gems fill this chamber, enough wealth to buy
+      kingdoms. But every coin is cursed, every jewel corrupted. Those
+      who take from this treasury find their fortune turns to ash,
+      their luck to disaster. The warnings are carved everywhere, but
+      greed is a powerful force.
+    exits:
+      west: undercroft_vault_level
+    sector_type: cave
+    flags: [dark, cursed, trap_zone]
+    mob_spawns:
+      - template_id: greed_demon
+        max_count: 1
+    item_spawns:
+      - template_id: cursed_gold
+        max_count: 10
+      - template_id: plague_gem
+        max_count: 2
+
+  - id: undercroft_deepest_vault
+    vnum: 1509
+    name: The First Prison
+    short_description: Where the First Prisoner strains against chains of ages
+    long_description: >
+      At the absolute bottom of the Undercroft lies a single cell, its
+      wards more powerful than all others combined. Here, chained with
+      bindings of divine origin, rests the First Prisoner - a demon lord
+      captured before human memory began. The chains have held for
+      millennia, but they are weakening. Something terrible will soon
+      break free.
+    exits:
+      up: undercroft_vault_level
+    sector_type: cave
+    flags: [boss_room, dark, ultimate_seal]
+    mob_spawns:
+      - template_id: first_prisoner
+        max_count: 1
+    ambient_messages:
+      - The chains groan under unimaginable strain.
+      - The First Prisoner's eyes burn with hatred for all that lives.
+      - Power beyond comprehension pulses against ancient bindings.
+      - Time itself seems to warp around this terrible presence.

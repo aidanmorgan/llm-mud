@@ -1,0 +1,383 @@
+# Thornhaven Mobs
+# Plant creatures, corrupted nature, and the Briar King's servants
+
+zone_id: thornhaven
+
+mobs:
+  # Plant Creatures
+  - id: thorn_creeper
+    vnum: 1100
+    name: a thorn creeper
+    keywords: [creeper, thorn, vine, plant]
+    short_description: A mass of thorny vines slithers along the ground.
+    long_description: >
+      This animated tangle of thorny vines moves with surprising speed,
+      seeking warm-blooded prey to fertilize the soil. Its thorns are
+      razor-sharp and coated with a mild toxin that causes numbness.
+    level: 7
+    health: 60
+    strength: 12
+    dexterity: 14
+    constitution: 12
+    damage_dice: 1d6
+    damage_type: piercing
+    armor_class: 12
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 90
+    abilities: [entangle, thorn_spray]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: thorn_vine
+        drop_chance: 0.4
+
+  - id: wall_creeper
+    vnum: 1101
+    name: a wall creeper
+    keywords: [creeper, wall, vine, plant]
+    short_description: Vines covering the wall shift with predatory intent.
+    long_description: >
+      This mass of vines has grown so thick that it can support itself,
+      detaching from walls to engulf prey. Victims are slowly digested
+      over days, their nutrients feeding the plant's endless growth.
+    level: 8
+    health: 80
+    strength: 14
+    dexterity: 10
+    constitution: 16
+    damage_dice: 1d8
+    damage_type: bludgeoning
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 2
+    experience_value: 120
+    abilities: [engulf, constrict]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: creeper_sap
+        drop_chance: 0.3
+
+  - id: thorn_guardian
+    vnum: 1102
+    name: a thorn guardian
+    keywords: [guardian, thorn, plant, construct]
+    short_description: A humanoid shape of interwoven thorns blocks the path.
+    long_description: >
+      The Briar King has shaped this guardian from the fortress's
+      aggressive vegetation. Standing eight feet tall, it is a mass
+      of thorns, vines, and flowering plants twisted into a mockery
+      of human form. It serves its master without thought or mercy.
+    level: 10
+    health: 130
+    strength: 16
+    dexterity: 10
+    constitution: 18
+    damage_dice: 2d6
+    damage_type: piercing
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 180
+    abilities: [thorn_burst, regeneration]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: guardian_seeds
+        drop_chance: 0.3
+      - template_id: thorned_heart
+        drop_chance: 0.2
+
+  - id: vine_horror
+    vnum: 1103
+    name: a vine horror
+    keywords: [horror, vine, monster, plant]
+    short_description: A writhing mass of vines with a central maw lurks here.
+    long_description: >
+      This creature has no fixed form, constantly shifting as vines
+      grow, extend, and die. At its center is a tooth-lined opening
+      that serves as both mouth and sensory organ. It is a pure
+      predator, patient and deadly.
+    level: 11
+    health: 110
+    strength: 16
+    dexterity: 12
+    constitution: 14
+    damage_dice: 2d6
+    damage_type: piercing
+    armor_class: 13
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 3
+    experience_value: 170
+    abilities: [grapple, drain_life]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: horror_seed
+        drop_chance: 0.2
+
+  # Carnivorous Plants
+  - id: man_eating_plant
+    vnum: 1110
+    name: a man-eating plant
+    keywords: [plant, carnivorous, flower, trap]
+    short_description: A beautiful flower conceals a deadly trap.
+    long_description: >
+      This massive plant has a flower that can swallow a person whole.
+      It lures prey with a sweet scent and hypnotic pollen, then
+      snaps shut with crushing force. Half-digested remains are
+      visible through its translucent petals.
+    level: 9
+    health: 100
+    strength: 16
+    dexterity: 8
+    constitution: 16
+    damage_dice: 2d8
+    damage_type: bludgeoning
+    armor_class: 12
+    behavior_type: aggressive
+    aggro_radius: 2
+    experience_value: 140
+    abilities: [hypnotic_pollen, swallow, acid_digest]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: digestive_sap
+        drop_chance: 0.3
+
+  - id: pitcher_plant
+    vnum: 1111
+    name: a giant pitcher plant
+    keywords: [pitcher, plant, carnivorous, trap]
+    short_description: A massive pitcher plant large enough to hold a person.
+    long_description: >
+      This pitcher plant has grown to monstrous size, its digestive
+      pool deep enough to drown in. The slick sides make escape
+      nearly impossible, and the plant's digestive acids can dissolve
+      bone in hours.
+    level: 10
+    health: 120
+    strength: 14
+    dexterity: 6
+    constitution: 18
+    damage_dice: 1d6
+    damage_type: acid
+    armor_class: 10
+    behavior_type: aggressive
+    aggro_radius: 2
+    experience_value: 160
+    abilities: [trap_victim, acid_pool]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: pitcher_acid
+        drop_chance: 0.4
+
+  - id: snapdragon_beast
+    vnum: 1112
+    name: a snapdragon beast
+    keywords: [snapdragon, beast, plant, flower]
+    short_description: A cluster of snapping flower-heads sways here.
+    long_description: >
+      This mobile plant has developed legs and multiple heads, each
+      capable of biting with crushing force. It roams the gardens
+      seeking prey, more animal than plant in its behavior.
+    level: 8
+    health: 70
+    strength: 14
+    dexterity: 14
+    constitution: 12
+    damage_dice: 1d8
+    damage_type: piercing
+    armor_class: 13
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 110
+    abilities: [multi_bite]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: snapdragon_seeds
+        drop_chance: 0.3
+
+  # Corrupted Creatures
+  - id: plant_zombie
+    vnum: 1120
+    name: a plant zombie
+    keywords: [zombie, plant, undead, soldier]
+    short_description: A corpse animated by invasive plant growth shambles here.
+    long_description: >
+      This was once a guard of Thornhaven, but plant life has invaded
+      their dead body, animating it with terrible purpose. Vines run
+      through muscle and bone, and flowers bloom from empty eye sockets.
+    level: 8
+    health: 80
+    strength: 14
+    dexterity: 8
+    constitution: 14
+    damage_dice: 1d8
+    damage_type: bludgeoning
+    armor_class: 11
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 100
+    abilities: [infectious_spores]
+    immunities: [poison]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: guard_sword
+        drop_chance: 0.2
+      - template_id: zombie_seeds
+        drop_chance: 0.3
+
+  - id: fungal_soldier
+    vnum: 1121
+    name: a fungal soldier
+    keywords: [soldier, fungal, undead, mushroom]
+    short_description: A soldier covered in fungal growths marches forward.
+    long_description: >
+      Fungal infection has claimed this soldier, their body now serving
+      as a host for mushroom growth. They still carry their weapons
+      and wear their armor, guided by the fungal network's collective
+      will.
+    level: 9
+    health: 90
+    strength: 14
+    dexterity: 10
+    constitution: 14
+    damage_dice: 1d10
+    damage_type: slashing
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 130
+    abilities: [spore_burst]
+    immunities: [poison]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: fungal_armor
+        drop_chance: 0.2
+
+  # Thornwatch
+  - id: thornwatch_patrol
+    vnum: 1130
+    name: a Thornwatch patrol
+    keywords: [thornwatch, patrol, guard, plant]
+    short_description: A humanoid figure of living plant matter stands guard.
+    long_description: >
+      The Thornwatch are the Briar King's elite guards, once humans
+      who pledged themselves to him and were transformed. Their
+      bodies are now plant matter shaped into a warrior's form,
+      armed with weapons of living wood and thorns.
+    level: 10
+    health: 100
+    strength: 14
+    dexterity: 12
+    constitution: 14
+    damage_dice: 1d10
+    damage_type: piercing
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 160
+    abilities: [thorn_blade, regeneration]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: thornwatch_blade
+        drop_chance: 0.2
+
+  - id: thornwatch_knight
+    vnum: 1131
+    name: a Thornwatch knight
+    keywords: [thornwatch, knight, warrior, plant]
+    short_description: A powerful plant-warrior in organic armor stands ready.
+    long_description: >
+      This Thornwatch has proven themselves in battle and been granted
+      greater power by the Briar King. Their armor is a living carapace
+      of bark and thorns, and their weapons are extensions of their
+      own body.
+    level: 13
+    health: 160
+    strength: 18
+    dexterity: 12
+    constitution: 16
+    damage_dice: 2d8
+    damage_type: piercing
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 260
+    abilities: [thorn_storm, bark_armor, regeneration]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: knight_blade
+        drop_chance: 0.3
+      - template_id: bark_shield
+        drop_chance: 0.2
+
+  - id: thornwatch_champion
+    vnum: 1132
+    name: a Thornwatch champion
+    keywords: [thornwatch, champion, warrior, boss]
+    short_description: The Briar King's mightiest warrior stands here.
+    long_description: >
+      This champion is the greatest of the Thornwatch, their body
+      almost indistinguishable from a small tree. They are the
+      Briar King's right hand, carrying out his will with absolute
+      loyalty and terrifying power.
+    level: 14
+    health: 200
+    strength: 20
+    dexterity: 14
+    constitution: 18
+    damage_dice: 2d10
+    damage_type: piercing
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 6
+    experience_value: 350
+    abilities: [root_strike, thorn_storm, bark_armor, summon_vines]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: champion_greatsword
+        drop_chance: 0.4
+
+  # Boss
+  - id: briar_king
+    vnum: 1140
+    name: The Briar King
+    keywords: [briar, king, boss, knight, plant]
+    short_description: A massive figure of man and plant sits upon a living throne.
+    long_description: >
+      The Briar King was once Sir Aldric Thornhaven, lord of this
+      fortress. When a druidic curse transformed the land, he embraced
+      it rather than flee, merging with the plant life until he became
+      something new. Now more tree than man, he rules his domain of
+      thorns from a throne of living wood, his mind as alien as his
+      form. Flowers bloom in his presence, but their beauty is deadly.
+    level: 14
+    health: 450
+    strength: 22
+    dexterity: 10
+    constitution: 24
+    intelligence: 14
+    wisdom: 16
+    damage_dice: 3d8
+    damage_type: piercing
+    armor_class: 19
+    behavior_type: aggressive
+    combat_style: tactician
+    aggro_radius: 8
+    experience_value: 1200
+    gold_min: 100
+    gold_max: 400
+    abilities: [thorn_storm, summon_guardians, regeneration, entangle, toxic_bloom]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: briar_crown
+        drop_chance: 1.0
+      - template_id: thornhaven_blade
+        drop_chance: 0.5
+      - template_id: heartwood_gem
+        drop_chance: 0.7
+    dialogue:
+      greeting: "You trespass in my garden, little seedling. All who enter become part of the growth."
+      topics:
+        past: "Aldric Thornhaven is dead. I am what grew from his grave."
+        curse: "Curse? This was a gift. Flesh is weak. Wood is eternal."

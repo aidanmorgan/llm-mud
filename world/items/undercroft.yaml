@@ -1,0 +1,388 @@
+# The Undercroft Items
+# Prison-themed equipment, cursed relics, and binding materials
+
+zone_id: undercroft
+
+items:
+  # Crafting Materials
+  - id: binding_chains
+    vnum: 1400
+    name: a length of binding chain
+    keywords: [binding, chain, prison, magical]
+    short_description: A length of glowing chain lies here.
+    long_description: >
+      These chains were forged to bind supernatural entities. They
+      glow with divine light and are warm to the touch. Even broken
+      links retain some of their binding power.
+    item_type: material
+    rarity: uncommon
+    weight: 2.0
+    value: 80
+
+  - id: spectral_essence
+    vnum: 1401
+    name: spectral essence
+    keywords: [spectral, essence, ghost, spirit]
+    short_description: A vial of ghostly vapor swirls here.
+    long_description: >
+      This vial contains the essence of destroyed ghosts, collected
+      from the prison's spectral inhabitants. It can be used to
+      craft items that affect the undead.
+    item_type: material
+    rarity: common
+    weight: 0.2
+    value: 40
+
+  - id: cursed_gold
+    vnum: 1402
+    name: a piece of cursed gold
+    keywords: [cursed, gold, treasure, corrupted]
+    short_description: A gold piece that seems to whisper lies here.
+    long_description: >
+      This gold came from the prison's treasury, tainted by the
+      greed demon's corruption. It whispers promises of wealth
+      to those who hold it too long.
+    item_type: material
+    rarity: rare
+    weight: 0.1
+    value: 100
+    flags: [cursed]
+
+  - id: demon_ichor
+    vnum: 1403
+    name: a vial of demon ichor
+    keywords: [demon, ichor, blood, infernal]
+    short_description: A vial of smoking black blood lies here.
+    long_description: >
+      The blood of demons burns with infernal fire. This ichor
+      was collected from the bound demons of the Undercroft. It
+      is dangerous but valuable for dark enchantments.
+    item_type: material
+    rarity: rare
+    weight: 0.3
+    value: 200
+    flags: [dangerous]
+
+  # Weapons
+  - id: warden_sword
+    vnum: 1410
+    name: a warden's sword
+    keywords: [warden, sword, prison, ghost]
+    short_description: A spectral sword of ancient design lies here.
+    long_description: >
+      The ghost wardens carry these swords, weapons that exist
+      partially in the spirit world. They can harm both physical
+      and incorporeal beings equally.
+    item_type: weapon
+    rarity: common
+    weight: 3.0
+    value: 90
+    level_requirement: 16
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: slashing
+      speed: medium
+      magical_properties:
+        - ghost_touch: true
+
+  - id: binding_mace
+    vnum: 1411
+    name: a binding mace
+    keywords: [binding, mace, prison, holy]
+    short_description: A mace covered in binding runes lies here.
+    long_description: >
+      This mace was designed to subdue supernatural prisoners.
+      Its head is covered in divine runes that flare when striking
+      demons or undead, weakening their resistance.
+    item_type: weapon
+    rarity: uncommon
+    weight: 6.0
+    value: 320
+    level_requirement: 17
+    weapon_stats:
+      damage_dice: 1d10
+      damage_type: bludgeoning
+      speed: slow
+      magical_properties:
+        - holy_damage_bonus: 1d6
+        - binding_strike: true
+        - demon_bane: true
+
+  - id: chains_of_judgement
+    vnum: 1412
+    name: Chains of Judgement
+    keywords: [chains, judgement, weapon, binding]
+    short_description: Glowing chains that move on their own lie here.
+    long_description: >
+      These chains were used to bind the most dangerous prisoners.
+      In the hands of a skilled wielder, they seek out targets and
+      wrap around them, preventing escape.
+    item_type: weapon
+    rarity: rare
+    weight: 8.0
+    value: 500
+    level_requirement: 18
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: bludgeoning
+      speed: medium
+      reach: true
+      magical_properties:
+        - auto_grapple: true
+        - holy_damage_bonus: 1d6
+        - binding_on_hit: true
+        - strength_bonus: 2
+
+  - id: exorcist_staff
+    vnum: 1413
+    name: an exorcist's staff
+    keywords: [exorcist, staff, holy, banish]
+    short_description: A staff that radiates divine light lies here.
+    long_description: >
+      The wardens used these staves to control and banish spirits.
+      Divine light emanates from the head, painful to undead and
+      demons alike. It can force spirits from possessed bodies.
+    item_type: weapon
+    rarity: rare
+    weight: 4.0
+    value: 480
+    level_requirement: 17
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: radiant
+      speed: medium
+      magical_properties:
+        - radiant_damage_bonus: 2d4
+        - turn_undead: true
+        - exorcism: true
+        - wisdom_bonus: 3
+
+  # Armor
+  - id: warden_armor
+    vnum: 1420
+    name: ghost warden armor
+    keywords: [ghost, warden, armor, spectral]
+    short_description: Armor that phases between solid and ghostly lies here.
+    long_description: >
+      This armor was worn by the wardens in life and follows them
+      in death. It exists partially in the spirit world, providing
+      protection against both physical and spectral attacks.
+    item_type: armor
+    rarity: uncommon
+    weight: 20.0
+    value: 350
+    level_requirement: 16
+    armor_stats:
+      armor_class: 16
+      slot: body
+      resistances: [necrotic]
+      magical_properties:
+        - ghost_touch: true
+        - partial_incorporeal: 10
+
+  - id: binding_plate
+    vnum: 1421
+    name: binding plate armor
+    keywords: [binding, plate, armor, holy]
+    short_description: Plate armor covered in divine runes lies here.
+    long_description: >
+      This armor was worn by the Undercroft's elite guards. Runes
+      of binding cover every surface, making the wearer resistant
+      to demonic and undead attacks.
+    item_type: armor
+    rarity: rare
+    weight: 35.0
+    value: 650
+    level_requirement: 18
+    armor_stats:
+      armor_class: 18
+      slot: body
+      resistances: [necrotic, fire]
+      magical_properties:
+        - possession_immunity: true
+        - demon_resistance: 25
+
+  - id: sanity_ward
+    vnum: 1422
+    name: a sanity ward amulet
+    keywords: [sanity, ward, amulet, mental]
+    short_description: An amulet that protects the mind lies here.
+    long_description: >
+      The prisoners of the Undercroft include beings that can
+      shatter minds with a glance. This amulet provides protection
+      against such horrors.
+    item_type: armor
+    rarity: rare
+    weight: 0.3
+    value: 400
+    level_requirement: 17
+    armor_stats:
+      armor_class: 0
+      slot: neck
+      immunities: [insanity, fear]
+      magical_properties:
+        - psychic_resistance: 50
+        - wisdom_bonus: 2
+
+  - id: wardens_key
+    vnum: 1423
+    name: a warden's key
+    keywords: [warden, key, prison, unlock]
+    short_description: A key that glows with binding magic lies here.
+    long_description: >
+      This key opens the cells of the Undercroft. It also serves
+      as a symbol of authority, commanding respect from the prison's
+      spectral guardians.
+    item_type: armor
+    rarity: uncommon
+    weight: 0.2
+    value: 150
+    level_requirement: 16
+    armor_stats:
+      armor_class: 0
+      slot: held
+      magical_properties:
+        - undead_command: prison_spirits
+        - unlock_cells: true
+
+  # Consumables
+  - id: holy_water
+    vnum: 1430
+    name: a vial of holy water
+    keywords: [holy, water, blessed, divine]
+    short_description: A vial of blessed water glows faintly.
+    long_description: >
+      This water was blessed by the ancient rites of the Undercroft's
+      founders. It burns demons and undead on contact and can purify
+      cursed objects temporarily.
+    item_type: consumable
+    rarity: common
+    weight: 0.5
+    value: 25
+    consumable_effect:
+      effect_type: thrown
+      damage_type: radiant
+      damage: 4d6
+      affects: [undead, demon]
+
+  - id: curse_ward
+    vnum: 1431
+    name: a curse ward charm
+    keywords: [curse, ward, charm, protection]
+    short_description: A charm that protects against curses lies here.
+    long_description: >
+      The prisoners of the Undercroft carry ancient curses. This
+      charm provides temporary protection, absorbing curses that
+      would otherwise affect the wearer.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.1
+    value: 70
+    consumable_effect:
+      effect_type: buff
+      duration: 300
+      effects:
+        curse_immunity: true
+
+  - id: sanity_draught
+    vnum: 1432
+    name: a sanity draught
+    keywords: [sanity, draught, potion, mental]
+    short_description: A potion that steadies the mind lies here.
+    long_description: >
+      Exposure to the horrors of the Undercroft can shatter minds.
+      This draught restores mental stability and clears confusion
+      caused by psychic attacks.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.5
+    value: 60
+    consumable_effect:
+      effect_type: cure
+      cures: [insanity, confusion, fear, domination]
+
+  # Boss Drops
+  - id: first_prisoners_chains
+    vnum: 1450
+    name: the First Prisoner's chains
+    keywords: [first, prisoner, chains, boss, divine]
+    short_description: Massive chains of divine power lie broken here.
+    long_description: >
+      These chains held the First Prisoner for millennia. Though
+      broken, they still contain immense binding power. They could
+      be reforged to contain almost any being.
+    item_type: material
+    rarity: legendary
+    weight: 50.0
+    value: 5000
+    flags: [no_drop, quest_item]
+
+  - id: crown_of_damnation
+    vnum: 1451
+    name: the Crown of Damnation
+    keywords: [crown, damnation, demon, boss, head]
+    short_description: A crown of black iron and hellfire lies here.
+    long_description: >
+      The First Prisoner wore this crown in the age before its
+      imprisonment. Wearing it grants demonic power but slowly
+      corrupts the wearer's soul.
+    item_type: armor
+    rarity: legendary
+    weight: 3.0
+    value: 5500
+    level_requirement: 25
+    armor_stats:
+      armor_class: 5
+      slot: head
+      immunities: [fire, necrotic]
+      vulnerabilities: [radiant]
+      magical_properties:
+        - demonic_power: true
+        - strength_bonus: 5
+        - charisma_bonus: 5
+        - gradual_corruption: true
+        - summon_demons: true
+
+  - id: doom_blade
+    vnum: 1452
+    name: the Doom Blade
+    keywords: [doom, blade, sword, boss, demon]
+    short_description: A massive sword that radiates despair lies here.
+    long_description: >
+      This weapon was forged from the First Prisoner's hatred,
+      given physical form. It drains hope from those it wounds
+      and grows stronger with each soul it claims. Many would
+      argue it should remain buried.
+    item_type: weapon
+    rarity: legendary
+    weight: 15.0
+    value: 6000
+    level_requirement: 25
+    weapon_stats:
+      damage_dice: 3d8
+      damage_type: necrotic
+      speed: slow
+      two_handed: true
+      magical_properties:
+        - soul_drain: true
+        - despair_aura: true
+        - necrotic_damage_bonus: 3d6
+        - strength_bonus: 4
+        - wisdom_penalty: 3
+        - gradual_corruption: true
+
+  - id: primordial_essence
+    vnum: 1453
+    name: a vial of primordial essence
+    keywords: [primordial, essence, ancient, power]
+    short_description: A vial of impossibly ancient power lies here.
+    long_description: >
+      This essence was extracted from the First Prisoner itself,
+      containing power from before the world was shaped. Its
+      applications are theoretically limitless, though few would
+      dare attempt them.
+    item_type: material
+    rarity: legendary
+    weight: 0.5
+    value: 10000
+    flags: [no_drop, quest_item]

@@ -1,0 +1,272 @@
+# Wraithhollow Rooms
+# Haunted village with eternal night
+
+zone_id: wraithhollow
+
+rooms:
+  # Entry Area
+  - id: wraithhollow_road
+    vnum: 2300
+    name: Road to Wraithhollow
+    short_description: A road ends at a wall of unnatural darkness.
+    long_description: >
+      The road simply stops here, blocked by a wall of supernatural
+      darkness that marks the boundary of Wraithhollow. Beyond, shapes
+      can barely be seen - buildings, trees, things that might be people.
+      The darkness emanates cold and dread.
+    exits:
+      north:
+        destination: village_gate
+        description: The village entrance lies within the darkness.
+      south:
+        description: The safe road leads away.
+        flags: [zone_exit]
+    sector_type: road
+    flags: [safe]
+
+  - id: village_gate
+    vnum: 2301
+    name: Village Gate
+    short_description: A rotted gate hangs open.
+    long_description: >
+      The gate to Wraithhollow was once sturdy, but time and neglect
+      have reduced it to splinters. The darkness is total here, and
+      only magical light or special sight can penetrate it. Ghostly
+      faces peer from nearby buildings.
+    exits:
+      north:
+        destination: main_street
+        description: The main street of the village lies ahead.
+      south:
+        destination: wraithhollow_road
+        description: The road leads out of the darkness.
+    sector_type: road
+    flags: [dark]
+    mob_spawns:
+      - mob_id: village_ghost
+        max_count: 2
+        respawn_time: 300
+
+  - id: main_street
+    vnum: 2302
+    name: Main Street
+    short_description: A ghostly main street frozen in time.
+    long_description: >
+      The main street of Wraithhollow looks like time stopped mid-moment.
+      Shop signs hang frozen, doors stand half-open, and ghostly figures
+      go about their business, unaware of their own death. The silence
+      is broken only by phantom sounds.
+    exits:
+      north:
+        destination: village_square
+        description: The village square lies ahead.
+      south:
+        destination: village_gate
+        description: The village gate stands behind you.
+      east:
+        destination: general_store
+        description: A general store stands to the east.
+      west:
+        destination: village_tavern
+        description: A tavern sign creaks in a phantom wind.
+    sector_type: road
+    flags: [dark, haunted]
+    mob_spawns:
+      - mob_id: spectral_villager
+        max_count: 3
+        respawn_time: 360
+
+  - id: general_store
+    vnum: 2303
+    name: Hollow's General Store
+    short_description: A shop where a ghost still tends the counter.
+    long_description: >
+      Dusty goods line the shelves of this abandoned store. A spectral
+      shopkeeper stands behind the counter, going through the motions
+      of a transaction with invisible customers. Some items here still
+      retain value to the living.
+    exits:
+      west:
+        destination: main_street
+        description: The main street lies to the west.
+    sector_type: indoor
+    flags: [dark, haunted]
+    npcs:
+      - mob_id: ghost_shopkeeper
+        spawn_chance: 1.0
+    item_spawns:
+      - template_id: dusty_goods
+        chance: 0.3
+
+  - id: village_tavern
+    vnum: 2304
+    name: The Last Drink Tavern
+    short_description: A tavern where the dead still drink.
+    long_description: >
+      Phantom patrons sit at tables, raising ghostly mugs to lips
+      that feel nothing. A spectral bartender polishes glasses that
+      will never be clean. The revelry is silent and terrible in its
+      frozen joy.
+    exits:
+      east:
+        destination: main_street
+        description: The main street lies to the east.
+      up:
+        destination: tavern_rooms
+        description: Stairs lead to rooms above.
+    sector_type: indoor
+    flags: [dark, haunted]
+    mob_spawns:
+      - mob_id: drunk_ghost
+        max_count: 4
+        respawn_time: 300
+    item_spawns:
+      - template_id: spectral_ale
+        chance: 0.2
+
+  - id: tavern_rooms
+    vnum: 2305
+    name: Tavern Rooms
+    short_description: Guest rooms where travelers died in their sleep.
+    long_description: >
+      These rooms offered respite to travelers who never left. Beds
+      still hold the impression of bodies, and some rooms contain the
+      spirits of those who died here. The curse took everyone in a
+      single night.
+    exits:
+      down:
+        destination: village_tavern
+        description: Stairs lead down to the tavern.
+    sector_type: indoor
+    flags: [dark, haunted]
+    mob_spawns:
+      - mob_id: restless_sleeper
+        max_count: 2
+        respawn_time: 480
+    item_spawns:
+      - template_id: traveler_pouch
+        chance: 0.15
+
+  - id: village_square
+    vnum: 2306
+    name: Village Square
+    short_description: The center of the cursed village.
+    long_description: >
+      This square was once the heart of village life. A well stands
+      in the center, its water turned to black ichor. Ghostly
+      children play games they will never finish, and vendors hawk
+      wares to customers who cannot hear.
+    exits:
+      south:
+        destination: main_street
+        description: The main street leads south.
+      north:
+        destination: village_church
+        description: A church steeple rises to the north.
+      east:
+        destination: blacksmith
+        description: A forge's cold glow flickers to the east.
+      west:
+        destination: village_graveyard
+        description: A graveyard lies to the west.
+    sector_type: city
+    flags: [dark, haunted]
+    mob_spawns:
+      - mob_id: ghost_child
+        max_count: 3
+        respawn_time: 360
+      - mob_id: spectral_villager
+        max_count: 2
+        respawn_time: 420
+
+  - id: blacksmith
+    vnum: 2307
+    name: The Cold Forge
+    short_description: A forge that gives no heat.
+    long_description: >
+      The blacksmith's forge still appears to burn, but the fire gives
+      no heat. A spectral smith hammers at an anvil, creating weapons
+      that dissolve when he stops. Some of the tools here still work.
+    exits:
+      west:
+        destination: village_square
+        description: The village square lies to the west.
+    sector_type: indoor
+    flags: [dark, haunted]
+    mob_spawns:
+      - mob_id: ghost_smith
+        max_count: 1
+        respawn_time: 600
+    item_spawns:
+      - template_id: ghostly_weapon
+        chance: 0.1
+
+  - id: village_graveyard
+    vnum: 2308
+    name: Village Graveyard
+    short_description: A graveyard where the dead do not rest.
+    long_description: >
+      Every grave here is occupied, but none of the dead rest within
+      them. Tombstones bear dates that all match - the night of the
+      curse. Some graves have been clawed open from the inside, and
+      things still move beneath the soil.
+    exits:
+      east:
+        destination: village_square
+        description: The village square lies to the east.
+      north:
+        destination: mourning_brides_manor
+        description: A dark manor looms to the north.
+    sector_type: outdoor
+    flags: [dark, haunted]
+    mob_spawns:
+      - mob_id: grave_spirit
+        max_count: 3
+        respawn_time: 300
+      - mob_id: corpse_crawler
+        max_count: 2
+        respawn_time: 480
+
+  - id: village_church
+    vnum: 2309
+    name: Church of the Forgotten God
+    short_description: A church whose god could not save it.
+    long_description: >
+      This church was where the villagers fled when the curse came.
+      It did not save them. Phantom worshippers still kneel in the
+      pews, praying to a god who did not answer. The altar is stained
+      with ectoplasmic residue.
+    exits:
+      south:
+        destination: village_square
+        description: The village square lies to the south.
+    sector_type: indoor
+    flags: [dark, haunted]
+    mob_spawns:
+      - mob_id: ghost_priest
+        max_count: 1
+        respawn_time: 600
+      - mob_id: praying_ghost
+        max_count: 4
+        respawn_time: 300
+
+  - id: mourning_brides_manor
+    vnum: 2310
+    name: The Mourning Bride's Manor
+    short_description: A manor where tragedy still echoes.
+    long_description: >
+      This manor belonged to a bride who lost her husband on their
+      wedding day - the day of the curse. Her grief was so powerful
+      it may have caused the curse itself. She waits within, weeping
+      eternally, her sorrow a weapon against the living.
+    exits:
+      south:
+        destination: village_graveyard
+        description: The graveyard lies to the south.
+    sector_type: indoor
+    flags: [boss_room, dark, haunted]
+    mob_spawns:
+      - mob_id: mourning_bride
+        max_count: 1
+        respawn_time: 3600
+        flags: [boss]

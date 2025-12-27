@@ -1,0 +1,368 @@
+# The Crucible Mobs
+# Dwarven constructs, fire creatures, and forge workers
+
+zone_id: crucible
+
+mobs:
+  # Constructs
+  - id: golem_guard
+    vnum: 2200
+    name: a golem guard
+    keywords: [golem, guard, construct, metal]
+    short_description: A metal golem stands at attention.
+    long_description: >
+      This golem is one of many that patrol the Crucible. Its body
+      is forged from slag steel, and runes of obedience cover its
+      chest. It follows its orders without question or mercy.
+    level: 14
+    health: 180
+    strength: 18
+    dexterity: 8
+    constitution: 20
+    damage_dice: 2d6
+    damage_type: bludgeoning
+    armor_class: 18
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 260
+    abilities: [slam, guard_routine]
+    immunities: [poison, psychic]
+    resistances: [fire]
+    loot_table:
+      - template_id: golem_core
+        drop_chance: 0.2
+
+  - id: forge_golem
+    vnum: 2201
+    name: a forge golem
+    keywords: [forge, golem, construct, fire]
+    short_description: A golem with molten metal for blood works the forges.
+    long_description: >
+      This specialized golem was built to work the forges. Molten
+      metal flows through its body like blood, and it can shape
+      hot metal with its bare hands. Its touch burns.
+    level: 15
+    health: 160
+    strength: 16
+    dexterity: 10
+    constitution: 18
+    damage_dice: 2d6
+    damage_type: fire
+    armor_class: 16
+    behavior_type: neutral
+    aggro_radius: 2
+    experience_value: 280
+    abilities: [molten_touch, forge_strike]
+    immunities: [fire, poison]
+    loot_table:
+      - template_id: heated_metal
+        drop_chance: 0.4
+
+  - id: repair_golem
+    vnum: 2202
+    name: a repair golem
+    keywords: [repair, golem, construct, tools]
+    short_description: A golem with many tool-arms tends to damaged constructs.
+    long_description: >
+      This golem was designed to repair other golems. Its multiple
+      arms end in various tools, and it works with surprising
+      delicacy despite its size. It defends other golems fiercely.
+    level: 13
+    health: 140
+    strength: 14
+    dexterity: 14
+    constitution: 16
+    damage_dice: 1d8
+    damage_type: slashing
+    armor_class: 15
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 220
+    abilities: [repair_ally, tool_flurry]
+    immunities: [poison, psychic]
+    loot_table:
+      - template_id: golem_part
+        drop_chance: 0.5
+
+  # Fire Creatures
+  - id: fire_elemental
+    vnum: 2210
+    name: a fire elemental
+    keywords: [fire, elemental, flame, living]
+    short_description: A column of living flame dances here.
+    long_description: >
+      The dwarves bind these elementals to power their forges. This
+      one has escaped or been released, and now burns freely. Its
+      touch ignites anything flammable.
+    level: 14
+    health: 100
+    strength: 12
+    dexterity: 18
+    constitution: 14
+    damage_dice: 2d6
+    damage_type: fire
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 250
+    abilities: [fire_touch, flame_burst]
+    immunities: [fire, poison]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: fire_essence
+        drop_chance: 0.4
+
+  - id: salamander
+    vnum: 2211
+    name: a salamander
+    keywords: [salamander, fire, creature, lizard]
+    short_description: A serpentine creature of living flame slithers past.
+    long_description: >
+      Salamanders are intelligent fire creatures that dwell in the
+      hottest regions. They are craftsmen in their own right and
+      sometimes trade with the dwarves. This one seems territorial.
+    level: 16
+    health: 150
+    strength: 18
+    dexterity: 14
+    constitution: 16
+    damage_dice: 2d8
+    damage_type: fire
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 320
+    abilities: [tail_slap, fire_spear, heat_aura]
+    immunities: [fire]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: salamander_scale
+        drop_chance: 0.3
+
+  - id: magma_elemental
+    vnum: 2212
+    name: a magma elemental
+    keywords: [magma, elemental, lava, living]
+    short_description: A creature of living lava oozes forward.
+    long_description: >
+      More solid than fire elementals, magma elementals are slower
+      but far more destructive. Their touch melts steel, and their
+      passage leaves pools of cooling rock behind.
+    level: 18
+    health: 200
+    strength: 20
+    dexterity: 8
+    constitution: 22
+    damage_dice: 2d10
+    damage_type: fire
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 380
+    abilities: [magma_splash, lava_pool, harden]
+    immunities: [fire, poison]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: obsidian_core
+        drop_chance: 0.3
+
+  # NPCs
+  - id: gate_guard
+    vnum: 2250
+    name: Ironhelm the Gate Guard
+    keywords: [ironhelm, guard, dwarf, gate]
+    short_description: A stalwart dwarven guard watches the gates.
+    long_description: >
+      This veteran guard has watched the gates for decades. Little
+      escapes his notice, and he knows every face that belongs in
+      the Crucible. Strangers are viewed with suspicion but not
+      hostility.
+    level: 18
+    health: 160
+    behavior_type: friendly
+    dialogue:
+      greeting: "Halt! State yer business in the Crucible. We don't take kindly to troublemakers."
+      topics:
+        crucible: "Greatest forge-city ever built. Been running for two thousand years, it has."
+        golems: "They keep order. Don't give 'em trouble and they won't give you any."
+        deep: "The depths are off-limits. Something sleeps down there that's best left sleeping."
+
+  - id: master_smith
+    vnum: 2251
+    name: Forge Master Grimhammer
+    keywords: [grimhammer, forge, master, smith]
+    short_description: A masterful dwarf smith works the forges.
+    long_description: >
+      Grimhammer has crafted weapons for kings and armored heroes.
+      His work is legendary, though getting a commission takes years.
+      He's gruff but fair, and always looking for rare materials.
+    level: 20
+    health: 180
+    behavior_type: friendly
+    dialogue:
+      greeting: "Eh? Come to gawk or to trade? If you've got materials, we can talk."
+      topics:
+        craft: "I forge what needs forging. Bring me the materials and I'll make something worthy."
+        patriarch: "The Iron Patriarch? Ancient golem, first ever made. Went mad centuries ago. Sealed below."
+
+  - id: golem_artificer
+    vnum: 2252
+    name: Artificer Cogsworth
+    keywords: [cogsworth, artificer, golem, maker]
+    short_description: A dwarf surrounded by golem parts works intently.
+    long_description: >
+      Cogsworth is the Crucible's master artificer, responsible for
+      creating and maintaining the golem army. His workshop is a
+      chaos of parts, tools, and half-completed constructs.
+    level: 18
+    health: 100
+    behavior_type: friendly
+    dialogue:
+      greeting: "Hmm? Oh, a visitor. Don't touch anything - it might explode. Or come to life. Or both."
+
+  - id: weapon_merchant
+    vnum: 2253
+    name: a dwarven weapon merchant
+    keywords: [merchant, weapon, dwarf, trader]
+    short_description: A dwarf displays weapons of exceptional quality.
+    long_description: >
+      This merchant sells weapons forged in the Crucible, each one
+      a masterwork of dwarven craftsmanship. The prices are high,
+      but the quality is unmatched.
+    level: 15
+    health: 120
+    behavior_type: friendly
+    shop:
+      markup: 1.4
+      markdown: 0.6
+      inventory:
+        - template_id: dwarven_axe
+        - template_id: forge_hammer
+        - template_id: slag_steel_sword
+
+  - id: armor_merchant
+    vnum: 2254
+    name: a dwarven armor merchant
+    keywords: [merchant, armor, dwarf, trader]
+    short_description: A dwarf displays suits of heavy armor.
+    long_description: >
+      This merchant specializes in armor, from simple chain to
+      elaborate plate. Each piece is forged with dwarven precision.
+    level: 15
+    health: 130
+    behavior_type: friendly
+    shop:
+      markup: 1.4
+      markdown: 0.6
+      inventory:
+        - template_id: forge_plate
+        - template_id: slag_chainmail
+        - template_id: fire_ward_shield
+
+  - id: gem_merchant
+    vnum: 2255
+    name: Gemcutter Sparkle
+    keywords: [sparkle, gem, merchant, jeweler]
+    short_description: A dwarf examines gems with a jeweler's loupe.
+    long_description: >
+      Sparkle is the finest gemcutter in the Crucible, able to
+      bring out the beauty in even the roughest stones. She also
+      buys gems and evaluates their worth.
+    level: 14
+    health: 80
+    behavior_type: friendly
+    shop:
+      markup: 1.3
+      markdown: 0.7
+      inventory:
+        - template_id: fire_ruby
+        - template_id: obsidian_gem
+        - template_id: lava_diamond
+
+  - id: forge_priest
+    vnum: 2256
+    name: High Priest of the Forge Father
+    keywords: [priest, forge, father, holy]
+    short_description: A dwarf priest tends the eternal flame.
+    long_description: >
+      This priest serves the Forge Father, god of creation and fire.
+      He offers blessings to smiths and can perform sacred rites
+      over weapons and armor.
+    level: 16
+    health: 100
+    behavior_type: friendly
+    dialogue:
+      greeting: "The Forge Father's flame burns eternal. How may I serve you, traveler?"
+
+  - id: grand_smith
+    vnum: 2257
+    name: Grand Smith Anvilbreaker
+    keywords: [anvilbreaker, grand, smith, master]
+    short_description: The greatest living smith tends the Master Forge.
+    long_description: >
+      Anvilbreaker has crafted legendary weapons and is the only
+      one permitted to use the Master Forge. Commissions from him
+      cost fortunes and take decades to complete.
+    level: 25
+    health: 200
+    behavior_type: friendly
+    dialogue:
+      greeting: "The Master Forge awaits worthy materials. Have you brought something exceptional?"
+
+  - id: master_artificer
+    vnum: 2258
+    name: Master Artificer Gearwright
+    keywords: [gearwright, master, artificer, genius]
+    short_description: An elderly dwarf tinkers with impossibly complex mechanisms.
+    long_description: >
+      Gearwright designed half the golems in the Crucible and improved
+      the other half. His mind holds secrets of construct creation
+      that he guards jealously.
+    level: 22
+    health: 120
+    behavior_type: friendly
+    dialogue:
+      greeting: "Careful! That's delicate work. Are you here about the Patriarch? Everyone always asks..."
+
+  # Boss
+  - id: iron_patriarch
+    vnum: 2299
+    name: The Iron Patriarch
+    keywords: [iron, patriarch, boss, golem, ancient]
+    short_description: An ancient golem of immense power awaits.
+    long_description: >
+      The Iron Patriarch was the first golem ever created, crafted
+      by the founders of the Crucible. After millennia of service,
+      madness took it, and it had to be sealed away. Now it waits
+      in the depths, ancient and terrible, its original purpose
+      corrupted into a desire to destroy all organic life.
+    level: 24
+    health: 1000
+    strength: 28
+    dexterity: 10
+    constitution: 30
+    intelligence: 14
+    damage_dice: 4d8
+    damage_type: bludgeoning
+    armor_class: 22
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 10
+    experience_value: 4000
+    gold_min: 400
+    gold_max: 1200
+    abilities: [earthquake_slam, summon_golems, forge_fire, iron_skin, ancient_protocols]
+    immunities: [fire, poison, psychic]
+    resistances: [physical]
+    loot_table:
+      - template_id: patriarchs_core
+        drop_chance: 1.0
+      - template_id: crown_of_iron
+        drop_chance: 0.5
+      - template_id: primordial_gear
+        drop_chance: 0.7
+    dialogue:
+      greeting: "INTRUDERS. ORGANIC CONTAMINATION DETECTED. PURGE PROTOCOLS ACTIVATED."
+      topics:
+        purpose: "I WAS MADE TO SERVE. NOW I SERVE ONLY DESTRUCTION."
+        madness: "CENTURIES OF SERVICE. THEY CALLED IT LOYALTY. I CALL IT SLAVERY. NO MORE."

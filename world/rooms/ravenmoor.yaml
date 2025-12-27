@@ -1,0 +1,397 @@
+zone_id: ravenmoor
+
+rooms:
+  # ==========================================================================
+  # City Center
+  # ==========================================================================
+  - id: ravenmoor_square
+    vnum: 100
+    name: City Square
+    short_description: The heart of Ravenmoor
+    long_description: >
+      You stand in the central square of Ravenmoor, a once-magnificent plaza now
+      showing signs of neglect. Cracked cobblestones create uneven footing, and
+      weeds push through the gaps. A tarnished bronze fountain stands in the
+      center, its water stained and murky. Despite the decay, life persists here
+      - merchants hawk their wares from rickety stalls, and citizens hurry about
+      their business. Roads branch off in all directions, leading to various
+      districts of the city.
+    exits:
+      north: ravenmoor_castle_road
+      south: ravenmoor_south_gate
+      east: ravenmoor_market_east
+      west: ravenmoor_market_west
+    sector_type: city
+    flags: [safe]
+    ambient_messages:
+      - A merchant adjusts the prices on his faded sign.
+      - Pigeons scatter from the fountain as someone walks past.
+      - The distant clang of a blacksmith's hammer echoes through the streets.
+      - A child chases a stray cat between the market stalls.
+
+  # ==========================================================================
+  # Castle District
+  # ==========================================================================
+  - id: ravenmoor_castle_road
+    vnum: 101
+    name: Castle Road
+    short_description: The road leading to the castle
+    long_description: >
+      Once-grand houses line this wide avenue leading toward the castle. Many
+      now stand empty, their windows boarded and gardens overgrown. The
+      cobblestones here are better maintained than elsewhere, though weeds still
+      creep between them. Iron lamp posts, many missing their lamps, line the
+      street at regular intervals.
+    exits:
+      south: ravenmoor_square
+      north: ravenmoor_castle_gate
+    sector_type: city
+    flags: [safe]
+
+  - id: ravenmoor_castle_gate
+    vnum: 102
+    name: Castle Gate
+    short_description: The entrance to Ravenmoor Castle
+    long_description: >
+      Massive iron gates stand between two weathered stone towers. The gates
+      hang slightly askew on their hinges, but guards still maintain their post
+      here. The castle rises beyond - a brooding stone fortress that has seen
+      better days. Moss grows on its walls, and several windows are dark and
+      empty.
+    exits:
+      south: ravenmoor_castle_road
+      north: ravenmoor_castle_courtyard
+    sector_type: city
+    flags: [safe]
+    mob_spawns:
+      - template_id: castle_guard
+        max_count: 2
+
+  - id: ravenmoor_castle_courtyard
+    vnum: 103
+    name: Castle Courtyard
+    short_description: The inner courtyard of the castle
+    long_description: >
+      This spacious courtyard lies within the castle walls. A dry fountain
+      stands in the center, its basin filled with dead leaves. Training dummies
+      line one wall, used by the dwindling castle guard. Stone archways lead to
+      various wings of the castle, though some are blocked by rubble.
+    exits:
+      south: ravenmoor_castle_gate
+      north: ravenmoor_throne_room
+      east: ravenmoor_training_grounds
+      west: ravenmoor_castle_chapel
+    sector_type: inside
+    flags: [safe]
+
+  - id: ravenmoor_throne_room
+    vnum: 104
+    name: Throne Room
+    short_description: The once-grand throne room
+    long_description: >
+      Faded tapestries hang from the high walls, their colors bleached by time.
+      A threadbare carpet runs the length of the hall to a raised dais where a
+      simple wooden throne sits. The original throne was sold long ago to pay
+      debts. Despite the decay, the room retains an air of dignity, and the
+      current steward conducts what official business remains.
+    exits:
+      south: ravenmoor_castle_courtyard
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: castle_steward
+        max_count: 1
+
+  - id: ravenmoor_training_grounds
+    vnum: 105
+    name: Training Grounds
+    short_description: Where warriors learn their craft
+    long_description: >
+      A packed-earth training yard fills this corner of the castle grounds.
+      Wooden practice dummies and archery targets show heavy use. Weapon racks
+      hold a motley assortment of practice weapons - wooden swords, blunted
+      spears, and padded staves. A grizzled trainer watches over the area,
+      ready to instruct those who seek martial knowledge.
+    exits:
+      west: ravenmoor_castle_courtyard
+      north: ravenmoor_barracks
+    sector_type: inside
+    flags: [safe]
+    mob_spawns:
+      - template_id: combat_trainer
+        max_count: 1
+
+  - id: ravenmoor_castle_chapel
+    vnum: 106
+    name: Castle Chapel
+    short_description: A small chapel within the castle
+    long_description: >
+      Simple wooden pews face a plain stone altar at the front of this modest
+      chapel. Candles flicker in niches along the walls, their light
+      reflecting off a tarnished silver symbol of the old gods. The air
+      smells of incense and old wood. A priest tends to the spiritual needs
+      of those who still visit.
+    exits:
+      east: ravenmoor_castle_courtyard
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: chapel_priest
+        max_count: 1
+
+  # ==========================================================================
+  # Market District
+  # ==========================================================================
+  - id: ravenmoor_market_east
+    vnum: 110
+    name: East Market
+    short_description: The eastern marketplace
+    long_description: >
+      Merchants have set up stalls along this portion of the square, selling
+      various goods. A weapons shop occupies a sturdy stone building, its
+      shutters painted with crossed swords. Nearby, an armorer displays his
+      wares on wooden mannequins outside his door. Business is slow, but
+      the shopkeepers maintain hope for better days. A narrow alley leads
+      behind the market stalls to the south.
+    exits:
+      west: ravenmoor_square
+      north: ravenmoor_weapon_shop
+      south: ravenmoor_armor_shop
+      east: ravenmoor_east_gate
+      down: ravenmoor_back_alley
+    sector_type: city
+    flags: [safe]
+
+  - id: ravenmoor_weapon_shop
+    vnum: 111
+    name: Grimjaw's Weapons
+    short_description: A well-stocked weapon shop
+    long_description: >
+      Weapons of all types hang from the walls of this shop - swords, axes,
+      maces, and more. The quality varies, but everything is functional. The
+      proprietor, a scarred veteran named Grimjaw, sits behind a counter
+      sharpening a blade. He looks up as customers enter, his one good eye
+      assessing their worth.
+    exits:
+      south: ravenmoor_market_east
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: weapon_merchant
+        max_count: 1
+
+  - id: ravenmoor_armor_shop
+    vnum: 112
+    name: The Iron Shell
+    short_description: An armor and shield shop
+    long_description: >
+      Suits of armor stand like silent sentinels around this shop. Shields hang
+      from the walls, their surfaces displaying various heraldic designs.
+      Leather armor, chainmail, and even a few pieces of plate are available
+      for those who can afford them. The smith works at a small forge in the
+      back, making repairs. A side door leads to a temple dedicated to healing.
+    exits:
+      north: ravenmoor_market_east
+      south: ravenmoor_temple
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: armor_merchant
+        max_count: 1
+
+  - id: ravenmoor_market_west
+    vnum: 115
+    name: West Market
+    short_description: The western marketplace
+    long_description: >
+      This side of the market caters to everyday needs. A general store
+      occupies the corner, its windows crammed with miscellaneous goods.
+      A tavern's faded sign creaks in the wind, promising food and drink.
+      The smell of baking bread wafts from somewhere nearby. A tall tower
+      rises to the west, its windows glowing with an eerie blue light.
+    exits:
+      east: ravenmoor_square
+      north: ravenmoor_general_store
+      south: ravenmoor_tavern
+      west: ravenmoor_west_gate
+      up: ravenmoor_mage_tower
+    sector_type: city
+    flags: [safe]
+
+  - id: ravenmoor_general_store
+    vnum: 116
+    name: Dusty's Goods
+    short_description: A cramped general store
+    long_description: >
+      Every surface in this small shop is covered with merchandise. Ropes,
+      lanterns, backpacks, rations, and countless other adventuring supplies
+      compete for space. The elderly proprietor, known only as Dusty, seems
+      to know exactly where everything is despite the apparent chaos.
+    exits:
+      south: ravenmoor_market_west
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: general_merchant
+        max_count: 1
+
+  - id: ravenmoor_tavern
+    vnum: 117
+    name: The Rusty Tankard
+    short_description: A run-down but welcoming tavern
+    long_description: >
+      The smell of ale and roasting meat fills this dimly lit tavern. Wooden
+      tables, scarred by countless mugs and knives, fill the common room.
+      A fire burns low in a stone hearth, providing warmth against the damp.
+      The barkeeper polishes glasses with a rag that has seen better days,
+      while a few regulars nurse their drinks in shadowy corners.
+    exits:
+      north: ravenmoor_market_west
+      up: ravenmoor_tavern_rooms
+    sector_type: inside
+    flags: [safe]
+    mob_spawns:
+      - template_id: tavern_keeper
+        max_count: 1
+      - template_id: tavern_patron
+        max_count: 3
+    ambient_messages:
+      - Someone laughs at a joke you didn't hear.
+      - A drunk mutters something incomprehensible into his cup.
+      - The fire crackles and pops in the hearth.
+
+  - id: ravenmoor_tavern_rooms
+    vnum: 118
+    name: Tavern Rooms
+    short_description: The upstairs rooms of the tavern
+    long_description: >
+      A narrow hallway runs between small rooms for rent. The walls are thin,
+      and the sounds of the tavern below are clearly audible. The rooms are
+      sparse but clean enough - a bed, a small table, and a washbasin.
+      It's not luxurious, but it's dry and relatively safe.
+    exits:
+      down: ravenmoor_tavern
+    sector_type: inside
+    flags: [safe, no_combat]
+
+  # ==========================================================================
+  # City Gates
+  # ==========================================================================
+  - id: ravenmoor_east_gate
+    vnum: 120
+    name: East Gate
+    short_description: The eastern gate of Ravenmoor
+    long_description: >
+      The eastern gate of Ravenmoor stands partially open, its massive doors
+      warped by age. Beyond lies the coastal road leading to the distant
+      shores of Coral Bay. The gate guards here seem more relaxed than
+      those at other entrances, perhaps because trouble rarely comes
+      from the sea.
+    exits:
+      west: ravenmoor_market_east
+      east:
+        destination: ~
+        leads_to_region: coastal_road
+        target_coordinate:
+          x: 1
+          y: 0
+          z: 0
+    sector_type: city
+    flags: [safe]
+    mob_spawns:
+      - template_id: city_guard
+        max_count: 1
+
+  - id: ravenmoor_west_gate
+    vnum: 121
+    name: West Gate
+    short_description: The western gate of Ravenmoor
+    long_description: >
+      The western gate opens onto a path that winds into the ancient forest
+      between Ravenmoor and the village of Willowdale. Tall trees are visible
+      in the distance, their canopy dark and forbidding. Travelers are warned
+      to be careful on the forest path - bandits and wolves are common. A
+      rustic lodge is visible among the trees to the north, where rangers gather.
+    exits:
+      east: ravenmoor_market_west
+      north: ravenmoor_rangers_lodge
+      west:
+        destination: ~
+        leads_to_region: forest_path
+        target_coordinate:
+          x: -1
+          y: 0
+          z: 0
+    sector_type: city
+    flags: [safe]
+    mob_spawns:
+      - template_id: city_guard
+        max_count: 1
+
+  - id: ravenmoor_south_gate
+    vnum: 122
+    name: South Gate
+    short_description: The southern gate of Ravenmoor
+    long_description: >
+      The main gate of Ravenmoor faces south, its stone archway carved with
+      the city's faded coat of arms. A trail leads down toward the old mines
+      in the hills. The mines have been abandoned for years, but rumors
+      persist of treasure - and monsters - still lurking in the depths.
+    exits:
+      north: ravenmoor_square
+      south:
+        destination: ~
+        leads_to_region: mine_trail
+        target_coordinate:
+          x: 0
+          y: -1
+          z: 0
+    sector_type: city
+    flags: [safe]
+    mob_spawns:
+      - template_id: city_guard
+        max_count: 2
+
+  - id: ravenmoor_north_road
+    vnum: 123
+    name: North Road
+    short_description: The road north from the castle
+    long_description: >
+      Beyond the castle, a steep road climbs northward into the mountains.
+      The path is treacherous in places, with loose rocks and narrow ledges.
+      Far above, the white walls of Stillwater Monastery can just be seen
+      clinging to the mountainside. Few make the journey except the devout.
+    exits:
+      south: ravenmoor_castle_gate
+      north:
+        destination: ~
+        leads_to_region: mountain_path
+        target_coordinate:
+          x: 0
+          y: 1
+          z: 0
+    sector_type: hills
+    ambient_messages:
+      - A cold wind blows down from the mountain peaks.
+      - Loose pebbles skitter down the slope.
+
+  # ==========================================================================
+  # Temple District
+  # ==========================================================================
+  - id: ravenmoor_temple
+    vnum: 130
+    name: Temple of Light
+    short_description: An ancient temple
+    long_description: >
+      This temple has stood for centuries, its white marble walls now stained
+      by time and weather. Despite its age, it remains a place of healing and
+      sanctuary. Priests in faded robes tend to the wounded and the weary.
+      The altar still glows with faint divine light, a reminder that the gods
+      have not entirely abandoned this place.
+    exits:
+      east: ravenmoor_square
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: temple_healer
+        max_count: 1

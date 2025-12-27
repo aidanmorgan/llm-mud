@@ -1,0 +1,104 @@
+region_id: mine_trail
+name: The Old Mine Road
+
+theme:
+  theme_id: mining_country
+  description: >
+    A rocky trail leading from Ravenmoor down into the hills where the
+    old Ironvein Mine awaits. The landscape is scarred by old mining
+    activity, with abandoned equipment and small shafts dotting the
+    hillsides.
+
+  room_prompt: >
+    Generate a room description for rocky mining country.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: desolate, industrial decay, hints of danger.
+    The path descends through scarred hills toward the mines.
+    Include old mining debris, abandoned shafts, rocky terrain.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a creature for the mining hills, level {target_level}.
+    Room context: {room_description}
+
+    Types: giant rats, wild dogs, desperate bandits, rock elementals,
+    escaped mine creatures, scavengers.
+
+    Return JSON with mob details.
+
+  item_prompt: >
+    Generate a mining-themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: ore chunks, abandoned tools, miner's equipment, gems,
+    old coins, mysterious minerals.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - rock, stone, gravel, ore, iron, shaft, tunnel
+    - rusted, abandoned, weathered, scarred, desolate
+    - clang, rumble, creak, drip, echo
+    - pick, shovel, cart, rail, lantern
+
+  forbidden_words:
+    - forest, ocean, tropical, modern, technology
+
+  sector_types: [hills, mountain, cave, road]
+
+  ambient_messages:
+    - "Wind whistles through an abandoned mine shaft."
+    - "Loose rocks clatter down the slope."
+    - "A rusted cart sits overturned by the path."
+    - "The smell of iron and dust fills the air."
+    - "Something glints in the rubble, then is gone."
+
+  mob_templates: [cave_rat, wild_dog, scavenger, rock_spider]
+  item_templates: [iron_ore, rusty_pick, miner_lantern, old_coins]
+
+endpoints:
+  ravenmoor_south_gate:
+    direction: south
+    coordinate:
+      x: 0
+      y: -1
+      z: 0
+  ironvein_entrance:
+    direction: north
+    coordinate:
+      x: 0
+      y: -7
+      z: -1
+
+waypoints:
+  - x: 0
+    y: -3
+    z: 0
+    name: "Miner's Rest"
+    is_required: true
+  - x: 0
+    y: -5
+    z: -1
+    name: "Abandoned Camp"
+    is_required: true
+
+generation:
+  min_rooms: 6
+  max_rooms: 15
+  difficulty_min: 2
+  difficulty_max: 5
+  mob_density: 0.35
+  item_density: 0.2
+  branch_chance: 0.15
+
+primary_sector_type: hills

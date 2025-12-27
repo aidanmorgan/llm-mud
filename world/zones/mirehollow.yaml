@@ -1,0 +1,24 @@
+# Mirehollow Swamp - Toxic wetlands zone
+zone_id: mirehollow
+name: Mirehollow Swamp
+description: >
+  A vast, treacherous swamp south of the Ashveil Wastes. Bioluminescent
+  fungi cast an eerie glow across stagnant pools, while hallucinogenic
+  spores drift on fetid breezes. Sunken ruins hint at a civilization
+  drowned long ago. The Mire Druids have been corrupted by the swamp's
+  influence, now serving darker purposes.
+level_range: [10, 18]
+flags: [outdoor, hostile, poison_hazard]
+coordinate_origin:
+  x: -25
+  y: -10
+  z: 0
+weather_effects:
+  - fog
+  - spore_cloud
+environmental_damage:
+  type: poison
+  amount: 3
+  interval: 90
+  message: "Toxic vapors burn your lungs."
+visibility_penalty: 0.5

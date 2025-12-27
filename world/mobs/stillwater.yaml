@@ -1,0 +1,536 @@
+zone_id: stillwater
+
+mobs:
+  # ==========================================================================
+  # Friendly NPCs
+  # ==========================================================================
+  - id: monastery_guard
+    vnum: 500
+    name: a monastery guardian
+    keywords: [monk, guardian, guard]
+    short_description: A serene monk guards the gate.
+    long_description: >
+      This monk wears simple robes but carries himself with the
+      confidence of a master martial artist. His eyes are calm but
+      watchful, assessing all who approach the monastery.
+    level: 8
+    health: 120
+    strength: 14
+    dexterity: 18
+    constitution: 14
+    wisdom: 16
+    damage_dice: 2d6
+    damage_type: bludgeoning
+    armor_class: 16
+    behavior_type: guard
+    combat_style: defensive
+    flags: [sentinel, no_wander]
+    dialogue:
+      greeting: "Peace be upon you, traveler. What brings you to Stillwater?"
+      topics:
+        monastery: "This is a place of learning and reflection."
+        training: "The masters within may teach you, if you prove worthy."
+        mountain: "The path down to Ravenmoor is treacherous. Take care."
+
+  - id: stillwater_monk
+    vnum: 501
+    name: a monk
+    keywords: [monk, brother, sister]
+    short_description: A monk moves quietly about their duties.
+    long_description: >
+      Dressed in simple robes, this monk goes about their daily
+      duties with quiet purpose. They move with a grace that hints
+      at martial training beneath their peaceful exterior.
+    level: 5
+    health: 60
+    strength: 12
+    dexterity: 16
+    constitution: 12
+    wisdom: 14
+    behavior_type: passive
+    flags: []
+    dialogue:
+      greeting: "Greetings, friend. May you find what you seek."
+      topics:
+        peace: "True peace comes from within."
+        training: "Speak to the masters in the training hall."
+
+  - id: martial_master
+    vnum: 502
+    name: Master Chen
+    keywords: [master, chen, martial, teacher]
+    short_description: Master Chen observes the training with keen eyes.
+    long_description: >
+      This elderly monk radiates an aura of quiet power. Despite his
+      age, his movements are fluid and precise. He watches the students
+      with patience, offering corrections with a word or gesture.
+    level: 15
+    health: 200
+    strength: 16
+    dexterity: 20
+    constitution: 16
+    wisdom: 20
+    damage_dice: 2d10
+    damage_type: bludgeoning
+    armor_class: 20
+    behavior_type: passive
+    flags: [sentinel, no_wander, trainer]
+    dialogue:
+      greeting: "You seek to learn the martial way? It is a long path."
+      topics:
+        train: "Training is available for those with dedication. And gold."
+        combat: "True martial arts is not about violence. It is about control."
+        wisdom: "The strongest warrior knows when not to fight."
+        ki: "The energy flows through all things. Learn to feel it."
+
+  - id: student_monk
+    vnum: 503
+    name: a student monk
+    keywords: [student, monk, novice]
+    short_description: A young monk practices their forms.
+    long_description: >
+      A young person in student robes practices martial forms with
+      intense concentration. Their movements show promise, though
+      they still have much to learn.
+    level: 3
+    health: 50
+    strength: 12
+    dexterity: 14
+    constitution: 12
+    behavior_type: passive
+    flags: []
+    dialogue:
+      greeting: "I must focus... but greetings, traveler."
+      topics:
+        training: "Master Chen is strict but fair. I learn much."
+
+  - id: stillwater_abbot
+    vnum: 504
+    name: Abbot Miriam
+    keywords: [abbot, miriam, leader, wise]
+    short_description: Abbot Miriam sits in quiet contemplation.
+    long_description: >
+      The leader of Stillwater Monastery is a woman of advanced years
+      whose eyes hold the wisdom of a lifetime of study. She speaks
+      rarely, but her words carry great weight. Many seek her counsel.
+    level: 20
+    health: 150
+    intelligence: 20
+    wisdom: 22
+    charisma: 18
+    behavior_type: passive
+    flags: [sentinel, no_wander, quest_giver]
+    dialogue:
+      greeting: "Welcome, seeker. You have traveled far to reach us."
+      topics:
+        wisdom: "True wisdom comes not from knowledge, but from understanding."
+        monastery: "Stillwater has stood for a thousand years. It will stand a thousand more."
+        quest: "The world beyond these walls grows darker. Perhaps you can bring light."
+        vision: "I have seen shadows gathering. The balance must be restored."
+
+  - id: librarian_monk
+    vnum: 505
+    name: Brother Thaddeus
+    keywords: [thaddeus, librarian, brother, monk, scholar]
+    short_description: Brother Thaddeus carefully catalogs a scroll.
+    long_description: >
+      This monk is surrounded by scrolls and books, his spectacles
+      perched on his nose as he examines ancient texts. He knows
+      every book in the library and can find any reference within
+      moments.
+    level: 8
+    health: 60
+    intelligence: 20
+    wisdom: 18
+    behavior_type: passive
+    flags: [sentinel, no_wander]
+    dialogue:
+      greeting: "Shh! This is a library. Ah, a seeker of knowledge. How can I help?"
+      topics:
+        books: "We have texts on every subject. History, magic, martial arts..."
+        history: "The monastery was founded a thousand years ago by a wandering sage."
+        research: "Tell me what you seek, and I will find the relevant texts."
+        forbidden: "Some texts are sealed for good reason. Ask the Abbot."
+
+  - id: temple_healer_monk
+    vnum: 506
+    name: Sister Lotus
+    keywords: [lotus, sister, healer, monk]
+    short_description: Sister Lotus tends to the medicinal herbs.
+    long_description: >
+      This serene woman moves through the temple garden, carefully
+      tending to rare medicinal herbs. Her touch is gentle, and she
+      is known throughout the region for her healing abilities.
+    level: 10
+    health: 80
+    intelligence: 16
+    wisdom: 20
+    charisma: 16
+    behavior_type: passive
+    flags: [sentinel, no_wander, healer, shopkeeper]
+    dialogue:
+      greeting: "May your body and spirit find balance here."
+      is_merchant: true
+      shop_items: [healing_potion, greater_healing_potion, antidote_vial, ki_tea]
+      topics:
+        healing: "I can treat your wounds, body and spirit alike."
+        herbs: "The mountain provides all we need for medicine."
+        ki: "Proper breathing unlocks the body's natural healing."
+    shop:
+      shop_name: "Temple Apothecary"
+      buy_markup: 1.4
+      sell_markdown: 0.5
+      shop_gold: 5000
+
+  - id: weapon_master
+    vnum: 507
+    name: Master Iron Palm
+    keywords: [iron, palm, master, weapons, teacher]
+    short_description: Master Iron Palm polishes an ancient weapon.
+    long_description: >
+      This muscular monk is responsible for the monastery's weapons
+      training. His hands are calloused from decades of practice,
+      and he is said to have mastered every weapon ever forged.
+    level: 18
+    health: 250
+    strength: 20
+    dexterity: 18
+    constitution: 18
+    wisdom: 16
+    damage_dice: 3d6
+    damage_type: bludgeoning
+    armor_class: 18
+    behavior_type: passive
+    flags: [sentinel, no_wander, trainer, shopkeeper]
+    dialogue:
+      greeting: "You wish to learn the way of weapons? Show me your stance."
+      is_merchant: true
+      shop_items: [monastery_staff, iron_fist_wraps, training_sword]
+      topics:
+        weapons: "Every weapon is an extension of the self."
+        train: "I can teach you to fight with any weapon. For a price."
+        iron_palm: "It took twenty years to temper my hands. Are you patient?"
+    shop:
+      shop_name: "Training Armory"
+      buy_markup: 1.5
+      sell_markdown: 0.4
+      shop_gold: 8000
+
+  # ==========================================================================
+  # Common Hostile Creatures - Mountain Path
+  # ==========================================================================
+  - id: mountain_goat
+    vnum: 510
+    name: a mountain goat
+    keywords: [goat, mountain, ram, beast]
+    short_description: A large mountain goat eyes you warily.
+    long_description: >
+      This hardy mountain goat has large curving horns and an
+      aggressive temperament. It is territorial and will charge
+      at anything it perceives as a threat to its domain.
+    level: 4
+    health: 55
+    strength: 14
+    dexterity: 14
+    constitution: 14
+    damage_dice: 1d8
+    damage_type: bludgeoning
+    armor_class: 12
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 3
+    experience_value: 65
+    loot_table:
+      - template_id: goat_horn
+        drop_chance: 0.4
+      - template_id: goat_hide
+        drop_chance: 0.5
+
+  - id: snow_leopard
+    vnum: 511
+    name: a snow leopard
+    keywords: [leopard, snow, cat, predator]
+    short_description: A white-furred cat stalks through the rocks.
+    long_description: >
+      This beautiful but deadly predator has adapted perfectly to
+      the mountain environment. Its white fur provides camouflage
+      in the snow, and its powerful muscles launch devastating pounces.
+    level: 6
+    health: 75
+    strength: 14
+    dexterity: 20
+    constitution: 12
+    damage_dice: 2d6
+    damage_type: slashing
+    armor_class: 15
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 4
+    flee_threshold: 0.2
+    experience_value: 120
+    loot_table:
+      - template_id: snow_leopard_pelt
+        drop_chance: 0.4
+      - template_id: leopard_fang
+        drop_chance: 0.3
+
+  - id: mountain_eagle
+    vnum: 512
+    name: a giant mountain eagle
+    keywords: [eagle, giant, bird, mountain]
+    short_description: A massive eagle circles overhead.
+    long_description: >
+      This giant eagle has a wingspan wider than a man is tall.
+      Its talons are like curved daggers, and its shriek echoes
+      through the mountain passes. It hunts from above, diving
+      at speeds that make its strikes almost impossible to dodge.
+    level: 5
+    health: 50
+    strength: 12
+    dexterity: 20
+    constitution: 10
+    damage_dice: 1d10
+    damage_type: slashing
+    armor_class: 16
+    behavior_type: aggressive
+    combat_style: skirmisher
+    aggro_radius: 6
+    flee_threshold: 0.3
+    experience_value: 100
+    loot_table:
+      - template_id: eagle_feathers
+        drop_chance: 0.5
+      - template_id: eagle_talon
+        drop_chance: 0.3
+
+  - id: ice_elemental_minor
+    vnum: 513
+    name: a minor ice elemental
+    keywords: [elemental, ice, frost, spirit]
+    short_description: A swirling mass of ice and snow drifts by.
+    long_description: >
+      This small elemental appears to be made of living ice and
+      perpetual snowfall. It moves with jerky, crystalline motion
+      and radiates bitter cold. Such elementals are drawn to the
+      thin places where the elemental planes touch the mortal world.
+    level: 7
+    health: 80
+    strength: 10
+    dexterity: 14
+    constitution: 16
+    damage_dice: 2d6
+    damage_type: cold
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: defensive
+    aggro_radius: 3
+    experience_value: 150
+    loot_table:
+      - template_id: ice_crystal
+        drop_chance: 0.5
+      - template_id: frost_essence
+        drop_chance: 0.3
+
+  - id: wind_spirit
+    vnum: 514
+    name: a wind spirit
+    keywords: [spirit, wind, air, elemental]
+    short_description: The air swirls into a vaguely humanoid shape.
+    long_description: >
+      This air spirit is barely visible - a distortion in the air
+      that moves with impossible speed. It seems playful until
+      angered, at which point it becomes a whirlwind of cutting
+      winds and buffeting gusts.
+    level: 6
+    health: 45
+    strength: 8
+    dexterity: 22
+    constitution: 10
+    damage_dice: 2d4
+    damage_type: slashing
+    armor_class: 18
+    behavior_type: neutral
+    combat_style: skirmisher
+    aggro_radius: 3
+    flee_threshold: 0.4
+    experience_value: 130
+    loot_table:
+      - template_id: wind_essence
+        drop_chance: 0.4
+      - template_id: air_mote
+        drop_chance: 0.3
+
+  # ==========================================================================
+  # Uncommon/Rare Creatures
+  # ==========================================================================
+  - id: yeti
+    vnum: 520
+    name: a yeti
+    keywords: [yeti, ape, snow, beast, abominable]
+    short_description: A massive white-furred ape-like creature roars at you.
+    long_description: >
+      This legendary mountain creature stands twice as tall as a man,
+      covered in thick white fur that reeks of musk. Its massive arms
+      end in claws capable of tearing a man in half. Its roar echoes
+      through the mountains for miles.
+    level: 10
+    health: 200
+    strength: 22
+    dexterity: 12
+    constitution: 20
+    damage_dice: 2d10
+    damage_type: slashing
+    armor_class: 15
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 5
+    experience_value: 400
+    gold_min: 30
+    gold_max: 80
+    loot_table:
+      - template_id: yeti_fur
+        drop_chance: 0.5
+      - template_id: yeti_claw
+        drop_chance: 0.4
+      - template_id: yeti_horn
+        drop_chance: 0.2
+
+  - id: corrupted_monk
+    vnum: 521
+    name: a corrupted monk
+    keywords: [monk, corrupted, fallen, shadow]
+    short_description: A monk in tattered robes radiates dark energy.
+    long_description: >
+      Once a brother of Stillwater, this monk has fallen to shadow.
+      His movements are still perfect, but his ki has been corrupted
+      into something dark and twisted. He attacks with moves that
+      should be impossible, powered by malevolent force.
+    level: 12
+    health: 150
+    strength: 16
+    dexterity: 20
+    constitution: 14
+    intelligence: 14
+    wisdom: 16
+    damage_dice: 2d8
+    damage_type: necrotic
+    armor_class: 18
+    behavior_type: aggressive
+    combat_style: tactician
+    aggro_radius: 4
+    experience_value: 350
+    gold_min: 25
+    gold_max: 60
+    loot_table:
+      - template_id: corrupted_prayer_beads
+        drop_chance: 0.4
+      - template_id: shadow_sash
+        drop_chance: 0.3
+      - template_id: dark_sutra
+        drop_chance: 0.15
+    dialogue_style: "Speaks in fragments of sutras, twisted and broken"
+
+  - id: stone_guardian
+    vnum: 522
+    name: a stone guardian
+    keywords: [guardian, stone, golem, statue]
+    short_description: An ancient stone statue suddenly moves.
+    long_description: >
+      This statue was carved by the monastery's founders a thousand
+      years ago. Enchanted to protect the sacred grounds, it animates
+      when it senses those with hostile intent. Its movements are
+      slow but unstoppable.
+    level: 11
+    health: 250
+    strength: 22
+    dexterity: 6
+    constitution: 24
+    damage_dice: 2d12
+    damage_type: bludgeoning
+    armor_class: 18
+    behavior_type: guard
+    combat_style: defensive
+    aggro_radius: 3
+    experience_value: 380
+    loot_table:
+      - template_id: guardian_core
+        drop_chance: 0.5
+      - template_id: ancient_rune
+        drop_chance: 0.3
+
+  - id: frost_wraith
+    vnum: 523
+    name: a frost wraith
+    keywords: [wraith, frost, ghost, spirit]
+    short_description: A spectral figure wreathed in ice drifts toward you.
+    long_description: >
+      The ghost of someone who died in the mountain cold, twisted
+      by their agonizing death into a creature of pure malice. Its
+      touch freezes the soul as well as the flesh, and its wail
+      carries the despair of its final moments.
+    level: 9
+    health: 90
+    strength: 10
+    dexterity: 18
+    constitution: 12
+    damage_dice: 2d8
+    damage_type: cold
+    armor_class: 16
+    behavior_type: aggressive
+    combat_style: caster
+    aggro_radius: 5
+    experience_value: 280
+    loot_table:
+      - template_id: frozen_soul_shard
+        drop_chance: 0.4
+      - template_id: wraith_essence
+        drop_chance: 0.3
+    dialogue_style: "Moans wordlessly, occasionally crying out names"
+
+  # ==========================================================================
+  # Boss - Stillwater
+  # ==========================================================================
+  - id: shadow_master
+    vnum: 550
+    name: the Shadow Master
+    keywords: [shadow, master, boss, monk, dark]
+    short_description: A figure of living darkness stands before you.
+    long_description: >
+      Once the greatest martial artist Stillwater ever produced, this
+      monk sought forbidden power and was consumed by it. Now he is
+      more shadow than man, his form shifting and flowing like darkness
+      given life. His strikes come from impossible angles, and his
+      presence drains the light from the room.
+    level: 15
+    health: 450
+    strength: 18
+    dexterity: 24
+    constitution: 16
+    intelligence: 16
+    wisdom: 20
+    damage_dice: 3d8
+    damage_type: necrotic
+    armor_class: 20
+    behavior_type: aggressive
+    combat_style: tactician
+    aggro_radius: 6
+    flee_threshold: 0
+    experience_value: 1500
+    gold_min: 150
+    gold_max: 400
+    is_boss: true
+    loot_table:
+      - template_id: shadow_master_mantle
+        drop_chance: 1.0
+      - template_id: fist_of_shadows
+        drop_chance: 0.4
+      - template_id: dark_ki_crystal
+        drop_chance: 0.3
+      - template_id: forbidden_sutra
+        drop_chance: 0.2
+    dialogue:
+      greeting: "So... another comes to face me. The Abbot sends children to do what she cannot."
+      topics:
+        power: "Power flows through all things. I simply take what I deserve."
+        monastery: "They fear what they cannot control. I am free of their constraints."
+        shadow: "The shadows whisper truths the light conceals. Join me, and learn."

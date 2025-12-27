@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Register - LLM-MUD{% endblock %}
+
+{% block body_class %}auth-page{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h1>Create Account</h1>
+    <form hx-post="/api/register" hx-target="#result" hx-swap="innerHTML">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required
+                   placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required
+                   placeholder="At least 8 characters">
+        </div>
+        <div class="form-group">
+            <label for="confirm">Confirm Password</label>
+            <input type="password" id="confirm" name="confirm" required
+                   placeholder="Repeat password">
+        </div>
+        <button type="submit" class="btn-primary">Create Account</button>
+    </form>
+    <div id="result"></div>
+    <p class="auth-link">Already have an account? <a href="/login">Login</a></p>
+</div>
+{% endblock %}

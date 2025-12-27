@@ -1,0 +1,365 @@
+# Skyreach Spire Items
+# Air/lightning themed equipment, gravity-defying gear, and elemental materials
+
+zone_id: skyreach
+
+items:
+  # Crafting Materials
+  - id: wind_essence
+    vnum: 1200
+    name: a vial of wind essence
+    keywords: [wind, essence, vial, air]
+    short_description: A vial containing captured wind swirls here.
+    long_description: >
+      This vial contains the essence of a wind elemental, constantly
+      swirling despite being sealed. It is used to craft items that
+      manipulate air and enhance speed.
+    item_type: material
+    rarity: uncommon
+    weight: 0.1
+    value: 65
+
+  - id: lightning_crystal
+    vnum: 1201
+    name: a lightning crystal
+    keywords: [lightning, crystal, storm, electric]
+    short_description: A crystal that crackles with electricity lies here.
+    long_description: >
+      This crystal has absorbed the energy of countless lightning
+      strikes. It sparks constantly and can shock those who handle
+      it carelessly. Enchanters prize it for electrical weapons.
+    item_type: material
+    rarity: uncommon
+    weight: 0.3
+    value: 90
+
+  - id: cloudstone
+    vnum: 1202
+    name: a piece of cloudstone
+    keywords: [cloudstone, floating, stone, sky]
+    short_description: A piece of stone that floats gently lies here.
+    long_description: >
+      This stone was quarried from the floating islands near Skyreach.
+      It defies gravity, floating gently upward if not contained.
+      It is essential for crafting items that grant flight or levitation.
+    item_type: material
+    rarity: rare
+    weight: -0.5
+    value: 200
+
+  - id: storm_core
+    vnum: 1203
+    name: a storm core
+    keywords: [storm, core, elemental, heart]
+    short_description: A swirling sphere of compressed storm lies here.
+    long_description: >
+      This sphere contains a miniature storm - winds, lightning, and
+      thunder compressed into a space the size of a fist. Releasing
+      it would be catastrophic but controlled use is invaluable.
+    item_type: material
+    rarity: rare
+    weight: 1.0
+    value: 250
+
+  # Weapons
+  - id: wind_blade
+    vnum: 1210
+    name: a wind blade
+    keywords: [wind, blade, sword, air]
+    short_description: A sword that leaves trails of wind lies here.
+    long_description: >
+      This blade is enchanted to cut with the force of wind behind
+      every swing. It is almost weightless and can deflect arrows
+      with the gusts it creates.
+    item_type: weapon
+    rarity: common
+    weight: 1.0
+    value: 80
+    level_requirement: 12
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: slashing
+      speed: fast
+      magical_properties:
+        - wind_damage_bonus: 1d2
+        - deflect_missiles: 10
+
+  - id: lightning_rapier
+    vnum: 1211
+    name: a lightning rapier
+    keywords: [lightning, rapier, sword, electric]
+    short_description: A rapier that crackles with electricity lies here.
+    long_description: >
+      This elegant rapier channels lightning with every thrust. The
+      blade itself is a lightning rod, drawing storms to it. In
+      thunder weather, its power increases dramatically.
+    item_type: weapon
+    rarity: uncommon
+    weight: 2.0
+    value: 300
+    level_requirement: 14
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: piercing
+      speed: fast
+      magical_properties:
+        - lightning_damage_bonus: 1d6
+        - storm_empowered: true
+
+  - id: thunder_staff
+    vnum: 1212
+    name: a staff of thunder
+    keywords: [thunder, staff, storm, magical]
+    short_description: A staff that rumbles with contained thunder lies here.
+    long_description: >
+      The Skybound Scholars craft these staves to channel storm magic.
+      Each strike releases a clap of thunder, and skilled wielders
+      can call down lightning from the sky.
+    item_type: weapon
+    rarity: rare
+    weight: 4.0
+    value: 450
+    level_requirement: 15
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: lightning
+      speed: medium
+      magical_properties:
+        - thunder_damage_bonus: 1d6
+        - call_lightning: true
+        - intelligence_bonus: 2
+
+  - id: gravity_hammer
+    vnum: 1213
+    name: a gravity hammer
+    keywords: [gravity, hammer, weight, force]
+    short_description: A hammer that manipulates gravity lies here.
+    long_description: >
+      This hammer was crafted with cloudstone and enchanted to
+      manipulate gravity. It feels weightless to the wielder but
+      strikes with the force of a falling boulder.
+    item_type: weapon
+    rarity: rare
+    weight: 1.0
+    value: 500
+    level_requirement: 16
+    weapon_stats:
+      damage_dice: 2d6
+      damage_type: bludgeoning
+      speed: slow
+      two_handed: true
+      magical_properties:
+        - gravity_strike: true
+        - knockback: true
+        - strength_bonus: 2
+
+  # Armor
+  - id: windweave_armor
+    vnum: 1220
+    name: windweave armor
+    keywords: [windweave, armor, light, air]
+    short_description: Armor woven from solidified air lies here.
+    long_description: >
+      This armor is made from air itself, compressed and woven into
+      a protective garment. It is nearly weightless and allows
+      incredible freedom of movement.
+    item_type: armor
+    rarity: common
+    weight: 2.0
+    value: 100
+    level_requirement: 12
+    armor_stats:
+      armor_class: 13
+      slot: body
+      resistances: [lightning]
+      magical_properties:
+        - movement_bonus: 10
+
+  - id: stormplate
+    vnum: 1221
+    name: storm plate armor
+    keywords: [storm, plate, armor, lightning]
+    short_description: Armor that crackles with storm energy lies here.
+    long_description: >
+      This plate armor channels and redirects lightning. Instead of
+      harming the wearer, electrical attacks are absorbed and can
+      be released in counterattacks.
+    item_type: armor
+    rarity: rare
+    weight: 30.0
+    value: 550
+    level_requirement: 16
+    armor_stats:
+      armor_class: 17
+      slot: body
+      immunities: [lightning]
+      magical_properties:
+        - lightning_absorption: true
+        - storm_release: true
+
+  - id: cloudstep_boots
+    vnum: 1222
+    name: cloudstep boots
+    keywords: [cloudstep, boots, flying, air]
+    short_description: Boots that allow walking on air lie here.
+    long_description: >
+      These boots contain cloudstone soles that allow the wearer to
+      walk on air as if it were solid ground. The effect is limited
+      but can save a life when falling.
+    item_type: armor
+    rarity: rare
+    weight: 1.0
+    value: 500
+    level_requirement: 14
+    armor_stats:
+      armor_class: 1
+      slot: feet
+      magical_properties:
+        - feather_fall: true
+        - air_walk: 30
+        - dexterity_bonus: 2
+
+  - id: scholar_robes
+    vnum: 1223
+    name: Skybound Scholar robes
+    keywords: [scholar, robes, skybound, cloth]
+    short_description: Blue robes marked with arcane symbols lie here.
+    long_description: >
+      These robes mark the wearer as a Skybound Scholar. They are
+      enchanted to protect against the spire's gravity anomalies
+      and amplify air and lightning magic.
+    item_type: armor
+    rarity: uncommon
+    weight: 3.0
+    value: 280
+    level_requirement: 13
+    armor_stats:
+      armor_class: 11
+      slot: body
+      resistances: [lightning, force]
+      magical_properties:
+        - gravity_stability: true
+        - air_spellpower: 3
+
+  # Consumables
+  - id: featherfall_charm
+    vnum: 1230
+    name: a featherfall charm
+    keywords: [featherfall, charm, falling, protection]
+    short_description: A charm depicting a feather lies here.
+    long_description: >
+      This charm activates automatically when the wearer falls,
+      slowing their descent to a safe speed. It is essential for
+      navigating Skyreach's gravity-shifted halls.
+    item_type: consumable
+    rarity: common
+    weight: 0.1
+    value: 40
+    consumable_effect:
+      effect_type: passive
+      uses: 3
+      effects:
+        feather_fall: true
+
+  - id: lightning_ward
+    vnum: 1231
+    name: a lightning ward
+    keywords: [lightning, ward, protection, electric]
+    short_description: A grounding charm that protects against lightning lies here.
+    long_description: >
+      This charm grounds electrical energy around the wearer,
+      providing significant protection against lightning damage.
+      The storms around Skyreach make it invaluable.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.1
+    value: 55
+    consumable_effect:
+      effect_type: buff
+      duration: 300
+      effects:
+        lightning_resistance: 75
+
+  - id: scroll_of_flight
+    vnum: 1232
+    name: a scroll of flight
+    keywords: [scroll, flight, flying, magical]
+    short_description: A scroll that grants temporary flight lies here.
+    long_description: >
+      Reading this scroll grants the user the ability to fly for a
+      limited time. The Skybound Scholars create these for visitors
+      who must navigate the spire's more dangerous sections.
+    item_type: consumable
+    rarity: rare
+    weight: 0.1
+    value: 150
+    consumable_effect:
+      effect_type: buff
+      duration: 120
+      effects:
+        flight: true
+
+  # Boss Drops
+  - id: stormwrights_heart
+    vnum: 1250
+    name: the Heart of the Storm
+    keywords: [storm, heart, stormwright, boss]
+    short_description: A sphere of pure storm energy crackles here.
+    long_description: >
+      This is the essence of the Stormwright himself, a concentrated
+      sphere of storm that contains the power of a thousand lightning
+      strikes. Handling it without protection would be fatal.
+    item_type: material
+    rarity: legendary
+    weight: 2.0
+    value: 3500
+    flags: [no_drop, quest_item]
+
+  - id: crown_of_storms
+    vnum: 1251
+    name: the Crown of Storms
+    keywords: [crown, storms, stormwright, boss, head]
+    short_description: A crown of crackling lightning hovers here.
+    long_description: >
+      The Stormwright's crown, a circlet of perpetual lightning that
+      marks the ruler of the sky. Wearing it grants command over
+      storms but attracts lightning from miles away.
+    item_type: armor
+    rarity: legendary
+    weight: 0.0
+    value: 4000
+    level_requirement: 18
+    armor_stats:
+      armor_class: 4
+      slot: head
+      immunities: [lightning]
+      magical_properties:
+        - storm_command: true
+        - lightning_spellpower: 7
+        - call_storm: true
+        - wisdom_bonus: 3
+        - lightning_aura: true
+
+  - id: tempest_blade
+    vnum: 1252
+    name: Tempest
+    keywords: [tempest, blade, sword, boss, storm]
+    short_description: A blade of living lightning lies here.
+    long_description: >
+      This sword is not metal but captured lightning, held in the
+      shape of a blade by the Stormwright's will. In the hands of
+      a new master, it seeks to create storms wherever it goes.
+    item_type: weapon
+    rarity: legendary
+    weight: 0.0
+    value: 4500
+    level_requirement: 18
+    weapon_stats:
+      damage_dice: 2d6
+      damage_type: lightning
+      speed: fast
+      magical_properties:
+        - lightning_damage_bonus: 3d6
+        - chain_lightning: true
+        - storm_flight: true
+        - dexterity_bonus: 4

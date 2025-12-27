@@ -1,0 +1,176 @@
+zone_id: ironvein
+
+mobs:
+  - id: cave_rat
+    vnum: 300
+    name: a cave rat
+    keywords: [rat, cave, rodent]
+    short_description: A large rat scurries through the shadows.
+    long_description: >
+      This rat is larger than normal, with matted fur and glowing red
+      eyes. It has grown fat and bold in the abandoned tunnels, feeding
+      on whatever it can find.
+    level: 1
+    health: 15
+    strength: 4
+    dexterity: 14
+    constitution: 6
+    damage_dice: 1d4
+    damage_type: piercing
+    armor_class: 11
+    behavior_type: aggressive
+    aggro_radius: 2
+    experience_value: 25
+    loot_table:
+      - template_id: rat_tail
+        drop_chance: 0.5
+
+  - id: giant_spider
+    vnum: 301
+    name: a giant spider
+    keywords: [spider, giant, arachnid]
+    short_description: A massive spider lurks in the shadows.
+    long_description: >
+      This spider is the size of a large dog, its black carapace gleaming
+      in the faint light. Multiple eyes reflect your presence, and venom
+      drips from its fangs.
+    level: 4
+    health: 60
+    strength: 12
+    dexterity: 16
+    constitution: 10
+    damage_dice: 1d8
+    damage_type: piercing
+    armor_class: 13
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 3
+    experience_value: 100
+    loot_table:
+      - template_id: spider_silk
+        drop_chance: 0.3
+      - template_id: spider_venom
+        drop_chance: 0.2
+
+  - id: kobold_miner
+    vnum: 302
+    name: a kobold miner
+    keywords: [kobold, miner, creature]
+    short_description: A small reptilian creature works the walls.
+    long_description: >
+      This small, dog-like reptile wears tattered clothing and wields
+      a rusty pick. It has taken up the mining work where humans left
+      off, seeking precious metals for its tribe.
+    level: 2
+    health: 25
+    strength: 8
+    dexterity: 14
+    constitution: 8
+    damage_dice: 1d6
+    damage_type: bludgeoning
+    armor_class: 12
+    behavior_type: aggressive
+    aggro_radius: 4
+    flee_threshold: 0.3
+    experience_value: 50
+    gold_min: 2
+    gold_max: 10
+    loot_table:
+      - template_id: iron_ore
+        drop_chance: 0.4
+      - template_id: rusty_pick
+        drop_chance: 0.1
+
+  - id: kobold_warrior
+    vnum: 303
+    name: a kobold warrior
+    keywords: [kobold, warrior, creature, guard]
+    short_description: A kobold in crude armor stands guard.
+    long_description: >
+      This kobold is better equipped than its mining brethren, wearing
+      scavenged armor and carrying a crude spear. It watches the tunnels
+      with alert, suspicious eyes.
+    level: 4
+    health: 45
+    strength: 12
+    dexterity: 14
+    constitution: 10
+    damage_dice: 1d8
+    damage_type: piercing
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: defensive
+    aggro_radius: 5
+    flee_threshold: 0.2
+    experience_value: 100
+    gold_min: 5
+    gold_max: 20
+    loot_table:
+      - template_id: kobold_spear
+        drop_chance: 0.2
+      - template_id: kobold_scale
+        drop_chance: 0.3
+
+  - id: cave_fisher
+    vnum: 304
+    name: a cave fisher
+    keywords: [fisher, cave, creature, monster]
+    short_description: A strange creature lurks near the water.
+    long_description: >
+      This bizarre creature resembles a cross between a spider and a
+      lobster. It uses a long, sticky filament to catch prey, dragging
+      them toward its snapping claws. It is well-adapted to the darkness.
+    level: 5
+    health: 70
+    strength: 14
+    dexterity: 12
+    constitution: 14
+    damage_dice: 2d6
+    damage_type: slashing
+    armor_class: 15
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 3
+    experience_value: 150
+    loot_table:
+      - template_id: cave_fisher_shell
+        drop_chance: 0.4
+
+  - id: kobold_king
+    vnum: 310
+    name: King Skritik
+    keywords: [king, skritik, kobold, boss]
+    short_description: The Kobold King sits upon his stolen throne.
+    long_description: >
+      Larger and more cunning than the other kobolds, King Skritik rules
+      this warren with an iron claw. He wears a crown made from gold
+      coins and scrap metal, and carries a wicked-looking blade taken
+      from some fallen adventurer. His eyes gleam with malicious intelligence.
+    level: 8
+    health: 150
+    strength: 14
+    dexterity: 16
+    constitution: 14
+    intelligence: 12
+    damage_dice: 2d8
+    damage_type: slashing
+    armor_class: 16
+    behavior_type: aggressive
+    combat_style: tactician
+    aggro_radius: 6
+    flee_threshold: 0.1
+    experience_value: 500
+    gold_min: 50
+    gold_max: 200
+    loot_table:
+      - template_id: kobold_crown
+        drop_chance: 1.0
+      - template_id: adventurer_sword
+        drop_chance: 0.5
+      - template_id: mine_key
+        drop_chance: 1.0
+    dialogue:
+      greeting: "Foolish surface-dweller! You dare enter King Skritik's domain?"
+      topics:
+        mine: "This mine is OURS now! The tunnels belong to kobold-kind!"
+        treasure: "You want treasure? Come and take it from my cold claws!"

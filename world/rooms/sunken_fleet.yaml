@@ -1,0 +1,277 @@
+# The Sunken Fleet Rooms
+# Underwater shipwreck graveyard
+
+zone_id: sunken_fleet
+
+rooms:
+  # Entry Area
+  - id: fleet_approach
+    vnum: 2700
+    name: Approach to the Sunken Fleet
+    short_description: The seafloor drops away toward a field of wrecks.
+    long_description: >
+      The sandy seafloor descends here toward a massive underwater
+      graveyard. Hundreds of ships from an ancient naval battle
+      lie scattered across the deep. Ghostly lights flicker among
+      the wrecks, and shadows move between hulls.
+    exits:
+      north:
+        destination: outer_wrecks
+        description: The wrecks begin ahead.
+      south:
+        description: The shallows lie behind you.
+        flags: [zone_exit]
+    sector_type: underwater
+    flags: [underwater]
+
+  - id: outer_wrecks
+    vnum: 2701
+    name: Outer Wrecks
+    short_description: Scattered hulls of smaller ships lie here.
+    long_description: >
+      The outer edge of the fleet graveyard contains smaller vessels -
+      scouts, merchants, and support ships. Many are broken beyond
+      recognition, but some are intact enough to explore. Fish swim
+      through broken portholes.
+    exits:
+      north:
+        destination: merchant_ship
+        description: A large merchant ship lies ahead.
+      south:
+        destination: fleet_approach
+        description: The approach lies behind you.
+      east:
+        destination: broken_mast
+        description: A field of broken masts lies to the east.
+    sector_type: underwater
+    flags: [underwater]
+    mob_spawns:
+      - mob_id: drowned_sailor
+        max_count: 3
+        respawn_time: 300
+      - mob_id: reef_shark
+        max_count: 2
+        respawn_time: 360
+
+  - id: broken_mast
+    vnum: 2702
+    name: Field of Broken Masts
+    short_description: Shattered masts rise from the seafloor like a forest.
+    long_description: >
+      Countless broken masts jut from the sand here, creating an
+      underwater forest of rotted wood. Kelp has grown over them,
+      and visibility is poor. Things hide among the columns, waiting
+      for prey.
+    exits:
+      west:
+        destination: outer_wrecks
+        description: The outer wrecks lie to the west.
+      east:
+        destination: treasure_scatter
+        description: Glints of gold are visible to the east.
+    sector_type: underwater
+    flags: [underwater]
+    mob_spawns:
+      - mob_id: moray_eel
+        max_count: 3
+        respawn_time: 300
+      - mob_id: ghost_sailor
+        max_count: 2
+        respawn_time: 420
+
+  - id: treasure_scatter
+    vnum: 2703
+    name: Treasure Scatter
+    short_description: Gold coins and treasures litter the seafloor.
+    long_description: >
+      The cargo holds of many ships spilled their contents here.
+      Gold coins, jewelry, and precious goods cover the sand like
+      a carpet of wealth. But the treasure is guarded by those who
+      died protecting it.
+    exits:
+      west:
+        destination: broken_mast
+        description: The mast field lies to the west.
+    sector_type: underwater
+    flags: [underwater]
+    item_spawns:
+      - template_id: gold_coins
+        chance: 0.5
+      - template_id: pearl_necklace
+        chance: 0.1
+    mob_spawns:
+      - mob_id: treasure_guardian
+        max_count: 2
+        respawn_time: 480
+
+  - id: merchant_ship
+    vnum: 2704
+    name: Sunken Merchant Ship
+    short_description: A large merchant vessel lies on its side.
+    long_description: >
+      This merchant ship went down with its cargo intact. The hold
+      still contains crates and barrels, though most have rotted.
+      The ship's ghost crew still works, unaware of their death,
+      going through the motions of trade.
+    exits:
+      north:
+        destination: warship_graveyard
+        description: Larger wrecks lie ahead.
+      south:
+        destination: outer_wrecks
+        description: The outer wrecks lie behind you.
+      in:
+        destination: merchant_hold
+        description: The cargo hold is accessible.
+    sector_type: underwater
+    flags: [underwater]
+    mob_spawns:
+      - mob_id: phantom_merchant
+        max_count: 1
+        respawn_time: 600
+      - mob_id: ghost_sailor
+        max_count: 2
+        respawn_time: 360
+
+  - id: merchant_hold
+    vnum: 2705
+    name: Merchant Ship Hold
+    short_description: The cargo hold of the merchant vessel.
+    long_description: >
+      Crates and barrels fill this hold, their contents mostly
+      ruined by centuries underwater. But some items were protected
+      by waterproof containers, and valuables can still be found.
+      Giant crabs have made this place home.
+    exits:
+      out:
+        destination: merchant_ship
+        description: The deck lies outside.
+    sector_type: indoor
+    flags: [underwater, dark]
+    item_spawns:
+      - template_id: waterproof_chest
+        chance: 0.2
+    mob_spawns:
+      - mob_id: giant_crab
+        max_count: 3
+        respawn_time: 360
+
+  - id: warship_graveyard
+    vnum: 2706
+    name: Warship Graveyard
+    short_description: Massive warships lie in their final rest.
+    long_description: >
+      The great warships from both fleets lie here, their final
+      battle frozen in time. Some are locked together, having gone
+      down while still fighting. Their crews remain, spectral warriors
+      still fighting the battle.
+    exits:
+      north:
+        destination: flagship_approach
+        description: The largest wreck looms ahead.
+      south:
+        destination: merchant_ship
+        description: Smaller wrecks lie to the south.
+      west:
+        destination: battle_site
+        description: The center of the battle is visible.
+    sector_type: underwater
+    flags: [underwater]
+    mob_spawns:
+      - mob_id: spectral_marine
+        max_count: 4
+        respawn_time: 300
+      - mob_id: ghost_officer
+        max_count: 1
+        respawn_time: 540
+
+  - id: battle_site
+    vnum: 2707
+    name: Heart of the Battle
+    short_description: Two warships lie locked in eternal combat.
+    long_description: >
+      These two warships went down together, grappled in mortal
+      combat. Ghost crews still fight across the decks, replaying
+      their final battle for eternity. The violence is spectral
+      but still dangerous.
+    exits:
+      east:
+        destination: warship_graveyard
+        description: The warship graveyard lies to the east.
+    sector_type: underwater
+    flags: [underwater, dangerous]
+    mob_spawns:
+      - mob_id: battling_ghosts
+        max_count: 6
+        respawn_time: 240
+
+  - id: flagship_approach
+    vnum: 2708
+    name: Approach to the Flagship
+    short_description: The admiral's flagship towers above other wrecks.
+    long_description: >
+      The largest ship in the graveyard lies ahead - the admiral's
+      flagship. Even wrecked, it is magnificent, its hull mostly
+      intact. Ghost lights burn in its portholes, and spectral
+      guards patrol its deck.
+    exits:
+      north:
+        destination: flagship_deck
+        description: The flagship deck is accessible.
+      south:
+        destination: warship_graveyard
+        description: The other wrecks lie behind you.
+    sector_type: underwater
+    flags: [underwater]
+    mob_spawns:
+      - mob_id: spectral_guard
+        max_count: 2
+        respawn_time: 480
+
+  - id: flagship_deck
+    vnum: 2709
+    name: Flagship Deck
+    short_description: The deck of the admiral's mighty vessel.
+    long_description: >
+      The flagship's deck is frozen in the moment of destruction.
+      Ghost sailors man phantom cannons, and spectral officers
+      shout orders that echo through the water. The captain's
+      cabin lies at the stern.
+    exits:
+      south:
+        destination: flagship_approach
+        description: The approach lies behind you.
+      in:
+        destination: admirals_cabin
+        description: The admiral's cabin awaits.
+    sector_type: underwater
+    flags: [underwater]
+    mob_spawns:
+      - mob_id: ghost_crew
+        max_count: 4
+        respawn_time: 300
+      - mob_id: spectral_first_mate
+        max_count: 1
+        respawn_time: 600
+
+  - id: admirals_cabin
+    vnum: 2710
+    name: Admiral Dreadtide's Cabin
+    short_description: The admiral's ghost awaits in his cabin.
+    long_description: >
+      This cabin was once magnificent, and even in ruin it shows
+      signs of wealth and power. Maps cover the walls, and treasures
+      fill chests. At the desk, Admiral Dreadtide himself sits,
+      a ghost bound by duty and vengeance. He does not welcome
+      intruders.
+    exits:
+      out:
+        destination: flagship_deck
+        description: The deck lies outside.
+    sector_type: indoor
+    flags: [boss_room, underwater, dark]
+    mob_spawns:
+      - mob_id: admiral_dreadtide
+        max_count: 1
+        respawn_time: 3600
+        flags: [boss]

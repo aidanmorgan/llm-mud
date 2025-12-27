@@ -1,0 +1,245 @@
+# The Bleached Wastes Rooms
+# Ancient battlefield with restless spirits
+
+zone_id: bleached_wastes
+
+rooms:
+  # Entry Area
+  - id: wastes_edge
+    vnum: 2000
+    name: Edge of the Wastes
+    short_description: The fertile land ends abruptly at a wall of white.
+    long_description: >
+      Here the green grass simply stops, giving way to bleached white salt
+      flats that stretch endlessly to the horizon. Bones are visible even
+      from here, scattered across the pale expanse. A feeling of profound
+      sadness emanates from the wasteland ahead.
+    exits:
+      north:
+        destination: bone_field_south
+        description: The salt flats begin.
+      south:
+        description: A path leads back to safer lands.
+        flags: [zone_exit]
+    sector_type: field
+    flags: [safe]
+
+  - id: bone_field_south
+    vnum: 2001
+    name: Southern Bone Field
+    short_description: Bones crunch underfoot with every step.
+    long_description: >
+      The ground is carpeted with bones - human, horse, and things less
+      identifiable. Ancient weapons and armor fragments lie scattered among
+      the remains. The battle that occurred here must have been catastrophic.
+    exits:
+      north:
+        destination: bone_field_center
+        description: More bones lie to the north.
+      south:
+        destination: wastes_edge
+        description: The edge of the wastes lies south.
+      east:
+        destination: mass_grave
+        description: A depression in the ground marks a mass grave.
+    sector_type: wasteland
+    mob_spawns:
+      - mob_id: skeleton_soldier
+        max_count: 3
+        respawn_time: 300
+    item_spawns:
+      - template_id: ancient_coin
+        chance: 0.1
+
+  - id: bone_field_center
+    vnum: 2002
+    name: Central Bone Field
+    short_description: The bones here are piled waist-high.
+    long_description: >
+      The density of remains increases dramatically here. Bones are piled
+      so thick that walking requires climbing. Rusted weapons still clutched
+      in skeletal hands hint at the ferocity of the ancient battle.
+    exits:
+      north:
+        destination: commanders_last_stand
+        description: A raised mound of bones lies to the north.
+      south:
+        destination: bone_field_south
+        description: The southern bone field stretches behind you.
+      west:
+        destination: war_monument
+        description: A shattered monument rises from the bones.
+      east:
+        destination: weapons_graveyard
+        description: A glint of metal marks an area of fallen weapons.
+    sector_type: wasteland
+    mob_spawns:
+      - mob_id: skeleton_soldier
+        max_count: 4
+        respawn_time: 240
+      - mob_id: bone_golem
+        max_count: 1
+        respawn_time: 600
+
+  - id: mass_grave
+    vnum: 2003
+    name: The Mass Grave
+    short_description: A pit filled with countless dead.
+    long_description: >
+      This depression was once a mass grave, though the bones have long
+      since risen to the surface. The spiritual energy here is oppressive,
+      and ghostly wails can be heard just at the edge of perception.
+    exits:
+      west:
+        destination: bone_field_south
+        description: The bone field lies to the west.
+    sector_type: wasteland
+    flags: [haunted]
+    mob_spawns:
+      - mob_id: ghost_soldier
+        max_count: 3
+        respawn_time: 360
+      - mob_id: corpse_collector
+        max_count: 1
+        respawn_time: 600
+
+  - id: war_monument
+    vnum: 2004
+    name: Shattered War Monument
+    short_description: A broken monument to forgotten heroes.
+    long_description: >
+      This monument was erected to honor the fallen, but time and neglect
+      have reduced it to rubble. Inscriptions in a dead language cover
+      the remaining stones. Someone has left fresh offerings here.
+    exits:
+      east:
+        destination: bone_field_center
+        description: The bone field lies to the east.
+    sector_type: wasteland
+    npcs:
+      - mob_id: bone_collector_npc
+        spawn_chance: 1.0
+
+  - id: weapons_graveyard
+    vnum: 2005
+    name: Weapons Graveyard
+    short_description: Rusted weapons lie in heaps.
+    long_description: >
+      Thousands of weapons from the ancient battle lie here - swords, spears,
+      axes, and things stranger. Most are rusted beyond use, but some retain
+      an edge that defies time. Spirits are said to guard their weapons still.
+    exits:
+      west:
+        destination: bone_field_center
+        description: The bone field lies to the west.
+      north:
+        destination: generals_tent
+        description: The remains of a command tent lie to the north.
+    sector_type: wasteland
+    mob_spawns:
+      - mob_id: weapon_specter
+        max_count: 2
+        respawn_time: 420
+    item_spawns:
+      - template_id: ancient_sword
+        chance: 0.05
+      - template_id: rusted_armor
+        chance: 0.1
+
+  - id: commanders_last_stand
+    vnum: 2006
+    name: Commander's Last Stand
+    short_description: A mound where a final stand was made.
+    long_description: >
+      This raised area shows signs of a desperate last stand. Bones form
+      a ring of defenders around a central figure in ornate armor, still
+      clutching a standard. At night, this scene replays in ghostly form.
+    exits:
+      south:
+        destination: bone_field_center
+        description: The bone field stretches to the south.
+      north:
+        destination: ghost_battlefield
+        description: The spectral battlefield lies ahead.
+    sector_type: wasteland
+    flags: [haunted]
+    mob_spawns:
+      - mob_id: ghost_commander
+        max_count: 1
+        respawn_time: 900
+      - mob_id: ghost_soldier
+        max_count: 4
+        respawn_time: 360
+
+  - id: generals_tent
+    vnum: 2007
+    name: Remains of the General's Tent
+    short_description: Rotted canvas and broken poles mark a command post.
+    long_description: >
+      This was once the command tent of one of the armies. Maps and orders
+      have long since rotted away, but ghostly figures still debate strategy
+      around a phantom table when the moon is full.
+    exits:
+      south:
+        destination: weapons_graveyard
+        description: The weapons graveyard lies to the south.
+      east:
+        destination: ghost_battlefield
+        description: The ghost battlefield lies to the east.
+    sector_type: wasteland
+    flags: [haunted]
+    item_spawns:
+      - template_id: generals_orders
+        chance: 0.02
+      - template_id: war_medal
+        chance: 0.1
+
+  - id: ghost_battlefield
+    vnum: 2008
+    name: The Ghost Battlefield
+    short_description: Spectral armies clash in eternal warfare.
+    long_description: >
+      Here, the veil between worlds is thinnest. Every night, ghost armies
+      rise to fight the battle again, charging through each other in an
+      endless cycle of violence. During the day, their forms are barely
+      visible, repeating their final moments.
+    exits:
+      south:
+        destination: commanders_last_stand
+        description: The commander's last stand lies to the south.
+      west:
+        destination: generals_tent
+        description: The remains of a command tent lie to the west.
+      north:
+        destination: generals_tomb
+        description: A sealed tomb lies to the north.
+    sector_type: wasteland
+    flags: [haunted, dangerous]
+    mob_spawns:
+      - mob_id: phantom_cavalry
+        max_count: 2
+        respawn_time: 480
+      - mob_id: ghost_soldier
+        max_count: 6
+        respawn_time: 240
+
+  - id: generals_tomb
+    vnum: 2009
+    name: The General's Tomb
+    short_description: A sealed tomb radiates ancient power.
+    long_description: >
+      Both armies' generals were entombed here after the battle, their
+      hatred so great that even death could not separate them. The tomb
+      is sealed with powerful wards, but something stirs within. The
+      General's Ghost awaits those foolish enough to break the seals.
+    exits:
+      south:
+        destination: ghost_battlefield
+        description: The ghost battlefield lies to the south.
+    sector_type: wasteland
+    flags: [boss_room, haunted]
+    mob_spawns:
+      - mob_id: generals_ghost
+        max_count: 1
+        respawn_time: 3600
+        flags: [boss]

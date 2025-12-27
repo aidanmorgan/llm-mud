@@ -1,0 +1,325 @@
+# Drowned Sanctum Mobs
+# Deep Ones, sea creatures, and drowned priests
+
+zone_id: drowned_sanctum
+
+mobs:
+  # Sea Creatures
+  - id: giant_crab
+    vnum: 1400
+    name: a giant crab
+    keywords: [crab, giant, crustacean]
+    short_description: A massive crab clicks its claws menacingly.
+    long_description: >
+      This crab has grown to enormous size in the sanctum's waters.
+      Its shell is encrusted with barnacles and coral, and its claws
+      can crush bone with ease.
+    level: 10
+    health: 100
+    strength: 16
+    dexterity: 8
+    constitution: 18
+    damage_dice: 2d6
+    damage_type: bludgeoning
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 160
+    abilities: [pincer_grip]
+    loot_table:
+      - template_id: crab_shell
+        drop_chance: 0.4
+      - template_id: crab_meat
+        drop_chance: 0.6
+
+  - id: sea_serpent
+    vnum: 1401
+    name: a sea serpent
+    keywords: [serpent, sea, snake, eel]
+    short_description: A massive serpentine form coils through the water.
+    long_description: >
+      This serpent is a terror of the temple halls, its body as thick
+      as a tree trunk and covered in iridescent scales. It can constrict
+      victims or strike with venomous fangs.
+    level: 14
+    health: 180
+    strength: 18
+    dexterity: 14
+    constitution: 16
+    damage_dice: 2d8
+    damage_type: piercing
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 300
+    abilities: [constrict, venom_bite]
+    loot_table:
+      - template_id: serpent_scale
+        drop_chance: 0.3
+      - template_id: sea_venom
+        drop_chance: 0.2
+
+  - id: coral_guardian
+    vnum: 1402
+    name: a coral guardian
+    keywords: [guardian, coral, construct, living]
+    short_description: A humanoid figure of living coral blocks the path.
+    long_description: >
+      This guardian was grown rather than built, a construct of living
+      coral shaped by Deep One magic. It continues to grow even as it
+      guards, sharp coral edges forming natural weapons.
+    level: 13
+    health: 160
+    strength: 16
+    dexterity: 6
+    constitution: 20
+    damage_dice: 2d6
+    damage_type: piercing
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 260
+    abilities: [coral_spikes]
+    resistances: [piercing, slashing]
+    vulnerabilities: [bludgeoning]
+    loot_table:
+      - template_id: living_coral
+        drop_chance: 0.3
+
+  # Deep Ones
+  - id: deep_one_guard
+    vnum: 1410
+    name: a Deep One guard
+    keywords: [deep, one, guard, fish, creature]
+    short_description: A fish-like humanoid watches with bulging eyes.
+    long_description: >
+      The Deep Ones are an ancient race that dwells in the ocean's
+      depths. This guard has the body of a man but the head and
+      scales of a fish. It carries a weapon of coral and bone.
+    level: 12
+    health: 110
+    strength: 14
+    dexterity: 14
+    constitution: 14
+    damage_dice: 1d10
+    damage_type: piercing
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 200
+    abilities: [water_breathing]
+    loot_table:
+      - template_id: deep_one_scale
+        drop_chance: 0.3
+      - template_id: coral_spear
+        drop_chance: 0.2
+
+  - id: deep_one_gatherer
+    vnum: 1411
+    name: a Deep One gatherer
+    keywords: [deep, one, gatherer, fish]
+    short_description: A fish-folk collects treasures from the tide pools.
+    long_description: >
+      This Deep One is a worker, gathering food and materials from
+      the shallows. It is less aggressive than its warrior kin but
+      will defend itself if threatened.
+    level: 10
+    health: 70
+    strength: 12
+    dexterity: 14
+    constitution: 12
+    damage_dice: 1d6
+    damage_type: slashing
+    armor_class: 12
+    behavior_type: neutral
+    aggro_radius: 2
+    experience_value: 120
+    loot_table:
+      - template_id: pearl
+        drop_chance: 0.3
+      - template_id: fish_scales
+        drop_chance: 0.5
+
+  - id: deep_one_warrior
+    vnum: 1412
+    name: a Deep One warrior
+    keywords: [deep, one, warrior, fish, soldier]
+    short_description: A heavily-armored fish-creature readies for battle.
+    long_description: >
+      Deep One warriors are the elite defenders of the sanctum. They
+      wear armor grown from shells and coral, and wield weapons
+      enchanted with sea magic. They fight with cold, alien efficiency.
+    level: 14
+    health: 150
+    strength: 16
+    dexterity: 12
+    constitution: 16
+    damage_dice: 2d6
+    damage_type: slashing
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 280
+    abilities: [water_jet, deep_strike]
+    loot_table:
+      - template_id: coral_armor
+        drop_chance: 0.2
+      - template_id: deep_blade
+        drop_chance: 0.2
+
+  - id: deep_one_guardian
+    vnum: 1413
+    name: a Deep One guardian
+    keywords: [deep, one, guardian, elite]
+    short_description: A massive Deep One radiates ancient power.
+    long_description: >
+      This Deep One is ancient, its scales darkened by age and covered
+      with ritual scars. It serves as personal guard to the high
+      priest, and has been enhanced by dark sea magic.
+    level: 16
+    health: 200
+    strength: 18
+    dexterity: 14
+    constitution: 18
+    damage_dice: 2d8
+    damage_type: slashing
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 360
+    abilities: [crushing_depths, tidal_strike]
+    loot_table:
+      - template_id: guardian_shell
+        drop_chance: 0.3
+
+  # Priests
+  - id: deep_one_priest
+    vnum: 1420
+    name: a Deep One priest
+    keywords: [deep, one, priest, caster]
+    short_description: A robed fish-creature intones dark prayers.
+    long_description: >
+      Deep One priests commune with their god through ritual and
+      sacrifice. They wear robes of woven kelp and carry symbols
+      of their dark faith. Their magic draws on the crushing
+      power of the deep ocean.
+    level: 13
+    health: 90
+    strength: 10
+    dexterity: 12
+    constitution: 12
+    intelligence: 16
+    wisdom: 18
+    damage_dice: 1d8
+    damage_type: cold
+    armor_class: 13
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 240
+    abilities: [water_bolt, bless_deep, summon_fish]
+    loot_table:
+      - template_id: priest_robe
+        drop_chance: 0.2
+      - template_id: holy_symbol
+        drop_chance: 0.3
+
+  - id: deep_one_oracle
+    vnum: 1421
+    name: a Deep One oracle
+    keywords: [deep, one, oracle, seer]
+    short_description: A blind Deep One stares with empty, knowing eyes.
+    long_description: >
+      This oracle has been touched by their god's vision, their eyes
+      replaced with orbs of black pearl. They can see the future
+      in the currents and speak prophecies that come true with
+      terrible accuracy.
+    level: 14
+    health: 80
+    strength: 8
+    dexterity: 10
+    constitution: 12
+    intelligence: 18
+    wisdom: 20
+    damage_dice: 2d6
+    damage_type: psychic
+    armor_class: 14
+    behavior_type: neutral
+    aggro_radius: 4
+    experience_value: 280
+    abilities: [prophecy, psychic_scream, foresight]
+    loot_table:
+      - template_id: oracle_eyes
+        drop_chance: 0.2
+
+  - id: deep_one_high_priest
+    vnum: 1422
+    name: a Deep One high priest
+    keywords: [deep, one, high, priest, leader]
+    short_description: A massive robed figure commands the inner sanctum.
+    long_description: >
+      The high priest of the Drowned Sanctum has served for centuries,
+      their body warped by constant communion with their god. They
+      are part fish, part something else entirely, their power
+      second only to the Abyssal Herald.
+    level: 17
+    health: 180
+    strength: 12
+    dexterity: 10
+    constitution: 16
+    intelligence: 20
+    wisdom: 22
+    damage_dice: 2d8
+    damage_type: cold
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 400
+    abilities: [drown, crushing_depths, summon_deep_ones, divine_wrath]
+    loot_table:
+      - template_id: high_priest_staff
+        drop_chance: 0.4
+      - template_id: abyssal_robes
+        drop_chance: 0.3
+
+  # Boss
+  - id: abyssal_herald
+    vnum: 1430
+    name: The Abyssal Herald
+    keywords: [abyssal, herald, boss, kraken, priest]
+    short_description: A towering figure wrapped in tentacles fills the abyss.
+    long_description: >
+      The Abyssal Herald is the avatar of the Deep Ones' kraken god,
+      a priest who has merged with their deity's essence. Their body
+      is a nightmare of tentacles, fish-flesh, and deep-sea horror.
+      Bioluminescence plays across their form, the only light in
+      the crushing darkness of the abyss. They speak with the voice
+      of the deep, and the ocean itself obeys their commands.
+    level: 18
+    health: 600
+    strength: 22
+    dexterity: 14
+    constitution: 24
+    intelligence: 20
+    wisdom: 22
+    damage_dice: 3d10
+    damage_type: cold
+    armor_class: 20
+    behavior_type: aggressive
+    combat_style: tactician
+    aggro_radius: 12
+    experience_value: 2200
+    gold_min: 200
+    gold_max: 700
+    abilities: [tentacle_storm, crushing_depths, summon_kraken_spawn, drown, abyssal_darkness]
+    immunities: [cold, drowning]
+    loot_table:
+      - template_id: herald_heart
+        drop_chance: 1.0
+      - template_id: kraken_eye
+        drop_chance: 0.5
+      - template_id: abyssal_crown
+        drop_chance: 0.6
+    dialogue:
+      greeting: "THE DEEP WELCOMES YOU. THE DEEP WILL KEEP YOU. FOREVER."
+      topics:
+        god: "OUR LORD SLEEPS IN THE DEEPEST TRENCHES. WHEN IT WAKES, THE SURFACE WORLD WILL DROWN."

@@ -1,0 +1,30 @@
+# The Bleached Wastes Zone
+# Ancient battlefield, sun-scorched bones, restless spirits
+
+zone_id: bleached_wastes
+name: The Bleached Wastes
+description: >
+  An ancient battlefield where two great armies annihilated each other in a
+  cataclysmic conflict. The sun-bleached bones of thousands cover salt flats
+  that stretch to the horizon. Nothing grows here, and the spirits of fallen
+  soldiers still fight their eternal war each night.
+level_range: [15, 25]
+flags: [outdoor, hostile, undead_heavy, cursed]
+coordinate_origin:
+  x: -30
+  y: 15
+  z: 0
+environmental_hazards:
+  - type: heat
+    amount: 1
+    interval: 120
+    message: "The relentless sun beats down upon you."
+  - type: despair
+    amount: 1
+    interval: 180
+    message: "The weight of death in this place presses on your spirit."
+ambient_messages:
+  - "The wind carries whispers of ancient battle cries."
+  - "Bones shift and clatter in the distance."
+  - "A ghostly horn sounds from somewhere far away."
+  - "The salt flats shimmer with phantom images of charging armies."

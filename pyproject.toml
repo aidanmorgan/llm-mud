@@ -1,0 +1,86 @@
+[project]
+name = "llm-mud"
+version = "0.1.0"
+description = "A Multi-User Dungeon combining static and LLM-generated content"
+readme = "README.md"
+authors = [
+    { name = "Aidan Morgan", email = "aidan.j.morgan@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "ray[default]>=2.0",
+    "websockets>=12.0",
+    "pyyaml>=6.0",
+    "llm-mud-core",
+    "llm-mud-game",
+    "llm-mud-network",
+    "llm-mud-web",
+]
+
+
+[tool.uv.workspace]
+members = [
+    "packages/core",
+    "packages/game",
+    "packages/network",
+    "packages/extensions",
+    "packages/llm",
+    "packages/generation",
+    "packages/web",
+]
+exclude = []
+
+[tool.uv.sources]
+llm-mud-core = { workspace = true }
+llm-mud-game = { workspace = true }
+llm-mud-network = { workspace = true }
+llm-mud-llm = { workspace = true }
+llm-mud-generation = { workspace = true }
+llm-mud-web = { workspace = true }
+
+[tool.uv]
+dev-dependencies = [
+    "black>=25.12.0",
+    "httpx>=0.27",
+    "pyright>=1.1.407",
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.14.10",
+    "websockets>=12.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = [
+    "e2e: marks tests as end-to-end tests (deselect with '-m \"not e2e\"')",
+]
+
+
+[project.scripts]
+llm-mud = "game.main:run"
+ollama-setup = "scripts.ollama_setup:main"
+
+
+[tool.pyright]
+# Ray uses dynamic typing patterns that pyright doesn't understand
+# ObjectRef is awaitable but pyright doesn't recognize this
+reportGeneralTypeIssues = "warning"
+reportAttributeAccessIssue = "warning"
+reportArgumentType = "warning"
+pythonVersion = "3.12"
+typeCheckingMode = "standard"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E501"]  # Line too long - handled by black
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+# No build-system - this is a workspace root, not a distributable package

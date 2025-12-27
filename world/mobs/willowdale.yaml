@@ -1,0 +1,498 @@
+zone_id: willowdale
+
+mobs:
+  # ==========================================================================
+  # Friendly NPCs
+  # ==========================================================================
+  - id: willowdale_fisherman
+    vnum: 200
+    name: a fisherman
+    keywords: [fisherman, villager, fisher]
+    short_description: A fisherman mends nets by the dock.
+    long_description: >
+      A weathered villager with sun-darkened skin and calloused hands.
+      They wear simple clothing suited for work on the water. Their
+      movements are practiced as they repair fishing nets.
+    level: 2
+    health: 40
+    strength: 12
+    dexterity: 12
+    constitution: 12
+    behavior_type: passive
+    flags: []
+    dialogue:
+      greeting: "Fine day for fishing, if I do say so."
+      topics:
+        fish: "The river's been generous lately. Plenty of fish for everyone."
+        ravenmoor: "The forest path to Ravenmoor can be dangerous. Wolves and such."
+        creature: "Something big lurks in the deep pool. We call it Old Whiskers."
+
+  - id: willowdale_master_fisher
+    vnum: 201
+    name: Old Nettie
+    keywords: [nettie, master, fisher, fisherman]
+    short_description: Old Nettie sits by the window, watching the river.
+    long_description: >
+      The oldest fisher in Willowdale, Nettie knows the river better than
+      anyone. Her hair is white as river foam, and her eyes still sparkle
+      with life. She's happy to share her wisdom with those who ask.
+    level: 4
+    health: 50
+    intelligence: 14
+    wisdom: 16
+    behavior_type: passive
+    flags: [sentinel, no_wander, trainer]
+    dialogue:
+      greeting: "Ah, a visitor! Come, sit. The river's running fine today."
+      topics:
+        fishing: "I can teach you the ways of the water, if you've patience."
+        river: "The river is life. Treat her with respect, and she'll provide."
+        train: "Fishing is about patience, timing, and knowing where to look."
+
+  - id: willowdale_miller
+    vnum: 202
+    name: Thomas the Miller
+    keywords: [thomas, miller]
+    short_description: Thomas tends the mill with practiced hands.
+    long_description: >
+      A flour-dusted man of middle years works the grinding stones. His
+      arms are strong from years of lifting sacks, and his face is kind
+      despite his busy demeanor.
+    level: 3
+    health: 60
+    strength: 14
+    constitution: 12
+    behavior_type: passive
+    flags: [sentinel, no_wander, shopkeeper]
+    dialogue:
+      greeting: "Busy day, friend! Need flour?"
+      is_merchant: true
+      shop_items: [flour_sack, bread_loaf, grain_bundle]
+      topics:
+        flour: "Best flour in the region, ground fresh daily."
+        village: "Willowdale's a quiet place. We like it that way."
+    shop:
+      shop_name: "Thomas's Mill"
+      buy_markup: 1.2
+      sell_markdown: 0.5
+      shop_gold: 1500
+
+  - id: willowdale_farmer
+    vnum: 203
+    name: Goodman Briggs
+    keywords: [briggs, farmer, goodman]
+    short_description: Goodman Briggs works his fields with care.
+    long_description: >
+      A sturdy farmer in practical clothing tends to his crops. His hands
+      are dirt-stained but gentle as he inspects the growing plants. He
+      takes pride in his work and his land.
+    level: 2
+    health: 50
+    strength: 14
+    dexterity: 10
+    constitution: 14
+    behavior_type: passive
+    flags: [sentinel, no_wander, shopkeeper]
+    dialogue:
+      greeting: "Morning! Or is it afternoon? Lose track of time out here."
+      is_merchant: true
+      shop_items: [fresh_vegetables, apple, carrots]
+      topics:
+        crops: "The harvest looks good this year. Enough to feed everyone."
+        vegetables: "Fresh vegetables for sale, if you're interested."
+    shop:
+      shop_name: "Briggs Farm Stand"
+      buy_markup: 1.1
+      sell_markdown: 0.4
+      shop_gold: 800
+
+  - id: village_elder
+    vnum: 204
+    name: Elder Willow
+    keywords: [elder, willow, wise, woman]
+    short_description: Elder Willow sits beneath the great willow tree.
+    long_description: >
+      An ancient woman whose age seems impossible. Her skin is bark-like and
+      her hair hangs like willow fronds. Some say she's been here since the
+      village was founded, and that she has the ear of the river spirits.
+    level: 12
+    health: 100
+    strength: 6
+    dexterity: 8
+    constitution: 10
+    intelligence: 18
+    wisdom: 22
+    charisma: 16
+    behavior_type: passive
+    flags: [sentinel, no_wander, quest_giver]
+    dialogue:
+      greeting: "The river whispers of your coming, young one."
+      topics:
+        wisdom: "Listen to the water. It knows more than any book."
+        village: "Willowdale has stood for generations. It will stand for more."
+        quest: "The forest grows restless. Something stirs the natural order."
+        thornhaven: "West, along the river, lies Thornhaven. Nature claims it now."
+
+  - id: ferry_captain
+    vnum: 205
+    name: Captain Redmast
+    keywords: [captain, redmast, ferry, sailor]
+    short_description: Captain Redmast prepares his ferry for passengers.
+    long_description: >
+      A stocky river captain with a magnificent red beard. His ferry is
+      old but lovingly maintained, and he knows every bend and sandbar
+      in the river. His stories are legendary in the tavern.
+    level: 5
+    health: 80
+    strength: 14
+    dexterity: 12
+    constitution: 14
+    charisma: 12
+    behavior_type: passive
+    flags: [sentinel, no_wander]
+    dialogue:
+      greeting: "All aboard who's coming aboard! Where ye headed?"
+      topics:
+        ferry: "Five gold to cross. Ten if you're bringing cargo."
+        river: "I know this river like I know my own wife. Better, maybe."
+        stories: "Buy me an ale and I'll tell you about the time I..."
+
+  - id: herbalist_woman
+    vnum: 206
+    name: Sage Meadow
+    keywords: [sage, meadow, herbalist, healer, woman]
+    short_description: Sage Meadow sorts herbs in her cottage.
+    long_description: >
+      A middle-aged woman with knowing eyes and herb-stained fingers.
+      Her cottage smells of a hundred dried plants, and she knows the
+      healing properties of every flower, root, and leaf in the region.
+    level: 6
+    health: 60
+    strength: 8
+    dexterity: 12
+    constitution: 10
+    intelligence: 16
+    wisdom: 18
+    behavior_type: passive
+    flags: [sentinel, no_wander, shopkeeper, healer]
+    dialogue:
+      greeting: "Come in, come in. What ails you today?"
+      is_merchant: true
+      shop_items: [healing_herb, antidote_herb, stamina_tea, poultice]
+      topics:
+        herbs: "Every plant has a purpose. You just need to learn which."
+        healing: "I can mend most wounds, for a small donation."
+        forest: "Be wary of the deep forest. Strange plants grow there."
+    shop:
+      shop_name: "Meadow's Remedies"
+      buy_markup: 1.3
+      sell_markdown: 0.6
+      shop_gold: 2000
+
+  # ==========================================================================
+  # Common Hostile Creatures
+  # ==========================================================================
+  - id: river_snake
+    vnum: 210
+    name: a river snake
+    keywords: [snake, river, serpent, water]
+    short_description: A long water snake slithers along the bank.
+    long_description: >
+      This non-venomous but aggressive water snake makes its home in the
+      river shallows. It's territorial and quick to strike at anything
+      that disturbs it. Its coils are surprisingly strong.
+    level: 2
+    health: 25
+    strength: 8
+    dexterity: 16
+    constitution: 10
+    damage_dice: 1d4
+    damage_type: piercing
+    armor_class: 12
+    behavior_type: aggressive
+    aggro_radius: 2
+    experience_value: 35
+    loot_table:
+      - template_id: snake_skin
+        drop_chance: 0.4
+
+  - id: giant_toad
+    vnum: 211
+    name: a giant toad
+    keywords: [toad, giant, frog, amphibian]
+    short_description: A massive toad watches you with bulging eyes.
+    long_description: >
+      This toad is the size of a large dog, its warty skin glistening
+      with moisture. It sits motionless until prey comes within range,
+      then strikes with a lightning-fast tongue. Its croak is deafening.
+    level: 3
+    health: 45
+    strength: 12
+    dexterity: 10
+    constitution: 14
+    damage_dice: 1d6
+    damage_type: bludgeoning
+    armor_class: 11
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 2
+    experience_value: 50
+    loot_table:
+      - template_id: toad_legs
+        drop_chance: 0.5
+      - template_id: toad_wart
+        drop_chance: 0.3
+
+  - id: marsh_crow
+    vnum: 212
+    name: a marsh crow
+    keywords: [crow, marsh, bird, raven]
+    short_description: An oversized crow watches you from a dead tree.
+    long_description: >
+      This crow is far larger than normal, with intelligence gleaming in
+      its black eyes. It seems to study you with unnatural interest.
+      Locals claim these birds are omens of misfortune.
+    level: 3
+    health: 30
+    strength: 8
+    dexterity: 18
+    constitution: 8
+    damage_dice: 1d6
+    damage_type: piercing
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: skirmisher
+    aggro_radius: 3
+    flee_threshold: 0.3
+    experience_value: 45
+    loot_table:
+      - template_id: black_feather
+        drop_chance: 0.5
+      - template_id: crow_eye
+        drop_chance: 0.2
+
+  - id: wild_boar
+    vnum: 213
+    name: a wild boar
+    keywords: [boar, pig, wild, beast]
+    short_description: A tusked boar roots through the undergrowth.
+    long_description: >
+      This bristly boar is ill-tempered and territorial. Its tusks are
+      yellowed and sharp, capable of goring an unwary traveler. It
+      charges when threatened rather than fleeing.
+    level: 4
+    health: 60
+    strength: 14
+    dexterity: 10
+    constitution: 16
+    damage_dice: 1d8
+    damage_type: piercing
+    armor_class: 13
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 3
+    experience_value: 75
+    loot_table:
+      - template_id: boar_tusk
+        drop_chance: 0.4
+      - template_id: boar_meat
+        drop_chance: 0.6
+
+  - id: river_otter_giant
+    vnum: 214
+    name: a giant river otter
+    keywords: [otter, giant, river, beast]
+    short_description: An unusually large otter swims nearby.
+    long_description: >
+      This river otter has grown to the size of a small wolf, likely
+      from the strange magic seeping from the forest. Its playful
+      appearance belies its territorial aggression toward intruders.
+    level: 4
+    health: 50
+    strength: 12
+    dexterity: 16
+    constitution: 12
+    damage_dice: 1d6
+    damage_type: piercing
+    armor_class: 13
+    behavior_type: neutral
+    combat_style: skirmisher
+    aggro_radius: 2
+    experience_value: 70
+    loot_table:
+      - template_id: otter_pelt
+        drop_chance: 0.5
+
+  # ==========================================================================
+  # Uncommon/Rare Creatures
+  # ==========================================================================
+  - id: will_o_wisp
+    vnum: 220
+    name: a will-o'-wisp
+    keywords: [wisp, will, light, spirit]
+    short_description: A ghostly light bobs and weaves through the marsh.
+    long_description: >
+      This floating ball of pale light moves with seeming purpose,
+      trying to lure travelers deeper into the marsh. It flickers
+      hypnotically, and those who follow often meet misfortune.
+    level: 6
+    health: 40
+    strength: 4
+    dexterity: 20
+    constitution: 8
+    damage_dice: 2d6
+    damage_type: lightning
+    armor_class: 17
+    behavior_type: aggressive
+    combat_style: skirmisher
+    aggro_radius: 4
+    flee_threshold: 0.2
+    experience_value: 150
+    loot_table:
+      - template_id: wisp_essence
+        drop_chance: 0.4
+      - template_id: phosphorescent_dust
+        drop_chance: 0.3
+
+  - id: forest_troll
+    vnum: 221
+    name: a forest troll
+    keywords: [troll, forest, giant, creature]
+    short_description: A hunched, moss-covered troll lurks in the shadows.
+    long_description: >
+      This troll has made the riverside forest its home. Its green-gray
+      skin is covered in moss and lichen, making it nearly invisible
+      among the trees. Its regeneration makes it a formidable foe.
+    level: 8
+    health: 160
+    strength: 18
+    dexterity: 10
+    constitution: 20
+    damage_dice: 2d8
+    damage_type: slashing
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 4
+    experience_value: 300
+    gold_min: 20
+    gold_max: 60
+    loot_table:
+      - template_id: troll_blood
+        drop_chance: 0.4
+      - template_id: troll_hide
+        drop_chance: 0.3
+      - template_id: forest_gem
+        drop_chance: 0.15
+
+  - id: nixie
+    vnum: 222
+    name: a nixie
+    keywords: [nixie, water, spirit, fey]
+    short_description: A beautiful water spirit rises from the river.
+    long_description: >
+      This water fey appears as a beautiful humanoid with skin the color
+      of river water and hair like flowing weeds. She is territorial
+      about her stretch of river and not above drowning intruders.
+    level: 7
+    health: 80
+    strength: 10
+    dexterity: 16
+    constitution: 12
+    intelligence: 14
+    wisdom: 14
+    charisma: 18
+    damage_dice: 2d6
+    damage_type: cold
+    armor_class: 15
+    behavior_type: neutral
+    combat_style: caster
+    aggro_radius: 3
+    experience_value: 200
+    gold_min: 15
+    gold_max: 40
+    loot_table:
+      - template_id: nixie_tear
+        drop_chance: 0.3
+      - template_id: river_pearl
+        drop_chance: 0.25
+      - template_id: aquamarine
+        drop_chance: 0.15
+    dialogue_style: "Speaks in bubbling, musical tones, often in rhymes"
+
+  - id: corrupted_dryad
+    vnum: 223
+    name: a corrupted dryad
+    keywords: [dryad, corrupted, spirit, tree, fey]
+    short_description: A twisted tree spirit glares with hatred.
+    long_description: >
+      Once a guardian of the forest, this dryad has been twisted by
+      dark magic. Her bark-like skin is blackened, and thorns sprout
+      from her hair. She attacks anything that enters her grove.
+    level: 9
+    health: 120
+    strength: 14
+    dexterity: 14
+    constitution: 14
+    intelligence: 12
+    wisdom: 16
+    damage_dice: 2d8
+    damage_type: piercing
+    armor_class: 15
+    behavior_type: aggressive
+    combat_style: caster
+    aggro_radius: 5
+    experience_value: 280
+    loot_table:
+      - template_id: corrupted_heartwood
+        drop_chance: 0.4
+      - template_id: dryad_tears
+        drop_chance: 0.25
+      - template_id: blackened_acorn
+        drop_chance: 0.2
+    dialogue_style: "Speaks in rustling whispers, full of sorrow and rage"
+
+  # ==========================================================================
+  # Boss - Willowdale
+  # ==========================================================================
+  - id: old_whiskers
+    vnum: 250
+    name: Old Whiskers
+    keywords: [whiskers, old, catfish, boss, monster, fish]
+    short_description: An enormous catfish lurks in the deep pool.
+    long_description: >
+      The legendary catfish of Willowdale is as old as the village itself.
+      It is the size of a small boat, with whiskers like tentacles and
+      scales thick as armor. Generations of fishermen have tried and
+      failed to catch it. Now it seems something has made it aggressive.
+    level: 10
+    health: 300
+    strength: 18
+    dexterity: 14
+    constitution: 20
+    intelligence: 8
+    wisdom: 14
+    damage_dice: 2d10
+    damage_type: bludgeoning
+    armor_class: 16
+    behavior_type: aggressive
+    combat_style: tactician
+    aggro_radius: 5
+    flee_threshold: 0
+    experience_value: 800
+    gold_min: 50
+    gold_max: 150
+    is_boss: true
+    loot_table:
+      - template_id: old_whiskers_scale
+        drop_chance: 1.0
+      - template_id: river_king_crown
+        drop_chance: 0.4
+      - template_id: lucky_fishing_rod
+        drop_chance: 0.3
+      - template_id: giant_pearl
+        drop_chance: 0.2
+    dialogue:
+      greeting: "*Old Whiskers breaches the surface, its ancient eyes studying you*"
+      topics:
+        river: "*The ancient fish seems to understand, bubbling meaningfully*"

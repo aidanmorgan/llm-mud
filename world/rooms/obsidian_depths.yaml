@@ -1,0 +1,286 @@
+# Obsidian Depths Rooms
+# Volcanic underworld with fire creatures and cultists
+
+zone_id: obsidian_depths
+
+rooms:
+  # Entry Area
+  - id: depths_entrance
+    vnum: 2600
+    name: Entrance to the Depths
+    short_description: A passage descends into volcanic darkness.
+    long_description: >
+      This passage leads from the Crucible's deepest forges into the
+      volcanic depths below. The heat increases dramatically, and
+      the stone walls give way to raw obsidian. An orange glow
+      emanates from below.
+    exits:
+      north:
+        destination: obsidian_tunnel
+        description: The tunnel descends deeper.
+      south:
+        description: The way back to the Crucible lies above.
+        flags: [zone_exit]
+    sector_type: underground
+    flags: [hot]
+
+  - id: obsidian_tunnel
+    vnum: 2601
+    name: Obsidian Tunnel
+    short_description: Walls of black volcanic glass surround you.
+    long_description: >
+      The tunnel is carved through solid obsidian, its walls reflecting
+      the dim red glow from below. The air is searing hot, and the
+      ground sometimes shifts with volcanic tremors. Sharp edges
+      glitter dangerously.
+    exits:
+      north:
+        destination: lava_overlook
+        description: A wider chamber opens ahead.
+      south:
+        destination: depths_entrance
+        description: The entrance lies behind you.
+    sector_type: underground
+    flags: [hot, dangerous]
+    mob_spawns:
+      - mob_id: obsidian_spider
+        max_count: 2
+        respawn_time: 360
+
+  - id: lava_overlook
+    vnum: 2602
+    name: Lava Overlook
+    short_description: A ledge overlooks a river of molten rock.
+    long_description: >
+      This ledge offers a terrifying view of a lava river below.
+      The heat is almost unbearable, and the light from the magma
+      paints everything in shades of orange and red. Stone bridges
+      cross the deadly flow.
+    exits:
+      north:
+        destination: lava_bridge
+        description: A stone bridge spans the lava.
+      south:
+        destination: obsidian_tunnel
+        description: The tunnel lies behind you.
+      east:
+        destination: crystal_cave
+        description: A cooler cave branches off.
+    sector_type: underground
+    flags: [hot, dangerous]
+    mob_spawns:
+      - mob_id: fire_elemental
+        max_count: 2
+        respawn_time: 420
+
+  - id: crystal_cave
+    vnum: 2603
+    name: Fire Crystal Cave
+    short_description: Crystals glow with internal fire.
+    long_description: >
+      This cave contains rare fire crystals, stones that glow with
+      inner flame but never burn out. The cult harvests them for
+      their rituals, and guards may be present. The heat is intense.
+    exits:
+      west:
+        destination: lava_overlook
+        description: The overlook lies to the west.
+    sector_type: underground
+    flags: [hot]
+    item_spawns:
+      - template_id: fire_crystal
+        chance: 0.25
+    mob_spawns:
+      - mob_id: crystal_guardian
+        max_count: 1
+        respawn_time: 600
+
+  - id: lava_bridge
+    vnum: 2604
+    name: The Lava Bridge
+    short_description: A narrow bridge over molten death.
+    long_description: >
+      This bridge of volcanic stone spans the lava river, shimmering
+      with heat distortion. One wrong step means a fiery death.
+      Fire creatures sometimes emerge from the magma to attack
+      those crossing.
+    exits:
+      north:
+        destination: cult_outpost
+        description: Buildings are visible on the far side.
+      south:
+        destination: lava_overlook
+        description: The overlook lies behind you.
+    sector_type: underground
+    flags: [hot, dangerous]
+    mob_spawns:
+      - mob_id: magma_mephit
+        max_count: 3
+        respawn_time: 300
+
+  - id: cult_outpost
+    vnum: 2605
+    name: Cult Outpost
+    short_description: Fire cultists have made camp here.
+    long_description: >
+      The fire cultists have established an outpost here, crude
+      shelters of volcanic glass protecting them from the worst
+      of the heat. Ritual markings cover the ground, and fires
+      burn in braziers without fuel.
+    exits:
+      north:
+        destination: sacred_path
+        description: A path marked with runes leads deeper.
+      south:
+        destination: lava_bridge
+        description: The bridge lies to the south.
+      east:
+        destination: prisoner_cave
+        description: Sounds of distress come from the east.
+    sector_type: underground
+    flags: [hot]
+    mob_spawns:
+      - mob_id: fire_cultist
+        max_count: 3
+        respawn_time: 360
+      - mob_id: cult_overseer
+        max_count: 1
+        respawn_time: 600
+
+  - id: prisoner_cave
+    vnum: 2606
+    name: Prisoner Cave
+    short_description: Prisoners are kept for sacrifice.
+    long_description: >
+      The cult keeps prisoners here, destined for sacrifice to
+      awaken the Molten King. Some are captured travelers, others
+      bought slaves. The conditions are horrific, and the prisoners
+      beg for rescue or death.
+    exits:
+      west:
+        destination: cult_outpost
+        description: The cult outpost lies to the west.
+    sector_type: underground
+    flags: [hot]
+    npcs:
+      - mob_id: prisoner_npc
+        spawn_chance: 1.0
+
+  - id: sacred_path
+    vnum: 2607
+    name: Sacred Path
+    short_description: Runes of fire mark the path ahead.
+    long_description: >
+      This path is marked with glowing runes that pulse with fire
+      magic. The cult considers this approach to their temple
+      sacred, and only the faithful should walk it. Guardians
+      watch for intruders.
+    exits:
+      north:
+        destination: fire_temple_entrance
+        description: The temple rises ahead.
+      south:
+        destination: cult_outpost
+        description: The outpost lies behind you.
+      west:
+        destination: salamander_den
+        description: Heat ripples from a cave to the west.
+    sector_type: underground
+    flags: [hot]
+    mob_spawns:
+      - mob_id: flame_guardian
+        max_count: 2
+        respawn_time: 480
+
+  - id: salamander_den
+    vnum: 2608
+    name: Salamander Den
+    short_description: Fire creatures nest in this sweltering cave.
+    long_description: >
+      Salamanders and other fire creatures have made this cave
+      their den. Pools of magma serve as beds, and the heat is
+      absolutely extreme. They guard their territory fiercely.
+    exits:
+      east:
+        destination: sacred_path
+        description: The sacred path lies to the east.
+    sector_type: underground
+    flags: [hot, dangerous]
+    mob_spawns:
+      - mob_id: salamander
+        max_count: 3
+        respawn_time: 420
+      - mob_id: fire_snake
+        max_count: 2
+        respawn_time: 300
+
+  - id: fire_temple_entrance
+    vnum: 2609
+    name: Fire Temple Entrance
+    short_description: The temple to the Molten King rises before you.
+    long_description: >
+      This temple was built to honor and contain the Molten King,
+      an ancient fire giant who slumbers in the volcanic depths.
+      The cultists seek to wake him. Massive doors of bronze
+      and obsidian bar the way.
+    exits:
+      north:
+        destination: fire_temple_interior
+        description: The temple interior lies ahead.
+      south:
+        destination: sacred_path
+        description: The sacred path lies behind you.
+    sector_type: underground
+    flags: [hot]
+    mob_spawns:
+      - mob_id: temple_guardian
+        max_count: 2
+        respawn_time: 540
+
+  - id: fire_temple_interior
+    vnum: 2610
+    name: Fire Temple Interior
+    short_description: A cathedral of flame and darkness.
+    long_description: >
+      The interior of the temple is a mix of magnificence and horror.
+      Flames burn in patterns on the walls, and an altar of solidified
+      lava dominates the chamber. The high priest leads rituals here
+      to wake the Molten King.
+    exits:
+      south:
+        destination: fire_temple_entrance
+        description: The entrance lies behind you.
+      down:
+        destination: molten_throne
+        description: Stairs descend to the deepest chamber.
+    sector_type: underground
+    flags: [hot]
+    mob_spawns:
+      - mob_id: fire_priest
+        max_count: 2
+        respawn_time: 480
+    npcs:
+      - mob_id: high_priest
+        spawn_chance: 0.5
+
+  - id: molten_throne
+    vnum: 2611
+    name: The Molten Throne
+    short_description: A giant of living magma slumbers on a throne of fire.
+    long_description: >
+      In the deepest chamber, the Molten King awaits. This ancient
+      fire giant was not truly destroyed but imprisoned in sleep.
+      He sits upon a throne that is part of the volcano itself,
+      his body flowing lava, his eyes closed. The rituals are
+      waking him, and he is not pleased.
+    exits:
+      up:
+        destination: fire_temple_interior
+        description: The stairs lead back up.
+    sector_type: underground
+    flags: [boss_room, hot, dangerous]
+    mob_spawns:
+      - mob_id: molten_king
+        max_count: 1
+        respawn_time: 3600
+        flags: [boss]

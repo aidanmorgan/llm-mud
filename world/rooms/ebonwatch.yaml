@@ -1,0 +1,198 @@
+# Ebonwatch Citadel Rooms
+# Shadow fortress with eternal twilight and dark magic
+
+zone_id: ebonwatch
+
+rooms:
+  - id: ebonwatch_approach
+    vnum: 1200
+    name: Twilight Road
+    short_description: A road where daylight never reaches
+    long_description: >
+      Even at midday, this road lies in perpetual twilight. Shadows gather
+      unnaturally, pooling in corners and seeming to move when not watched
+      directly. Ahead, the spires of Ebonwatch Citadel pierce a sky that
+      is always dark, always starless. Something watches from the shadows.
+    exits:
+      east:
+        destination: ~
+        leads_to_region: shadow_pass
+      west: ebonwatch_outer_gate
+    sector_type: field
+    flags: [dark]
+    ambient_messages:
+      - Shadows shift in your peripheral vision.
+      - The air is unnaturally cold here.
+      - Whispers seem to come from the darkness.
+
+  - id: ebonwatch_outer_gate
+    vnum: 1201
+    name: Outer Gate
+    short_description: Massive gates of black iron
+    long_description: >
+      Gates of black iron rise thirty feet high, decorated with images
+      of writhing shadows and bound spirits. The metal seems to absorb
+      light rather than reflect it. Guards in dark armor stand motionless,
+      and it's unclear whether they're alive, dead, or something else
+      entirely.
+    exits:
+      east: ebonwatch_approach
+      west: ebonwatch_shadow_court
+    sector_type: ruin
+    flags: [dark]
+    mob_spawns:
+      - template_id: shadow_guard
+        max_count: 2
+
+  - id: ebonwatch_shadow_court
+    vnum: 1202
+    name: Court of Shadows
+    short_description: Where the dark nobility holds audience
+    long_description: >
+      This vast courtyard is always in shadow, lit only by pale ghost-lights
+      that provide no warmth. Members of the Shadow Court drift about,
+      noble figures whose features shift and blur like smoke. They speak
+      in whispers that somehow carry across the entire space.
+    exits:
+      east: ebonwatch_outer_gate
+      north: ebonwatch_mirror_hall
+      south: ebonwatch_spirit_cells
+      west: ebonwatch_inner_citadel
+    sector_type: city
+    flags: [dark, social_zone]
+    mob_spawns:
+      - template_id: shadow_noble
+        max_count: 3
+      - template_id: shade_servant
+        max_count: 2
+
+  - id: ebonwatch_mirror_hall
+    vnum: 1203
+    name: Hall of Mirrors
+    short_description: Reflections show other worlds
+    long_description: >
+      Ornate mirrors line both walls of this long hall, but they don't
+      reflect this world. Each shows a different reality - some similar,
+      some nightmarishly different. Figures move in the reflections that
+      have no counterpart in the hall, and occasionally, something tries
+      to step through.
+    exits:
+      south: ebonwatch_shadow_court
+      east: ebonwatch_reflection_room
+    sector_type: ruin
+    flags: [dark, dimensional]
+    mob_spawns:
+      - template_id: mirror_wraith
+        max_count: 2
+      - template_id: reflection_horror
+        max_count: 1
+
+  - id: ebonwatch_spirit_cells
+    vnum: 1204
+    name: Spirit Cells
+    short_description: Prisons for bound souls
+    long_description: >
+      These cells hold no physical prisoners. Instead, spirits are bound
+      here by arcane symbols carved into the walls. Their ghostly forms
+      press against invisible barriers, wailing silently. Some were bound
+      as punishment, others as a source of power for the citadel's dark
+      magic.
+    exits:
+      north: ebonwatch_shadow_court
+      south: ebonwatch_binding_chamber
+    sector_type: ruin
+    flags: [dark, dark_magic]
+    mob_spawns:
+      - template_id: bound_spirit
+        max_count: 4
+      - template_id: spirit_warden
+        max_count: 1
+
+  - id: ebonwatch_reflection_room
+    vnum: 1205
+    name: Reflection Room
+    short_description: A room that exists in multiple realities
+    long_description: >
+      This circular chamber seems to exist in several places at once.
+      Shadows of different rooms overlay each other, and walking in one
+      direction might take you somewhere unexpected. The Shadow Court
+      uses this room to travel to other planes - or to trap the unwary.
+    exits:
+      west: ebonwatch_mirror_hall
+    sector_type: ruin
+    flags: [dark, dimensional, disorienting]
+    mob_spawns:
+      - template_id: dimensional_horror
+        max_count: 1
+    item_spawns:
+      - template_id: shadow_gem
+        max_count: 1
+
+  - id: ebonwatch_binding_chamber
+    vnum: 1206
+    name: Binding Chamber
+    short_description: Where souls are claimed for the Shadow Court
+    long_description: >
+      A ritual chamber where new spirits are bound to serve the citadel.
+      Arcane symbols cover every surface, and chains of solidified shadow
+      hang from the ceiling. The air crackles with dark energy, and the
+      screams of past victims seem to echo from the walls themselves.
+    exits:
+      north: ebonwatch_spirit_cells
+      west: ebonwatch_inner_citadel
+    sector_type: ruin
+    flags: [dark, dark_magic, dangerous]
+    mob_spawns:
+      - template_id: shadow_binder
+        max_count: 1
+      - template_id: shade_servant
+        max_count: 2
+    item_spawns:
+      - template_id: binding_chains
+        max_count: 1
+
+  - id: ebonwatch_inner_citadel
+    vnum: 1207
+    name: Inner Citadel
+    short_description: The heart of darkness
+    long_description: >
+      The inner citadel is a fortress within a fortress, its walls made
+      of solidified shadow rather than stone. Here the most powerful
+      members of the Shadow Court reside, plotting eternal schemes in
+      eternal darkness. The very air is thick with dark magic.
+    exits:
+      east: ebonwatch_shadow_court
+      north: ebonwatch_binding_chamber
+      west: ebonwatch_wardens_vault
+    sector_type: ruin
+    flags: [dark, high_magic]
+    mob_spawns:
+      - template_id: shadow_lord
+        max_count: 1
+      - template_id: shadow_knight
+        max_count: 2
+
+  - id: ebonwatch_wardens_vault
+    vnum: 1208
+    name: Warden's Vault
+    short_description: Where the Umbral Warden guards forbidden treasures
+    long_description: >
+      This vault contains artifacts too dangerous to destroy but too
+      powerful to use. Weapons that drink souls, armor that binds the
+      wearer to shadow, books of forbidden knowledge - all guarded by
+      the Umbral Warden, a demon bound in shadow who has served the
+      citadel since its founding.
+    exits:
+      east: ebonwatch_inner_citadel
+    sector_type: ruin
+    flags: [boss_room, dark, high_magic]
+    mob_spawns:
+      - template_id: umbral_warden
+        max_count: 1
+    item_spawns:
+      - template_id: shadow_blade
+        max_count: 1
+    ambient_messages:
+      - The Umbral Warden's presence fills the room with cold dread.
+      - Shadows coil like living things around the vault's treasures.
+      - You sense countless eyes watching from the darkness.

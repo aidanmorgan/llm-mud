@@ -1,0 +1,21 @@
+# Skyreach Spire - Floating tower zone
+zone_id: skyreach
+name: Skyreach Spire
+description: >
+  An ancient mage tower floating impossibly above the clouds, accessible
+  only via magical stepping stones from Stillwater Monastery. Gravity
+  works strangely here - some rooms are inverted, others have no up or
+  down at all. Elemental winds howl through broken windows, and the
+  Skybound Scholars continue their esoteric research, tended by elemental
+  servants. The Stormwright, an air elemental archmage, commands the spire.
+level_range: [12, 20]
+flags: [dungeon, magic_zone, flying_required]
+coordinate_origin:
+  x: 0
+  y: 15
+  z: 20
+special_effects:
+  - gravity_reversal
+  - wind_movement
+  - arcane_instability
+magic_modifier: 1.5

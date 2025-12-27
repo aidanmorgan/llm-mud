@@ -1,0 +1,116 @@
+region_id: singing_canyon
+name: The Singing Canyon
+
+theme:
+  theme_id: echo_canyon
+  description: >
+    A vast canyon system connects the volcanic Ashveil Wastes to the
+    Crucible's forge-city. The canyon's unique rock formations create
+    natural resonance chambers that make the wind "sing." The dwarves
+    once used this path for trade, and their carved passages still exist
+    alongside natural formations.
+
+  room_prompt: >
+    Generate a room description for a canyon with musical wind effects
+    connecting volcanic badlands to a dwarven forge-city.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: echo-filled, musical, carved and natural mixed, dramatic.
+    Early rooms near Ashveil: Volcanic rock, ash-touched, heat residue.
+    Middle rooms: Natural echo chambers, wind instruments, carved paths.
+    Late rooms near Crucible: Dwarven stonework, ancient trade posts.
+    Include sensory details: haunting sounds, echoes, wind music.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a canyon/echo creature for level {target_level}.
+    Room context: {room_description}
+
+    Types: echo spirits, canyon predators, stone creatures,
+    abandoned golem guards, fire-touched beasts, wind elementals.
+
+    Return JSON with mob details including behavior and personality.
+
+  item_prompt: >
+    Generate a canyon/dwarven themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: resonating crystals, dwarven trade goods, volcanic stones,
+    wind instruments, echo-touched items, old mining equipment.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - canyon, cliff, gorge, ravine, chasm
+    - echo, resonance, song, music, wind
+    - stone, rock, carved, dwarven, ancient
+    - volcanic, ash, ember, heat
+    - sound, voice, ring, hum
+
+  forbidden_words:
+    - ocean, forest, ice, snow
+    - modern, technology, electric
+
+  sector_types: [canyon, mountain, volcanic]
+
+  ambient_messages:
+    - "The wind creates an eerie melody as it passes through the rocks."
+    - "Your footsteps echo endlessly through the canyon."
+    - "A deep humming resonance fills the air."
+    - "Ancient dwarven carvings mark a trade route."
+    - "The canyon walls glow faintly with volcanic heat."
+    - "Somewhere, the wind whistles a haunting tune."
+
+  mob_templates: [echo_spirit, canyon_stalker, stone_golem, fire_beetle]
+  item_templates: [resonating_crystal, dwarven_goods, volcanic_glass, wind_chime]
+
+endpoints:
+  ashveil_east:
+    direction: east
+    coordinate:
+      x: 15
+      y: 0
+      z: 0
+  crucible_west_gate:
+    direction: west
+    coordinate:
+      x: 50
+      y: 10
+      z: -5
+
+waypoints:
+  - x: 25
+    y: 3
+    z: 0
+    name: "The First Echo Chamber"
+    is_required: true
+  - x: 35
+    y: 6
+    z: -2
+    name: "Old Trade Station"
+    is_required: true
+  - x: 45
+    y: 8
+    z: -4
+    name: "The Singing Gate"
+    is_required: true
+
+generation:
+  min_rooms: 30
+  max_rooms: 45
+  difficulty_min: 12
+  difficulty_max: 20
+  mob_density: 0.35
+  item_density: 0.12
+  branch_chance: 0.25
+
+primary_sector_type: canyon

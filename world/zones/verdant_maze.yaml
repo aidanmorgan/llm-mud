@@ -1,0 +1,28 @@
+# The Verdant Maze Zone
+# Living hedge labyrinth, ever-shifting, nature's puzzle
+
+zone_id: verdant_maze
+name: The Verdant Maze
+description: >
+  A massive hedge labyrinth that covers miles of land, grown by ancient druids
+  as a test for those seeking nature's secrets. The hedges are alive and
+  constantly shift, making mapping impossible. Hidden gardens, trapped explorers,
+  and the Maze Heart at its center await those who enter.
+level_range: [8, 16]
+flags: [outdoor, shifting_paths, nature, labyrinth]
+coordinate_origin:
+  x: -15
+  y: 5
+  z: 0
+environmental_hazards:
+  - type: confusion
+    amount: 0
+    interval: 360
+    message: "The paths seem to rearrange themselves when you're not looking."
+ambient_messages:
+  - "The hedge walls rustle and shift behind you."
+  - "You glimpse another lost soul through a gap in the hedge."
+  - "Flowers bloom and wilt in seconds."
+  - "The hedge closes a path you were certain was there."
+  - "A vine reaches toward you, then retreats."
+  - "The smell of pollen is almost overwhelming."

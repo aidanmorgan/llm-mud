@@ -1,0 +1,13 @@
+zone_id: willowdale
+name: Willowdale
+description: >
+  A peaceful riverside village west of Ravenmoor. The villagers make their
+  living from fishing and farming, leading simple but content lives. The
+  willow trees that give the village its name line the riverbanks, their
+  branches trailing in the water.
+level_range: [1, 3]
+flags: []
+coordinate_origin:
+  x: -15
+  y: 2
+  z: 0

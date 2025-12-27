@@ -1,0 +1,38 @@
+# Zone worker Dockerfile
+# Uses Ray base image for version compatibility with Ray cluster
+
+FROM rayproject/ray:2.46.0-py312
+
+# Switch to root for installation
+USER root
+
+WORKDIR /app
+
+# Install uv for fast dependency resolution
+RUN pip install uv
+
+# Copy all project files needed for dependency resolution
+COPY --chown=ray:users pyproject.toml uv.lock README.md ./
+COPY --chown=ray:users packages/ packages/
+
+# Install all workspace packages and dependencies
+RUN uv pip install --system --no-deps -e packages/core -e packages/game -e packages/network -e packages/llm -e packages/generation -e packages/extensions -e packages/web && \
+    uv pip install --system pyyaml websockets aiosqlite bcrypt python-jose pydantic fastapi uvicorn python-multipart sqlalchemy python-dotenv alembic jinja2
+
+# Copy entrypoint script (while still root) with execute permissions
+COPY --chmod=755 scripts/zone-entrypoint.sh /app/entrypoint.sh
+
+# Switch back to ray user for runtime
+USER ray
+
+# Set up Python path
+ENV PYTHONPATH="/app/packages/core/src:/app/packages/game/src:/app/packages/network/src:/app/packages/llm/src:/app/packages/generation/src:/app/packages/extensions/src"
+
+# Environment variables (set at runtime via docker-compose)
+ENV RAY_ADDRESS=""
+ENV ZONE_ID=""
+ENV ZONE_TYPE="zone"
+ENV REDIS_URL=""
+
+# Entrypoint - start Ray worker and then run zone worker
+ENTRYPOINT ["/app/entrypoint.sh"]

@@ -1,0 +1,250 @@
+# Windreach Peaks Rooms
+# Mountain summit with griffin riders and storm temples
+
+zone_id: windreach
+
+rooms:
+  # Entry Area
+  - id: mountain_base
+    vnum: 2400
+    name: Base of Windreach
+    short_description: The mountain path begins its steep ascent.
+    long_description: >
+      The path to Windreach Peaks begins here, switchbacking up the
+      mountainside. Already the air is thinner and the wind stronger
+      than in the lowlands. Distant peaks pierce the clouds above.
+    exits:
+      north:
+        destination: lower_path
+        description: The path climbs steeply upward.
+      south:
+        description: The path leads back to safer elevations.
+        flags: [zone_exit]
+    sector_type: mountain
+    flags: [safe]
+
+  - id: lower_path
+    vnum: 2401
+    name: Lower Mountain Path
+    short_description: A treacherous path winds up the mountainside.
+    long_description: >
+      The path here is narrow and treacherous, barely wide enough for
+      single file travel. To one side, the mountain rises; to the other,
+      a sheer drop. The wind tugs at clothing and equipment.
+    exits:
+      north:
+        destination: cliff_ledge
+        description: The path continues upward.
+      south:
+        destination: mountain_base
+        description: The base of the mountain lies below.
+    sector_type: mountain
+    flags: [windy]
+    mob_spawns:
+      - mob_id: mountain_goat
+        max_count: 2
+        respawn_time: 300
+      - mob_id: wind_elemental
+        max_count: 1
+        respawn_time: 480
+
+  - id: cliff_ledge
+    vnum: 2402
+    name: Cliff Ledge
+    short_description: A wide ledge offers respite from the climb.
+    long_description: >
+      This natural ledge provides a place to rest before continuing
+      the ascent. Prayer flags have been strung here by pilgrims, and
+      small shrines to the wind gods dot the area.
+    exits:
+      north:
+        destination: griffin_roost
+        description: Large nests are visible above.
+      south:
+        destination: lower_path
+        description: The path descends behind you.
+      west:
+        destination: hermit_cave
+        description: A cave opening is visible in the cliff face.
+    sector_type: mountain
+    flags: [windy]
+    item_spawns:
+      - template_id: prayer_flag
+        chance: 0.2
+
+  - id: hermit_cave
+    vnum: 2403
+    name: Hermit's Cave
+    short_description: A cave sheltered from the eternal wind.
+    long_description: >
+      This cave provides blessed relief from the constant wind. A
+      hermit monk has made this place home, meditating on the nature
+      of storms. Simple furnishings and religious symbols fill the space.
+    exits:
+      east:
+        destination: cliff_ledge
+        description: The cliff ledge lies outside.
+    sector_type: indoor
+    flags: [sheltered, safe]
+    npcs:
+      - mob_id: storm_hermit
+        spawn_chance: 1.0
+
+  - id: griffin_roost
+    vnum: 2404
+    name: Griffin Roost
+    short_description: Massive nests cling to the cliffsides.
+    long_description: >
+      The griffin riders of Windreach raise their mounts here. Massive
+      nests large enough for houses cling to the cliffs, and the
+      majestic creatures come and go freely. Handlers tend to the
+      younger animals.
+    exits:
+      north:
+        destination: upper_path
+        description: The path continues upward.
+      south:
+        destination: cliff_ledge
+        description: The cliff ledge lies below.
+    sector_type: mountain
+    flags: [windy]
+    mob_spawns:
+      - mob_id: young_griffin
+        max_count: 2
+        respawn_time: 600
+    npcs:
+      - mob_id: griffin_handler
+        spawn_chance: 1.0
+
+  - id: upper_path
+    vnum: 2405
+    name: Upper Mountain Path
+    short_description: The path nears the cloud line.
+    long_description: >
+      Clouds drift past at eye level now, and the wind has become
+      a constant howl. The path here is reinforced with stone steps
+      carved by ancient hands. Storm temples are visible above.
+    exits:
+      north:
+        destination: cloud_bridge
+        description: A bridge of stone arches through the clouds.
+      south:
+        destination: griffin_roost
+        description: The griffin roost lies below.
+      east:
+        destination: wind_shrine
+        description: A small shrine stands against the cliff.
+    sector_type: mountain
+    flags: [windy, cold]
+    mob_spawns:
+      - mob_id: storm_elemental
+        max_count: 1
+        respawn_time: 600
+
+  - id: wind_shrine
+    vnum: 2406
+    name: Shrine of the Four Winds
+    short_description: A shrine where offerings are made to the wind gods.
+    long_description: >
+      This shrine honors the four wind gods - North, South, East, and
+      West. Offerings of feathers, prayers written on silk, and wind
+      chimes fill the space. The shrine seems to calm the wind around it.
+    exits:
+      west:
+        destination: upper_path
+        description: The mountain path lies to the west.
+    sector_type: mountain
+    flags: [sanctuary]
+    npcs:
+      - mob_id: wind_priest
+        spawn_chance: 1.0
+
+  - id: cloud_bridge
+    vnum: 2407
+    name: Cloud Bridge
+    short_description: A stone bridge arches through the clouds.
+    long_description: >
+      This ancient bridge spans a gap in the peaks, passing through
+      the clouds themselves. At times the bridge seems to vanish into
+      mist, and wind spirits play in the currents around it.
+    exits:
+      north:
+        destination: storm_temple_entrance
+        description: The storm temple rises ahead.
+      south:
+        destination: upper_path
+        description: The mountain path lies behind you.
+    sector_type: mountain
+    flags: [windy, dangerous]
+    mob_spawns:
+      - mob_id: wind_spirit
+        max_count: 3
+        respawn_time: 360
+
+  - id: storm_temple_entrance
+    vnum: 2408
+    name: Storm Temple Entrance
+    short_description: The gates of the ancient storm temple.
+    long_description: >
+      Massive stone gates carved with lightning patterns mark the
+      entrance to the Storm Temple. Storm monks train here, learning
+      to harness the power of lightning and wind. The air crackles
+      with electrical energy.
+    exits:
+      north:
+        destination: storm_temple_hall
+        description: The temple interior lies ahead.
+      south:
+        destination: cloud_bridge
+        description: The cloud bridge lies behind you.
+    sector_type: indoor
+    mob_spawns:
+      - mob_id: storm_monk
+        max_count: 2
+        respawn_time: 480
+
+  - id: storm_temple_hall
+    vnum: 2409
+    name: Storm Temple Hall
+    short_description: Lightning arcs between pillars in this sacred hall.
+    long_description: >
+      The main hall of the Storm Temple is a display of controlled
+      power. Lightning continuously arcs between tall metal pillars,
+      and monks meditate amid the electricity. The air smells of ozone.
+    exits:
+      south:
+        destination: storm_temple_entrance
+        description: The temple entrance lies behind you.
+      up:
+        destination: tempest_sanctum
+        description: Stairs spiral up to the highest chamber.
+    sector_type: indoor
+    flags: [electrical]
+    mob_spawns:
+      - mob_id: lightning_monk
+        max_count: 2
+        respawn_time: 420
+    npcs:
+      - mob_id: temple_master
+        spawn_chance: 1.0
+
+  - id: tempest_sanctum
+    vnum: 2410
+    name: The Tempest Sanctum
+    short_description: A chamber open to the eternal storm.
+    long_description: >
+      The highest chamber of the temple has no roof, opening to the
+      sky where storms eternally rage. Here the Tempest dwells, an
+      ancient air elemental prince who has protected these peaks
+      for millennia. Lightning crowns his form.
+    exits:
+      down:
+        destination: storm_temple_hall
+        description: Stairs lead down to the temple hall.
+    sector_type: indoor
+    flags: [boss_room, electrical, windy]
+    mob_spawns:
+      - mob_id: the_tempest
+        max_count: 1
+        respawn_time: 3600
+        flags: [boss]

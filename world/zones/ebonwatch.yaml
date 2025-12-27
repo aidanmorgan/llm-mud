@@ -1,0 +1,20 @@
+# Ebonwatch Citadel - Shadow fortress zone
+zone_id: ebonwatch
+name: Ebonwatch Citadel
+description: >
+  A fortress shrouded in eternal twilight where shadow magic pervades
+  every stone. The Shadow Court holds power here, dark nobles who traded
+  their souls for immortality in the gloom. Bound spirits whisper secrets
+  in the walls, and reality itself seems thin - mirrors show other worlds,
+  shadows move with purpose. The Umbral Warden guards the deepest vaults.
+level_range: [15, 22]
+flags: [dungeon, dark_zone, hostile]
+coordinate_origin:
+  x: -22
+  y: 8
+  z: 0
+special_effects:
+  - shadow_stepping
+  - mirror_dimensions
+light_level: darkness
+shadow_damage_modifier: 1.3

@@ -1,0 +1,241 @@
+# The Bleached Wastes Items
+# Battlefield relics and spirit-touched equipment
+
+zone_id: bleached_wastes
+
+items:
+  # Common Drops
+  - id: ancient_coin
+    name: an ancient coin
+    keywords: [ancient, coin, old, currency]
+    short_description: A tarnished coin from a fallen empire.
+    long_description: >
+      This coin bears the likeness of a forgotten emperor. It has
+      no value as currency now, but collectors might pay for it.
+    type: treasure
+    rarity: common
+    value: 15
+    weight: 0.1
+
+  - id: rusted_sword
+    name: a rusted sword
+    keywords: [rusted, sword, old, weapon]
+    short_description: A corroded blade from the ancient battle.
+    long_description: >
+      This sword has lain on the battlefield for centuries. It's
+      barely usable now, pitted with rust and notched from old battles.
+    type: weapon
+    subtype: sword
+    rarity: common
+    value: 20
+    weight: 4.0
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: slashing
+      to_hit_bonus: -1
+
+  - id: ectoplasm
+    name: a glob of ectoplasm
+    keywords: [ectoplasm, ghost, spirit, goo]
+    short_description: Ghostly residue left by spectral beings.
+    long_description: >
+      This translucent, slightly glowing substance is what remains when
+      spirits interact with the physical world. It's cold to the touch
+      and useful in various alchemical preparations.
+    type: reagent
+    rarity: uncommon
+    value: 25
+    weight: 0.2
+
+  - id: bone_dust
+    name: bone dust
+    keywords: [bone, dust, powder, remains]
+    short_description: Fine powder ground from ancient bones.
+    long_description: >
+      The constant movement of the wastes grinds bones to dust over time.
+      This powder is useful in necromantic rituals and certain potions.
+    type: reagent
+    rarity: common
+    value: 10
+    weight: 0.1
+
+  - id: skull_fragment
+    name: a skull fragment
+    keywords: [skull, bone, fragment, piece]
+    short_description: A piece of an ancient skull.
+    long_description: >
+      This fragment once protected a warrior's brain. It still holds
+      faint traces of the person's essence, useful in divination.
+    type: reagent
+    rarity: uncommon
+    value: 30
+    weight: 0.3
+
+  - id: collected_valuables
+    name: collected valuables
+    keywords: [valuables, collection, treasure, mixed]
+    short_description: A collection of items gathered by corpse collectors.
+    long_description: >
+      This hodgepodge of rings, coins, buttons, and other small items
+      was gathered by a corpse collector. Most are worthless, but a
+      few pieces might have value.
+    type: treasure
+    rarity: uncommon
+    value: 75
+    weight: 1.0
+
+  - id: ancient_weapon
+    name: an ancient weapon
+    keywords: [ancient, weapon, old, artifact]
+    short_description: A weapon preserved by spectral energy.
+    long_description: >
+      This weapon was so loved by its wielder that their spirit preserved
+      it even in death. It still functions, though with an ethereal chill.
+    type: weapon
+    subtype: random
+    rarity: rare
+    value: 300
+    weight: 3.5
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: slashing
+      to_hit_bonus: 1
+    magical_properties:
+      - effect: cold_damage
+        value: 1d4
+        description: Deals additional cold damage
+
+  - id: cavalry_saber
+    name: a phantom cavalry saber
+    keywords: [phantom, cavalry, saber, sword]
+    short_description: A blade that phases between solid and spectral.
+    long_description: >
+      This saber belonged to a cavalry officer who died charging the enemy.
+      It sometimes becomes intangible, allowing strikes that bypass armor.
+    type: weapon
+    subtype: sword
+    rarity: rare
+    value: 450
+    weight: 3.0
+    level_requirement: 14
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: slashing
+      to_hit_bonus: 2
+    magical_properties:
+      - effect: armor_piercing
+        value: 2
+        description: Ignores 2 points of armor
+
+  - id: officer_medal
+    name: an officer's medal
+    keywords: [officer, medal, military, honor]
+    short_description: A medal of rank from a fallen commander.
+    long_description: >
+      This medal was awarded for valor in a war that ended in mutual
+      destruction. It still carries the authority of command.
+    type: accessory
+    subtype: trinket
+    rarity: uncommon
+    value: 150
+    weight: 0.2
+    magical_properties:
+      - effect: leadership
+        value: 1
+        description: Grants +1 to charisma
+
+  - id: command_baton
+    name: a commander's baton
+    keywords: [command, baton, leader, officer]
+    short_description: A symbol of military authority that still holds power.
+    long_description: >
+      Ghost commanders still obey this baton. It can be used to influence
+      the spectral soldiers of the wastes, though doing so draws attention.
+    type: weapon
+    subtype: mace
+    rarity: rare
+    value: 500
+    weight: 2.0
+    level_requirement: 16
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: bludgeoning
+      to_hit_bonus: 2
+    magical_properties:
+      - effect: command_undead
+        value: 1
+        description: Can attempt to command nearby undead
+
+  # Boss Drops
+  - id: generals_blade
+    name: The General's Blade
+    keywords: [generals, blade, legendary, sword]
+    short_description: A sword carried by both generals, fused by their deaths.
+    long_description: >
+      When the two generals struck each other down, their weapons fused
+      into a single blade. It carries the tactical brilliance of both
+      commanders and the eternal fury of their rivalry.
+    type: weapon
+    subtype: longsword
+    rarity: legendary
+    value: 5000
+    weight: 4.0
+    level_requirement: 20
+    weapon_stats:
+      damage_dice: 2d8
+      damage_type: slashing
+      to_hit_bonus: 3
+    magical_properties:
+      - effect: necrotic_damage
+        value: 1d6
+        description: Deals additional necrotic damage
+      - effect: tactical_insight
+        value: 2
+        description: Grants +2 to intelligence in combat
+
+  - id: crown_of_command
+    name: Crown of Command
+    keywords: [crown, command, helmet, legendary]
+    short_description: A crowned helm worn by the ghostly generals.
+    long_description: >
+      This helm was worn by both generals at different times, their
+      spirits leaving imprints of their tactical genius. It grants
+      the wearer supernatural battlefield awareness.
+    type: armor
+    subtype: helmet
+    rarity: legendary
+    value: 4500
+    weight: 3.0
+    level_requirement: 20
+    armor_stats:
+      armor_bonus: 3
+      slot: head
+    magical_properties:
+      - effect: wisdom_bonus
+        value: 2
+        description: Grants +2 wisdom
+      - effect: detect_invisible
+        value: 1
+        description: Can see invisible creatures
+
+  - id: war_standard
+    name: The Eternal War Standard
+    keywords: [war, standard, banner, flag]
+    short_description: A battle standard that rallies both living and dead.
+    long_description: >
+      This banner was fought over by both armies. It now serves whoever
+      carries it, inspiring allies with supernatural fervor and striking
+      fear into enemies.
+    type: accessory
+    subtype: held
+    rarity: legendary
+    value: 3500
+    weight: 5.0
+    level_requirement: 18
+    magical_properties:
+      - effect: rally_allies
+        value: 2
+        description: Nearby allies gain +2 to attack rolls
+      - effect: intimidate_enemies
+        value: 2
+        description: Nearby enemies suffer -2 to morale

@@ -1,0 +1,114 @@
+region_id: mist_veil
+name: The Mist Veil
+
+theme:
+  theme_id: haunted_passage
+  description: >
+    A perpetually foggy valley connects Wraithhollow to Ebonwatch Citadel.
+    The mist is supernatural, carrying whispers and half-seen shapes.
+    Both the curse of Wraithhollow and the shadow magic of Ebonwatch
+    bleed into this place, making it treacherous and haunting.
+
+  room_prompt: >
+    Generate a room description for a fog-shrouded valley between two
+    haunted locations.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: eerie, disorienting, supernatural fog, glimpses of spirits.
+    The fog is thick and seems alive. Visibility is poor.
+    Sounds are muffled and distorted. Shapes appear and vanish.
+    Include sensory details: cold mist, distant voices, sudden silences.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a mist/spirit creature for level {target_level}.
+    Room context: {room_description}
+
+    Types: lost souls, mist wraiths, shadow stalkers, fog beasts,
+    wandering ghosts, spectral predators.
+
+    Return JSON with mob details including behavior and personality.
+
+  item_prompt: >
+    Generate a haunted/spectral themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: spectral items, cursed trinkets, lost belongings,
+    shadow-touched objects, ghost-touched equipment.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - mist, fog, haze, shroud, veil
+    - ghost, spirit, specter, wraith, shadow
+    - cold, chill, damp, ethereal
+    - whisper, voice, echo, silence
+    - lost, wandering, haunted, cursed
+
+  forbidden_words:
+    - sunny, bright, clear, vibrant
+    - modern, technology, electric
+
+  sector_types: [field, hills, mist]
+
+  ambient_messages:
+    - "A voice whispers something unintelligible from the fog."
+    - "A shape appears in the mist, then dissolves."
+    - "The temperature drops suddenly, then returns to normal."
+    - "Footsteps echo nearby, though you see no one."
+    - "The mist seems to reach toward you, then recoils."
+    - "For a moment, you glimpse a face in the fog, then it's gone."
+
+  mob_templates: [mist_wraith, lost_soul, shadow_stalker, fog_beast]
+  item_templates: [ectoplasm, ghost_touched_trinket, cursed_pendant, spectral_essence]
+
+endpoints:
+  wraithhollow_east:
+    direction: east
+    coordinate:
+      x: 5
+      y: 0
+      z: 0
+  ebonwatch_west:
+    direction: west
+    coordinate:
+      x: 35
+      y: 3
+      z: 0
+
+waypoints:
+  - x: 12
+    y: 1
+    z: 0
+    name: "The Weeping Stones"
+    is_required: true
+  - x: 22
+    y: 2
+    z: 0
+    name: "Crossroads of Lost Souls"
+    is_required: true
+  - x: 30
+    y: 3
+    z: 0
+    name: "Shadow's Edge"
+    is_required: true
+
+generation:
+  min_rooms: 25
+  max_rooms: 40
+  difficulty_min: 10
+  difficulty_max: 18
+  mob_density: 0.5
+  item_density: 0.1
+  branch_chance: 0.3
+
+primary_sector_type: field

@@ -1,0 +1,302 @@
+# Crystaldeep Caverns Mobs
+# Crystal creatures, singers, and resonance entities
+
+zone_id: crystaldeep
+
+mobs:
+  # Common Creatures
+  - id: gem_golem
+    vnum: 1000
+    name: a gem golem
+    keywords: [golem, gem, crystal, construct]
+    short_description: A humanoid figure of fused crystals guards the path.
+    long_description: >
+      This construct is made from countless crystals fused into a
+      roughly humanoid form. Each movement produces a musical tone as
+      the crystals grind against each other. It was created by the
+      Crystal Singers to protect their sacred places.
+    level: 13
+    health: 200
+    strength: 18
+    dexterity: 8
+    constitution: 20
+    damage_dice: 2d8
+    damage_type: bludgeoning
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 280
+    abilities: [crystal_shards, sonic_pulse]
+    resistances: [piercing, slashing]
+    loot_table:
+      - template_id: crystal_core
+        drop_chance: 0.3
+      - template_id: resonance_gem
+        drop_chance: 0.2
+
+  - id: echo_stalker
+    vnum: 1001
+    name: an echo stalker
+    keywords: [stalker, echo, creature, cave]
+    short_description: A pale creature navigates by sound alone.
+    long_description: >
+      This eyeless predator has adapted to the caves' strange acoustics.
+      It hunts by echolocation, using the crystals' resonance to track
+      prey with perfect precision. Its pallid skin is translucent,
+      revealing the glow of digested crystal.
+    level: 12
+    health: 100
+    strength: 14
+    dexterity: 18
+    constitution: 12
+    damage_dice: 2d6
+    damage_type: piercing
+    armor_class: 15
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 5
+    experience_value: 200
+    abilities: [sonic_scream, disorienting_pulse]
+    loot_table:
+      - template_id: stalker_ear
+        drop_chance: 0.3
+
+  - id: memory_wraith
+    vnum: 1002
+    name: a memory wraith
+    keywords: [wraith, memory, ghost, crystal]
+    short_description: A ghostly figure emerges from a memory stone.
+    long_description: >
+      This entity is an echo of someone long dead, their memories
+      preserved in crystal and given a semblance of life. It relives
+      moments from its past existence, sometimes violently defending
+      against perceived threats from memories.
+    level: 13
+    health: 80
+    strength: 8
+    dexterity: 14
+    constitution: 10
+    intelligence: 16
+    damage_dice: 2d4
+    damage_type: psychic
+    armor_class: 14
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 220
+    abilities: [memory_flood, psychic_scream]
+    immunities: [physical]
+    loot_table:
+      - template_id: memory_shard
+        drop_chance: 0.4
+
+  - id: prismatic_elemental
+    vnum: 1003
+    name: a prismatic elemental
+    keywords: [elemental, prismatic, light, crystal]
+    short_description: A being of pure refracted light shimmers here.
+    long_description: >
+      This elemental is composed of pure light, refracted through the
+      crystal formations into a semi-solid form. It shifts through
+      every color of the spectrum, each hue corresponding to a
+      different magical effect.
+    level: 14
+    health: 120
+    strength: 10
+    dexterity: 18
+    constitution: 14
+    intelligence: 16
+    damage_dice: 2d6
+    damage_type: radiant
+    armor_class: 16
+    behavior_type: neutral
+    aggro_radius: 4
+    experience_value: 280
+    abilities: [prismatic_spray, blinding_flash, color_shift]
+    immunities: [radiant]
+    vulnerabilities: [necrotic]
+    loot_table:
+      - template_id: light_essence
+        drop_chance: 0.3
+      - template_id: prismatic_shard
+        drop_chance: 0.2
+
+  # Crystal Singers
+  - id: crystal_singer
+    vnum: 1010
+    name: a Crystal Singer
+    keywords: [singer, crystal, human, mystic]
+    short_description: A robed figure hums in harmony with the crystals.
+    long_description: >
+      The Crystal Singers are mystics who have learned to communicate
+      with the crystals through sound. Their voices can activate
+      dormant formations, unlock sealed chambers, and even heal wounds.
+      They dress in robes that shimmer like crystal.
+    level: 12
+    health: 90
+    strength: 8
+    dexterity: 12
+    constitution: 12
+    intelligence: 16
+    wisdom: 18
+    charisma: 16
+    damage_dice: 1d8
+    damage_type: thunder
+    armor_class: 13
+    behavior_type: neutral
+    aggro_radius: 4
+    experience_value: 180
+    abilities: [sonic_bolt, healing_harmony]
+    loot_table:
+      - template_id: singer_robe
+        drop_chance: 0.2
+
+  - id: crystal_tender
+    vnum: 1011
+    name: a crystal tender
+    keywords: [tender, crystal, gardener, caretaker]
+    short_description: A patient figure tends to crystal formations.
+    long_description: >
+      This Crystal Singer specializes in cultivating and nurturing
+      crystal growth. They spend years encouraging a single formation
+      to achieve its perfect form, singing to the crystals daily.
+    level: 10
+    health: 70
+    behavior_type: friendly
+    dialogue:
+      greeting: "Welcome to the garden. Please, do not disturb the young growths."
+      topics:
+        crystals: "Each crystal is unique, with its own voice. We learn to hear them, guide them."
+        garden: "These formations are centuries old. Some were tended by my predecessors' predecessors."
+
+  - id: crystal_miner
+    vnum: 1012
+    name: a crystal miner
+    keywords: [miner, crystal, worker]
+    short_description: A worker carefully extracts crystals from the walls.
+    long_description: >
+      Crystal mining is delicate work - too much force can shatter
+      a formation and disrupt the resonance of the entire network.
+      This miner uses specialized tools and techniques passed down
+      through generations.
+    level: 10
+    health: 80
+    strength: 14
+    dexterity: 12
+    constitution: 14
+    behavior_type: friendly
+    dialogue:
+      greeting: "Mind your step. One wrong move could bring the ceiling down."
+
+  - id: singer_elder
+    vnum: 1013
+    name: Elder Crystallis
+    keywords: [elder, crystallis, singer, leader]
+    short_description: An ancient singer radiates harmonic power.
+    long_description: >
+      Elder Crystallis has spent over a century learning the crystals'
+      songs. Their voice can shatter stone or heal mortal wounds, and
+      they claim to hear the thoughts of the Resonance itself. Their
+      body has begun to crystallize, gems growing from their skin.
+    level: 18
+    health: 200
+    behavior_type: friendly
+    dialogue:
+      greeting: "I heard your arrival in the harmonics. The Resonance is curious about you."
+      topics:
+        resonance: "It is the heart of these caves. All crystals sing in harmony with it. We serve it, and it protects us."
+        crystals: "Each crystal holds memories, power, secrets. We have barely scratched the surface of their potential."
+
+  - id: crystal_merchant
+    vnum: 1014
+    name: a crystal merchant
+    keywords: [merchant, crystal, trader]
+    short_description: A trader displays carefully selected crystals.
+    long_description: >
+      This merchant sells crystals harvested with permission from
+      the Singers. Each has been tested for quality and resonance,
+      ensuring they maintain their properties outside the caves.
+    level: 12
+    health: 100
+    behavior_type: friendly
+    shop:
+      markup: 1.3
+      markdown: 0.7
+      inventory:
+        - template_id: resonance_gem
+        - template_id: memory_crystal
+        - template_id: light_stone
+        - template_id: singing_crystal
+
+  # Guardians
+  - id: deep_crystal_guardian
+    vnum: 1020
+    name: a deep crystal guardian
+    keywords: [guardian, crystal, deep, ancient]
+    short_description: An ancient crystalline entity bars further passage.
+    long_description: >
+      This guardian is older than the Crystal Singers, created by the
+      Resonance itself to protect the deepest veins. Its form is
+      perfect geometry, and its power is tied directly to the heart
+      of the caves.
+    level: 16
+    health: 280
+    strength: 20
+    dexterity: 12
+    constitution: 22
+    intelligence: 14
+    damage_dice: 2d10
+    damage_type: force
+    armor_class: 19
+    behavior_type: aggressive
+    aggro_radius: 6
+    experience_value: 400
+    abilities: [resonance_blast, crystal_prison, harmonic_shield]
+    resistances: [all_physical]
+    loot_table:
+      - template_id: ancient_crystal
+        drop_chance: 0.3
+      - template_id: guardian_shard
+        drop_chance: 0.5
+
+  # Boss
+  - id: the_resonance
+    vnum: 1030
+    name: The Resonance
+    keywords: [resonance, crystal, boss, entity, heart]
+    short_description: A vast crystalline consciousness fills the chamber.
+    long_description: >
+      The Resonance is not a creature but a vast, crystalline intelligence
+      that has grown over millions of years. It is the collective
+      consciousness of every crystal in the caves, thinking thoughts
+      that span centuries. Its physical form is a massive, pulsing
+      crystal formation that seems almost alive. It may be the oldest
+      sentient being on this world.
+    level: 20
+    health: 800
+    strength: 10
+    dexterity: 6
+    constitution: 28
+    intelligence: 24
+    wisdom: 24
+    damage_dice: 4d8
+    damage_type: force
+    armor_class: 22
+    behavior_type: neutral
+    combat_style: tactician
+    aggro_radius: 10
+    experience_value: 3000
+    gold_min: 200
+    gold_max: 800
+    abilities: [harmonic_devastation, crystal_army, memory_assault, reality_warp, regeneration]
+    resistances: [all]
+    loot_table:
+      - template_id: resonance_heart
+        drop_chance: 1.0
+      - template_id: perfect_crystal
+        drop_chance: 0.5
+      - template_id: ancient_memory
+        drop_chance: 0.7
+    dialogue:
+      greeting: "WE HAVE KNOWN YOU WOULD COME. WE HAVE SEEN IT IN THE MEMORIES OF THOSE YET TO BE BORN."
+      topics:
+        purpose: "WE ARE THE SONG. WE ARE THE MEMORY. WE HAVE ALWAYS BEEN."

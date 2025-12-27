@@ -1,0 +1,179 @@
+# Character Races
+# ROM-inspired race definitions for LLM-MUD
+
+races:
+  # ==========================================================================
+  # Human - Versatile and adaptable
+  # ==========================================================================
+  - race_id: human
+    name: Human
+    description: >
+      Humans are the most common race, found in every corner of the world.
+      What they lack in specialized abilities, they make up for in
+      adaptability and determination. Humans can excel in any profession
+      and are welcome in most communities.
+    stat_modifiers:
+      # Humans get no stat bonuses - their bonus is versatility
+      strength: 0
+      dexterity: 0
+      constitution: 0
+      intelligence: 0
+      wisdom: 0
+      charisma: 0
+    racial_abilities:
+      - fast_learner  # Bonus XP
+      - versatile     # Can use any equipment
+    size: medium
+    speed_modifier: 100
+    infravision: false
+    darkvision: false
+    resistances: {}
+    languages:
+      - common
+    lifespan: average
+    # Proficiency skill bonuses - humans are versatile
+    proficiency_bonuses:
+      blacksmithing: 5
+      tailoring: 5
+      cooking: 5
+
+  # ==========================================================================
+  # Elf - Graceful and magical
+  # ==========================================================================
+  - race_id: elf
+    name: Elf
+    description: >
+      Ancient and graceful, Elves are attuned to magic and nature. Their
+      long lifespans grant them patience and wisdom beyond their years.
+      Elves excel at archery and magic, moving through the world with
+      an otherworldly grace.
+    stat_modifiers:
+      dexterity: 2
+      intelligence: 1
+      constitution: -1
+      strength: -1
+    racial_abilities:
+      - keen_senses    # Bonus to detect hidden
+      - magic_affinity # Bonus to mana regen
+      - sleep_immunity # Cannot be put to sleep
+    size: medium
+    speed_modifier: 110
+    infravision: true
+    darkvision: false
+    resistances:
+      charm: 30
+    languages:
+      - common
+      - elvish
+    lifespan: immortal
+    # Proficiency skill bonuses - elves excel at nature and magic
+    proficiency_bonuses:
+      herbalism: 10
+      enchanting: 10
+      foraging: 5
+
+  # ==========================================================================
+  # Dwarf - Stout and resilient
+  # ==========================================================================
+  - race_id: dwarf
+    name: Dwarf
+    description: >
+      Born of stone and fire, Dwarves are a hardy folk known for their
+      craftsmanship and combat prowess. They make their homes in great
+      mountain halls, mining precious metals and forging legendary
+      weapons. Dwarves are stubborn but loyal.
+    stat_modifiers:
+      constitution: 2
+      strength: 1
+      charisma: -1
+      dexterity: -1
+    racial_abilities:
+      - stonecunning   # Detect traps and secret doors in stone
+      - poison_resist  # Bonus vs poison
+      - hardy          # Bonus health regen
+    size: medium
+    speed_modifier: 85
+    infravision: true
+    darkvision: true
+    resistances:
+      poison: 25
+      magic: 10
+    languages:
+      - common
+      - dwarvish
+    lifespan: long
+    # Proficiency skill bonuses - dwarves are master miners and smiths
+    proficiency_bonuses:
+      mining: 15
+      blacksmithing: 10
+      armorsmithing: 10
+      jewelcrafting: 5
+
+  # ==========================================================================
+  # Halfling - Small and nimble
+  # ==========================================================================
+  - race_id: halfling
+    name: Halfling
+    description: >
+      Small in stature but large in spirit, Halflings are a cheerful folk
+      who love comfort and good food. Despite their peaceful nature, they
+      can be surprisingly brave when their homes are threatened. Their
+      small size lets them go unnoticed by larger foes.
+    stat_modifiers:
+      dexterity: 2
+      charisma: 1
+      strength: -2
+    racial_abilities:
+      - lucky          # Bonus to saves
+      - nimble         # Bonus to dodge
+      - brave          # Resist fear
+    size: small
+    speed_modifier: 90
+    infravision: false
+    darkvision: false
+    resistances:
+      fear: 30
+    languages:
+      - common
+      - halfling
+    lifespan: average
+    # Proficiency skill bonuses - halflings love food and comfort
+    proficiency_bonuses:
+      cooking: 15
+      foraging: 10
+      fishing: 5
+
+  # ==========================================================================
+  # Orc - Fierce and powerful
+  # ==========================================================================
+  - race_id: orc
+    name: Orc
+    description: >
+      Orcs are fierce warriors, their culture built around strength and
+      conquest. Though often misunderstood, Orcs who leave their tribes
+      can make loyal companions. Their raw physical power makes them
+      formidable in combat, though their temper can be their downfall.
+    stat_modifiers:
+      strength: 3
+      constitution: 1
+      intelligence: -2
+      charisma: -1
+    racial_abilities:
+      - blood_fury     # Bonus damage when wounded
+      - intimidating   # Bonus to intimidation
+      - savage_charge  # Extra damage on first attack
+    size: medium
+    speed_modifier: 105
+    infravision: true
+    darkvision: false
+    resistances:
+      cold: 15
+    languages:
+      - common
+      - orcish
+    lifespan: short
+    # Proficiency skill bonuses - orcs are skilled hunters and scavengers
+    proficiency_bonuses:
+      skinning: 15
+      leatherworking: 10
+      dismantling: 5

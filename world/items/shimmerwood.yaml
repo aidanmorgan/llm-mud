@@ -1,0 +1,279 @@
+# Shimmerwood Items
+# Fey-touched equipment and magical curiosities
+
+zone_id: shimmerwood
+
+items:
+  # Common Drops
+  - id: pixie_dust
+    name: pixie dust
+    keywords: [pixie, dust, fey, powder]
+    short_description: Glittering dust that sparkles with inner light.
+    long_description: >
+      This dust is shed from pixie wings. It glows faintly and can
+      be used in enchantments or thrown to temporarily daze creatures.
+    type: reagent
+    rarity: common
+    value: 20
+    weight: 0.1
+
+  - id: magic_mushroom
+    name: a magic mushroom
+    keywords: [magic, mushroom, fungus, fey]
+    short_description: A mushroom that glows with otherworldly light.
+    long_description: >
+      Grown in fairy rings, these mushrooms have various magical effects.
+      Some are beneficial, others hallucinogenic. Use with caution.
+    type: consumable
+    rarity: uncommon
+    value: 35
+    weight: 0.2
+    consumable_effect:
+      type: random_effect
+      duration: 300
+      description: Causes a random magical effect
+
+  - id: wisp_essence
+    name: wisp essence
+    keywords: [wisp, essence, light, ghost]
+    short_description: Captured light from a will-o-wisp.
+    long_description: >
+      This small bottle contains the luminous essence of a will-o-wisp.
+      It provides light and can be used to navigate treacherous paths.
+    type: reagent
+    rarity: uncommon
+    value: 50
+    weight: 0.1
+
+  - id: summer_flower
+    name: an eternal summer flower
+    keywords: [summer, flower, eternal, fey]
+    short_description: A flower that never wilts, warm to the touch.
+    long_description: >
+      This flower was picked from the Summer Court and retains its
+      beauty forever. It radiates gentle warmth and smells of honey.
+    type: reagent
+    rarity: uncommon
+    value: 40
+    weight: 0.1
+
+  - id: winter_rose
+    name: a frozen winter rose
+    keywords: [winter, rose, frozen, fey]
+    short_description: A rose encased in eternal ice, cold but alive.
+    long_description: >
+      This rose was picked from the Winter Court. It's perpetually
+      frozen yet somehow alive, its petals razor-sharp ice crystals.
+    type: reagent
+    rarity: uncommon
+    value: 40
+    weight: 0.1
+
+  - id: flower_petal
+    name: guardian flower petals
+    keywords: [flower, petal, guardian, poison]
+    short_description: Beautiful petals that hold deadly poison.
+    long_description: >
+      These colorful petals came from a flower guardian. They're
+      beautiful but coated in a contact poison useful for coatings.
+    type: reagent
+    rarity: common
+    value: 15
+    weight: 0.1
+
+  - id: ice_crystal
+    name: an ice sprite crystal
+    keywords: [ice, sprite, crystal, frozen]
+    short_description: A crystal of supernatural ice that never melts.
+    long_description: >
+      This crystal came from an ice sprite's body and remains frozen
+      regardless of temperature. It's valuable for cold enchantments.
+    type: reagent
+    rarity: uncommon
+    value: 45
+    weight: 0.2
+
+  - id: living_wood
+    name: living wood
+    keywords: [living, wood, branch, magical]
+    short_description: A branch that still grows though cut from its tree.
+    long_description: >
+      This wood was taken from a maze guardian. It still lives,
+      sprouting leaves and slowly growing. Perfect for magical staves.
+    type: reagent
+    rarity: rare
+    value: 100
+    weight: 1.0
+
+  # Vendor Items
+  - id: fey_wine
+    name: a bottle of fey wine
+    keywords: [fey, wine, bottle, drink]
+    short_description: Wine from the Feywild, shimmering with magic.
+    long_description: >
+      This wine was made in the Feywild and carries its magic. Drinking
+      it provides visions and enhanced perception for a short time.
+    type: consumable
+    rarity: uncommon
+    value: 100
+    weight: 1.0
+    consumable_effect:
+      type: buff
+      stat: perception
+      value: 3
+      duration: 600
+      description: Enhances perception for 10 minutes
+
+  - id: glamour_dust
+    name: glamour dust
+    keywords: [glamour, dust, illusion, fey]
+    short_description: Dust that creates temporary illusions.
+    long_description: >
+      When thrown, this dust creates convincing illusions. The fey
+      use it constantly. Effects last only minutes but can be useful.
+    type: consumable
+    rarity: uncommon
+    value: 75
+    weight: 0.1
+    consumable_effect:
+      type: create_illusion
+      duration: 180
+      description: Creates a minor illusion for 3 minutes
+
+  - id: moonflower
+    name: a moonflower
+    keywords: [moonflower, moon, flower, light]
+    short_description: A flower that blooms only under moonlight.
+    long_description: >
+      This flower opens at night, releasing a soft silver glow. It's
+      prized for night vision potions and lunar enchantments.
+    type: reagent
+    rarity: rare
+    value: 150
+    weight: 0.1
+
+  - id: feywild_map
+    name: a map of the Feywild
+    keywords: [feywild, map, navigation, fey]
+    short_description: A map that changes to show your location.
+    long_description: >
+      This magical map shows the Shimmerwood's current layout, which
+      shifts constantly. It updates as the paths change, invaluable
+      for navigation.
+    type: accessory
+    subtype: held
+    rarity: rare
+    value: 500
+    weight: 0.5
+    magical_properties:
+      - effect: navigation
+        value: 5
+        description: Greatly aids navigation in fey areas
+
+  - id: true_sight_charm
+    name: a charm of true sight
+    keywords: [true, sight, charm, vision]
+    short_description: A charm that sees through illusions.
+    long_description: >
+      This fey-crafted charm grants the ability to see through illusions
+      and glamours. Essential for navigating fey territories safely.
+    type: accessory
+    subtype: necklace
+    rarity: rare
+    value: 600
+    weight: 0.2
+    magical_properties:
+      - effect: see_invisible
+        value: 1
+        description: See invisible and illusory things
+
+  - id: iron_ward
+    name: an iron ward
+    keywords: [iron, ward, protection, fey]
+    short_description: A cold iron amulet that repels fey.
+    long_description: >
+      Fey creatures are repelled by cold iron. This amulet provides
+      protection against fey magic and their charms.
+    type: accessory
+    subtype: amulet
+    rarity: uncommon
+    value: 200
+    weight: 0.3
+    magical_properties:
+      - effect: fey_resistance
+        value: 5
+        description: Grants resistance to fey magic
+
+  # Boss Drops
+  - id: fey_lords_ring
+    name: The Fey Lord's Ring
+    keywords: [fey, lords, ring, legendary]
+    short_description: A ring of immense fey power.
+    long_description: >
+      This ring held the Fey Lord's authority over the Shimmerwood.
+      It grants the wearer influence over fey creatures and the
+      ability to bend reality slightly.
+    type: accessory
+    subtype: ring
+    rarity: legendary
+    value: 4000
+    weight: 0.1
+    level_requirement: 18
+    magical_properties:
+      - effect: charisma_bonus
+        value: 3
+        description: Grants +3 charisma
+      - effect: fey_command
+        value: 1
+        description: Can influence fey creatures
+
+  - id: crown_of_glamour
+    name: Crown of Glamour
+    keywords: [crown, glamour, illusion, legendary]
+    short_description: A crown that bends perception around the wearer.
+    long_description: >
+      This crown makes the wearer appear however they wish. It grants
+      perfect illusions and makes the wearer difficult to perceive
+      when they don't want to be seen.
+    type: armor
+    subtype: helmet
+    rarity: legendary
+    value: 4500
+    weight: 1.0
+    level_requirement: 18
+    armor_stats:
+      armor_bonus: 2
+      slot: head
+    magical_properties:
+      - effect: disguise_self
+        value: 1
+        description: Can change apparent appearance at will
+      - effect: stealth_bonus
+        value: 3
+        description: Grants +3 to stealth
+
+  - id: staff_of_seasons
+    name: Staff of Seasons
+    keywords: [staff, seasons, legendary, fey]
+    short_description: A staff that channels both Summer and Winter.
+    long_description: >
+      This staff was crafted when Summer and Winter were united under
+      one ruler. It channels both fire and ice, switching between
+      aspects at the wielder's will.
+    type: weapon
+    subtype: staff
+    rarity: legendary
+    value: 5500
+    weight: 4.0
+    level_requirement: 18
+    weapon_stats:
+      damage_dice: 2d6
+      damage_type: bludgeoning
+      to_hit_bonus: 3
+    magical_properties:
+      - effect: fire_or_cold_damage
+        value: 2d4
+        description: Deals fire or cold damage (wielder's choice)
+      - effect: intelligence_bonus
+        value: 2
+        description: Grants +2 intelligence

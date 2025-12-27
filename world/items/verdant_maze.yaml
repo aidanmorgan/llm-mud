@@ -1,0 +1,298 @@
+# The Verdant Maze Items
+# Plant-based equipment and nature magic materials
+
+zone_id: verdant_maze
+
+items:
+  # Common Drops
+  - id: living_vine
+    name: living vine
+    keywords: [living, vine, plant, moving]
+    short_description: A vine that continues to grow and move.
+    long_description: >
+      This vine was cut from a hedge crawler but refuses to die.
+      It slowly writhes and grows, useful for bindings or alchemy.
+    type: reagent
+    rarity: common
+    value: 15
+    weight: 0.3
+
+  - id: maze_thorn
+    name: maze thorns
+    keywords: [maze, thorn, sharp, poison]
+    short_description: Thorns that carry a mild toxin.
+    long_description: >
+      These thorns from the maze hedges are coated in a natural toxin.
+      They can be used to coat weapons or make poisons.
+    type: reagent
+    rarity: common
+    value: 20
+    weight: 0.1
+
+  - id: guardian_petal
+    name: guardian petals
+    keywords: [guardian, petal, flower, beautiful]
+    short_description: Beautiful petals with hidden danger.
+    long_description: >
+      These petals from a flower guardian are coated in toxic pollen.
+      Beautiful but deadly, useful in both poisons and perfumes.
+    type: reagent
+    rarity: uncommon
+    value: 35
+    weight: 0.1
+
+  - id: toxic_nectar
+    name: toxic nectar
+    keywords: [toxic, nectar, poison, sweet]
+    short_description: Sweet nectar that carries a lethal dose.
+    long_description: >
+      This nectar smells delicious but is extremely poisonous.
+      A single drop can kill a small creature. Handle with care.
+    type: reagent
+    rarity: uncommon
+    value: 50
+    weight: 0.2
+
+  - id: sprite_dust
+    name: sprite dust
+    keywords: [sprite, dust, fey, glitter]
+    short_description: Glittering dust from a maze sprite.
+    long_description: >
+      When maze sprites are destroyed, they leave this sparkling dust.
+      It has minor illusory properties and is used in confusion potions.
+    type: reagent
+    rarity: common
+    value: 25
+    weight: 0.1
+
+  - id: stolen_trinket
+    name: a stolen trinket
+    keywords: [stolen, trinket, sprite, random]
+    short_description: Something a sprite stole from a traveler.
+    long_description: >
+      Sprites collect shiny things from lost travelers. This could be
+      valuable or worthless - it depends on who they robbed.
+    type: treasure
+    rarity: uncommon
+    value: 40
+    weight: 0.2
+
+  - id: thorn_beast_hide
+    name: thorn beast hide
+    keywords: [thorn, beast, hide, leather]
+    short_description: Leather-like hide covered in thorns.
+    long_description: >
+      The hide of a thorn beast is tough and naturally armored.
+      It can be made into protective gear that damages attackers.
+    type: reagent
+    rarity: uncommon
+    value: 60
+    weight: 2.0
+
+  - id: poison_thorn
+    name: poison thorns
+    keywords: [poison, thorn, toxin, deadly]
+    short_description: Thorns dripping with potent venom.
+    long_description: >
+      These thorns from a thorn beast carry its natural venom.
+      They're useful for coating weapons with poison.
+    type: reagent
+    rarity: uncommon
+    value: 45
+    weight: 0.1
+
+  - id: mound_mulch
+    name: shambling mound mulch
+    keywords: [mound, mulch, compost, magical]
+    short_description: Magically rich plant matter.
+    long_description: >
+      The remains of a shambling mound make excellent magical fertilizer.
+      Plants grown in this soil become larger and more vigorous.
+    type: reagent
+    rarity: uncommon
+    value: 30
+    weight: 1.0
+
+  - id: absorbed_treasure
+    name: absorbed treasures
+    keywords: [absorbed, treasure, consumed, mixed]
+    short_description: Items absorbed by a shambling mound.
+    long_description: >
+      Shambling mounds absorb everything organic, including victims'
+      belongings. These items were recovered from such a creature.
+    type: treasure
+    rarity: rare
+    value: 100
+    weight: 1.5
+
+  - id: heartwood
+    name: heartwood
+    keywords: [heartwood, tree, ancient, magical]
+    short_description: Wood from a walking tree's heart.
+    long_description: >
+      The heartwood of a treant contains immense natural magic.
+      It can be carved into powerful wands or used in druidic rituals.
+    type: reagent
+    rarity: rare
+    value: 200
+    weight: 2.0
+
+  - id: living_branch
+    name: a living branch
+    keywords: [living, branch, tree, growing]
+    short_description: A branch that still lives and grows.
+    long_description: >
+      Cut from a walking tree, this branch continues to live.
+      It could grow into a new tree if planted properly.
+    type: reagent
+    rarity: uncommon
+    value: 75
+    weight: 1.0
+
+  - id: worn_equipment
+    name: worn equipment
+    keywords: [worn, equipment, old, traveler]
+    short_description: Equipment from a lost traveler.
+    long_description: >
+      This gear belonged to someone who got lost in the maze and
+      went mad. It's serviceable but shows signs of long use.
+    type: armor
+    subtype: random
+    rarity: common
+    value: 50
+    weight: 3.0
+
+  - id: maze_journal
+    name: a maze journal
+    keywords: [maze, journal, notes, lost]
+    short_description: Notes from someone trying to escape the maze.
+    long_description: >
+      This journal contains desperate notes about maze navigation.
+      The later entries become increasingly frantic and confused.
+    type: treasure
+    rarity: rare
+    value: 150
+    weight: 0.5
+    magical_properties:
+      - effect: navigation_hints
+        value: 1
+        description: Contains useful navigation information
+
+  # Vendor Items
+  - id: healing_bloom
+    name: a healing bloom
+    keywords: [healing, bloom, flower, restorative]
+    short_description: A flower that heals when consumed.
+    long_description: >
+      This flower's petals have powerful healing properties. Eating
+      them restores health and cures minor ailments.
+    type: consumable
+    rarity: uncommon
+    value: 100
+    weight: 0.1
+    consumable_effect:
+      type: heal
+      value: 30
+      description: Heals 30 health points
+
+  - id: courage_flower
+    name: a courage flower
+    keywords: [courage, flower, bravery, buff]
+    short_description: A flower that grants temporary courage.
+    long_description: >
+      Inhaling this flower's scent banishes fear and grants courage.
+      Warriors use them before battle to steady their nerves.
+    type: consumable
+    rarity: uncommon
+    value: 80
+    weight: 0.1
+    consumable_effect:
+      type: buff
+      stat: courage
+      value: 5
+      duration: 300
+      description: Immunity to fear for 5 minutes
+
+  - id: truth_blossom
+    name: a truth blossom
+    keywords: [truth, blossom, flower, honest]
+    short_description: A flower that compels honesty.
+    long_description: >
+      When this flower blooms near someone, they find it difficult
+      to lie. Useful in negotiations or interrogations.
+    type: consumable
+    rarity: rare
+    value: 200
+    weight: 0.1
+    consumable_effect:
+      type: aura
+      value: 1
+      duration: 120
+      description: Makes lying difficult for those nearby
+
+  # Boss Drops
+  - id: heart_seed
+    name: Seed of the Maze Heart
+    keywords: [heart, seed, legendary, plant]
+    short_description: A seed from the maze's living core.
+    long_description: >
+      This seed contains the potential to grow a new Maze Heart.
+      Planting it would create a new living maze over centuries,
+      or its power could be harnessed for other purposes.
+    type: reagent
+    rarity: legendary
+    value: 5000
+    weight: 0.5
+    magical_properties:
+      - effect: create_maze
+        value: 1
+        description: Can create a living maze if planted
+
+  - id: maze_map
+    name: The Living Map
+    keywords: [maze, map, living, legendary]
+    short_description: A map that shows the maze's current layout.
+    long_description: >
+      This map is connected to the Maze Heart and updates constantly
+      to show the maze's current configuration. Invaluable for
+      navigation, it also shows the location of treasures.
+    type: accessory
+    subtype: held
+    rarity: legendary
+    value: 4000
+    weight: 0.5
+    magical_properties:
+      - effect: perfect_navigation
+        value: 1
+        description: Always shows the way
+      - effect: detect_treasure
+        value: 1
+        description: Shows nearby valuable items
+
+  - id: verdant_crown
+    name: Crown of the Verdant King
+    keywords: [verdant, crown, legendary, nature]
+    short_description: A crown of living, flowering vines.
+    long_description: >
+      This crown was worn by the legendary Verdant King who first
+      tamed the maze. It grants the wearer authority over plants
+      and the ability to command the maze's guardians.
+    type: armor
+    subtype: helmet
+    rarity: legendary
+    value: 5500
+    weight: 1.0
+    level_requirement: 15
+    armor_stats:
+      armor_bonus: 2
+      slot: head
+    magical_properties:
+      - effect: plant_command
+        value: 1
+        description: Can command plant creatures
+      - effect: wisdom_bonus
+        value: 3
+        description: Grants +3 wisdom
+      - effect: regeneration
+        value: 1
+        description: Slowly regenerates health

@@ -1,0 +1,25 @@
+[project]
+name = "llm-mud-web"
+version = "0.1.0"
+description = "HTMX Web Client for LLM-MUD"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "jinja2>=3.1",
+    "python-multipart>=0.0.9",
+    "aiosqlite>=0.19",
+    "bcrypt>=4.1",
+    "python-jose[cryptography]>=3.3",
+    "alembic>=1.13",
+    "llm-mud-core",
+    "llm-mud-game",
+    "llm-mud-network",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/web"]

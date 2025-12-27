@@ -1,0 +1,246 @@
+# Shimmerwood Rooms
+# Fey-touched forest with shifting paths
+
+zone_id: shimmerwood
+
+rooms:
+  # Entry Area
+  - id: shimmerwood_edge
+    vnum: 2100
+    name: Edge of the Shimmerwood
+    short_description: The forest ahead shimmers with unnatural beauty.
+    long_description: >
+      The border of the Shimmerwood is unmistakable - ordinary trees give
+      way to ones that seem to glow with inner light. Colors are more
+      vivid here, sounds more musical. A path leads in, but whether it
+      leads back out is another matter entirely.
+    exits:
+      north:
+        destination: twilight_glade
+        description: A path of soft grass leads into the forest.
+      south:
+        description: The mundane world lies behind you.
+        flags: [zone_exit]
+    sector_type: forest
+    flags: [safe]
+
+  - id: twilight_glade
+    vnum: 2101
+    name: Twilight Glade
+    short_description: Perpetual dusk fills this peaceful glade.
+    long_description: >
+      The light here is that of eternal twilight, neither day nor night.
+      Fireflies dance between flowers that should not bloom together.
+      The grass is impossibly soft, and time seems to slow.
+    exits:
+      north:
+        destination: mushroom_ring
+        description: A circle of mushrooms glows ahead.
+      south:
+        destination: shimmerwood_edge
+        description: The edge of the forest lies behind you.
+      east:
+        destination: dancing_lights
+        description: Lights flicker between the trees.
+      west:
+        destination: whispering_pool
+        description: The sound of water trickles from the west.
+    sector_type: forest
+    flags: [fey_touched]
+    mob_spawns:
+      - mob_id: pixie_swarm
+        max_count: 2
+        respawn_time: 300
+
+  - id: mushroom_ring
+    vnum: 2102
+    name: Mushroom Ring
+    short_description: A perfect circle of giant mushrooms.
+    long_description: >
+      Massive mushrooms form a perfect circle here, their caps large
+      enough to sit upon. Fey creatures use these rings as meeting
+      places and doorways to the Feywild. Standing in the center
+      feels... significant.
+    exits:
+      south:
+        destination: twilight_glade
+        description: The twilight glade lies to the south.
+      north:
+        destination: fey_crossroads
+        description: The path continues deeper into the forest.
+    sector_type: forest
+    flags: [fey_touched, portal_possible]
+    mob_spawns:
+      - mob_id: mushroom_sprite
+        max_count: 3
+        respawn_time: 360
+    npcs:
+      - mob_id: traveling_fey
+        spawn_chance: 0.3
+
+  - id: dancing_lights
+    vnum: 2103
+    name: Path of Dancing Lights
+    short_description: Will-o-wisps lead the way... somewhere.
+    long_description: >
+      Ethereal lights dance between the trees here, leading travelers
+      deeper into the forest. Whether they guide or mislead depends
+      entirely on their mood. Some are helpful; others lead to doom.
+    exits:
+      west:
+        destination: twilight_glade
+        description: The twilight glade lies to the west.
+      east:
+        destination: summer_court_garden
+        description: A warm glow emanates from the east.
+    sector_type: forest
+    flags: [fey_touched]
+    mob_spawns:
+      - mob_id: will_o_wisp
+        max_count: 3
+        respawn_time: 480
+
+  - id: whispering_pool
+    vnum: 2104
+    name: The Whispering Pool
+    short_description: A pool that reflects impossible things.
+    long_description: >
+      This pool shows not your reflection, but glimpses of other times
+      and places. The water whispers secrets to those who listen, though
+      understanding them is another matter. Fey sometimes come here to
+      see their futures.
+    exits:
+      east:
+        destination: twilight_glade
+        description: The glade lies to the east.
+      west:
+        destination: winter_court_grove
+        description: A chill emanates from the west.
+    sector_type: water
+    flags: [fey_touched, magical]
+    item_spawns:
+      - template_id: pool_water
+        chance: 0.5
+
+  - id: fey_crossroads
+    vnum: 2105
+    name: Fey Crossroads
+    short_description: Paths branch in impossible directions.
+    long_description: >
+      This crossroads has more paths leading from it than should be
+      geometrically possible. Some paths go up into the trees, others
+      seem to lead underground, and at least one appears to go sideways
+      through reality itself.
+    exits:
+      south:
+        destination: mushroom_ring
+        description: The mushroom ring lies to the south.
+      north:
+        destination: ancient_tree
+        description: An impossibly large tree rises ahead.
+      east:
+        destination: summer_court_garden
+        description: Warm light beckons from the east.
+      west:
+        destination: winter_court_grove
+        description: Cold mist drifts from the west.
+    sector_type: forest
+    flags: [fey_touched]
+    npcs:
+      - mob_id: fey_merchant
+        spawn_chance: 1.0
+
+  - id: summer_court_garden
+    vnum: 2106
+    name: Summer Court Garden
+    short_description: Eternal summer blooms in this garden.
+    long_description: >
+      This garden is a fragment of the Summer Court, warm and bright
+      despite the forest's twilight. Flowers of impossible beauty bloom
+      eternally, and the air is thick with intoxicating perfume. Summer
+      fey dance here, beautiful and terrible.
+    exits:
+      west:
+        destination: fey_crossroads
+        description: The crossroads lies to the west.
+      south:
+        destination: dancing_lights
+        description: Dancing lights lead south.
+    sector_type: forest
+    flags: [fey_touched, summer_court]
+    mob_spawns:
+      - mob_id: summer_fey
+        max_count: 2
+        respawn_time: 480
+      - mob_id: flower_sprite
+        max_count: 3
+        respawn_time: 300
+
+  - id: winter_court_grove
+    vnum: 2107
+    name: Winter Court Grove
+    short_description: Eternal winter grips this frozen grove.
+    long_description: >
+      Ice and snow cover this grove despite the forest around it. The
+      trees here are bare and crystalline, beautiful in their frozen
+      death. Winter fey watch from the shadows, their beauty cold
+      and merciless.
+    exits:
+      east:
+        destination: fey_crossroads
+        description: The crossroads lies to the east.
+      south:
+        destination: whispering_pool
+        description: The whispering pool lies to the south.
+    sector_type: forest
+    flags: [fey_touched, winter_court, cold]
+    mob_spawns:
+      - mob_id: winter_fey
+        max_count: 2
+        respawn_time: 480
+      - mob_id: ice_sprite
+        max_count: 3
+        respawn_time: 300
+
+  - id: ancient_tree
+    vnum: 2108
+    name: The Ancient Tree
+    short_description: A tree of impossible age and size.
+    long_description: >
+      This tree is so large it creates its own clearing. Its trunk
+      could contain a castle, and its branches scrape the stars.
+      Fey creatures of all courts come here to treat and trade,
+      for this is neutral ground.
+    exits:
+      south:
+        destination: fey_crossroads
+        description: The crossroads lies to the south.
+      up:
+        destination: fey_lord_court
+        description: A spiral stair leads up into the tree.
+    sector_type: forest
+    flags: [fey_touched, sanctuary]
+    npcs:
+      - mob_id: ancient_dryad
+        spawn_chance: 1.0
+
+  - id: fey_lord_court
+    vnum: 2109
+    name: The Fey Lord's Court
+    short_description: A throne of living wood awaits its master.
+    long_description: >
+      Within the ancient tree, a court has grown from the living wood.
+      A throne of twisted branches dominates the chamber, and the
+      walls shimmer with contained magic. The Fey Lord rules from
+      here, dispensing capricious justice to mortal and fey alike.
+    exits:
+      down:
+        destination: ancient_tree
+        description: The spiral stair leads down.
+    sector_type: indoor
+    flags: [boss_room, fey_touched]
+    mob_spawns:
+      - mob_id: fey_lord
+        max_count: 1
+        respawn_time: 3600
+        flags: [boss]

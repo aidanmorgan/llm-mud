@@ -1,0 +1,400 @@
+# Obsidian Depths Mobs
+# Volcanic creatures and fire cultists
+
+zone_id: obsidian_depths
+
+mobs:
+  # Common Enemies
+  - id: obsidian_spider
+    vnum: 2600
+    name: an obsidian spider
+    keywords: [obsidian, spider, glass, arachnid]
+    short_description: A spider made of volcanic glass skitters across the stone.
+    long_description: >
+      These creatures are born from the volcanic glass itself, their
+      bodies sharp and reflective. They spin webs of crystallized lava
+      and their bite injects molten venom.
+    level: 18
+    health: 100
+    strength: 14
+    dexterity: 18
+    constitution: 12
+    damage_dice: 1d8
+    damage_type: piercing
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 300
+    abilities: [obsidian_bite, glass_web, shard_spray]
+    immunities: [fire]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: obsidian_fang
+        drop_chance: 0.35
+      - template_id: glass_silk
+        drop_chance: 0.25
+
+  - id: fire_elemental
+    vnum: 2601
+    name: a fire elemental
+    keywords: [fire, elemental, flame, living]
+    short_description: A pillar of living flame dances across the rocks.
+    long_description: >
+      Born from the volcanic fires below, these elementals are pure
+      destruction. They set alight anything they touch and leave
+      trails of burning stone in their wake.
+    level: 19
+    health: 110
+    strength: 14
+    dexterity: 18
+    constitution: 14
+    damage_dice: 2d6
+    damage_type: fire
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 340
+    abilities: [fire_touch, flame_burst, heat_aura]
+    immunities: [fire, poison]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: fire_essence
+        drop_chance: 0.4
+
+  - id: magma_mephit
+    vnum: 2602
+    name: a magma mephit
+    keywords: [magma, mephit, small, elemental]
+    short_description: A small creature of molten rock flits about.
+    long_description: >
+      These minor elementals are common near lava flows. Individually
+      weak, they often attack in groups and delight in pushing victims
+      toward the magma. Their bodies are painfully hot.
+    level: 17
+    health: 60
+    strength: 10
+    dexterity: 16
+    constitution: 12
+    damage_dice: 1d6
+    damage_type: fire
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 260
+    abilities: [magma_spit, heat_metal, death_burst]
+    immunities: [fire]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: mephit_core
+        drop_chance: 0.3
+
+  - id: fire_cultist
+    vnum: 2603
+    name: a fire cultist
+    keywords: [fire, cultist, human, fanatic]
+    short_description: A robed figure with burn-scarred skin chants prayers.
+    long_description: >
+      The fire cult worships the Molten King, seeking to wake him from
+      his slumber. This cultist has scarred themselves with ritual
+      burns and wields fire magic with fanatical devotion.
+    level: 18
+    health: 90
+    strength: 12
+    dexterity: 14
+    constitution: 14
+    intelligence: 16
+    damage_dice: 1d8
+    damage_type: fire
+    armor_class: 13
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 320
+    abilities: [fire_bolt, flame_shield, fanatical_devotion]
+    resistances: [fire]
+    loot_table:
+      - template_id: cult_robe
+        drop_chance: 0.3
+      - template_id: fire_crystal
+        drop_chance: 0.2
+
+  - id: cult_overseer
+    vnum: 2604
+    name: a cult overseer
+    keywords: [cult, overseer, leader, cultist]
+    short_description: A heavily tattooed cultist commands lesser members.
+    long_description: >
+      Overseers lead the cult's operations, commanding both cultists
+      and summoned fire creatures. Their bodies are covered in magical
+      fire tattoos that grant them power.
+    level: 20
+    health: 130
+    strength: 14
+    dexterity: 14
+    constitution: 16
+    intelligence: 18
+    damage_dice: 2d6
+    damage_type: fire
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 400
+    abilities: [commanding_presence, fire_nova, summon_elemental]
+    immunities: [fire]
+    loot_table:
+      - template_id: overseer_tattoo
+        drop_chance: 0.25
+      - template_id: command_rod
+        drop_chance: 0.15
+
+  - id: salamander
+    vnum: 2605
+    name: a salamander
+    keywords: [salamander, fire, serpent, creature]
+    short_description: A serpentine creature of living flame coils nearby.
+    long_description: >
+      Salamanders are intelligent fire creatures that dwell in the
+      hottest regions. They are masterful smiths and sometimes ally
+      with the cult, but just as often work independently.
+    level: 21
+    health: 150
+    strength: 18
+    dexterity: 14
+    constitution: 16
+    damage_dice: 2d8
+    damage_type: fire
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 440
+    abilities: [tail_whip, fire_spear, heat_aura, forge_strike]
+    immunities: [fire]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: salamander_scale
+        drop_chance: 0.35
+      - template_id: fire_spear
+        drop_chance: 0.15
+
+  - id: fire_snake
+    vnum: 2606
+    name: a fire snake
+    keywords: [fire, snake, serpent, elemental]
+    short_description: A serpent made of living flame slithers past.
+    long_description: >
+      These elemental serpents hunt anything organic, consuming it
+      in their fiery coils. They leave trails of burned stone and
+      can squeeze through any crack.
+    level: 18
+    health: 80
+    strength: 12
+    dexterity: 18
+    constitution: 12
+    damage_dice: 1d8
+    damage_type: fire
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 300
+    abilities: [constrict, fire_bite, flame_trail]
+    immunities: [fire, poison]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: fire_fang
+        drop_chance: 0.3
+
+  - id: crystal_guardian
+    vnum: 2607
+    name: a crystal guardian
+    keywords: [crystal, guardian, construct, fire]
+    short_description: A construct of fire crystals blocks the way.
+    long_description: >
+      Created by the cult to guard their fire crystal harvests, these
+      constructs are powered by the very crystals they protect. They
+      emit intense heat and reflect fire magic.
+    level: 19
+    health: 140
+    strength: 18
+    dexterity: 10
+    constitution: 18
+    damage_dice: 2d6
+    damage_type: fire
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 360
+    abilities: [crystal_slam, fire_reflect, heat_pulse]
+    immunities: [fire, poison, psychic]
+    loot_table:
+      - template_id: fire_crystal
+        drop_chance: 0.5
+      - template_id: guardian_core
+        drop_chance: 0.2
+
+  - id: flame_guardian
+    vnum: 2608
+    name: a flame guardian
+    keywords: [flame, guardian, elemental, sentinel]
+    short_description: A humanoid figure of pure flame stands sentinel.
+    long_description: >
+      These powerful fire elementals are bound to guard the sacred
+      path to the temple. They attack without mercy and cannot be
+      reasoned with - their binding allows no negotiation.
+    level: 20
+    health: 130
+    strength: 16
+    dexterity: 16
+    constitution: 16
+    damage_dice: 2d6
+    damage_type: fire
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 380
+    abilities: [flame_blade, fire_shield, burning_grip]
+    immunities: [fire, poison]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: flame_essence
+        drop_chance: 0.4
+
+  - id: temple_guardian
+    vnum: 2609
+    name: a temple guardian
+    keywords: [temple, guardian, construct, obsidian]
+    short_description: An obsidian golem guards the temple entrance.
+    long_description: >
+      These massive constructs are forged from obsidian and animated
+      with fire magic. They have guarded the temple for centuries and
+      will continue until destroyed.
+    level: 21
+    health: 180
+    strength: 20
+    dexterity: 8
+    constitution: 22
+    damage_dice: 2d8
+    damage_type: bludgeoning
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 420
+    abilities: [obsidian_slam, shard_explosion, magma_blood]
+    immunities: [fire, poison, psychic]
+    loot_table:
+      - template_id: obsidian_shard
+        drop_chance: 0.5
+      - template_id: golem_heart
+        drop_chance: 0.2
+
+  - id: fire_priest
+    vnum: 2610
+    name: a fire priest
+    keywords: [fire, priest, cultist, holy]
+    short_description: A robed priest channels divine fire.
+    long_description: >
+      The priests of the Molten King wield divine fire magic, believing
+      themselves to channel the sleeping god's power. They lead rituals
+      designed to wake their master.
+    level: 22
+    health: 120
+    strength: 12
+    dexterity: 14
+    constitution: 14
+    intelligence: 18
+    wisdom: 18
+    damage_dice: 2d8
+    damage_type: fire
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 460
+    abilities: [divine_fire, flame_heal, pillar_of_fire, fire_blessing]
+    immunities: [fire]
+    loot_table:
+      - template_id: priest_vestments
+        drop_chance: 0.3
+      - template_id: holy_fire_symbol
+        drop_chance: 0.2
+
+  # NPCs
+  - id: prisoner_npc
+    vnum: 2650
+    name: a captured prisoner
+    keywords: [prisoner, captive, victim, human]
+    short_description: A prisoner in chains pleads for rescue.
+    long_description: >
+      This poor soul was captured by the cult for sacrifice. They beg
+      for rescue and can provide information about the cult's plans
+      if freed.
+    level: 5
+    health: 40
+    behavior_type: friendly
+    dialogue:
+      greeting: "Please, help me! They're going to sacrifice us to wake some sleeping monster!"
+      topics:
+        cult: "They worship something deep below - a giant made of fire. They think feeding it souls will wake it."
+        king: "The Molten King, they call it. It's been sleeping for ages. They're getting close to waking it."
+        escape: "The keys... the overseer has them. Please, don't leave us here!"
+
+  - id: high_priest
+    vnum: 2651
+    name: High Priest Emberwrath
+    keywords: [emberwrath, high, priest, leader]
+    short_description: The cult's leader radiates an aura of intense heat.
+    long_description: >
+      Emberwrath leads the fire cult with fanatical devotion. His body
+      has been transformed by years of fire magic, his skin glowing
+      like embers. He will not rest until the Molten King awakens.
+    level: 24
+    health: 160
+    behavior_type: aggressive
+    dialogue:
+      greeting: "An intruder in the sacred halls! You will fuel the awakening!"
+      topics:
+        king: "Soon, the Molten King will rise! His fire will cleanse this world of weakness!"
+        faith: "Through fire, we are purified. Through the King's wrath, we are reborn!"
+
+  # Boss
+  - id: molten_king
+    vnum: 2699
+    name: The Molten King
+    keywords: [molten, king, boss, giant, fire]
+    short_description: A giant of living magma rises from a throne of fire.
+    long_description: >
+      The Molten King is an ancient fire giant who ruled these depths
+      millennia ago. Imprisoned rather than destroyed, he has slumbered
+      on his volcanic throne for eons. The cult's rituals have stirred
+      him, and he is NOT grateful to be awakened. His body is living
+      lava, his crown a ring of eternal flame, and his rage is volcanic.
+    level: 28
+    health: 1200
+    strength: 30
+    dexterity: 10
+    constitution: 28
+    intelligence: 16
+    wisdom: 14
+    charisma: 18
+    damage_dice: 4d10
+    damage_type: fire
+    armor_class: 21
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 12
+    experience_value: 5000
+    gold_min: 500
+    gold_max: 1500
+    abilities: [volcanic_eruption, magma_wave, meteor_slam, inferno_aura, summon_fire_elementals]
+    immunities: [fire, poison]
+    resistances: [physical]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: molten_crown
+        drop_chance: 0.7
+      - template_id: kings_flame
+        drop_chance: 0.5
+      - template_id: heart_of_the_volcano
+        drop_chance: 0.8
+    dialogue:
+      greeting: "WHO DARES DISTURB THE MOLTEN KING?! I WILL TURN YOUR BONES TO ASH!"
+      topics:
+        sleep: "I WAS IMPRISONED, NOT SLEEPING! AND NOW I SHALL HAVE MY VENGEANCE!"
+        cult: "THESE FOOLS THOUGHT TO CONTROL ME. THEY WILL BURN FIRST. THEN THE WORLD."

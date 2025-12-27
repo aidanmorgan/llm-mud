@@ -1,0 +1,438 @@
+# The Sunken Fleet Items
+# Naval treasures and underwater equipment
+
+zone_id: sunken_fleet
+
+items:
+  # Common Drops
+  - id: sailor_trinket
+    name: a sailor's trinket
+    keywords: [sailor, trinket, personal, memento]
+    short_description: A personal item from a drowned sailor.
+    long_description: >
+      This small item - a locket, coin, or charm - belonged to a
+      sailor who went down with the fleet. It carries memories of
+      a life ended too soon.
+    type: treasure
+    rarity: common
+    value: 15
+    weight: 0.1
+
+  - id: corroded_coin
+    name: corroded coins
+    keywords: [corroded, coins, money, old]
+    short_description: Ancient coins covered in sea growth.
+    long_description: >
+      These coins have been underwater for centuries. They're still
+      valuable, though the corrosion makes their origin hard to
+      determine.
+    type: treasure
+    rarity: common
+    value: 25
+    weight: 0.2
+
+  - id: shark_tooth
+    name: a shark tooth
+    keywords: [shark, tooth, sharp, trophy]
+    short_description: A razor-sharp tooth from a reef shark.
+    long_description: >
+      This tooth is valued as a trophy and crafting material. It
+      never loses its edge and is useful for making weapons.
+    type: reagent
+    rarity: common
+    value: 20
+    weight: 0.1
+
+  - id: shark_fin
+    name: a shark fin
+    keywords: [shark, fin, trophy, material]
+    short_description: A fin from a reef shark.
+    long_description: >
+      Shark fins are prized for various purposes, from cooking to
+      alchemy. This one is well-preserved despite its time underwater.
+    type: reagent
+    rarity: uncommon
+    value: 50
+    weight: 0.5
+
+  - id: eel_skin
+    name: moray eel skin
+    keywords: [eel, skin, leather, slippery]
+    short_description: Flexible skin from a giant moray eel.
+    long_description: >
+      This skin is incredibly flexible and naturally waterproof.
+      It's useful for making underwater equipment and armor.
+    type: reagent
+    rarity: uncommon
+    value: 60
+    weight: 1.0
+
+  - id: gold_coins
+    name: ancient gold coins
+    keywords: [gold, coins, treasure, ancient]
+    short_description: A handful of gold coins from the sunken fleet.
+    long_description: >
+      These gold coins are from the fleet's treasure holds. They bear
+      the marks of empires that no longer exist but gold is eternal.
+    type: treasure
+    rarity: uncommon
+    value: 100
+    weight: 0.3
+
+  - id: guardian_cutlass
+    name: a guardian's cutlass
+    keywords: [guardian, cutlass, sword, treasure]
+    short_description: A sword that guards treasure even in death.
+    long_description: >
+      This cutlass belonged to a treasure guardian. It still carries
+      some of its owner's obsessive protectiveness.
+    type: weapon
+    subtype: cutlass
+    rarity: uncommon
+    value: 200
+    weight: 3.0
+    level_requirement: 12
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: slashing
+      to_hit_bonus: 1
+    magical_properties:
+      - effect: treasure_sense
+        value: 1
+        description: Helps locate nearby treasure
+
+  - id: crab_shell
+    name: giant crab shell
+    keywords: [crab, shell, armor, hard]
+    short_description: A section of shell from a giant crab.
+    long_description: >
+      This shell is incredibly hard and can be fashioned into armor
+      or shields. It's naturally resistant to crushing attacks.
+    type: reagent
+    rarity: uncommon
+    value: 45
+    weight: 3.0
+
+  - id: crab_meat
+    name: giant crab meat
+    keywords: [crab, meat, food, delicacy]
+    short_description: Delicious meat from a giant crab.
+    long_description: >
+      Despite coming from a monster, this meat is delicious. It can
+      be eaten for sustenance or sold to gourmets.
+    type: consumable
+    rarity: common
+    value: 30
+    weight: 1.0
+    consumable_effect:
+      type: heal
+      value: 15
+      description: Heals 15 health and satisfies hunger
+
+  - id: marine_medallion
+    name: a marine medallion
+    keywords: [marine, medallion, military, naval]
+    short_description: A medal of service from a naval marine.
+    long_description: >
+      This medallion marked its wearer as a marine - an elite naval
+      soldier. It still carries some martial authority.
+    type: accessory
+    subtype: necklace
+    rarity: uncommon
+    value: 120
+    weight: 0.2
+    magical_properties:
+      - effect: strength_bonus
+        value: 1
+        description: Grants +1 strength
+
+  - id: spectral_blade
+    name: a spectral blade
+    keywords: [spectral, blade, ghost, sword]
+    short_description: A sword that phases between solid and ghostly.
+    long_description: >
+      This blade sometimes becomes incorporeal, allowing it to
+      strike spirits and pass through armor.
+    type: weapon
+    subtype: shortsword
+    rarity: rare
+    value: 400
+    weight: 2.0
+    level_requirement: 14
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: necrotic
+      to_hit_bonus: 2
+    magical_properties:
+      - effect: ghost_touch
+        value: 1
+        description: Can harm incorporeal creatures
+
+  - id: officer_signet
+    name: an officer's signet ring
+    keywords: [officer, signet, ring, authority]
+    short_description: A ring bearing naval rank.
+    long_description: >
+      This signet ring marked its wearer as a naval officer. It still
+      carries authority that even the dead recognize.
+    type: accessory
+    subtype: ring
+    rarity: uncommon
+    value: 180
+    weight: 0.1
+    magical_properties:
+      - effect: charisma_bonus
+        value: 1
+        description: Grants +1 charisma
+
+  - id: naval_compass
+    name: a spectral compass
+    keywords: [naval, compass, navigation, ghost]
+    short_description: A compass that points to what you seek.
+    long_description: >
+      This compass no longer points north. Instead, it points to
+      whatever the bearer most desires to find.
+    type: accessory
+    subtype: held
+    rarity: rare
+    value: 350
+    weight: 0.3
+    magical_properties:
+      - effect: locate_object
+        value: 1
+        description: Points to sought items
+
+  - id: battle_remnant
+    name: battle remnants
+    keywords: [battle, remnant, mixed, debris]
+    short_description: Debris from the eternal ghost battle.
+    long_description: >
+      Pieces of ghostly weapons, armor fragments, and other debris
+      from the battling ghosts. Some pieces retain spectral energy.
+    type: treasure
+    rarity: common
+    value: 35
+    weight: 0.5
+
+  - id: guard_insignia
+    name: an admiral's guard insignia
+    keywords: [guard, insignia, elite, badge]
+    short_description: The badge of the admiral's personal guard.
+    long_description: >
+      Only the finest soldiers wore this badge. It grants authority
+      over lesser spirits and marks the bearer as elite.
+    type: accessory
+    subtype: trinket
+    rarity: rare
+    value: 250
+    weight: 0.2
+    magical_properties:
+      - effect: undead_authority
+        value: 2
+        description: Grants authority over lesser undead
+
+  - id: spectral_shield
+    name: a spectral shield
+    keywords: [spectral, shield, ghost, defense]
+    short_description: A shield that blocks both physical and spiritual attacks.
+    long_description: >
+      This shield phases between solid and ghostly, able to block
+      attacks from both the living and the dead.
+    type: armor
+    subtype: shield
+    rarity: rare
+    value: 400
+    weight: 6.0
+    level_requirement: 15
+    armor_stats:
+      armor_bonus: 2
+      slot: off_hand
+    magical_properties:
+      - effect: necrotic_resistance
+        value: 3
+        description: Grants resistance to necrotic damage
+
+  - id: crew_effects
+    name: ghost crew effects
+    keywords: [crew, effects, personal, ghost]
+    short_description: Personal items from the ghost crew.
+    long_description: >
+      These items belonged to the flagship's crew. They're mundane
+      but carry echoes of their former owners' duties.
+    type: treasure
+    rarity: common
+    value: 40
+    weight: 0.5
+
+  - id: first_mate_saber
+    name: the First Mate's Saber
+    keywords: [first, mate, saber, sword]
+    short_description: A fine saber that commands respect.
+    long_description: >
+      This saber belonged to Admiral Dreadtide's first mate. It
+      carries authority over the ghost crew and cuts through
+      defenses with supernatural precision.
+    type: weapon
+    subtype: saber
+    rarity: rare
+    value: 600
+    weight: 3.0
+    level_requirement: 17
+    weapon_stats:
+      damage_dice: 1d10
+      damage_type: slashing
+      to_hit_bonus: 2
+    magical_properties:
+      - effect: crew_command
+        value: 1
+        description: Can command ghost sailors
+      - effect: dexterity_bonus
+        value: 1
+        description: Grants +1 dexterity
+
+  - id: command_whistle
+    name: the Command Whistle
+    keywords: [command, whistle, naval, officer]
+    short_description: A whistle that still commands the dead.
+    long_description: >
+      The first mate used this whistle to direct the crew. It still
+      works, and the ghost sailors respond to its calls.
+    type: accessory
+    subtype: trinket
+    rarity: rare
+    value: 350
+    weight: 0.1
+    magical_properties:
+      - effect: summon_ghost_sailor
+        value: 1
+        description: Can summon a temporary ghost sailor ally
+
+  # Vendor Items
+  - id: waterbreathing_charm
+    name: a waterbreathing charm
+    keywords: [waterbreathing, charm, breathe, underwater]
+    short_description: A charm that allows breathing underwater.
+    long_description: >
+      This charm creates a bubble of air around the wearer's head,
+      allowing them to breathe underwater indefinitely.
+    type: accessory
+    subtype: necklace
+    rarity: rare
+    value: 500
+    weight: 0.2
+    magical_properties:
+      - effect: waterbreathing
+        value: 1
+        description: Can breathe underwater
+
+  - id: pressure_ring
+    name: a ring of pressure resistance
+    keywords: [pressure, ring, deep, protection]
+    short_description: A ring that protects against deep water pressure.
+    long_description: >
+      This ring creates a protective field that shields the wearer
+      from the crushing pressures of the deep ocean.
+    type: accessory
+    subtype: ring
+    rarity: rare
+    value: 400
+    weight: 0.1
+    magical_properties:
+      - effect: pressure_immunity
+        value: 1
+        description: Immune to water pressure damage
+
+  - id: salvaged_treasure
+    name: salvaged treasure
+    keywords: [salvaged, treasure, mixed, valuable]
+    short_description: Valuable items recovered from the wrecks.
+    long_description: >
+      This collection of items was salvaged from various wrecks.
+      It includes coins, jewelry, and other valuables.
+    type: treasure
+    rarity: uncommon
+    value: 150
+    weight: 2.0
+
+  # Boss Drops
+  - id: dreadtides_tricorn
+    name: Admiral Dreadtide's Tricorn
+    keywords: [dreadtides, tricorn, legendary, hat]
+    short_description: The admiral's hat, symbol of absolute command.
+    long_description: >
+      This tricorn hat was worn by Admiral Dreadtide, the most feared
+      naval commander of his age. It grants supernatural tactical
+      awareness and authority over seafaring spirits.
+    type: armor
+    subtype: helmet
+    rarity: legendary
+    value: 5000
+    weight: 1.0
+    level_requirement: 18
+    armor_stats:
+      armor_bonus: 2
+      slot: head
+    magical_properties:
+      - effect: tactical_mastery
+        value: 1
+        description: Perfect tactical awareness
+      - effect: fleet_command
+        value: 1
+        description: Can command ghost ships
+      - effect: intelligence_bonus
+        value: 3
+        description: Grants +3 intelligence
+
+  - id: admirals_cutlass
+    name: Admiral's Cutlass
+    keywords: [admirals, cutlass, legendary, sword]
+    short_description: A blade that commanded fleets.
+    long_description: >
+      This cutlass was Admiral Dreadtide's personal weapon. It cuts
+      through both flesh and spirit, and carries the weight of a
+      hundred naval victories.
+    type: weapon
+    subtype: cutlass
+    rarity: legendary
+    value: 6000
+    weight: 4.0
+    level_requirement: 18
+    weapon_stats:
+      damage_dice: 2d8
+      damage_type: slashing
+      to_hit_bonus: 3
+    magical_properties:
+      - effect: ghost_slaying
+        value: 2d6
+        description: Deals extra damage to undead
+      - effect: strength_bonus
+        value: 2
+        description: Grants +2 strength
+      - effect: dexterity_bonus
+        value: 2
+        description: Grants +2 dexterity
+
+  - id: fleet_battle_map
+    name: The Eternal Battle Map
+    keywords: [fleet, battle, map, legendary]
+    short_description: A map that shows all naval movements.
+    long_description: >
+      This map was used by Admiral Dreadtide to track enemy fleets.
+      It still updates, showing the positions of all ships - living
+      and dead - within a vast radius.
+    type: accessory
+    subtype: held
+    rarity: legendary
+    value: 5500
+    weight: 1.0
+    level_requirement: 18
+    magical_properties:
+      - effect: fleet_awareness
+        value: 1
+        description: Shows all ships in the region
+      - effect: tactical_bonus
+        value: 3
+        description: Grants +3 to tactical decisions
+      - effect: wisdom_bonus
+        value: 2
+        description: Grants +2 wisdom

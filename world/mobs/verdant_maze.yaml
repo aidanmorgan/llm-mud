@@ -1,0 +1,313 @@
+# The Verdant Maze Mobs
+# Living hedge creatures and maze guardians
+
+zone_id: verdant_maze
+
+mobs:
+  # Common Enemies
+  - id: hedge_crawler
+    vnum: 2500
+    name: a hedge crawler
+    keywords: [hedge, crawler, plant, beast]
+    short_description: A creature of woven vines and thorns skitters through the hedge.
+    long_description: >
+      This construct of living plant matter patrols the maze, attacking
+      any who damage the hedges or seem lost. It moves surprisingly
+      fast despite its bulk, and its thorny limbs leave painful wounds.
+    level: 9
+    health: 70
+    strength: 14
+    dexterity: 12
+    constitution: 14
+    damage_dice: 1d6
+    damage_type: piercing
+    armor_class: 13
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 120
+    abilities: [thorn_lash, entangle, regeneration]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: living_vine
+        drop_chance: 0.4
+      - template_id: maze_thorn
+        drop_chance: 0.3
+
+  - id: flower_guardian
+    vnum: 2501
+    name: a flower guardian
+    keywords: [flower, guardian, plant, beautiful]
+    short_description: A figure made of blooming flowers guards the path.
+    long_description: >
+      Beautiful and deadly, flower guardians appear peaceful until
+      approached. Their petals release toxic pollen, and their stems
+      hide razor-sharp thorns. They protect the maze's hidden gardens.
+    level: 10
+    health: 60
+    strength: 10
+    dexterity: 14
+    constitution: 12
+    damage_dice: 1d6
+    damage_type: poison
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 140
+    abilities: [pollen_cloud, thorn_spray, bloom_burst]
+    immunities: [poison]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: guardian_petal
+        drop_chance: 0.4
+      - template_id: toxic_nectar
+        drop_chance: 0.2
+
+  - id: maze_sprite
+    vnum: 2502
+    name: a maze sprite
+    keywords: [maze, sprite, fey, trickster]
+    short_description: A tiny laughing figure darts between the hedges.
+    long_description: >
+      These mischievous fey delight in leading travelers astray. They
+      give false directions, create illusions, and steal small objects.
+      Annoying more than dangerous, they can still be deadly if they
+      lead you into a trap.
+    level: 8
+    health: 40
+    strength: 4
+    dexterity: 18
+    constitution: 8
+    damage_dice: 1d4
+    damage_type: psychic
+    armor_class: 16
+    behavior_type: neutral
+    aggro_radius: 2
+    experience_value: 100
+    abilities: [confuse, illusion, steal_item]
+    resistances: [magic]
+    loot_table:
+      - template_id: sprite_dust
+        drop_chance: 0.3
+      - template_id: stolen_trinket
+        drop_chance: 0.2
+
+  - id: thorn_beast
+    vnum: 2503
+    name: a thorn beast
+    keywords: [thorn, beast, plant, predator]
+    short_description: A quadruped of twisted thorns and vines stalks its prey.
+    long_description: >
+      These predatory plant creatures hunt within the maze, using
+      their natural camouflage to ambush unwary travelers. Their
+      bodies are covered in poisoned thorns that break off in wounds.
+    level: 12
+    health: 100
+    strength: 16
+    dexterity: 14
+    constitution: 14
+    damage_dice: 1d8
+    damage_type: piercing
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 4
+    experience_value: 180
+    abilities: [thorn_charge, poison_thorns, plant_camouflage]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: thorn_beast_hide
+        drop_chance: 0.3
+      - template_id: poison_thorn
+        drop_chance: 0.4
+
+  - id: shambling_mound
+    vnum: 2504
+    name: a shambling mound
+    keywords: [shambling, mound, plant, heap]
+    short_description: A massive heap of rotting vegetation lurches forward.
+    long_description: >
+      This creature is a mass of decomposing plant matter animated
+      by primal magic. It absorbs anything organic it catches,
+      growing larger as it feeds. Lightning only makes it stronger.
+    level: 14
+    health: 160
+    strength: 18
+    dexterity: 6
+    constitution: 20
+    damage_dice: 2d6
+    damage_type: bludgeoning
+    armor_class: 12
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 260
+    abilities: [engulf, absorb_lightning, rotting_slam]
+    immunities: [lightning, poison]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: mound_mulch
+        drop_chance: 0.5
+      - template_id: absorbed_treasure
+        drop_chance: 0.15
+
+  - id: walking_tree
+    vnum: 2505
+    name: a walking tree
+    keywords: [walking, tree, treant, ancient]
+    short_description: An ancient tree uproots itself and walks toward you.
+    long_description: >
+      The oldest trees in the maze have awakened into consciousness.
+      They are slow but incredibly powerful, and fiercely protective
+      of their botanical brethren. Some can be reasoned with.
+    level: 15
+    health: 180
+    strength: 20
+    dexterity: 6
+    constitution: 22
+    damage_dice: 2d8
+    damage_type: bludgeoning
+    armor_class: 14
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 300
+    abilities: [root_slam, animate_plants, bark_armor]
+    vulnerabilities: [fire]
+    resistances: [bludgeoning, piercing]
+    loot_table:
+      - template_id: heartwood
+        drop_chance: 0.25
+      - template_id: living_branch
+        drop_chance: 0.4
+
+  - id: lost_traveler
+    vnum: 2506
+    name: a lost traveler
+    keywords: [lost, traveler, human, mad]
+    short_description: A wild-eyed figure in tattered clothes lurches toward you.
+    long_description: >
+      This poor soul has been trapped in the maze so long they've
+      gone mad. They attack anything they encounter, convinced
+      everyone is an illusion trying to trap them further.
+    level: 10
+    health: 80
+    strength: 12
+    dexterity: 12
+    constitution: 12
+    damage_dice: 1d6
+    damage_type: slashing
+    armor_class: 11
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 130
+    abilities: [desperate_swing, paranoid_dodge]
+    loot_table:
+      - template_id: worn_equipment
+        drop_chance: 0.3
+      - template_id: maze_journal
+        drop_chance: 0.1
+
+  # NPCs
+  - id: maze_keeper
+    vnum: 2550
+    name: The Hedge Keeper
+    keywords: [hedge, keeper, druid, guide]
+    short_description: A figure woven from living plants tends the maze.
+    long_description: >
+      The Hedge Keeper is part of the maze itself, a druid who merged
+      with the verdant growth centuries ago. They offer guidance to
+      those who show respect for the plants, though their help comes
+      in riddles.
+    level: 18
+    health: 120
+    behavior_type: friendly
+    dialogue:
+      greeting: "Ah, another seeker walks my paths. Do you come to admire, or to conquer? The maze knows the difference."
+      topics:
+        heart: "The Maze Heart lies at the center, of course. But the center moves. It does not wish to be found."
+        navigate: "Listen to the flowers. They whisper directions... if you know their language."
+        escape: "Any wall can become a door, if you ask politely. Violence only makes the maze grow thicker."
+
+  - id: flower_merchant
+    vnum: 2551
+    name: Petal the Flower Merchant
+    keywords: [petal, flower, merchant, vendor]
+    short_description: A sprite tends a stall overflowing with magical blooms.
+    long_description: >
+      Petal has set up shop in one of the maze's few stable locations.
+      She sells magical flowers and plants, each with unique properties.
+      How she maintains her inventory is a mystery.
+    level: 12
+    health: 60
+    behavior_type: friendly
+    shop:
+      markup: 1.4
+      markdown: 0.6
+      inventory:
+        - template_id: healing_bloom
+        - template_id: courage_flower
+        - template_id: truth_blossom
+
+  - id: lost_noble
+    vnum: 2552
+    name: Lord Verdant
+    keywords: [verdant, lord, noble, lost]
+    short_description: A noble in overgrown finery sits on a throne of roots.
+    long_description: >
+      Lord Verdant entered the maze decades ago seeking its heart
+      and never left. He's made peace with his imprisonment and
+      now rules a small court of maze creatures. He offers help
+      to those who entertain him.
+    level: 16
+    health: 100
+    behavior_type: friendly
+    dialogue:
+      greeting: "A visitor! How delightful! It's been... oh, what year is it now? No matter. Sit, sit! Tell me of the outside world."
+      topics:
+        trapped: "Trapped? I prefer 'permanently relocated.' The maze provides everything I need. Well, almost everything."
+        heart: "I came seeking the Heart. Found wisdom instead. The Heart doesn't want to be found - respect that."
+        escape: "I could leave, perhaps. But out there, I'm old Lord Verdant. Here, I'm a king. Which would you choose?"
+
+  # Boss
+  - id: maze_heart
+    vnum: 2599
+    name: The Maze Heart
+    keywords: [maze, heart, boss, plant, ancient]
+    short_description: The living core of the maze pulses with ancient power.
+    long_description: >
+      At the maze's ever-shifting center lies its Heart - a massive
+      flowering entity that IS the maze. Every hedge, every flower,
+      every vine is connected to it. To harm it is to fight the
+      entire maze at once. It has existed for millennia and considers
+      all within its walls to be guests... or nutrients.
+    level: 16
+    health: 600
+    strength: 16
+    dexterity: 8
+    constitution: 24
+    intelligence: 16
+    wisdom: 20
+    charisma: 14
+    damage_dice: 2d8
+    damage_type: bludgeoning
+    armor_class: 16
+    behavior_type: aggressive
+    combat_style: defender
+    aggro_radius: 6
+    experience_value: 2200
+    gold_min: 150
+    gold_max: 500
+    abilities: [maze_shift, summon_guardians, root_prison, bloom_of_doom, regeneration]
+    immunities: [poison, psychic]
+    vulnerabilities: [fire]
+    resistances: [physical]
+    loot_table:
+      - template_id: heart_seed
+        drop_chance: 1.0
+      - template_id: maze_map
+        drop_chance: 0.6
+      - template_id: verdant_crown
+        drop_chance: 0.5
+    dialogue:
+      greeting: "YOU HAVE FOUND ME. FEW DO. FEWER LEAVE."
+      topics:
+        purpose: "I GROW. I SPREAD. I REMEMBER EVERY FOOTSTEP, EVERY DEATH, EVERY SEED PLANTED IN MY SOIL."
+        freedom: "FREEDOM? THE MAZE IS FREEDOM. OUTSIDE IS CHAOS. HERE, ALL IS ORDER. ALL IS GROWTH."

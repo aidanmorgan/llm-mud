@@ -1,0 +1,21 @@
+# Crystaldeep Caverns - Living crystal network zone
+zone_id: crystaldeep
+name: Crystaldeep Caverns
+description: >
+  A vast underground network of caverns where massive crystals grow like
+  forests of frozen light. The crystals sing when struck, creating
+  haunting harmonies that echo through the depths. Memory stones preserve
+  echoes of the past, and the Crystal Singers mine the formations for
+  their mystical properties. The Resonance, a sentient crystal entity,
+  watches over all.
+level_range: [12, 20]
+flags: [dungeon, magic_zone]
+coordinate_origin:
+  x: -30
+  y: -15
+  z: -5
+special_effects:
+  - crystal_resonance
+  - magic_amplification
+magic_modifier: 1.25
+ambient_light: dim

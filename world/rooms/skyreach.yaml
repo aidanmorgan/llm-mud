@@ -1,0 +1,199 @@
+# Skyreach Spire Rooms
+# Floating tower with gravity anomalies and elemental winds
+
+zone_id: skyreach
+
+rooms:
+  - id: skyreach_cloud_steps
+    vnum: 1300
+    name: Cloud Steps
+    short_description: Floating stones rise into the clouds
+    long_description: >
+      A series of stone platforms float impossibly in the air, forming
+      a stairway that rises into the clouds above Stillwater Monastery.
+      Each step hovers perfectly still despite the fierce winds, held
+      by ancient magic. Below, the world stretches out in miniature.
+      The Skyreach Spire waits above.
+    exits:
+      down:
+        destination: ~
+        leads_to_region: cloud_steps
+      up: skyreach_entrance
+    sector_type: mountain
+    flags: [outdoor, flying_zone]
+    ambient_messages:
+      - Clouds drift past at eye level.
+      - The wind howls but doesn't disturb the platforms.
+      - Lightning flickers in distant stormclouds.
+
+  - id: skyreach_entrance
+    vnum: 1301
+    name: Spire Entrance
+    short_description: The base of the floating tower
+    long_description: >
+      The Skyreach Spire rises impossibly above, its base floating on
+      nothing but magic. The entrance is a grand archway carved with
+      runes of levitation and wind. Inside, you can see that gravity
+      works strangely - furniture on the ceiling, water flowing upward.
+    exits:
+      down: skyreach_cloud_steps
+      up: skyreach_gravity_hall
+    sector_type: city
+    flags: [magic_zone]
+    mob_spawns:
+      - template_id: wind_servant
+        max_count: 2
+
+  - id: skyreach_gravity_hall
+    vnum: 1302
+    name: Gravity Hall
+    short_description: Where up and down have no meaning
+    long_description: >
+      This hall exists in a state of fluctuating gravity. Portions of
+      the floor become ceiling without warning, and you might find
+      yourself walking on walls. The scholars who live here have
+      adapted, but visitors often become violently disoriented.
+    exits:
+      down: skyreach_entrance
+      north: skyreach_library
+      south: skyreach_observatory
+      up: skyreach_wind_chamber
+    sector_type: city
+    flags: [gravity_anomaly, disorienting]
+    mob_spawns:
+      - template_id: gravity_phantom
+        max_count: 2
+    ambient_messages:
+      - Gravity shifts suddenly, pulling in a new direction.
+      - Objects float past, caught between competing gravities.
+
+  - id: skyreach_library
+    vnum: 1303
+    name: Floating Library
+    short_description: Books drift through the air
+    long_description: >
+      The library has no shelves - books simply float, organized by
+      some system that only the scholars understand. Reading alcoves
+      are scattered at all angles, some on the walls or ceiling. The
+      collected knowledge of the Skybound Scholars fills the air with
+      the rustle of turning pages.
+    exits:
+      south: skyreach_gravity_hall
+      east: skyreach_scholars_quarters
+    sector_type: city
+    flags: [gravity_anomaly]
+    mob_spawns:
+      - template_id: skybound_scholar
+        max_count: 3
+    item_spawns:
+      - template_id: floating_tome
+        max_count: 2
+      - template_id: scroll_of_levitation
+        max_count: 1
+
+  - id: skyreach_observatory
+    vnum: 1304
+    name: Star Observatory
+    short_description: Windows look out on endless sky
+    long_description: >
+      The walls here are mostly glass, providing a panoramic view of
+      the sky in all directions - even below. At night, the stars seem
+      close enough to touch, and strange instruments track celestial
+      movements. The scholars study the heavens, seeking patterns in
+      the cosmic dance.
+    exits:
+      north: skyreach_gravity_hall
+      west: skyreach_elemental_lab
+    sector_type: city
+    mob_spawns:
+      - template_id: star_gazer
+        max_count: 2
+    item_spawns:
+      - template_id: star_chart
+        max_count: 1
+
+  - id: skyreach_scholars_quarters
+    vnum: 1305
+    name: Scholars' Quarters
+    short_description: Living spaces adapted to strange gravity
+    long_description: >
+      The Skybound Scholars have made comfortable homes here, with beds
+      and furniture anchored at various angles. Some prefer ceiling-beds,
+      others wall-mounted workspaces. The quarters are peaceful despite
+      the disorientation, a place of study and contemplation.
+    exits:
+      west: skyreach_library
+    sector_type: city
+    flags: [safe_room, gravity_anomaly]
+    mob_spawns:
+      - template_id: senior_scholar
+        max_count: 1
+      - template_id: skybound_merchant
+        max_count: 1
+
+  - id: skyreach_elemental_lab
+    vnum: 1306
+    name: Elemental Laboratory
+    short_description: Where wind and lightning are harnessed
+    long_description: >
+      This laboratory studies the elemental forces that keep the spire
+      aloft. Contained whirlwinds spin in glass spheres, and lightning
+      crackles between copper rods. The experiments here are dangerous
+      but have yielded great knowledge about air magic.
+    exits:
+      east: skyreach_observatory
+      up: skyreach_wind_chamber
+    sector_type: city
+    flags: [high_magic, dangerous]
+    mob_spawns:
+      - template_id: storm_elemental
+        max_count: 1
+      - template_id: elemental_researcher
+        max_count: 2
+    item_spawns:
+      - template_id: bottled_lightning
+        max_count: 1
+
+  - id: skyreach_wind_chamber
+    vnum: 1307
+    name: Wind Chamber
+    short_description: Howling gales fill this open space
+    long_description: >
+      This chamber is open to the sky through great windows, and powerful
+      winds constantly howl through. The winds are not natural - they're
+      controlled, channeled, used to power the spire's magic. Air
+      elementals dance in the currents, and stepping wrong could send
+      you flying into the clouds.
+    exits:
+      down: skyreach_gravity_hall
+      west: skyreach_elemental_lab
+      up: skyreach_stormwrights_sanctum
+    sector_type: city
+    flags: [wind_hazard, high_magic]
+    mob_spawns:
+      - template_id: wind_elemental
+        max_count: 3
+
+  - id: skyreach_stormwrights_sanctum
+    vnum: 1308
+    name: The Stormwright's Sanctum
+    short_description: Where the master of winds holds court
+    long_description: >
+      The highest chamber of Skyreach Spire belongs to the Stormwright,
+      an air elemental who long ago took human form to study magic with
+      the scholars. Now ancient beyond measure, he commands the winds
+      that keep the spire aloft. His power crackles in the air like
+      approaching thunder.
+    exits:
+      down: skyreach_wind_chamber
+    sector_type: city
+    flags: [boss_room, high_magic]
+    mob_spawns:
+      - template_id: the_stormwright
+        max_count: 1
+      - template_id: storm_elemental
+        max_count: 2
+    ambient_messages:
+      - Lightning arcs between the Stormwright's fingers.
+      - The winds respond to his slightest gesture.
+      - Thunder rumbles with his displeasure.

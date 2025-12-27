@@ -1,0 +1,20 @@
+# Thornhaven - Overgrown fortress zone
+zone_id: thornhaven
+name: Thornhaven
+description: >
+  An ancient fortress overrun by aggressive plant life. Once a proud
+  stronghold guarding the River Road from Willowdale, it was abandoned
+  after a druidic curse caused the surrounding vegetation to consume
+  the stone walls. Now the Thornwatch, twisted guardians, patrol its
+  living corridors. The Briar King, a knight corrupted by plant magic,
+  rules from the central keep.
+level_range: [6, 14]
+flags: [dungeon, nature_zone]
+coordinate_origin:
+  x: -18
+  y: 5
+  z: 0
+special_effects:
+  - entangling_terrain
+  - regenerating_enemies
+nature_damage_modifier: 1.2

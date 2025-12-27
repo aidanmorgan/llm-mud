@@ -1,0 +1,378 @@
+# Starter Quests for Ravenmoor
+# These quests introduce new players to the game mechanics
+
+quests:
+  # Tutorial Quest - First Steps
+  - quest_id: tutorial_welcome
+    name: "Welcome to Ravenmoor"
+    description: |
+      The guard captain has asked you to familiarize yourself with the city.
+      Explore the main areas and report back when ready.
+    rarity: common
+    min_level: 1
+    max_level: 5
+    giver_id: guard_captain
+    giver_zone: ravenmoor
+
+    objectives:
+      - objective_id: visit_square
+        objective_type: explore
+        description: "Visit the City Square"
+        target_id: ravenmoor_square
+        target_name: "City Square"
+
+      - objective_id: visit_market
+        objective_type: explore
+        description: "Find the Market District"
+        target_id: ravenmoor_market
+        target_name: "Market District"
+
+      - objective_id: visit_tavern
+        objective_type: explore
+        description: "Visit the Rusty Blade Tavern"
+        target_id: ravenmoor_tavern
+        target_name: "Rusty Blade Tavern"
+
+    rewards:
+      experience: 50
+      gold: 10
+
+    intro_text: |
+      "Ah, a fresh face! I am Captain Aldric. Welcome to Ravenmoor, adventurer.
+      Before you venture beyond our walls, you should familiarize yourself with
+      the city. Visit the square, the market, and the tavern. Return when done."
+
+    complete_text: |
+      "Well done! You've learned your way around. The city can be your haven
+      between adventures. Now, are you ready for your first real challenge?"
+
+    chain_id: tutorial
+    chain_order: 1
+    next_quest: tutorial_combat
+
+  # Tutorial Quest - Combat Basics
+  - quest_id: tutorial_combat
+    name: "Pest Control"
+    description: |
+      The guard captain wants you to clear some rats from the cellar
+      beneath the tavern. A simple task to test your combat abilities.
+    rarity: common
+    min_level: 1
+    max_level: 10
+    giver_id: guard_captain
+    giver_zone: ravenmoor
+    required_quests:
+      - tutorial_welcome
+
+    objectives:
+      - objective_id: kill_rats
+        objective_type: kill
+        description: "Kill cellar rats"
+        target_id: cellar_rat
+        target_name: "Cellar Rat"
+        required_count: 5
+        zone_id: ravenmoor
+
+    rewards:
+      experience: 100
+      gold: 25
+      items:
+        - rusty_sword
+
+    intro_text: |
+      "The tavern keeper complains of rats in his cellar. Nothing dangerous,
+      but good practice for you. Kill five of them and return to me."
+
+    complete_text: |
+      "Excellent work! You've proven you can handle yourself in a fight.
+      Take this old sword - it's seen better days, but it's better than
+      nothing. Keep training, adventurer."
+
+    chain_id: tutorial
+    chain_order: 2
+    next_quest: tutorial_equipment
+
+  # Tutorial Quest - Equipment
+  - quest_id: tutorial_equipment
+    name: "Proper Equipment"
+    description: |
+      Visit the blacksmith and armorer to learn about equipment.
+      Having proper gear is essential for survival.
+    rarity: common
+    min_level: 1
+    max_level: 10
+    giver_id: guard_captain
+    giver_zone: ravenmoor
+    required_quests:
+      - tutorial_combat
+
+    objectives:
+      - objective_id: talk_blacksmith
+        objective_type: talk
+        description: "Speak with the blacksmith"
+        target_id: blacksmith_marcus
+        target_name: "Marcus the Blacksmith"
+
+      - objective_id: talk_armorer
+        objective_type: talk
+        description: "Speak with the armorer"
+        target_id: armorer_helena
+        target_name: "Helena the Armorer"
+
+    rewards:
+      experience: 75
+      gold: 15
+      items:
+        - leather_cap
+
+    intro_text: |
+      "A warrior is only as good as their equipment. Visit Marcus the
+      blacksmith for weapons, and Helena the armorer for protection.
+      They'll teach you what you need to know."
+
+    complete_text: |
+      "Good. Now you understand the importance of proper gear. This cap
+      isn't much, but it'll keep your head attached. You're almost ready
+      to venture beyond the city walls."
+
+    chain_id: tutorial
+    chain_order: 3
+    next_quest: tutorial_venture
+
+  # Tutorial Quest - Beyond the Walls
+  - quest_id: tutorial_venture
+    name: "Beyond the Walls"
+    description: |
+      The guard captain believes you're ready to explore outside the city.
+      Head to the West Gate and venture into the forest path.
+    rarity: common
+    min_level: 2
+    max_level: 15
+    giver_id: guard_captain
+    giver_zone: ravenmoor
+    required_quests:
+      - tutorial_equipment
+
+    objectives:
+      - objective_id: visit_gate
+        objective_type: explore
+        description: "Go to the West Gate"
+        target_id: ravenmoor_west_gate
+        target_name: "West Gate"
+
+      - objective_id: explore_forest
+        objective_type: explore
+        description: "Enter the forest path"
+        target_id: forest_path_entrance
+        target_name: "Forest Path Entrance"
+
+      - objective_id: kill_wolves
+        objective_type: kill
+        description: "Deal with any wolves you encounter"
+        target_id: forest_wolf
+        target_name: "Forest Wolf"
+        required_count: 3
+
+    rewards:
+      experience: 200
+      gold: 50
+      unlocks_quests:
+        - willowdale_intro
+
+    intro_text: |
+      "You've proven yourself capable. It's time to see what lies beyond
+      our walls. The forest path leads to Willowdale. Be careful - wolves
+      roam those woods. Kill a few to thin their numbers."
+
+    complete_text: |
+      "You've taken your first steps into the wider world, adventurer.
+      Ravenmoor will always be here if you need rest, but your destiny
+      lies out there. Good luck."
+
+    chain_id: tutorial
+    chain_order: 4
+
+  # Daily Quest - Guard Duty
+  - quest_id: daily_guard_duty
+    name: "Guard Duty"
+    description: |
+      Help patrol the city streets and deal with any troublemakers.
+      A simple daily task for those who wish to help the guard.
+    rarity: common
+    min_level: 3
+    max_level: 50
+    giver_id: guard_captain
+    giver_zone: ravenmoor
+    is_repeatable: true
+    is_daily: true
+    repeatable_cooldown_hours: 20
+
+    objectives:
+      - objective_id: patrol_market
+        objective_type: explore
+        description: "Patrol the Market District"
+        target_id: ravenmoor_market
+        target_name: "Market District"
+
+      - objective_id: patrol_docks
+        objective_type: explore
+        description: "Patrol the Docks"
+        target_id: ravenmoor_docks
+        target_name: "Docks"
+
+      - objective_id: kill_thugs
+        objective_type: kill
+        description: "Deal with any troublemakers"
+        target_id: street_thug
+        target_name: "Street Thug"
+        required_count: 2
+        zone_id: ravenmoor
+
+    rewards:
+      experience: 150
+      gold: 30
+
+    intro_text: |
+      "Looking for work? We always need help with patrols. Check the
+      market and docks, and deal with any troublemakers you find."
+
+    complete_text: |
+      "Good work, adventurer. The streets are a little safer thanks to
+      you. Come back tomorrow if you want more work."
+
+  # Collect Quest - Herb Gathering
+  - quest_id: herb_gathering
+    name: "Herbal Remedies"
+    description: |
+      The temple healer needs herbs for medicine. Gather healing herbs
+      from the forest and deliver them to the temple.
+    rarity: common
+    min_level: 1
+    max_level: 20
+    giver_id: temple_healer
+    giver_zone: ravenmoor
+
+    objectives:
+      - objective_id: collect_herbs
+        objective_type: collect
+        description: "Collect healing herbs"
+        target_id: healing_herb
+        target_name: "Healing Herb"
+        required_count: 10
+
+      - objective_id: deliver_herbs
+        objective_type: deliver
+        description: "Deliver herbs to the temple"
+        target_id: healing_herb
+        deliver_to_npc: temple_healer
+
+    rewards:
+      experience: 100
+      gold: 20
+      items:
+        - minor_healing_potion
+        - minor_healing_potion
+        - minor_healing_potion
+
+    intro_text: |
+      "Blessings upon you, child. I am in need of healing herbs for our
+      remedies. They grow in the forest west of the city. Bring me ten
+      and I shall reward you with potions."
+
+    complete_text: |
+      "These are perfect! The gods smile upon your generosity. Take these
+      potions - may they serve you well in your travels."
+
+    is_repeatable: true
+    repeatable_cooldown_hours: 48
+
+  # Kill Quest - Bandit Trouble
+  - quest_id: bandit_trouble
+    name: "Bandit Trouble"
+    description: |
+      Bandits have been attacking travelers on the road to Willowdale.
+      Find their camp and eliminate their leader.
+    rarity: uncommon
+    min_level: 5
+    max_level: 15
+    giver_id: merchant_guild_master
+    giver_zone: ravenmoor
+
+    objectives:
+      - objective_id: kill_bandits
+        objective_type: kill
+        description: "Kill bandits on the forest path"
+        target_id: bandit_scout
+        target_name: "Bandit Scout"
+        required_count: 5
+
+      - objective_id: find_camp
+        objective_type: explore
+        description: "Find the bandit camp"
+        target_id: bandit_camp
+        target_name: "Bandit Camp"
+
+      - objective_id: kill_leader
+        objective_type: kill
+        description: "Eliminate the bandit leader"
+        target_id: bandit_captain
+        target_name: "Bandit Captain"
+        required_count: 1
+
+    rewards:
+      experience: 500
+      gold: 150
+      items:
+        - bandit_captain_blade
+
+    intro_text: |
+      "These damned bandits are ruining trade! Every caravan to Willowdale
+      gets hit. I'll pay well for anyone who can deal with them. Find their
+      camp and kill their leader."
+
+    complete_text: |
+      "The bandit captain is dead? Excellent! Trade can resume safely.
+      Here's your reward - you've earned every coin of it."
+
+  # Escort Quest
+  - quest_id: escort_merchant
+    name: "Safe Passage"
+    description: |
+      A nervous merchant needs an escort to Willowdale. Protect them
+      from bandits and wildlife along the way.
+    rarity: uncommon
+    min_level: 5
+    max_level: 20
+    giver_id: nervous_merchant
+    giver_zone: ravenmoor
+    time_limit_minutes: 60
+
+    objectives:
+      - objective_id: escort_to_gate
+        objective_type: escort
+        description: "Escort merchant to West Gate"
+        target_id: nervous_merchant
+        target_name: "Merchant"
+        must_be_alive: true
+
+      - objective_id: escort_to_willowdale
+        objective_type: escort
+        description: "Escort merchant to Willowdale"
+        target_id: nervous_merchant
+        must_be_alive: true
+
+    rewards:
+      experience: 400
+      gold: 100
+
+    intro_text: |
+      "P-please! I need to get to Willowdale but I'm terrified of the
+      forest. Will you escort me? I'll pay you well if we both arrive
+      in one piece!"
+
+    complete_text: |
+      "We made it! Oh, thank the gods! Here, take this gold - you've
+      earned it. I'll never travel alone again!"
+
+    progress_text: |
+      "Are we there yet? I keep hearing noises in the forest..."

@@ -1,0 +1,193 @@
+zone_id: starter
+
+rooms:
+  - id: village_square
+    vnum: 1000
+    name: Village Square
+    short_description: The center of the village
+    long_description: >
+      You stand in the bustling center of a small village. A weathered stone
+      fountain bubbles cheerfully in the middle of the square, surrounded by
+      cobblestones worn smooth by countless footsteps. Colorful awnings shade
+      the storefronts that line the square, and the smell of fresh bread
+      drifts from a nearby bakery.
+    exits:
+      north: village_north_road
+      south: village_south_gate
+      east: village_general_store
+      west: village_inn
+    sector_type: city
+    flags: [safe]
+    ambient_messages:
+      - A merchant calls out, advertising their wares.
+      - Children run past, laughing as they play.
+      - A dog barks somewhere in the distance.
+
+  - id: village_north_road
+    vnum: 1001
+    name: North Road
+    short_description: A dusty road leading north
+    long_description: >
+      The road here is lined with modest wooden houses, their thatched roofs
+      showing signs of recent repairs. Vegetable gardens grow behind low
+      fences, and chickens peck at the ground. The road continues north
+      toward the forest.
+    exits:
+      south: village_square
+      north: forest_entrance
+    sector_type: city
+    flags: [safe]
+
+  - id: village_south_gate
+    vnum: 1002
+    name: South Gate
+    short_description: The village's southern entrance
+    long_description: >
+      Two sturdy wooden gates stand open here, flanked by a pair of guard
+      towers. A bored-looking guard leans against one of the posts, idly
+      watching travelers come and go. Beyond the gates, a well-worn path
+      leads south toward distant hills.
+    exits:
+      north: village_square
+      south: south_road
+    sector_type: city
+    flags: [safe]
+    mob_spawns:
+      - template_id: village_guard
+        max_count: 2
+
+  - id: village_inn
+    vnum: 1003
+    name: The Wanderer's Rest
+    short_description: A cozy village inn
+    long_description: >
+      Warmth and the smell of hearty stew greet you as you enter the inn.
+      A crackling fire burns in a large stone hearth, casting dancing shadows
+      on the timber walls. Rough-hewn tables fill the common room, and a
+      long bar runs along the far wall where the innkeeper polishes mugs.
+    exits:
+      east: village_square
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: innkeeper
+        max_count: 1
+
+  - id: village_general_store
+    vnum: 1004
+    name: General Store
+    short_description: A well-stocked shop
+    long_description: >
+      Shelves line every wall of this cluttered shop, filled with an eclectic
+      assortment of goods. Rope, lanterns, dried foods, and basic adventuring
+      supplies compete for space. A cheerful merchant stands behind a worn
+      wooden counter, ready to help customers.
+    exits:
+      west: village_square
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: shopkeeper
+        max_count: 1
+
+  - id: forest_entrance
+    vnum: 1010
+    name: Forest Entrance
+    short_description: Where the road meets the forest
+    long_description: >
+      The village road ends here at the edge of an ancient forest. Towering
+      oak trees form a natural archway over a narrow path that winds into
+      the shadowy depths. Strange bird calls echo from within, and the air
+      grows noticeably cooler under the canopy.
+    exits:
+      south: village_north_road
+      north: forest_path
+      east: forest_clearing
+    sector_type: forest
+    ambient_messages:
+      - Leaves rustle in an unfelt breeze.
+      - A twig snaps somewhere in the undergrowth.
+      - Sunlight filters through the canopy in shifting patterns.
+
+  - id: forest_path
+    vnum: 1011
+    name: Forest Path
+    short_description: A winding path through the trees
+    long_description: >
+      The forest closes in around you here, the path barely wide enough for
+      two people to walk abreast. Gnarled roots snake across the ground,
+      and thick ferns brush against your legs as you pass. The light is
+      dim, filtered through countless leaves overhead.
+    exits:
+      south: forest_entrance
+      north: deep_forest
+      west: forest_clearing
+    sector_type: forest
+    mob_spawns:
+      - template_id: forest_wolf
+        max_count: 2
+        respawn_delay: 300
+
+  - id: forest_clearing
+    vnum: 1012
+    name: Sunlit Clearing
+    short_description: A peaceful forest clearing
+    long_description: >
+      You emerge into a small clearing where sunlight streams down through
+      a gap in the canopy. Wildflowers carpet the ground in a riot of color,
+      and butterflies dance from bloom to bloom. A moss-covered boulder
+      sits at the center, perfect for resting.
+    exits:
+      west: forest_entrance
+      east: forest_path
+      north: mysterious_portal
+    sector_type: forest
+    flags: [safe]
+    item_spawns:
+      - template_id: healing_herb
+        max_count: 3
+
+  - id: deep_forest
+    vnum: 1015
+    name: Deep Forest
+    short_description: Deep within the ancient woods
+    long_description: >
+      This part of the forest feels older, more primal. The trees here are
+      massive, their trunks wider than houses, and strange phosphorescent
+      mushrooms glow faintly in the perpetual twilight. The air is thick
+      with the smell of moss and decay.
+    exits:
+      south: forest_path
+    sector_type: forest
+    flags: [dark]
+    mob_spawns:
+      - template_id: giant_spider
+        max_count: 3
+      - template_id: forest_wolf
+        max_count: 1
+
+  - id: south_road
+    vnum: 1020
+    name: South Road
+    short_description: The road south from the village
+    long_description: >
+      The road stretches south across rolling grasslands toward distant
+      hills. Farmers' fields line either side, golden wheat swaying in
+      the gentle breeze. A weathered signpost points back toward the village.
+    exits:
+      north: village_south_gate
+    sector_type: field
+
+  - id: mysterious_portal
+    vnum: 1030
+    name: Mysterious Portal
+    short_description: A shimmering magical gateway
+    long_description: >
+      In the center of this small grove stands an ancient stone archway,
+      covered in glowing runes. Within the arch, reality seems to shimmer
+      and twist, revealing glimpses of strange lands beyond. The air
+      crackles with arcane energy.
+    exits:
+      south: forest_clearing
+    sector_type: forest
+    flags: [no_mob]

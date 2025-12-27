@@ -1,0 +1,368 @@
+# Ebonwatch Citadel Items
+# Shadow-themed equipment, dark materials, and umbral gear
+
+zone_id: ebonwatch
+
+items:
+  # Crafting Materials
+  - id: shadow_essence
+    vnum: 1100
+    name: a vial of shadow essence
+    keywords: [shadow, essence, vial, dark]
+    short_description: A vial of pure darkness swirls here.
+    long_description: >
+      This vial contains distilled shadow, darkness given liquid form.
+      It absorbs light around it, creating a small zone of dimness.
+      Enchanters use it to imbue items with shadow properties.
+    item_type: material
+    rarity: uncommon
+    weight: 0.2
+    value: 80
+
+  - id: umbral_silk
+    vnum: 1101
+    name: a bolt of umbral silk
+    keywords: [umbral, silk, cloth, shadow]
+    short_description: Cloth woven from shadows lies here.
+    long_description: >
+      This silk was spun by the servants of the Shadow Court from
+      pure darkness. It is impossibly light and seems to fade into
+      shadows, making it ideal for those who wish to go unseen.
+    item_type: material
+    rarity: rare
+    weight: 0.3
+    value: 150
+
+  - id: mirror_shard
+    vnum: 1102
+    name: a shard of cursed mirror
+    keywords: [mirror, shard, cursed, reflection]
+    short_description: A fragment of mirror that shows wrong reflections lies here.
+    long_description: >
+      This shard came from one of Ebonwatch's reflection rooms. Looking
+      into it shows distorted versions of reality. It can be used to
+      craft items that manipulate reflections and illusions.
+    item_type: material
+    rarity: rare
+    weight: 0.1
+    value: 120
+    flags: [dangerous]
+
+  - id: void_crystal
+    vnum: 1103
+    name: a void crystal
+    keywords: [void, crystal, empty, dark]
+    short_description: A crystal that contains nothing lies here.
+    long_description: >
+      This crystal contains a fragment of the void itself - not
+      darkness, but an absence of everything. Gazing into it induces
+      vertigo. It is incredibly valuable for certain dark rituals.
+    item_type: material
+    rarity: rare
+    weight: 0.5
+    value: 200
+
+  # Weapons
+  - id: shadow_dagger
+    vnum: 1110
+    name: a shadow dagger
+    keywords: [shadow, dagger, dark, knife]
+    short_description: A dagger made of solidified shadow lies here.
+    long_description: >
+      This dagger was forged from darkness itself. It has no weight
+      and makes no sound when it strikes. In bright light, it
+      becomes almost invisible.
+    item_type: weapon
+    rarity: common
+    weight: 0.5
+    value: 60
+    level_requirement: 15
+    weapon_stats:
+      damage_dice: 1d4
+      damage_type: necrotic
+      speed: fast
+      magical_properties:
+        - silent_strike: true
+        - sneak_attack_bonus: 1d4
+
+  - id: umbral_blade
+    vnum: 1111
+    name: an umbral blade
+    keywords: [umbral, blade, sword, shadow]
+    short_description: A sword that trails shadows lies here.
+    long_description: >
+      This blade leaves trails of darkness with every swing. It seems
+      to cut through light itself, leaving temporary dimness where
+      it passes. The Shadow Court's knights carry these weapons.
+    item_type: weapon
+    rarity: uncommon
+    weight: 3.0
+    value: 350
+    level_requirement: 17
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: necrotic
+      speed: medium
+      magical_properties:
+        - necrotic_damage_bonus: 1d4
+        - darkness_trail: true
+        - light_resistance_bypass: true
+
+  - id: void_staff
+    vnum: 1112
+    name: a staff of the void
+    keywords: [void, staff, empty, magical]
+    short_description: A staff that seems to absorb light lies here.
+    long_description: >
+      This staff was crafted around a core of void crystal. It
+      absorbs magical energy, making it both a weapon and a shield
+      against other casters.
+    item_type: weapon
+    rarity: rare
+    weight: 4.0
+    value: 500
+    level_requirement: 18
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: necrotic
+      speed: medium
+      magical_properties:
+        - spell_absorption: 20
+        - dark_spellpower: 5
+        - mana_drain: true
+
+  - id: shadow_crossbow
+    vnum: 1113
+    name: a shadow crossbow
+    keywords: [shadow, crossbow, ranged, dark]
+    short_description: A crossbow that fires bolts of darkness lies here.
+    long_description: >
+      This crossbow doesn't fire physical bolts but condensed shadows.
+      Each shot materializes from darkness, leaving no ammunition to
+      recover. The bolts fade after striking their target.
+    item_type: weapon
+    rarity: rare
+    weight: 5.0
+    value: 450
+    level_requirement: 16
+    weapon_stats:
+      damage_dice: 1d10
+      damage_type: necrotic
+      speed: slow
+      ranged: true
+      magical_properties:
+        - unlimited_shadow_ammo: true
+        - silent: true
+
+  # Armor
+  - id: shadow_leather
+    vnum: 1120
+    name: shadow leather armor
+    keywords: [shadow, leather, armor, dark]
+    short_description: Armor made from darkness-treated leather lies here.
+    long_description: >
+      This leather armor has been treated with shadow essence until
+      it absorbed the darkness. It helps the wearer blend into
+      shadows and provides protection against dark magic.
+    item_type: armor
+    rarity: common
+    weight: 10.0
+    value: 120
+    level_requirement: 15
+    armor_stats:
+      armor_class: 13
+      slot: body
+      resistances: [necrotic]
+      magical_properties:
+        - stealth_bonus: 2
+
+  - id: umbral_plate
+    vnum: 1121
+    name: umbral plate armor
+    keywords: [umbral, plate, armor, shadow]
+    short_description: Plate armor forged from shadow metal lies here.
+    long_description: >
+      The Shadow Court's knights wear this armor, forged from metal
+      suffused with shadow. It weighs less than normal plate and
+      seems to absorb attacks rather than deflect them.
+    item_type: armor
+    rarity: rare
+    weight: 30.0
+    value: 600
+    level_requirement: 18
+    armor_stats:
+      armor_class: 18
+      slot: body
+      resistances: [necrotic, cold]
+      vulnerabilities: [radiant]
+      magical_properties:
+        - damage_absorption: 10
+
+  - id: cloak_of_shadows
+    vnum: 1122
+    name: a cloak of shadows
+    keywords: [cloak, shadows, invisibility, dark]
+    short_description: A cloak that writhes with living shadows lies here.
+    long_description: >
+      This cloak is woven from umbral silk and enchanted to blend
+      with any shadow. In dim light, the wearer becomes nearly
+      invisible. In darkness, they might as well not exist.
+    item_type: armor
+    rarity: rare
+    weight: 1.0
+    value: 400
+    level_requirement: 16
+    armor_stats:
+      armor_class: 1
+      slot: about
+      magical_properties:
+        - shadow_invisibility: true
+        - dexterity_bonus: 2
+
+  - id: mirror_mask
+    vnum: 1123
+    name: a mirror mask
+    keywords: [mirror, mask, reflection, face]
+    short_description: A mask of reflective silver lies here.
+    long_description: >
+      This mask shows the viewer their own reflection. It protects
+      the wearer from gaze attacks and illusions by reflecting
+      them back at the source.
+    item_type: armor
+    rarity: rare
+    weight: 1.0
+    value: 350
+    level_requirement: 15
+    armor_stats:
+      armor_class: 1
+      slot: face
+      immunities: [gaze]
+      magical_properties:
+        - illusion_resistance: 50
+        - reflect_gaze: true
+
+  # Consumables
+  - id: shadow_veil_potion
+    vnum: 1130
+    name: a potion of shadow veil
+    keywords: [potion, shadow, veil, invisibility]
+    short_description: A dark potion that absorbs light lies here.
+    long_description: >
+      Drinking this potion wraps the user in shadows, making them
+      difficult to see in anything less than bright light. The
+      effect fades if the user attacks or enters bright light.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.5
+    value: 60
+    consumable_effect:
+      effect_type: buff
+      duration: 180
+      effects:
+        shadow_invisibility: true
+        stealth_bonus: 5
+
+  - id: light_ward
+    vnum: 1131
+    name: a light ward charm
+    keywords: [light, ward, charm, protection]
+    short_description: A charm that protects against radiant damage lies here.
+    long_description: >
+      Shadow creatures are vulnerable to light. This charm provides
+      temporary protection, absorbing radiant damage that would
+      otherwise harm the wearer.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.1
+    value: 50
+    consumable_effect:
+      effect_type: buff
+      duration: 300
+      effects:
+        radiant_resistance: 75
+
+  - id: nightmare_draught
+    vnum: 1132
+    name: a nightmare draught
+    keywords: [nightmare, draught, potion, fear]
+    short_description: A potion that contains bottled terror lies here.
+    long_description: >
+      This potion can be thrown at enemies, releasing the nightmares
+      contained within. Those affected suffer terrifying visions
+      that can paralyze even the bravest warriors.
+    item_type: consumable
+    rarity: rare
+    weight: 0.5
+    value: 100
+    consumable_effect:
+      effect_type: thrown
+      area: small
+      effects:
+        fear: true
+        duration: 30
+
+  # Boss Drops
+  - id: umbral_wardens_core
+    vnum: 1150
+    name: the Umbral Warden's core
+    keywords: [umbral, warden, core, boss, shadow]
+    short_description: A sphere of absolute darkness floats here.
+    long_description: >
+      This is the heart of the Umbral Warden, a concentration of
+      shadow so dense it has weight. Light cannot escape it, and
+      gazing into it is like staring into oblivion.
+    item_type: material
+    rarity: legendary
+    weight: 10.0
+    value: 3000
+    flags: [no_drop, quest_item]
+
+  - id: crown_of_shadows
+    vnum: 1151
+    name: the Crown of Endless Night
+    keywords: [crown, shadows, night, boss, head]
+    short_description: A crown of pure darkness hovers here.
+    long_description: >
+      This crown was formed from the Umbral Warden's own essence.
+      Wearing it grants dominion over shadows, but the darkness
+      slowly consumes the wearer's connection to light.
+    item_type: armor
+    rarity: legendary
+    weight: 0.5
+    value: 3500
+    level_requirement: 20
+    armor_stats:
+      armor_class: 4
+      slot: head
+      immunities: [necrotic]
+      vulnerabilities: [radiant]
+      magical_properties:
+        - shadow_command: true
+        - dark_spellpower: 7
+        - shadow_step: true
+        - charisma_bonus: 3
+
+  - id: void_blade
+    vnum: 1152
+    name: the Void Blade
+    keywords: [void, blade, sword, boss, empty]
+    short_description: A sword made of absence lies here.
+    long_description: >
+      This blade is not made of shadow but of nothing at all - a
+      sword-shaped hole in reality. It cuts through matter, magic,
+      and even souls with equal ease, leaving only emptiness.
+    item_type: weapon
+    rarity: legendary
+    weight: 0.0
+    value: 4500
+    level_requirement: 20
+    weapon_stats:
+      damage_dice: 2d8
+      damage_type: necrotic
+      speed: fast
+      magical_properties:
+        - vorpal_shadows: true
+        - magic_immunity_bypass: true
+        - soul_wound: true
+        - dexterity_bonus: 3
+        - wisdom_penalty: 2

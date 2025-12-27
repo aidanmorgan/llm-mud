@@ -1,0 +1,294 @@
+# The Crucible Items
+# Dwarven crafted equipment and forge materials
+
+zone_id: crucible
+
+items:
+  # Common Drops
+  - id: golem_core
+    name: a golem power core
+    keywords: [golem, core, power, construct]
+    short_description: The magical core that powered a golem.
+    long_description: >
+      This crystalline core was the heart of a golem. It still holds
+      residual magical energy and is valuable for crafting or selling.
+    type: reagent
+    rarity: uncommon
+    value: 75
+    weight: 2.0
+
+  - id: heated_metal
+    name: heated metal
+    keywords: [heated, metal, hot, material]
+    short_description: Metal still warm from a forge golem's body.
+    long_description: >
+      This metal was taken from a forge golem and retains supernatural
+      heat. It can be worked without a forge and never fully cools.
+    type: reagent
+    rarity: uncommon
+    value: 50
+    weight: 3.0
+
+  - id: golem_part
+    name: a golem part
+    keywords: [golem, part, repair, component]
+    short_description: A salvaged component from a repair golem.
+    long_description: >
+      This precision-crafted part was used to maintain other golems.
+      It could be sold to artificers or used in construct repair.
+    type: reagent
+    rarity: common
+    value: 30
+    weight: 1.0
+
+  - id: fire_essence
+    name: fire essence
+    keywords: [fire, essence, elemental, flame]
+    short_description: Pure elemental fire contained in crystal.
+    long_description: >
+      This crystal contains the essence of a fire elemental. It burns
+      eternally without fuel and is invaluable for enchantments.
+    type: reagent
+    rarity: rare
+    value: 150
+    weight: 0.3
+
+  - id: salamander_scale
+    name: salamander scales
+    keywords: [salamander, scale, fire, armor]
+    short_description: Scales from a fire salamander, still warm.
+    long_description: >
+      These scales provide natural protection against fire. Armor
+      crafted from them grants the wearer fire resistance.
+    type: reagent
+    rarity: uncommon
+    value: 60
+    weight: 0.5
+
+  - id: obsidian_core
+    name: an obsidian core
+    keywords: [obsidian, core, magma, elemental]
+    short_description: The solid heart of a magma elemental.
+    long_description: >
+      When a magma elemental is destroyed, its core sometimes survives.
+      This glassy sphere radiates heat and is useful in fire magic.
+    type: reagent
+    rarity: rare
+    value: 120
+    weight: 1.5
+
+  # Vendor Items
+  - id: dwarven_axe
+    name: a dwarven war axe
+    keywords: [dwarven, war, axe, weapon]
+    short_description: A masterfully crafted dwarven battle axe.
+    long_description: >
+      Forged in the Crucible, this axe exemplifies dwarven craftsmanship.
+      Perfectly balanced and impossibly sharp, it will last generations.
+    type: weapon
+    subtype: axe
+    rarity: uncommon
+    value: 350
+    weight: 5.0
+    level_requirement: 12
+    weapon_stats:
+      damage_dice: 1d10
+      damage_type: slashing
+      to_hit_bonus: 1
+
+  - id: forge_hammer
+    name: a forge hammer
+    keywords: [forge, hammer, weapon, tool]
+    short_description: A hammer used in forging and fighting.
+    long_description: >
+      This hammer serves both as a smithing tool and a weapon. Its
+      weight is perfect for shaping metal or crushing skulls.
+    type: weapon
+    subtype: hammer
+    rarity: uncommon
+    value: 300
+    weight: 6.0
+    level_requirement: 12
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: bludgeoning
+      to_hit_bonus: 1
+
+  - id: slag_steel_sword
+    name: a slag steel sword
+    keywords: [slag, steel, sword, weapon]
+    short_description: A sword forged from the Crucible's unique steel.
+    long_description: >
+      Slag steel is a dwarven innovation, stronger than normal steel
+      and resistant to heat. This sword will never rust or dull.
+    type: weapon
+    subtype: longsword
+    rarity: rare
+    value: 500
+    weight: 4.0
+    level_requirement: 14
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: slashing
+      to_hit_bonus: 2
+    magical_properties:
+      - effect: fire_resistance
+        value: 2
+        description: Grants minor fire resistance
+
+  - id: forge_plate
+    name: forge plate armor
+    keywords: [forge, plate, armor, heavy]
+    short_description: Heavy plate armor forged in the Crucible.
+    long_description: >
+      This plate armor was crafted by master smiths in the Crucible's
+      greatest forges. It's nearly impervious to normal weapons.
+    type: armor
+    subtype: heavy
+    rarity: rare
+    value: 800
+    weight: 50.0
+    level_requirement: 15
+    armor_stats:
+      armor_bonus: 8
+      slot: body
+      dexterity_penalty: 3
+
+  - id: slag_chainmail
+    name: slag steel chainmail
+    keywords: [slag, chainmail, armor, medium]
+    short_description: Chainmail woven from slag steel links.
+    long_description: >
+      Each link of this chainmail is made from slag steel. It's
+      lighter than normal mail and provides excellent protection.
+    type: armor
+    subtype: medium
+    rarity: uncommon
+    value: 400
+    weight: 25.0
+    level_requirement: 12
+    armor_stats:
+      armor_bonus: 5
+      slot: body
+      dexterity_penalty: 1
+
+  - id: fire_ward_shield
+    name: a fire ward shield
+    keywords: [fire, ward, shield, defense]
+    short_description: A shield enchanted to ward off fire.
+    long_description: >
+      This dwarven shield was forged with fire resistance in mind.
+      It can block flames as easily as arrows.
+    type: armor
+    subtype: shield
+    rarity: rare
+    value: 450
+    weight: 8.0
+    level_requirement: 13
+    armor_stats:
+      armor_bonus: 2
+      slot: off_hand
+    magical_properties:
+      - effect: fire_resistance
+        value: 5
+        description: Grants significant fire resistance
+
+  - id: fire_ruby
+    name: a fire ruby
+    keywords: [fire, ruby, gem, jewel]
+    short_description: A ruby that burns with inner flame.
+    long_description: >
+      This ruby was formed in volcanic fires and contains elemental
+      energy. It's warm to the touch and glows faintly in darkness.
+    type: treasure
+    rarity: rare
+    value: 500
+    weight: 0.1
+
+  - id: obsidian_gem
+    name: a polished obsidian gem
+    keywords: [obsidian, gem, black, volcanic]
+    short_description: Perfectly polished volcanic glass.
+    long_description: >
+      This obsidian has been polished until it gleams like a mirror.
+      It's valued for both jewelry and magical purposes.
+    type: treasure
+    rarity: uncommon
+    value: 200
+    weight: 0.1
+
+  - id: lava_diamond
+    name: a lava diamond
+    keywords: [lava, diamond, fire, gem]
+    short_description: A diamond formed in volcanic heat.
+    long_description: >
+      This diamond formed under extreme volcanic conditions, giving
+      it an orange-red color and unusual heat resistance.
+    type: treasure
+    rarity: rare
+    value: 750
+    weight: 0.1
+
+  # Boss Drops
+  - id: patriarchs_core
+    name: The Patriarch's Core
+    keywords: [patriarchs, core, legendary, golem]
+    short_description: The ancient heart of the first golem.
+    long_description: >
+      This massive crystal was the Iron Patriarch's power source,
+      created by the founders of the Crucible. It contains enough
+      magical energy to power a city.
+    type: reagent
+    rarity: legendary
+    value: 5000
+    weight: 10.0
+    magical_properties:
+      - effect: golem_creation
+        value: 1
+        description: Can be used to create powerful golems
+
+  - id: crown_of_iron
+    name: Crown of the Iron Patriarch
+    keywords: [crown, iron, patriarch, legendary]
+    short_description: The ancient crown that bound the first golem.
+    long_description: >
+      This crown was used to control the Iron Patriarch in ages past.
+      It still carries authority over constructs and the power to
+      command them.
+    type: armor
+    subtype: helmet
+    rarity: legendary
+    value: 6000
+    weight: 5.0
+    level_requirement: 22
+    armor_stats:
+      armor_bonus: 4
+      slot: head
+    magical_properties:
+      - effect: construct_command
+        value: 1
+        description: Can command constructs
+      - effect: constitution_bonus
+        value: 3
+        description: Grants +3 constitution
+
+  - id: primordial_gear
+    name: a primordial gear
+    keywords: [primordial, gear, ancient, mechanism]
+    short_description: A gear from the Patriarch's original mechanism.
+    long_description: >
+      This gear is from the Iron Patriarch's original construction,
+      made with techniques now lost. It's an irreplaceable artifact
+      of dwarven ingenuity.
+    type: accessory
+    subtype: trinket
+    rarity: legendary
+    value: 3000
+    weight: 2.0
+    magical_properties:
+      - effect: intelligence_bonus
+        value: 2
+        description: Grants +2 intelligence
+      - effect: crafting_bonus
+        value: 5
+        description: Greatly aids crafting abilities

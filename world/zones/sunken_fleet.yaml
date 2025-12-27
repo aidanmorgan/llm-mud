@@ -1,0 +1,37 @@
+# The Sunken Fleet Zone
+# Underwater shipwrecks, naval graveyard, drowned sailors
+
+zone_id: sunken_fleet
+name: The Sunken Fleet
+description: >
+  A naval graveyard where hundreds of ships from a great sea battle lie on
+  the ocean floor. The wrecks are home to drowned sailors who don't know
+  they're dead, treasure hunters who never left, and sea creatures that
+  have made the hulks their lairs. Fortunes in gold lie scattered among
+  the wreckage, guarded by the dead.
+level_range: [12, 20]
+flags: [underwater, wrecks, undead, treasure_heavy]
+coordinate_origin:
+  x: 20
+  y: -5
+  z: -8
+environmental_hazards:
+  - type: pressure
+    amount: 1
+    interval: 180
+    message: "The water pressure weighs heavily on you."
+  - type: drowning
+    amount: 0
+    interval: 0
+    message: "You need water breathing to survive here long."
+  - type: cold
+    amount: 1
+    interval: 240
+    message: "The deep water chills you to the bone."
+ambient_messages:
+  - "A school of fish darts through a broken porthole."
+  - "The hull of a massive warship looms above."
+  - "Gold coins glint in the murky water."
+  - "A ghostly sailor walks the deck of a sunken ship."
+  - "The figurehead of a ship stares with empty eyes."
+  - "Something large moves in the darkness between wrecks."

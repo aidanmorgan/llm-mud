@@ -1,0 +1,347 @@
+zone_id: ravenmoor
+
+mobs:
+  # ==========================================================================
+  # Castle NPCs
+  # ==========================================================================
+  - id: castle_guard
+    vnum: 100
+    name: a castle guard
+    keywords: [guard, castle, soldier]
+    short_description: A castle guard stands at attention here.
+    long_description: >
+      This guard wears the faded livery of Ravenmoor, a raven on a gray field.
+      His armor is dented but well-maintained, and his eyes are watchful despite
+      the city's decline. He takes his duty seriously.
+    level: 5
+    health: 150
+    strength: 14
+    dexterity: 12
+    constitution: 14
+    damage_dice: 1d8
+    damage_type: slashing
+    armor_class: 15
+    behavior_type: guard
+    combat_style: defensive
+    flags: [sentinel, no_wander]
+    dialogue:
+      greeting: "Halt! State your business."
+      topics:
+        castle: "The castle stands, though its glory has faded."
+        steward: "The Steward handles the city's affairs now."
+
+  - id: castle_steward
+    vnum: 101
+    name: the Steward
+    keywords: [steward, official, administrator]
+    short_description: The Steward of Ravenmoor reviews documents at his desk.
+    long_description: >
+      A tired-looking man in once-fine robes manages the affairs of the city.
+      His desk is covered in papers and ledgers. Dark circles under his eyes
+      speak to many sleepless nights. Despite everything, he carries himself
+      with dignity.
+    level: 8
+    health: 80
+    strength: 8
+    dexterity: 10
+    constitution: 10
+    intelligence: 16
+    wisdom: 14
+    charisma: 14
+    behavior_type: passive
+    flags: [sentinel, no_wander, quest_giver]
+    dialogue:
+      greeting: "Greetings, adventurer. Ravenmoor welcomes those who would aid us."
+      topics:
+        quest: "There is much work to be done. The mines need clearing, the roads need patrolling..."
+        city: "Ravenmoor was once great. Perhaps it can be again, with help."
+
+  - id: combat_trainer
+    vnum: 102
+    name: Sergeant Ironhide
+    keywords: [sergeant, trainer, ironhide, soldier]
+    short_description: Sergeant Ironhide barks orders at training dummies.
+    long_description: >
+      A grizzled old warrior with more scars than hair remaining. He wears
+      battered training armor and carries a wooden practice sword. His voice
+      is hoarse from years of shouting commands, but his eyes are sharp
+      and he moves with the grace of a seasoned fighter.
+    level: 10
+    health: 200
+    strength: 16
+    dexterity: 14
+    constitution: 16
+    damage_dice: 1d8
+    damage_type: bludgeoning
+    armor_class: 16
+    behavior_type: passive
+    flags: [sentinel, no_wander, trainer]
+    dialogue:
+      greeting: "You want to learn to fight? I can teach you, if you're not too soft."
+      topics:
+        train: "Training costs gold, but a strong sword arm is priceless."
+        combat: "Remember: keep your guard up and strike when they're open."
+
+  - id: chapel_priest
+    vnum: 103
+    name: Father Aldric
+    keywords: [priest, father, aldric, holy]
+    short_description: Father Aldric tends the chapel's candles.
+    long_description: >
+      An elderly priest in simple white robes moves quietly through the chapel.
+      His hands are steady as he lights candles and arranges offerings. His
+      face is lined but peaceful, and he offers a gentle smile to all who enter.
+    level: 6
+    health: 60
+    strength: 8
+    dexterity: 8
+    constitution: 10
+    intelligence: 12
+    wisdom: 18
+    charisma: 14
+    behavior_type: passive
+    flags: [sentinel, no_wander]
+    dialogue:
+      greeting: "Peace be upon you, child. The light welcomes all."
+      topics:
+        blessing: "I can offer blessings to those who seek them."
+        healing: "The temple can heal wounds of body and spirit."
+
+  # ==========================================================================
+  # Market NPCs
+  # ==========================================================================
+  - id: weapon_merchant
+    vnum: 110
+    name: Grimjaw
+    keywords: [grimjaw, merchant, weapons, shopkeeper]
+    short_description: Grimjaw sharpens a blade behind his counter.
+    long_description: >
+      A heavily scarred veteran runs this weapon shop. He lost an eye in some
+      long-ago battle, but his remaining one is sharp enough to judge both
+      weapons and customers. He speaks little, but his merchandise is quality.
+    level: 8
+    health: 120
+    strength: 16
+    dexterity: 12
+    constitution: 14
+    damage_dice: 1d10
+    damage_type: slashing
+    armor_class: 14
+    behavior_type: passive
+    flags: [sentinel, no_wander, shopkeeper]
+    dialogue:
+      greeting: "See something you want? Make it quick."
+      is_merchant: true
+      shop_items: [rusty_sword, wooden_club, hunting_bow]
+      topics:
+        buy: "Everything has a price. What's yours?"
+        weapons: "Good steel isn't cheap, but it'll save your life."
+    shop:
+      shop_name: "Grimjaw's Arms"
+      buy_markup: 1.5
+      sell_markdown: 0.4
+      shop_gold: 5000
+
+  - id: armor_merchant
+    vnum: 111
+    name: Tormund the Smith
+    keywords: [tormund, smith, armor, merchant, shopkeeper]
+    short_description: Tormund hammers at a piece of armor.
+    long_description: >
+      A massive man with arms like tree trunks works at a small forge in the
+      corner. His leather apron is scorched and stained, and sweat drips from
+      his brow. He looks up from his work when customers enter, offering a
+      friendly nod.
+    level: 7
+    health: 140
+    strength: 18
+    dexterity: 10
+    constitution: 16
+    damage_dice: 1d8
+    damage_type: bludgeoning
+    armor_class: 12
+    behavior_type: passive
+    flags: [sentinel, no_wander, shopkeeper]
+    dialogue:
+      greeting: "Welcome to the Iron Shell! Need something to keep you alive?"
+      is_merchant: true
+      shop_items: [leather_cap, leather_vest]
+      topics:
+        armor: "Good armor is like a second skin. Don't skimp on it."
+        repairs: "I can fix most anything, given time and gold."
+    shop:
+      shop_name: "The Iron Shell"
+      buy_markup: 1.6
+      sell_markdown: 0.45
+      shop_gold: 8000
+
+  - id: general_merchant
+    vnum: 112
+    name: Dusty
+    keywords: [dusty, merchant, shopkeeper, general]
+    short_description: Dusty peers at you from behind stacks of goods.
+    long_description: >
+      An impossibly old gnome barely visible behind the clutter of his shop.
+      His hair is white and wild, and his spectacles are thick as bottle
+      bottoms. Despite appearances, he seems to know exactly where everything
+      is and can find any item in seconds.
+    level: 4
+    health: 40
+    strength: 6
+    dexterity: 10
+    constitution: 8
+    intelligence: 16
+    wisdom: 14
+    charisma: 12
+    behavior_type: passive
+    flags: [sentinel, no_wander, shopkeeper]
+    dialogue:
+      greeting: "Ah, a customer! What do you need? I have everything!"
+      is_merchant: true
+      shop_items: [bread_loaf, healing_potion, mana_potion, healing_herb]
+      topics:
+        supplies: "Rope, torches, rations... everything an adventurer needs!"
+        items: "If it exists, I probably have it. Somewhere."
+    shop:
+      shop_name: "Dusty's General Store"
+      buy_markup: 1.4
+      sell_markdown: 0.5
+      shop_gold: 3000
+
+  - id: city_banker
+    vnum: 113
+    name: Percival Goldworth
+    keywords: [percival, banker, goldworth, bank]
+    short_description: Percival counts coins behind a reinforced counter.
+    long_description: >
+      A thin man in immaculate clothing sits behind a heavy oak counter
+      reinforced with iron bands. His fingers are ink-stained from ledgers,
+      and a pair of spectacles perch on his long nose. He regards customers
+      with the calculating gaze of one who values gold above all else.
+    level: 5
+    health: 50
+    strength: 8
+    dexterity: 12
+    constitution: 10
+    intelligence: 18
+    wisdom: 16
+    charisma: 10
+    behavior_type: passive
+    flags: [sentinel, no_wander]
+    dialogue:
+      greeting: "Welcome to the Ravenmoor Bank. How may I assist you with your finances?"
+      is_banker: true
+      topics:
+        deposit: "Deposit your gold here for safekeeping. No fees."
+        withdraw: "Your gold will be available whenever you need it."
+        interest: "We do not currently offer interest on deposits. Perhaps someday."
+        safety: "Your funds are secured by the most advanced locks in the realm."
+
+  # ==========================================================================
+  # Tavern NPCs
+  # ==========================================================================
+  - id: tavern_keeper
+    vnum: 115
+    name: Marta
+    keywords: [marta, barkeeper, tavern, keeper]
+    short_description: Marta wipes down the bar with a worn rag.
+    long_description: >
+      The tavern keeper is a stout woman with strong arms and a no-nonsense
+      attitude. Her gray-streaked hair is pulled back in a practical bun,
+      and she keeps a cudgel within easy reach. She's seen it all and
+      tolerates no trouble in her establishment.
+    level: 5
+    health: 80
+    strength: 12
+    dexterity: 10
+    constitution: 14
+    charisma: 14
+    behavior_type: passive
+    flags: [sentinel, no_wander, shopkeeper]
+    dialogue:
+      greeting: "What'll it be? Food, drink, or a room?"
+      topics:
+        rooms: "Two gold a night. Breakfast included if you're up early."
+        rumors: "Folks talk. I listen. Buy me a drink and maybe I'll share."
+        food: "The stew's hot and filling. Don't ask what's in it."
+
+  - id: tavern_patron
+    vnum: 116
+    name: a tavern patron
+    keywords: [patron, drunk, customer, villager]
+    short_description: A patron nurses their drink at a table.
+    long_description: >
+      One of the tavern's regular customers. They stare into their drink with
+      the look of someone who's seen better days. They might have stories
+      to tell, or they might just want to be left alone.
+    level: 2
+    health: 30
+    strength: 10
+    dexterity: 10
+    constitution: 10
+    behavior_type: passive
+    flags: []
+    dialogue:
+      greeting: "Hmm? Oh, leave me be."
+      topics:
+        rumors: "I heard the mines are haunted now. Or was it wolves? I forget."
+        city: "Ravenmoor's seen better days. Haven't we all?"
+
+  # ==========================================================================
+  # Gate Guards
+  # ==========================================================================
+  - id: city_guard
+    vnum: 120
+    name: a city guard
+    keywords: [guard, soldier, watch]
+    short_description: A city guard keeps watch here.
+    long_description: >
+      A member of the Ravenmoor city watch in worn but serviceable armor.
+      They look bored but alert, watching travelers come and go through the
+      gates. Their spear is sharp, and they know how to use it.
+    level: 3
+    health: 80
+    strength: 12
+    dexterity: 12
+    constitution: 12
+    damage_dice: 1d6
+    damage_type: piercing
+    armor_class: 14
+    behavior_type: guard
+    combat_style: defensive
+    flags: [sentinel]
+    dialogue:
+      greeting: "Move along. No trouble, now."
+      topics:
+        roads: "Watch yourself out there. The roads aren't as safe as they used to be."
+        bandits: "We've had reports of bandits on the forest path. Travel in groups."
+
+  # ==========================================================================
+  # Temple NPCs
+  # ==========================================================================
+  - id: temple_healer
+    vnum: 130
+    name: Sister Elara
+    keywords: [sister, healer, elara, priest, priestess]
+    short_description: Sister Elara prays quietly at the altar.
+    long_description: >
+      A young woman in white robes kneels at the altar, her head bowed in
+      prayer. When she rises, her face is serene and welcoming. She is
+      devoted to healing the sick and wounded, asking only for donations
+      to maintain the temple.
+    level: 6
+    health: 70
+    strength: 8
+    dexterity: 10
+    constitution: 10
+    intelligence: 14
+    wisdom: 16
+    charisma: 16
+    behavior_type: passive
+    flags: [sentinel, no_wander, healer]
+    dialogue:
+      greeting: "The Light welcomes you, traveler. How may I serve?"
+      topics:
+        healing: "I can heal your wounds for a small donation to the temple."
+        resurrection: "Death is not always the end. But such miracles are costly."
+        blessing: "May the Light guide your path and shield you from darkness."

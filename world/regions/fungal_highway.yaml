@@ -1,0 +1,115 @@
+region_id: fungal_highway
+name: The Fungal Highway
+
+theme:
+  theme_id: mushroom_forest
+  description: >
+    An underground passage of giant mushrooms connects the toxic Mirehollow
+    Swamp to the Verdant Maze. The fungi here have grown to massive size,
+    forming a subterranean forest. Some glow, some release spores, and some
+    are inhabited by strange creatures. The path is treacherous but beautiful.
+
+  room_prompt: >
+    Generate a room description for a giant mushroom forest connecting
+    a toxic swamp to a living maze.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: bioluminescent, alien, organic, dangerous beauty.
+    Early rooms near swamp: Toxic mushrooms, poisonous spores, damp.
+    Middle rooms: Giant mushroom forest, glowing fungi, strange life.
+    Late rooms near maze: Living plant hybrid, maze-like growth patterns.
+    Include sensory details: spore clouds, bioluminescence, organic sounds.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a mushroom/fungal creature for level {target_level}.
+    Room context: {room_description}
+
+    Types: mushroom creatures, spore beasts, fungal infected animals,
+    myconid folk, living plants, giant insects.
+
+    Return JSON with mob details including behavior and personality.
+
+  item_prompt: >
+    Generate a fungal/plant themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: medicinal mushrooms, toxic caps, glowing fungi,
+    spore samples, plant-fungal hybrids, rare specimens.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - mushroom, fungus, spore, cap, stem
+    - glow, bioluminescent, light, color
+    - grow, spread, colony, network
+    - toxic, poison, decay, organic
+    - damp, humid, warm, underground
+
+  forbidden_words:
+    - desert, ice, ocean, volcanic
+    - modern, technology, metal
+
+  sector_types: [underground, swamp, forest]
+
+  ambient_messages:
+    - "Spores drift lazily through the glowing air."
+    - "A mushroom cap pulses with soft light."
+    - "Something squelches underfoot."
+    - "The air is thick with the smell of decay and growth."
+    - "Colors shift as bioluminescent fungi pulse."
+    - "A distant popping sound suggests spore release."
+
+  mob_templates: [mushroom_beast, spore_cloud, myconid, giant_beetle]
+  item_templates: [glowing_cap, healing_mushroom, toxic_spores, rare_specimen]
+
+endpoints:
+  mirehollow_depths:
+    direction: south
+    coordinate:
+      x: -5
+      y: -15
+      z: -5
+  verdant_maze_entrance:
+    direction: north
+    coordinate:
+      x: -20
+      y: 10
+      z: 0
+
+waypoints:
+  - x: -8
+    y: -8
+    z: -4
+    name: "The Spore Cavern"
+    is_required: true
+  - x: -12
+    y: -2
+    z: -2
+    name: "Myconid Village"
+    is_required: true
+  - x: -16
+    y: 5
+    z: -1
+    name: "The Growing Edge"
+    is_required: true
+
+generation:
+  min_rooms: 20
+  max_rooms: 35
+  difficulty_min: 8
+  difficulty_max: 14
+  mob_density: 0.45
+  item_density: 0.18
+  branch_chance: 0.3
+
+primary_sector_type: underground

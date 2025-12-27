@@ -1,0 +1,356 @@
+# Mirehollow Swamp Items
+# Poison-themed equipment, fungal materials, and disease-resistant gear
+
+zone_id: mirehollow
+
+items:
+  # Crafting Materials
+  - id: toxic_spore
+    vnum: 850
+    name: a toxic spore cluster
+    keywords: [toxic, spore, fungal, poison]
+    short_description: A cluster of glowing toxic spores lies here.
+    long_description: >
+      These bioluminescent spores glow with an eerie green light. They
+      are highly toxic if inhaled but valuable for crafting poisons
+      and certain alchemical concoctions.
+    item_type: material
+    rarity: common
+    weight: 0.1
+    value: 20
+
+  - id: swamp_moss
+    vnum: 851
+    name: a clump of swamp moss
+    keywords: [swamp, moss, plant, material]
+    short_description: A clump of spongy swamp moss lies here.
+    long_description: >
+      This thick, spongy moss absorbs moisture and toxins alike. The
+      Mire Druids use it in their rituals, and herbalists prize it
+      for creating antidotes and poultices.
+    item_type: material
+    rarity: common
+    weight: 0.3
+    value: 10
+
+  - id: fungal_heart
+    vnum: 852
+    name: a fungal heart
+    keywords: [fungal, heart, mushroom, core]
+    short_description: A pulsating fungal mass lies here.
+    long_description: >
+      This is the core of a large fungal colony, still pulsing with
+      unnatural life. It radiates faint necromantic energy and is
+      prized by those who study the border between life and death.
+    item_type: material
+    rarity: uncommon
+    weight: 1.0
+    value: 100
+
+  - id: will_o_wisp_essence
+    vnum: 853
+    name: will-o-wisp essence
+    keywords: [wisp, essence, spirit, light]
+    short_description: A jar of glowing ethereal essence floats here.
+    long_description: >
+      Captured from a destroyed will-o-wisp, this essence glows with
+      a cold, pale light. It can be used to craft items that produce
+      light without heat or flame, or to lure the unwary to their doom.
+    item_type: material
+    rarity: rare
+    weight: 0.2
+    value: 150
+
+  # Weapons
+  - id: bog_iron_dagger
+    vnum: 860
+    name: a bog iron dagger
+    keywords: [bog, iron, dagger, rusty]
+    short_description: A crude dagger of bog iron lies here.
+    long_description: >
+      This dagger was forged from iron smelted from bog ore. While
+      crude in appearance, the unique composition makes it resistant
+      to acid and holds an edge well despite its rusty appearance.
+    item_type: weapon
+    rarity: common
+    weight: 1.0
+    value: 35
+    level_requirement: 10
+    weapon_stats:
+      damage_dice: 1d4
+      damage_type: piercing
+      speed: fast
+      resistances: [acid]
+
+  - id: venom_fang
+    vnum: 861
+    name: a venom fang blade
+    keywords: [venom, fang, blade, poison]
+    short_description: A curved blade drips with green venom.
+    long_description: >
+      This wicked blade was crafted to hold poison in grooves along
+      its edge. Each strike delivers a dose of toxin to the victim.
+      The Mire Druids favor such weapons for their rituals.
+    item_type: weapon
+    rarity: uncommon
+    weight: 2.0
+    value: 200
+    level_requirement: 12
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: piercing
+      speed: fast
+      magical_properties:
+        - poison_damage_bonus: 1d4
+        - poison_chance: 25
+
+  - id: fungal_staff
+    vnum: 862
+    name: a fungal staff
+    keywords: [fungal, staff, druid, spore]
+    short_description: A staff of living fungus stands here.
+    long_description: >
+      This staff is not carved but grown, a living column of fungal
+      matter that responds to its wielder's will. Spores drift from
+      its cap, and it pulses with strange life.
+    item_type: weapon
+    rarity: rare
+    weight: 4.0
+    value: 400
+    level_requirement: 14
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: bludgeoning
+      speed: medium
+      magical_properties:
+        - spellpower_bonus: 3
+        - poison_damage_bonus: 1d6
+        - summon_spores: true
+
+  - id: drowner_hook
+    vnum: 863
+    name: a drowner's hook
+    keywords: [drowner, hook, weapon, reach]
+    short_description: A wicked hook on a long pole lies here.
+    long_description: >
+      Used by the creatures of the swamp to drag victims beneath the
+      murky waters, this hook is designed to catch and hold. Rust
+      and old blood stain its curved edge.
+    item_type: weapon
+    rarity: uncommon
+    weight: 6.0
+    value: 150
+    level_requirement: 11
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: piercing
+      speed: slow
+      reach: true
+      magical_properties:
+        - pull_target: true
+
+  # Armor
+  - id: toad_leather
+    vnum: 870
+    name: toad leather armor
+    keywords: [toad, leather, armor, amphibian]
+    short_description: Armor made from giant toad hide lies here.
+    long_description: >
+      This armor is crafted from the hide of giant swamp toads. The
+      naturally slimy surface resists water and poison, while the
+      tough leather provides decent protection.
+    item_type: armor
+    rarity: common
+    weight: 10.0
+    value: 90
+    level_requirement: 10
+    armor_stats:
+      armor_class: 12
+      slot: body
+      resistances: [poison, acid]
+
+  - id: fungal_plate
+    vnum: 871
+    name: fungal plate armor
+    keywords: [fungal, plate, armor, mushroom]
+    short_description: Armor made from hardened fungal material lies here.
+    long_description: >
+      The Mire Druids grow this armor from specially cultivated fungi.
+      The hardened plates are surprisingly strong and release defensive
+      spores when struck.
+    item_type: armor
+    rarity: uncommon
+    weight: 20.0
+    value: 350
+    level_requirement: 13
+    armor_stats:
+      armor_class: 16
+      slot: body
+      resistances: [poison]
+      magical_properties:
+        - spore_retaliation: true
+
+  - id: swamp_waders
+    vnum: 872
+    name: swamp waders
+    keywords: [swamp, waders, boots, waterproof]
+    short_description: Tall waterproof boots lie here.
+    long_description: >
+      These high boots are treated to be completely waterproof and
+      resistant to the swamp's corrosive waters. They allow the
+      wearer to move through shallow water without penalty.
+    item_type: armor
+    rarity: common
+    weight: 4.0
+    value: 60
+    level_requirement: 10
+    armor_stats:
+      armor_class: 1
+      slot: feet
+      magical_properties:
+        - water_walking: shallow
+        - poison_resistance: 10
+
+  - id: mire_druid_robes
+    vnum: 873
+    name: Mire Druid robes
+    keywords: [mire, druid, robes, cloth]
+    short_description: Dark green robes stained with swamp water lie here.
+    long_description: >
+      These robes mark the wearer as a Mire Druid, one who communes
+      with the darker aspects of nature. They are enchanted to blend
+      with swamp surroundings and resist disease.
+    item_type: armor
+    rarity: rare
+    weight: 3.0
+    value: 300
+    level_requirement: 12
+    armor_stats:
+      armor_class: 10
+      slot: body
+      immunities: [disease]
+      magical_properties:
+        - camouflage_swamp: true
+        - nature_spellpower: 2
+
+  # Consumables
+  - id: antidote_potion
+    vnum: 880
+    name: an antidote potion
+    keywords: [antidote, potion, cure, poison]
+    short_description: A clear potion that neutralizes toxins lies here.
+    long_description: >
+      This potion instantly neutralizes most poisons in the drinker's
+      system. It is essential for anyone venturing into the swamp's
+      toxic depths.
+    item_type: consumable
+    rarity: common
+    weight: 0.5
+    value: 30
+    consumable_effect:
+      effect_type: cure
+      cures: [poison]
+
+  - id: disease_ward
+    vnum: 881
+    name: a disease ward charm
+    keywords: [disease, ward, charm, protection]
+    short_description: A small charm that wards against disease lies here.
+    long_description: >
+      This charm is crafted from blessed herbs and contains powerful
+      protective magic. When worn, it prevents the wearer from
+      contracting diseases for a limited time.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.1
+    value: 75
+    consumable_effect:
+      effect_type: buff
+      duration: 600
+      effects:
+        disease_immunity: true
+
+  - id: murky_potion
+    vnum: 882
+    name: a murky potion
+    keywords: [murky, potion, swamp, mysterious]
+    short_description: A murky green potion of unknown origin lies here.
+    long_description: >
+      This potion was brewed by the Mire Druids from unknown
+      ingredients. Its effects are unpredictable - it might heal,
+      harm, or transform the drinker.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.5
+    value: 40
+    consumable_effect:
+      effect_type: random
+      possible_effects:
+        - heal_amount: 50
+        - poison_damage: 20
+        - temporary_transformation: toad
+
+  # Boss Drops
+  - id: bloated_ones_bile
+    vnum: 890
+    name: the Bloated One's bile sac
+    keywords: [bloated, bile, sac, boss, poison]
+    short_description: A massive bile sac from the Bloated One lies here.
+    long_description: >
+      This grotesque organ contains the concentrated toxins of the
+      Bloated One. A single drop could poison a river. In the hands
+      of a skilled alchemist, it could create the deadliest poisons
+      or the most potent antidotes.
+    item_type: material
+    rarity: legendary
+    weight: 8.0
+    value: 2500
+    flags: [no_drop, quest_item]
+
+  - id: plague_crown
+    vnum: 891
+    name: the Crown of Pestilence
+    keywords: [crown, pestilence, plague, boss, head]
+    short_description: A crown of twisted bone and fungus lies here.
+    long_description: >
+      This grotesque crown was grown from the Bloated One's own
+      body. Wearing it grants immunity to all poisons and diseases,
+      but marks the wearer as a carrier of plague. Others may sicken
+      in their presence.
+    item_type: armor
+    rarity: legendary
+    weight: 1.5
+    value: 2800
+    level_requirement: 16
+    armor_stats:
+      armor_class: 2
+      slot: head
+      immunities: [poison, disease]
+      magical_properties:
+        - poison_aura: true
+        - constitution_bonus: 3
+        - charisma_penalty: 2
+
+  - id: plaguebearer
+    vnum: 892
+    name: Plaguebearer
+    keywords: [plaguebearer, staff, boss, disease]
+    short_description: A staff that oozes disease lies here.
+    long_description: >
+      This staff was the Bloated One's instrument of plague. It
+      constantly weeps foul ichor and spreads disease with every
+      strike. Those who master it can command sickness itself.
+    item_type: weapon
+    rarity: legendary
+    weight: 6.0
+    value: 3200
+    level_requirement: 16
+    weapon_stats:
+      damage_dice: 1d10
+      damage_type: poison
+      speed: medium
+      magical_properties:
+        - poison_damage_bonus: 2d8
+        - disease_on_hit: true
+        - summon_plague_swarm: true
+        - intelligence_bonus: 2

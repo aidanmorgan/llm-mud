@@ -1,0 +1,242 @@
+# LLM-MUD Docker Compose Configuration
+#
+# Multi-zone distributed deployment using Ray cluster.
+# Each zone runs in its own container for testing the distributed architecture.
+#
+# Usage:
+#   docker-compose up -d          # Start all services
+#   docker-compose logs -f        # View logs
+#   docker-compose down           # Stop all services
+#
+# Access:
+#   Web Client: http://localhost:8000
+#   WebSocket Gateway: ws://localhost:4000
+#   Ray Dashboard: http://localhost:8265
+
+services:
+  # ===========================================================================
+  # Infrastructure Services
+  # ===========================================================================
+
+  ray-head:
+    # IMPORTANT: Use our custom image so actors can be scheduled on head node
+    # Ray requires all nodes to have the same code/dependencies
+    image: llmmud-zone:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.zone
+    container_name: llmmud-ray-head
+    entrypoint: []  # Override default entrypoint
+    command: >
+      ray start --head
+      --port=6379
+      --ray-client-server-port=10001
+      --dashboard-host=0.0.0.0
+      --dashboard-port=8265
+      --block
+    ports:
+      - "6379:6379"       # Ray GCS
+      - "8265:8265"       # Ray Dashboard
+      - "10001:10001"     # Ray Client
+    environment:
+      - RAY_ENABLE_RECORD_ACTOR_TASK_LOGGING=1
+    shm_size: '2gb'
+    healthcheck:
+      test: ["CMD", "ray", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - llmmud-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: llmmud-redis
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - llmmud-network
+
+  # ===========================================================================
+  # Zone Image (built once, used by all zone services)
+  # ===========================================================================
+
+  zone-core:
+    image: llmmud-zone:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.zone
+    container_name: llmmud-zone-core
+    environment:
+      - RAY_ADDRESS=ray-head:6379
+      - ZONE_TYPE=core
+      - REDIS_URL=redis://redis:6379
+    shm_size: '2gb'
+    volumes:
+      - ./world:/app/world:ro
+    depends_on:
+      ray-head:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - llmmud-network
+
+  zone-gateway:
+    image: llmmud-zone:latest
+    container_name: llmmud-zone-gateway
+    environment:
+      - RAY_ADDRESS=ray-head:6379
+      - ZONE_TYPE=gateway
+      - GATEWAY_HOST=0.0.0.0
+      - GATEWAY_PORT=4000
+      - REDIS_URL=redis://redis:6379
+    shm_size: '2gb'
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./world:/app/world:ro
+    depends_on:
+      - zone-core
+    restart: unless-stopped
+    networks:
+      - llmmud-network
+
+  # ===========================================================================
+  # Zone Workers (all use the same image, configured via ZONE_ID)
+  # ===========================================================================
+
+  zone-ravenmoor:
+    image: llmmud-zone:latest
+    container_name: llmmud-zone-ravenmoor
+    environment:
+      - RAY_ADDRESS=ray-head:6379
+      - ZONE_TYPE=zone
+      - ZONE_ID=ravenmoor
+      - WORLD_PATH=/app/world
+      - REDIS_URL=redis://redis:6379
+    shm_size: '2gb'
+    volumes:
+      - ./world:/app/world:ro
+    depends_on:
+      - zone-core
+    restart: unless-stopped
+    networks:
+      - llmmud-network
+
+  zone-willowdale:
+    image: llmmud-zone:latest
+    container_name: llmmud-zone-willowdale
+    environment:
+      - RAY_ADDRESS=ray-head:6379
+      - ZONE_TYPE=zone
+      - ZONE_ID=willowdale
+      - WORLD_PATH=/app/world
+      - REDIS_URL=redis://redis:6379
+    shm_size: '2gb'
+    volumes:
+      - ./world:/app/world:ro
+    depends_on:
+      - zone-core
+    restart: unless-stopped
+    networks:
+      - llmmud-network
+
+  zone-ironvein:
+    image: llmmud-zone:latest
+    container_name: llmmud-zone-ironvein
+    environment:
+      - RAY_ADDRESS=ray-head:6379
+      - ZONE_TYPE=zone
+      - ZONE_ID=ironvein
+      - WORLD_PATH=/app/world
+      - REDIS_URL=redis://redis:6379
+    shm_size: '2gb'
+    volumes:
+      - ./world:/app/world:ro
+    depends_on:
+      - zone-core
+    restart: unless-stopped
+    networks:
+      - llmmud-network
+
+  zone-coral-bay:
+    image: llmmud-zone:latest
+    container_name: llmmud-zone-coral-bay
+    environment:
+      - RAY_ADDRESS=ray-head:6379
+      - ZONE_TYPE=zone
+      - ZONE_ID=coral_bay
+      - WORLD_PATH=/app/world
+      - REDIS_URL=redis://redis:6379
+    shm_size: '2gb'
+    volumes:
+      - ./world:/app/world:ro
+    depends_on:
+      - zone-core
+    restart: unless-stopped
+    networks:
+      - llmmud-network
+
+  zone-stillwater:
+    image: llmmud-zone:latest
+    container_name: llmmud-zone-stillwater
+    environment:
+      - RAY_ADDRESS=ray-head:6379
+      - ZONE_TYPE=zone
+      - ZONE_ID=stillwater
+      - WORLD_PATH=/app/world
+      - REDIS_URL=redis://redis:6379
+    shm_size: '2gb'
+    volumes:
+      - ./world:/app/world:ro
+    depends_on:
+      - zone-core
+    restart: unless-stopped
+    networks:
+      - llmmud-network
+
+  # ===========================================================================
+  # Web Client
+  # ===========================================================================
+
+  web-client:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: llmmud-web-client
+    environment:
+      - RAY_ADDRESS=ray-head:6379
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "8000:8000"
+    depends_on:
+      - zone-gateway
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - llmmud-network
+
+# ===========================================================================
+# Networks and Volumes
+# ===========================================================================
+
+networks:
+  llmmud-network:
+    driver: bridge
+
+volumes:
+  redis-data:

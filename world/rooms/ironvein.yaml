@@ -1,0 +1,194 @@
+zone_id: ironvein
+
+rooms:
+  - id: ironvein_entrance
+    vnum: 300
+    name: Mine Entrance
+    short_description: The yawning mouth of the old mine
+    long_description: >
+      A dark tunnel opens into the hillside, supported by rotting wooden
+      beams. Rusted mining equipment lies scattered about - overturned
+      carts, broken picks, and coils of frayed rope. A cold draft blows
+      from within, carrying the smell of damp stone and something else...
+      something unpleasant. Faded warning signs are posted near the entrance.
+    exits:
+      north:
+        destination: ~
+        leads_to_region: mine_trail
+        target_coordinate:
+          x: 0
+          y: -7
+          z: -1
+      down: ironvein_upper_tunnel
+    sector_type: cave
+    ambient_messages:
+      - Water drips somewhere in the darkness.
+      - The wooden supports creak ominously.
+      - A cold draft carries strange sounds from below.
+
+  - id: ironvein_upper_tunnel
+    vnum: 301
+    name: Upper Tunnels
+    short_description: A dusty mining tunnel
+    long_description: >
+      The tunnel here is wide enough for two to walk abreast. Pick marks
+      score the walls where miners once worked the stone. Abandoned
+      lanterns hang from hooks, long since out of oil. Cart tracks run
+      along the floor, disappearing into the darkness ahead.
+    exits:
+      up: ironvein_entrance
+      south: ironvein_junction
+    sector_type: cave
+    flags: [dark]
+    mob_spawns:
+      - template_id: cave_rat
+        max_count: 3
+
+  - id: ironvein_junction
+    vnum: 302
+    name: Tunnel Junction
+    short_description: Where several tunnels meet
+    long_description: >
+      Multiple tunnels branch off from this central point. Signs once
+      marked which led where, but they've long since fallen or been
+      destroyed. A rusty minecart sits abandoned on the tracks, its
+      contents long since looted.
+    exits:
+      north: ironvein_upper_tunnel
+      east: ironvein_east_shaft
+      west: ironvein_west_shaft
+      down: ironvein_deep_shaft
+    sector_type: cave
+    flags: [dark]
+
+  - id: ironvein_east_shaft
+    vnum: 303
+    name: East Mining Shaft
+    short_description: An abandoned mining shaft
+    long_description: >
+      This shaft shows signs of collapse - rocks and debris litter the
+      floor, and cracks spider across the ceiling. Despite the danger,
+      veins of ore are visible in the walls. Whatever drove the miners
+      away left in a hurry.
+    exits:
+      west: ironvein_junction
+      east: ironvein_collapsed_tunnel
+    sector_type: cave
+    flags: [dark]
+    mob_spawns:
+      - template_id: kobold_miner
+        max_count: 2
+    item_spawns:
+      - template_id: iron_ore
+        max_count: 2
+
+  - id: ironvein_west_shaft
+    vnum: 304
+    name: West Mining Shaft
+    short_description: A dark shaft to the west
+    long_description: >
+      Thick cobwebs hang from the ceiling here, evidence of large spiders
+      making their home in these abandoned tunnels. Old mining equipment
+      lies wrapped in silk, and bones can be seen among the webs. Something
+      moves in the darkness.
+    exits:
+      east: ironvein_junction
+    sector_type: cave
+    flags: [dark]
+    mob_spawns:
+      - template_id: giant_spider
+        max_count: 3
+
+  - id: ironvein_collapsed_tunnel
+    vnum: 305
+    name: Collapsed Tunnel
+    short_description: A partially collapsed passage
+    long_description: >
+      The tunnel here has partially given way, boulders blocking most
+      of the passage. A small gap remains, just large enough for someone
+      to squeeze through. Glittering objects can be seen among the
+      rubble - treasures left behind when the mine was abandoned.
+    exits:
+      west: ironvein_east_shaft
+    sector_type: cave
+    flags: [dark]
+    item_spawns:
+      - template_id: old_coins
+        max_count: 3
+      - template_id: gemstone
+        max_count: 1
+
+  - id: ironvein_deep_shaft
+    vnum: 310
+    name: Deep Shaft
+    short_description: The deep levels of the mine
+    long_description: >
+      The air here is thick and stale. The tunnel descends steeply into
+      darkness, the walls slick with moisture. Strange growths cling to
+      the stone - phosphorescent fungi that cast an eerie glow. The
+      sounds of dripping water echo from somewhere below.
+    exits:
+      up: ironvein_junction
+      down: ironvein_underground_lake
+    sector_type: cave
+    flags: [dark]
+    mob_spawns:
+      - template_id: kobold_warrior
+        max_count: 2
+
+  - id: ironvein_underground_lake
+    vnum: 311
+    name: Underground Lake
+    short_description: A vast underground lake
+    long_description: >
+      The tunnel opens into a massive cavern dominated by a dark,
+      still lake. Phosphorescent fungi line the shores, casting pale
+      light across the water's surface. Strange ripples disturb the
+      water occasionally, hinting at things that live in the depths.
+      An island rises from the center of the lake.
+    exits:
+      up: ironvein_deep_shaft
+      east: ironvein_lakeshore
+    sector_type: cave
+    flags: [dark]
+    ambient_messages:
+      - Something splashes in the dark water.
+      - The fungi pulse with a soft, rhythmic glow.
+      - A cold breeze ripples across the lake surface.
+
+  - id: ironvein_lakeshore
+    vnum: 312
+    name: Lakeshore
+    short_description: The rocky shore of the underground lake
+    long_description: >
+      The shore here is littered with smooth stones and the remains of
+      old mining operations. A small rowboat is tied to a post, its
+      wood warped but still serviceable. It could take someone to the
+      island, for those brave enough to try.
+    exits:
+      west: ironvein_underground_lake
+      east: ironvein_boss_chamber
+    sector_type: cave
+    flags: [dark]
+    mob_spawns:
+      - template_id: cave_fisher
+        max_count: 1
+
+  - id: ironvein_boss_chamber
+    vnum: 320
+    name: Kobold King's Throne
+    short_description: A makeshift throne room
+    long_description: >
+      This cavern has been transformed into a crude throne room. A
+      large chair carved from stone sits atop a raised platform,
+      surrounded by piles of stolen goods. Torches burn in sconces,
+      providing flickering light. This is clearly the lair of whoever
+      leads the creatures that took over the mine.
+    exits:
+      west: ironvein_lakeshore
+    sector_type: cave
+    mob_spawns:
+      - template_id: kobold_king
+        max_count: 1
+      - template_id: kobold_warrior
+        max_count: 2

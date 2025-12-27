@@ -1,0 +1,116 @@
+region_id: sky_road
+name: The Sky Road
+
+theme:
+  theme_id: mountain_ascent
+  description: >
+    A treacherous path climbs from Stillwater Monastery to the peaks of
+    Windreach. The trail winds through alpine meadows, across precarious
+    bridges, and through howling wind tunnels. The higher you climb, the
+    thinner the air and the stronger the storms become.
+
+  room_prompt: >
+    Generate a room description for a mountain ascent path leading to
+    storm-touched peaks.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: exposed, windswept, dangerous heights, alpine beauty.
+    Early rooms: Mountain trail, pine forests, clear views.
+    Middle rooms: Above treeline, rocky paths, strong winds.
+    Late rooms: Near the peaks, thin air, storm clouds, lightning.
+    Include sensory details: wind, cold, vertigo, distant views.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a mountain/storm creature for level {target_level}.
+    Room context: {room_description}
+
+    Types early: mountain goats, eagles, rock elementals.
+    Types middle: wind spirits, storm hawks, corrupted monks.
+    Types late: storm elementals, cloud giants, lightning creatures.
+
+    Return JSON with mob details including behavior and personality.
+
+  item_prompt: >
+    Generate a mountain/storm themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: climbing gear, storm-touched items, mountain crystals,
+    wind-carved stones, monk relics, lightning-charged objects.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - mountain, peak, summit, cliff, ledge
+    - wind, storm, gust, howl, roar
+    - sky, cloud, lightning, thunder
+    - cold, thin, high, exposed, treacherous
+    - stone, rock, crystal, ice
+
+  forbidden_words:
+    - underground, ocean, forest, desert
+    - modern, technology, urban
+
+  sector_types: [mountain, alpine, sky]
+
+  ambient_messages:
+    - "Wind howls past with tremendous force."
+    - "Lightning flickers in the clouds above."
+    - "The view stretches endlessly below."
+    - "Your breath comes short in the thin air."
+    - "A griffin circles far overhead."
+    - "Thunder rolls across the peaks."
+
+  mob_templates: [mountain_goat, storm_hawk, wind_elemental, rock_troll]
+  item_templates: [storm_crystal, climbing_rope, wind_charm, mountain_herb]
+
+endpoints:
+  stillwater_north_gate:
+    direction: north
+    coordinate:
+      x: 2
+      y: 12
+      z: 6
+  windreach_south_pass:
+    direction: south
+    coordinate:
+      x: 10
+      y: 35
+      z: 25
+
+waypoints:
+  - x: 4
+    y: 18
+    z: 10
+    name: "The Treeline Camp"
+    is_required: true
+  - x: 6
+    y: 25
+    z: 16
+    name: "Eagle's Rest"
+    is_required: true
+  - x: 8
+    y: 32
+    z: 22
+    name: "Storm Gate"
+    is_required: true
+
+generation:
+  min_rooms: 20
+  max_rooms: 35
+  difficulty_min: 10
+  difficulty_max: 20
+  mob_density: 0.35
+  item_density: 0.12
+  branch_chance: 0.2
+
+primary_sector_type: mountain

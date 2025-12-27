@@ -1,0 +1,318 @@
+# Obsidian Depths Items
+# Volcanic materials and fire cult artifacts
+
+zone_id: obsidian_depths
+
+items:
+  # Common Drops
+  - id: obsidian_fang
+    name: an obsidian spider fang
+    keywords: [obsidian, spider, fang, sharp]
+    short_description: A razor-sharp fang of volcanic glass.
+    long_description: >
+      This fang from an obsidian spider is impossibly sharp. It can
+      be used to craft weapons or as a reagent in fire magic.
+    type: reagent
+    rarity: uncommon
+    value: 45
+    weight: 0.2
+
+  - id: glass_silk
+    name: glass silk
+    keywords: [glass, silk, spider, thread]
+    short_description: Thread spun from volcanic glass.
+    long_description: >
+      Obsidian spiders spin webs of crystallized lava. This silk
+      is incredibly strong and heat-resistant, perfect for armor.
+    type: reagent
+    rarity: rare
+    value: 120
+    weight: 0.3
+
+  - id: mephit_core
+    name: a mephit core
+    keywords: [mephit, core, fire, elemental]
+    short_description: The fiery heart of a magma mephit.
+    long_description: >
+      This small sphere of solidified magma was the mephit's core.
+      It still radiates heat and is useful in fire enchantments.
+    type: reagent
+    rarity: uncommon
+    value: 40
+    weight: 0.2
+
+  - id: cult_robe
+    name: fire cultist robes
+    keywords: [cult, robe, fire, clothing]
+    short_description: Robes worn by fire cultists.
+    long_description: >
+      These robes are treated to resist fire and marked with cult
+      symbols. They provide minor fire protection.
+    type: armor
+    subtype: robe
+    rarity: common
+    value: 50
+    weight: 3.0
+    armor_stats:
+      armor_bonus: 1
+      slot: body
+    magical_properties:
+      - effect: fire_resistance
+        value: 2
+        description: Grants minor fire resistance
+
+  - id: fire_crystal
+    name: a fire crystal
+    keywords: [fire, crystal, elemental, glowing]
+    short_description: A crystal that glows with inner flame.
+    long_description: >
+      These crystals grow in the depths, infused with elemental fire.
+      They never stop glowing and can provide eternal light and heat.
+    type: reagent
+    rarity: uncommon
+    value: 75
+    weight: 0.3
+
+  - id: overseer_tattoo
+    name: an overseer's tattoo pattern
+    keywords: [overseer, tattoo, pattern, magical]
+    short_description: A pattern for magical fire tattoos.
+    long_description: >
+      This leather shows the pattern of a cult overseer's magical
+      tattoos. The pattern grants fire magic if properly applied.
+    type: scroll
+    rarity: rare
+    value: 300
+    weight: 0.2
+    magical_properties:
+      - effect: tattoo_pattern
+        value: 1
+        description: Can be used to apply magical tattoos
+
+  - id: command_rod
+    name: a cult command rod
+    keywords: [command, rod, cult, fire]
+    short_description: A rod used to command lesser cultists.
+    long_description: >
+      Overseers use these rods to command both cultists and fire
+      elementals. It channels fire magic and grants authority.
+    type: weapon
+    subtype: mace
+    rarity: rare
+    value: 400
+    weight: 2.0
+    level_requirement: 17
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: fire
+      to_hit_bonus: 2
+    magical_properties:
+      - effect: fire_command
+        value: 1
+        description: Can command fire elementals
+
+  - id: fire_fang
+    name: a fire snake fang
+    keywords: [fire, snake, fang, venom]
+    short_description: A fang that drips liquid fire.
+    long_description: >
+      This fang came from a fire snake. It drips molten venom and
+      can be used to coat weapons with burning poison.
+    type: reagent
+    rarity: uncommon
+    value: 55
+    weight: 0.1
+
+  - id: guardian_core
+    name: a crystal guardian core
+    keywords: [guardian, core, crystal, power]
+    short_description: The power source of a crystal guardian.
+    long_description: >
+      This core powered a crystal guardian construct. It contains
+      significant fire magic and can power other constructs.
+    type: reagent
+    rarity: rare
+    value: 150
+    weight: 1.0
+
+  - id: flame_essence
+    name: concentrated flame essence
+    keywords: [flame, essence, concentrated, fire]
+    short_description: Purified elemental fire.
+    long_description: >
+      This essence was extracted from a flame guardian. It's more
+      concentrated than normal fire essence and quite valuable.
+    type: reagent
+    rarity: rare
+    value: 180
+    weight: 0.2
+
+  - id: obsidian_shard
+    name: an obsidian shard
+    keywords: [obsidian, shard, glass, sharp]
+    short_description: A piece of magical volcanic glass.
+    long_description: >
+      This obsidian came from a temple guardian. It's sharper than
+      steel and holds magical properties from its enchantment.
+    type: reagent
+    rarity: uncommon
+    value: 60
+    weight: 0.5
+
+  - id: golem_heart
+    name: a golem heart
+    keywords: [golem, heart, core, construct]
+    short_description: The magical heart of an obsidian golem.
+    long_description: >
+      This crystalline heart powered an obsidian golem. It contains
+      significant magical energy useful in construct creation.
+    type: reagent
+    rarity: rare
+    value: 200
+    weight: 2.0
+
+  - id: priest_vestments
+    name: fire priest vestments
+    keywords: [priest, vestments, fire, holy]
+    short_description: Ceremonial robes of a fire priest.
+    long_description: >
+      These vestments mark the wearer as a priest of the Molten King.
+      They provide significant fire protection and aid fire magic.
+    type: armor
+    subtype: robe
+    rarity: rare
+    value: 350
+    weight: 4.0
+    level_requirement: 18
+    armor_stats:
+      armor_bonus: 2
+      slot: body
+    magical_properties:
+      - effect: fire_resistance
+        value: 5
+        description: Grants significant fire resistance
+      - effect: fire_magic_bonus
+        value: 2
+        description: Enhances fire spells
+
+  - id: holy_fire_symbol
+    name: a holy fire symbol
+    keywords: [holy, fire, symbol, divine]
+    short_description: A symbol sacred to the fire cult.
+    long_description: >
+      This symbol is used in worship of the Molten King. It channels
+      fire magic and can be used to cast divine fire spells.
+    type: accessory
+    subtype: held
+    rarity: rare
+    value: 300
+    weight: 0.5
+    magical_properties:
+      - effect: divine_fire
+        value: 1
+        description: Can cast fire-based divine magic
+
+  - id: fire_spear
+    name: a salamander fire spear
+    keywords: [salamander, fire, spear, weapon]
+    short_description: A spear wreathed in eternal flame.
+    long_description: >
+      Salamanders craft these spears in their magma dens. The flame
+      never goes out and the spear is incredibly hot to the touch.
+    type: weapon
+    subtype: spear
+    rarity: rare
+    value: 500
+    weight: 5.0
+    level_requirement: 18
+    weapon_stats:
+      damage_dice: 1d10
+      damage_type: piercing
+      to_hit_bonus: 2
+    magical_properties:
+      - effect: fire_damage
+        value: 1d6
+        description: Deals additional fire damage
+
+  # Boss Drops
+  - id: molten_crown
+    name: Crown of the Molten King
+    keywords: [molten, crown, legendary, fire]
+    short_description: A crown of living fire.
+    long_description: >
+      This crown burned atop the Molten King's brow for millennia.
+      It grants absolute mastery over fire and the ability to
+      command volcanic forces.
+    type: armor
+    subtype: helmet
+    rarity: legendary
+    value: 8000
+    weight: 2.0
+    level_requirement: 25
+    armor_stats:
+      armor_bonus: 4
+      slot: head
+    magical_properties:
+      - effect: fire_immunity
+        value: 1
+        description: Immune to fire damage
+      - effect: fire_mastery
+        value: 1
+        description: Fire spells are twice as effective
+      - effect: constitution_bonus
+        value: 3
+        description: Grants +3 constitution
+
+  - id: kings_flame
+    name: The King's Flame
+    keywords: [kings, flame, legendary, sword]
+    short_description: A blade of crystallized magma.
+    long_description: >
+      This massive sword was wielded by the Molten King in ancient
+      times. It's made of crystallized lava that never cools and
+      strikes with the force of a volcanic eruption.
+    type: weapon
+    subtype: greatsword
+    rarity: legendary
+    value: 9000
+    weight: 12.0
+    level_requirement: 25
+    weapon_stats:
+      damage_dice: 3d8
+      damage_type: slashing
+      to_hit_bonus: 4
+    magical_properties:
+      - effect: fire_damage
+        value: 2d8
+        description: Deals massive additional fire damage
+      - effect: strength_bonus
+        value: 2
+        description: Grants +2 strength
+
+  - id: heart_of_the_volcano
+    name: Heart of the Volcano
+    keywords: [heart, volcano, legendary, core]
+    short_description: The molten core of the Molten King himself.
+    long_description: >
+      This sphere of eternally molten rock was the Molten King's
+      heart. It contains enough power to fuel a volcano and grants
+      the bearer control over magma and earth.
+    type: accessory
+    subtype: held
+    rarity: legendary
+    value: 10000
+    weight: 5.0
+    level_requirement: 25
+    magical_properties:
+      - effect: magma_control
+        value: 1
+        description: Can control lava and magma
+      - effect: earthquake
+        value: 1
+        description: Can cause localized earthquakes
+      - effect: strength_bonus
+        value: 3
+        description: Grants +3 strength
+      - effect: constitution_bonus
+        value: 3
+        description: Grants +3 constitution

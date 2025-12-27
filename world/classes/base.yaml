@@ -1,0 +1,259 @@
+# Character Classes
+# ROM-inspired class definitions for LLM-MUD
+
+classes:
+  # ==========================================================================
+  # Warrior - Melee combat specialist
+  # ==========================================================================
+  - class_id: warrior
+    name: Warrior
+    description: >
+      Masters of martial combat, Warriors excel in close-quarters battle.
+      They wear the heaviest armor, wield the mightiest weapons, and can
+      take punishment that would fell lesser fighters. Warriors lead the
+      charge in battle and protect their allies with shield and steel.
+    stat_modifiers:
+      strength: 2
+      constitution: 1
+      intelligence: -1
+    health_per_level: 15
+    mana_per_level: 2
+    starting_health: 120
+    starting_mana: 30
+    starting_gold: 100
+    prime_attribute: strength
+    class_skills:
+      - bash
+      - kick
+      - parry
+      - disarm
+      - rescue
+      - second_attack
+      - third_attack
+    starting_skills:
+      - bash
+      - kick
+    starting_equipment:
+      - rusty_sword
+      - leather_vest
+    starting_room: ravenmoor_square
+    armor_proficiency:
+      - cloth
+      - light
+      - medium
+      - heavy
+      - shield
+    weapon_proficiency:
+      - sword
+      - axe
+      - mace
+      - hammer
+      - spear
+      - dagger
+    # Proficiency skill bonuses - warriors are skilled at making and breaking weapons
+    proficiency_bonuses:
+      blacksmithing: 10
+      armorsmithing: 10
+      dismantling: 5
+
+  # ==========================================================================
+  # Mage - Arcane spellcaster
+  # ==========================================================================
+  - class_id: mage
+    name: Mage
+    description: >
+      Wielders of arcane magic, Mages command the raw forces of the universe.
+      Though physically frail, they unleash devastating spells that can
+      destroy entire groups of enemies. Mages study ancient tomes and
+      unlock secrets of power that few can comprehend.
+    stat_modifiers:
+      intelligence: 2
+      wisdom: 1
+      constitution: -1
+      strength: -1
+    health_per_level: 6
+    mana_per_level: 12
+    starting_health: 60
+    starting_mana: 120
+    starting_gold: 80
+    prime_attribute: intelligence
+    class_skills:
+      - magic_missile
+      - fireball
+      - frost_bolt
+      - lightning_bolt
+      - shield
+      - teleport
+      - identify
+      - meditation
+    starting_skills:
+      - magic_missile
+      - meditation
+    starting_equipment:
+      - wooden_club
+    starting_room: ravenmoor_square
+    armor_proficiency:
+      - cloth
+    weapon_proficiency:
+      - dagger
+      - staff
+      - wand
+    # Proficiency skill bonuses - mages excel at magical crafting
+    proficiency_bonuses:
+      enchanting: 15
+      alchemy: 10
+      herbalism: 5
+
+  # ==========================================================================
+  # Cleric - Divine healer and protector
+  # ==========================================================================
+  - class_id: cleric
+    name: Cleric
+    description: >
+      Servants of the divine, Clerics channel holy power to heal wounds,
+      cure ailments, and smite the unholy. They serve as the backbone
+      of any adventuring party, keeping allies alive and turning back
+      the forces of darkness with their righteous fury.
+    stat_modifiers:
+      wisdom: 2
+      constitution: 1
+      dexterity: -1
+    health_per_level: 10
+    mana_per_level: 8
+    starting_health: 100
+    starting_mana: 80
+    starting_gold: 100
+    prime_attribute: wisdom
+    class_skills:
+      - cure_light
+      - cure_serious
+      - heal
+      - bless
+      - protection
+      - dispel_evil
+      - sanctuary
+      - resurrection
+    starting_skills:
+      - cure_light
+      - bless
+    starting_equipment:
+      - wooden_club
+      - leather_vest
+    starting_room: ravenmoor_square
+    armor_proficiency:
+      - cloth
+      - light
+      - medium
+      - shield
+    weapon_proficiency:
+      - mace
+      - hammer
+      - flail
+      - staff
+    # Proficiency skill bonuses - clerics know herbal remedies and healing
+    proficiency_bonuses:
+      alchemy: 10
+      herbalism: 10
+      cooking: 5
+
+  # ==========================================================================
+  # Rogue - Stealth and subterfuge expert
+  # ==========================================================================
+  - class_id: rogue
+    name: Rogue
+    description: >
+      Masters of stealth and deception, Rogues strike from the shadows.
+      They pick locks, disarm traps, and backstab unsuspecting foes for
+      devastating damage. What Rogues lack in direct combat prowess,
+      they make up for with cunning and precise, deadly strikes.
+    stat_modifiers:
+      dexterity: 2
+      charisma: 1
+      strength: -1
+    health_per_level: 8
+    mana_per_level: 4
+    starting_health: 80
+    starting_mana: 40
+    starting_gold: 150
+    prime_attribute: dexterity
+    class_skills:
+      - backstab
+      - sneak
+      - hide
+      - pick_lock
+      - steal
+      - detect_traps
+      - envenom
+      - circle
+    starting_skills:
+      - sneak
+      - hide
+    starting_equipment:
+      - rusty_sword
+    starting_room: ravenmoor_square
+    armor_proficiency:
+      - cloth
+      - light
+    weapon_proficiency:
+      - dagger
+      - sword
+      - bow
+      - crossbow
+    # Proficiency skill bonuses - rogues excel at taking things apart and finding hidden things
+    proficiency_bonuses:
+      dismantling: 10
+      prospecting: 10
+      tinkering: 10
+
+  # ==========================================================================
+  # Ranger - Wilderness warrior and tracker
+  # ==========================================================================
+  - class_id: ranger
+    name: Ranger
+    description: >
+      At home in the wilderness, Rangers are skilled hunters and trackers.
+      They combine martial prowess with nature magic, fighting equally
+      well with bow or blade. Rangers tame animal companions and use
+      their knowledge of the land to survive where others would perish.
+    stat_modifiers:
+      dexterity: 1
+      wisdom: 1
+      constitution: 1
+      charisma: -1
+    health_per_level: 10
+    mana_per_level: 5
+    starting_health: 100
+    starting_mana: 50
+    starting_gold: 90
+    prime_attribute: dexterity
+    class_skills:
+      - track
+      - ambush
+      - dual_wield
+      - animal_companion
+      - cure_poison
+      - entangle
+      - camouflage
+      - hawk_eye
+    starting_skills:
+      - track
+      - dual_wield
+    starting_equipment:
+      - hunting_bow
+    starting_room: ravenmoor_square
+    armor_proficiency:
+      - cloth
+      - light
+      - medium
+    weapon_proficiency:
+      - sword
+      - dagger
+      - bow
+      - crossbow
+      - spear
+    # Proficiency skill bonuses - rangers are skilled survivalists
+    proficiency_bonuses:
+      skinning: 10
+      herbalism: 10
+      foraging: 10
+      fishing: 5

@@ -1,0 +1,13 @@
+zone_id: coral_bay
+name: Coral Bay
+description: >
+  A bustling coastal village east of Ravenmoor. The villagers make their
+  living from fishing, trading, and the occasional salvage from shipwrecks.
+  The bay is dotted with colorful coral formations, and the beaches are
+  popular with traders from distant lands.
+level_range: [2, 6]
+flags: []
+coordinate_origin:
+  x: 12
+  y: 0
+  z: 0

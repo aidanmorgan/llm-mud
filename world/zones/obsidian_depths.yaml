@@ -1,0 +1,32 @@
+# Obsidian Depths Zone
+# Volcanic underworld, lava rivers, fire creatures
+
+zone_id: obsidian_depths
+name: The Obsidian Depths
+description: >
+  Deep beneath the Crucible lies a network of volcanic caverns where lava
+  flows like rivers and the air itself burns. Obsidian formations create a
+  landscape of razor-sharp beauty, and creatures of living fire dwell in
+  the magma. Fire cultists worship here, seeking to awaken something ancient
+  that sleeps in the deepest chambers.
+level_range: [18, 28]
+flags: [indoor, underground, volcanic, fire_hazard, extreme_heat]
+coordinate_origin:
+  x: -35
+  y: -10
+  z: -15
+environmental_hazards:
+  - type: fire
+    amount: 2
+    interval: 90
+    message: "The extreme heat sears your skin."
+  - type: toxic_fumes
+    amount: 1
+    interval: 180
+    message: "Sulfurous fumes burn your lungs."
+ambient_messages:
+  - "Lava bubbles and pops in nearby flows."
+  - "The obsidian walls reflect the hellish glow."
+  - "Something moves in the magma."
+  - "A geyser of fire erupts in the distance."
+  - "The ground trembles with volcanic activity."

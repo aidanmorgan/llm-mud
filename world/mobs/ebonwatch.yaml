@@ -1,0 +1,367 @@
+# Ebonwatch Citadel Mobs
+# Shadow creatures, dark nobles, and bound spirits
+
+zone_id: ebonwatch
+
+mobs:
+  # Shadow Creatures
+  - id: shadow_guard
+    vnum: 1200
+    name: a shadow guard
+    keywords: [guard, shadow, soldier, dark]
+    short_description: A figure of living shadow stands at attention.
+    long_description: >
+      This guard is made of solidified shadow, wearing armor that
+      seems woven from darkness itself. Its features are indistinct,
+      shifting constantly, but its vigilance is unwavering.
+    level: 15
+    health: 140
+    strength: 14
+    dexterity: 16
+    constitution: 14
+    damage_dice: 2d6
+    damage_type: necrotic
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 280
+    abilities: [shadow_strike, fade]
+    resistances: [necrotic]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: shadow_essence
+        drop_chance: 0.3
+
+  - id: shade_servant
+    vnum: 1201
+    name: a shade servant
+    keywords: [shade, servant, shadow, spirit]
+    short_description: A translucent figure glides silently by.
+    long_description: >
+      These shades serve the Shadow Court, performing menial tasks
+      with silent efficiency. They are souls bound to service, their
+      personalities worn away by centuries of servitude.
+    level: 12
+    health: 60
+    strength: 6
+    dexterity: 16
+    constitution: 8
+    damage_dice: 1d8
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: neutral
+    aggro_radius: 2
+    experience_value: 140
+    abilities: [chill_touch]
+    immunities: [physical]
+    loot_table:
+      - template_id: shade_essence
+        drop_chance: 0.2
+
+  - id: mirror_wraith
+    vnum: 1202
+    name: a mirror wraith
+    keywords: [wraith, mirror, reflection, ghost]
+    short_description: Your reflection steps out of a mirror.
+    long_description: >
+      This creature emerges from mirrors, wearing the face of whoever
+      gazes into them. It is a reflection given malevolent life,
+      attacking with intimate knowledge of its victim's weaknesses.
+    level: 14
+    health: 100
+    strength: 12
+    dexterity: 18
+    constitution: 10
+    damage_dice: 2d6
+    damage_type: psychic
+    armor_class: 16
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 3
+    experience_value: 260
+    abilities: [mirror_image, psychic_assault, copy_ability]
+    immunities: [physical]
+    loot_table:
+      - template_id: mirror_shard
+        drop_chance: 0.3
+
+  - id: reflection_horror
+    vnum: 1203
+    name: a reflection horror
+    keywords: [horror, reflection, monster, mirror]
+    short_description: A creature of twisted reflections lurches forward.
+    long_description: >
+      This abomination is a fusion of countless stolen reflections,
+      their faces visible across its amorphous surface. It has no
+      fixed form, constantly shifting between the forms of those
+      it has consumed.
+    level: 16
+    health: 180
+    strength: 16
+    dexterity: 14
+    constitution: 16
+    damage_dice: 2d8
+    damage_type: psychic
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 340
+    abilities: [identity_theft, nightmare_form]
+    resistances: [physical]
+    loot_table:
+      - template_id: horror_core
+        drop_chance: 0.2
+
+  # Shadow Court
+  - id: shadow_noble
+    vnum: 1210
+    name: a shadow noble
+    keywords: [noble, shadow, court, aristocrat]
+    short_description: A figure of dark elegance regards you coldly.
+    long_description: >
+      This member of the Shadow Court wears fashions from centuries
+      past, their features beautiful but alien. They traded their
+      souls for eternal existence in the darkness, and the shadows
+      themselves bend to their will.
+    level: 16
+    health: 120
+    strength: 10
+    dexterity: 16
+    constitution: 12
+    intelligence: 18
+    charisma: 18
+    damage_dice: 2d6
+    damage_type: necrotic
+    armor_class: 15
+    behavior_type: neutral
+    aggro_radius: 4
+    experience_value: 320
+    abilities: [shadow_bolt, charm, darkness]
+    resistances: [necrotic]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: noble_ring
+        drop_chance: 0.2
+      - template_id: shadow_silk
+        drop_chance: 0.3
+
+  - id: shadow_lord
+    vnum: 1211
+    name: a shadow lord
+    keywords: [lord, shadow, court, master]
+    short_description: A being of pure darkness commands this space.
+    long_description: >
+      Shadow lords are the highest-ranking members of the Shadow Court,
+      beings who have transcended physical form to become living shadows.
+      They command lesser shadows with absolute authority and wield
+      darkness as both weapon and armor.
+    level: 18
+    health: 200
+    strength: 14
+    dexterity: 18
+    constitution: 14
+    intelligence: 20
+    wisdom: 16
+    damage_dice: 3d6
+    damage_type: necrotic
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 450
+    abilities: [shadow_storm, summon_shadows, darkness_aura, shadow_step]
+    immunities: [necrotic]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: lord_crown
+        drop_chance: 0.3
+      - template_id: shadow_cloak
+        drop_chance: 0.4
+
+  - id: shadow_knight
+    vnum: 1212
+    name: a shadow knight
+    keywords: [knight, shadow, warrior, dark]
+    short_description: A warrior of living shadow stands ready.
+    long_description: >
+      Shadow knights are the martial arm of the Shadow Court, warriors
+      who have become one with darkness. Their weapons and armor are
+      extensions of their shadow-forms, and they can step between
+      shadows to appear anywhere darkness lies.
+    level: 17
+    health: 180
+    strength: 18
+    dexterity: 16
+    constitution: 16
+    damage_dice: 2d10
+    damage_type: necrotic
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 380
+    abilities: [shadow_blade, shadow_step, darkness]
+    resistances: [necrotic]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: shadow_sword
+        drop_chance: 0.3
+      - template_id: shadow_armor
+        drop_chance: 0.2
+
+  # Spirit Cells
+  - id: bound_spirit
+    vnum: 1220
+    name: a bound spirit
+    keywords: [spirit, bound, ghost, prisoner]
+    short_description: A tormented spirit strains against invisible bonds.
+    long_description: >
+      This spirit is trapped by arcane bindings, unable to move beyond
+      its cell or pass on to the afterlife. Its torment has driven
+      it mad, and it lashes out at anything that comes near.
+    level: 14
+    health: 80
+    strength: 4
+    dexterity: 14
+    constitution: 8
+    damage_dice: 2d4
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 200
+    abilities: [wail, life_drain]
+    immunities: [physical, poison]
+    loot_table:
+      - template_id: spirit_essence
+        drop_chance: 0.3
+
+  - id: spirit_warden
+    vnum: 1221
+    name: a spirit warden
+    keywords: [warden, spirit, ghost, jailer]
+    short_description: A ghostly figure in ancient armor patrols the cells.
+    long_description: >
+      This warden died at their post but their duty continues in
+      death. They maintain the spirit cells, ensuring the bound
+      cannot escape, and view any living intruder as a potential
+      threat to their eternal vigil.
+    level: 15
+    health: 120
+    strength: 14
+    dexterity: 12
+    constitution: 12
+    damage_dice: 2d6
+    damage_type: necrotic
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 280
+    abilities: [spectral_chains, binding_strike]
+    immunities: [physical]
+    loot_table:
+      - template_id: warden_key
+        drop_chance: 0.2
+      - template_id: binding_chains
+        drop_chance: 0.3
+
+  - id: shadow_binder
+    vnum: 1222
+    name: a shadow binder
+    keywords: [binder, shadow, mage, caster]
+    short_description: A dark figure performs binding rituals.
+    long_description: >
+      Shadow binders are specialists in trapping souls and binding
+      spirits. They provide the citadel with its endless supply of
+      spectral servants, performing rituals that tear spirits from
+      their bodies and chain them to service.
+    level: 16
+    health: 100
+    strength: 8
+    dexterity: 14
+    constitution: 12
+    intelligence: 20
+    wisdom: 16
+    damage_dice: 2d8
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 320
+    abilities: [soul_rip, bind_spirit, shadow_bolt, summon_shade]
+    resistances: [necrotic]
+    loot_table:
+      - template_id: binder_focus
+        drop_chance: 0.3
+      - template_id: shadow_tome
+        drop_chance: 0.2
+
+  - id: dimensional_horror
+    vnum: 1223
+    name: a dimensional horror
+    keywords: [horror, dimensional, monster, alien]
+    short_description: Something wrong exists in multiple realities at once.
+    long_description: >
+      This creature exists partially in several dimensions simultaneously,
+      its form shifting and impossible to focus on. It was drawn through
+      when the reflection room was created and has been trapped here
+      ever since, driving mad anyone who tries to understand its nature.
+    level: 17
+    health: 160
+    strength: 14
+    dexterity: 20
+    constitution: 14
+    intelligence: 6
+    damage_dice: 2d10
+    damage_type: psychic
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 400
+    abilities: [reality_tear, phase_shift, madness_gaze]
+    resistances: [all_physical]
+    loot_table:
+      - template_id: reality_shard
+        drop_chance: 0.2
+
+  # Boss
+  - id: umbral_warden
+    vnum: 1230
+    name: The Umbral Warden
+    keywords: [umbral, warden, boss, demon, shadow]
+    short_description: A demon of pure shadow guards the vault.
+    long_description: >
+      The Umbral Warden is an ancient demon bound to guard the citadel's
+      most dangerous treasures. Composed of living darkness, it has
+      no fixed form, manifesting weapons and appendages as needed.
+      Its eyes are points of absolute void that seem to swallow light
+      and hope alike. It has served faithfully since before the
+      Shadow Court came to power.
+    level: 22
+    health: 700
+    strength: 20
+    dexterity: 18
+    constitution: 22
+    intelligence: 18
+    wisdom: 16
+    damage_dice: 4d8
+    damage_type: necrotic
+    armor_class: 21
+    behavior_type: aggressive
+    combat_style: tactician
+    aggro_radius: 10
+    experience_value: 2500
+    gold_min: 200
+    gold_max: 800
+    abilities: [shadow_storm, void_touch, summon_shadows, darkness_absolute, drain_soul]
+    immunities: [necrotic, poison, physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: umbral_heart
+        drop_chance: 1.0
+      - template_id: void_blade
+        drop_chance: 0.5
+      - template_id: shadow_crown
+        drop_chance: 0.6
+    dialogue:
+      greeting: "NONE MAY CLAIM WHAT I GUARD. TURN BACK, OR JOIN THE SHADOWS."
+      topics:
+        vault: "THE TREASURES HERE WOULD CORRUPT YOUR SOUL. I DO YOU A KINDNESS BY DESTROYING YOU."

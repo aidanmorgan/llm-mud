@@ -1,0 +1,31 @@
+# Shimmerwood Zone
+# Fey-touched forest, reality-bending, eternal twilight
+
+zone_id: shimmerwood
+name: The Shimmerwood
+description: >
+  A forest touched by the Feywild, where reality bends to the whims of its
+  fey inhabitants. The trees seem to shift when you're not looking, paths
+  lead to unexpected places, and time flows strangely. It is beautiful and
+  dangerous in equal measure, trapped in eternal twilight.
+level_range: [10, 18]
+flags: [outdoor, fey_touched, shifting_paths, twilight]
+coordinate_origin:
+  x: -25
+  y: 10
+  z: 0
+environmental_hazards:
+  - type: time_distortion
+    amount: 0
+    interval: 300
+    message: "Time seems to skip and stutter around you."
+  - type: charm
+    amount: 0
+    interval: 240
+    message: "The beauty of this place tugs at your mind."
+ambient_messages:
+  - "Tiny lights dance between the trees, just out of reach."
+  - "You hear distant laughter that could be joyous or mocking."
+  - "The path behind you looks different than you remember."
+  - "Flowers turn to follow your movement."
+  - "A mushroom ring glows faintly nearby."

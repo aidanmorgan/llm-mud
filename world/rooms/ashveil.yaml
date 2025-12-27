@@ -1,0 +1,235 @@
+# Ashveil Wastes Rooms
+# Volcanic badlands with scorched earth, obsidian formations, and ash storms
+
+zone_id: ashveil
+
+rooms:
+  - id: ashveil_edge
+    vnum: 800
+    name: Edge of the Wastes
+    short_description: Where green land gives way to scorched earth
+    long_description: >
+      The transition here is stark and sudden. Grass and shrubs give way to
+      cracked, blackite earth, still warm to the touch. Ash drifts on hot
+      winds, and the air shimmers with heat. To the west, the Ashveil Wastes
+      stretch to the horizon, a blasted hellscape of obsidian spires and
+      smoking vents.
+    exits:
+      east:
+        destination: ~
+        leads_to_region: scorched_trail
+      west: ashveil_ash_plains
+    sector_type: field
+    ambient_messages:
+      - Hot ash swirls in sudden gusts.
+      - The ground radiates uncomfortable warmth.
+      - Distant volcanic rumbles echo across the wastes.
+
+  - id: ashveil_ash_plains
+    vnum: 801
+    name: Ash Plains
+    short_description: An endless expanse of gray ash
+    long_description: >
+      Fine gray ash covers everything, piling into drifts against obsidian
+      outcroppings. Your footsteps leave deep prints that slowly fill back
+      in. Occasionally, the wind parts the ash to reveal the cracked, glassy
+      ground beneath - the remnants of a great fire that scorched the earth
+      to glass.
+    exits:
+      east: ashveil_edge
+      west: ashveil_obsidian_field
+      south: ashveil_cinder_canyon
+    sector_type: desert
+    flags: [hot]
+    mob_spawns:
+      - template_id: ash_crawler
+        max_count: 3
+      - template_id: cinder_beetle
+        max_count: 2
+
+  - id: ashveil_obsidian_field
+    vnum: 802
+    name: Obsidian Field
+    short_description: A forest of black glass spires
+    long_description: >
+      Jagged pillars of obsidian thrust upward from the ash, some reaching
+      twenty feet or more. They catch the ruddy light and gleam like black
+      mirrors. The spaces between form a maze, and the glass edges are sharp
+      enough to cut through leather. Bones lie scattered at the base of some
+      spires.
+    exits:
+      east: ashveil_ash_plains
+      north: ashveil_nomad_camp
+      west: ashveil_smoking_vent
+    sector_type: mountain
+    flags: [difficult_terrain]
+    mob_spawns:
+      - template_id: glass_stalker
+        max_count: 2
+    item_spawns:
+      - template_id: obsidian_shard
+        max_count: 3
+
+  - id: ashveil_cinder_canyon
+    vnum: 803
+    name: Cinder Canyon
+    short_description: A deep ravine of smoldering stone
+    long_description: >
+      A great rift splits the earth here, its walls still glowing with
+      residual heat from the cataclysm. Rivulets of molten rock trickle
+      down the sides, and the bottom is lost in darkness and smoke. A
+      precarious path winds along the canyon rim, barely wide enough for
+      single-file travel.
+    exits:
+      north: ashveil_ash_plains
+      west: ashveil_lava_flow
+    sector_type: mountain
+    flags: [dangerous, hot]
+    mob_spawns:
+      - template_id: magma_elemental
+        max_count: 1
+
+  - id: ashveil_nomad_camp
+    vnum: 804
+    name: Ashborn Camp
+    short_description: A cluster of heat-resistant tents
+    long_description: >
+      The Ashborn have made their home in the shelter of an obsidian
+      overhang. Their tents are woven from fire-resistant fibers, and their
+      skin is scarred and darkened from constant exposure to heat and ash.
+      A central fire pit burns with strange blue flames, and the nomads
+      watch newcomers with wary eyes.
+    exits:
+      south: ashveil_obsidian_field
+      west: ashveil_relic_site
+    sector_type: city
+    flags: [safe_room, no_mob]
+    mob_spawns:
+      - template_id: ashborn_elder
+        max_count: 1
+      - template_id: ashborn_trader
+        max_count: 1
+
+  - id: ashveil_smoking_vent
+    vnum: 805
+    name: Smoking Vent
+    short_description: Sulfurous fumes rise from the earth
+    long_description: >
+      A massive crack in the ground releases constant jets of sulfurous
+      steam and noxious fumes. The heat is intense, and the air is barely
+      breathable. Despite the danger, valuable minerals crystallize around
+      the vent's edges, drawing treasure hunters to risk the poison.
+    exits:
+      east: ashveil_obsidian_field
+      south: ashveil_lava_flow
+      west: ashveil_crater_edge
+    sector_type: mountain
+    flags: [poison_air, hot]
+    mob_spawns:
+      - template_id: vent_spider
+        max_count: 2
+    item_spawns:
+      - template_id: sulfur_crystal
+        max_count: 2
+
+  - id: ashveil_lava_flow
+    vnum: 806
+    name: Lava Flow
+    short_description: Rivers of molten rock flow slowly past
+    long_description: >
+      The ground here is divided by channels of slowly moving lava, bright
+      orange and unbearably hot. Stepping stones of cooled basalt provide
+      a precarious path across, but one misstep would mean death. The
+      hellish light illuminates everything in shades of red and orange.
+    exits:
+      east: ashveil_cinder_canyon
+      north: ashveil_smoking_vent
+      west: ashveil_fire_temple
+    sector_type: mountain
+    flags: [dangerous, hot, fire_hazard]
+    mob_spawns:
+      - template_id: lava_salamander
+        max_count: 2
+
+  - id: ashveil_relic_site
+    vnum: 807
+    name: Relic Site
+    short_description: Ancient ruins half-buried in ash
+    long_description: >
+      Broken walls and scattered stonework mark the remains of a structure
+      that predates the cataclysm. The Ashborn consider this place sacred,
+      believing it was a temple to the fire gods. Faded carvings on the
+      surviving stones depict rituals of flame and sacrifice.
+    exits:
+      east: ashveil_nomad_camp
+      south: ashveil_crater_edge
+    sector_type: ruin
+    flags: [ancient]
+    mob_spawns:
+      - template_id: fire_guardian
+        max_count: 1
+    item_spawns:
+      - template_id: ancient_tablet
+        max_count: 1
+
+  - id: ashveil_crater_edge
+    vnum: 808
+    name: Crater's Edge
+    short_description: The rim of a vast volcanic crater
+    long_description: >
+      You stand at the edge of an enormous crater, the epicenter of the
+      ancient eruption. The bowl stretches for miles, its depths still
+      active with bubbling lava lakes and jets of flame. A path winds
+      down into the crater, for those brave or foolish enough to descend.
+    exits:
+      north: ashveil_relic_site
+      east: ashveil_smoking_vent
+      down: ashveil_crater_descent
+    sector_type: mountain
+    ambient_messages:
+      - The ground trembles with deep volcanic activity.
+      - Heat waves distort the view of the crater floor.
+      - Ash and smoke rise from below in thick columns.
+
+  - id: ashveil_crater_descent
+    vnum: 809
+    name: Crater Descent
+    short_description: A treacherous path into the heart of fire
+    long_description: >
+      The path switchbacks down the inner wall of the crater, carved into
+      the rock by unknown hands. The heat is oppressive, growing worse
+      with every step downward. Below, the glow of molten rock creates
+      an infernal illumination, and the air tastes of brimstone.
+    exits:
+      up: ashveil_crater_edge
+      down: ashveil_fire_temple
+    sector_type: mountain
+    flags: [dangerous, hot]
+    mob_spawns:
+      - template_id: flame_imp
+        max_count: 3
+
+  - id: ashveil_fire_temple
+    vnum: 810
+    name: Temple of the Slag Mother
+    short_description: An ancient temple of living fire
+    long_description: >
+      This temple was built around a permanent vent of molten rock, its
+      walls blackened and half-melted by centuries of exposure. A massive
+      statue of a female figure composed of cooling lava dominates the
+      central chamber - the Slag Mother, an elemental being worshipped
+      by fire cultists. The heat here is almost unbearable.
+    exits:
+      up: ashveil_crater_descent
+      east: ashveil_lava_flow
+    sector_type: ruin
+    flags: [boss_room, hot]
+    mob_spawns:
+      - template_id: slag_mother
+        max_count: 1
+      - template_id: fire_cultist
+        max_count: 2
+    ambient_messages:
+      - The Slag Mother's stone eyes seem to follow you.
+      - Waves of heat pulse from the central lava vent.
+      - Whispered prayers to fire echo off the walls.

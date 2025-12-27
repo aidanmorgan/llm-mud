@@ -1,0 +1,360 @@
+# Thornhaven Items
+# Plant-based equipment, nature-corrupted gear, and overgrowth materials
+
+zone_id: thornhaven
+
+items:
+  # Crafting Materials
+  - id: thorn_vine
+    vnum: 1000
+    name: a length of thorn vine
+    keywords: [thorn, vine, plant, material]
+    short_description: A coil of thorny vine lies here.
+    long_description: >
+      This vine is covered in razor-sharp thorns that never seem to
+      dull. It can be woven into armor or weapons, providing both
+      flexibility and piercing capability.
+    item_type: material
+    rarity: common
+    weight: 0.5
+    value: 15
+
+  - id: living_wood
+    vnum: 1001
+    name: a piece of living wood
+    keywords: [living, wood, plant, magical]
+    short_description: A piece of wood that still grows lies here.
+    long_description: >
+      This wood was harvested while still living and maintains its
+      vitality. It slowly grows and heals itself. Weapons and armor
+      crafted from it can regenerate damage.
+    item_type: material
+    rarity: uncommon
+    weight: 2.0
+    value: 75
+
+  - id: blight_seed
+    vnum: 1002
+    name: a blight seed
+    keywords: [blight, seed, corrupted, plant]
+    short_description: A seed that pulses with dark energy lies here.
+    long_description: >
+      This seed carries the corruption that transformed Thornhaven.
+      If planted, it would spread the blight further. Alchemists
+      study them to understand and counter the corruption.
+    item_type: material
+    rarity: rare
+    weight: 0.1
+    value: 150
+    flags: [dangerous]
+
+  - id: heartwood_sap
+    vnum: 1003
+    name: a vial of heartwood sap
+    keywords: [heartwood, sap, vial, material]
+    short_description: A vial of golden tree sap lies here.
+    long_description: >
+      This sap comes from the heart of ancient trees. It has powerful
+      healing properties when prepared correctly, or can be used to
+      seal and preserve wood against decay.
+    item_type: material
+    rarity: uncommon
+    weight: 0.3
+    value: 60
+
+  # Weapons
+  - id: thornwood_dagger
+    vnum: 1010
+    name: a thornwood dagger
+    keywords: [thornwood, dagger, plant, blade]
+    short_description: A dagger carved from thorn-bearing wood lies here.
+    long_description: >
+      This dagger was carved from thornwood, the thorns forming a
+      natural guard and pommel. The blade is hardened with sap to be
+      as strong as steel but lighter.
+    item_type: weapon
+    rarity: common
+    weight: 0.8
+    value: 40
+    level_requirement: 6
+    weapon_stats:
+      damage_dice: 1d4
+      damage_type: piercing
+      speed: fast
+
+  - id: briar_whip
+    vnum: 1011
+    name: a briar whip
+    keywords: [briar, whip, thorns, flexible]
+    short_description: A whip of thorny vines lies coiled here.
+    long_description: >
+      This whip was grown rather than crafted, a length of living
+      briar that responds to its wielder's will. Thorns run its
+      entire length, tearing flesh with each strike.
+    item_type: weapon
+    rarity: uncommon
+    weight: 2.0
+    value: 180
+    level_requirement: 8
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: slashing
+      speed: fast
+      reach: true
+      magical_properties:
+        - bleed_on_hit: true
+
+  - id: thornwatch_blade
+    vnum: 1012
+    name: a Thornwatch blade
+    keywords: [thornwatch, blade, sword, living]
+    short_description: A sword of living wood and thorns lies here.
+    long_description: >
+      The Thornwatch carry these living weapons, grown from the
+      Briar King's own essence. The blade is wood harder than steel,
+      with thorns that grow back when broken.
+    item_type: weapon
+    rarity: rare
+    weight: 3.5
+    value: 400
+    level_requirement: 10
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: slashing
+      speed: medium
+      magical_properties:
+        - regenerating: true
+        - nature_damage_bonus: 1d4
+        - entangle_on_critical: true
+
+  - id: verdant_staff
+    vnum: 1013
+    name: a verdant staff
+    keywords: [verdant, staff, druid, nature]
+    short_description: A staff of living green wood stands here.
+    long_description: >
+      This staff is still alive, leaves sprouting from its length.
+      It channels nature magic with incredible efficiency, though
+      its power serves the corrupted nature of Thornhaven.
+    item_type: weapon
+    rarity: rare
+    weight: 4.0
+    value: 380
+    level_requirement: 9
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: bludgeoning
+      speed: medium
+      magical_properties:
+        - nature_spellpower: 4
+        - heal_on_kill: 5
+        - summon_vines: true
+
+  # Armor
+  - id: vine_armor
+    vnum: 1020
+    name: vine armor
+    keywords: [vine, armor, plant, living]
+    short_description: Armor woven from living vines lies here.
+    long_description: >
+      This armor was grown to fit its wearer, a network of living
+      vines that provides protection while allowing freedom of
+      movement. It repairs itself slowly over time.
+    item_type: armor
+    rarity: common
+    weight: 8.0
+    value: 75
+    level_requirement: 6
+    armor_stats:
+      armor_class: 12
+      slot: body
+      magical_properties:
+        - regenerating: true
+      vulnerabilities: [fire]
+
+  - id: bark_plate
+    vnum: 1021
+    name: bark plate armor
+    keywords: [bark, plate, armor, wood]
+    short_description: Armor made from hardened bark lies here.
+    long_description: >
+      Layers of magically hardened bark form this suit of armor.
+      While it provides excellent protection, it crackles and groans
+      with movement. Fire is its greatest weakness.
+    item_type: armor
+    rarity: uncommon
+    weight: 25.0
+    value: 280
+    level_requirement: 9
+    armor_stats:
+      armor_class: 16
+      slot: body
+      resistances: [bludgeoning, slashing]
+      vulnerabilities: [fire]
+
+  - id: thornwatch_helm
+    vnum: 1022
+    name: a Thornwatch helm
+    keywords: [thornwatch, helm, helmet, thorn]
+    short_description: A helm of living thorns lies here.
+    long_description: >
+      Thornwatch warriors wear these living helms, which have grown
+      to fit their skulls perfectly. Thorns jut from the crown,
+      making headbutts particularly dangerous.
+    item_type: armor
+    rarity: rare
+    weight: 3.0
+    value: 300
+    level_requirement: 10
+    armor_stats:
+      armor_class: 3
+      slot: head
+      magical_properties:
+        - thorn_retaliation: true
+        - regenerating: true
+      vulnerabilities: [fire]
+
+  - id: root_boots
+    vnum: 1023
+    name: rootweave boots
+    keywords: [root, boots, weave, plant]
+    short_description: Boots woven from living roots lie here.
+    long_description: >
+      These boots allow the wearer to move through dense vegetation
+      as easily as open ground. The roots part to let the wearer
+      pass, then close behind them.
+    item_type: armor
+    rarity: uncommon
+    weight: 2.0
+    value: 200
+    level_requirement: 7
+    armor_stats:
+      armor_class: 1
+      slot: feet
+      magical_properties:
+        - ignore_difficult_terrain: plant
+        - nature_affinity: true
+
+  # Consumables
+  - id: healing_berry
+    vnum: 1030
+    name: a healing berry
+    keywords: [healing, berry, food, plant]
+    short_description: A glowing berry pulses with life energy.
+    long_description: >
+      These berries grow only in Thornhaven, fed by the life force
+      that permeates the overgrown fortress. Eating one restores
+      health but carries a faint taste of corruption.
+    item_type: consumable
+    rarity: common
+    weight: 0.1
+    value: 20
+    consumable_effect:
+      effect_type: heal
+      heal_amount: 25
+
+  - id: antitoxin_herb
+    vnum: 1031
+    name: an antitoxin herb
+    keywords: [antitoxin, herb, plant, cure]
+    short_description: A pungent herb that neutralizes plant toxins lies here.
+    long_description: >
+      This herb has evolved to neutralize the toxins produced by
+      Thornhaven's corrupted plants. Chewing it provides temporary
+      immunity to plant-based poisons.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.1
+    value: 35
+    consumable_effect:
+      effect_type: buff
+      duration: 300
+      effects:
+        plant_poison_immunity: true
+
+  - id: growth_potion
+    vnum: 1032
+    name: a growth potion
+    keywords: [growth, potion, plant, size]
+    short_description: A green potion that smells of fresh growth lies here.
+    long_description: >
+      Drinking this potion causes temporary but significant growth.
+      The drinker becomes larger and stronger, but also a bigger
+      target. The effect is disorienting at first.
+    item_type: consumable
+    rarity: rare
+    weight: 0.5
+    value: 100
+    consumable_effect:
+      effect_type: buff
+      duration: 120
+      effects:
+        size_increase: 1
+        strength_bonus: 4
+        armor_class_penalty: 2
+
+  # Boss Drops
+  - id: briar_kings_heart
+    vnum: 1050
+    name: the Heart of the Briar King
+    keywords: [briar, king, heart, boss, seed]
+    short_description: A massive seed that pulses with dark life lies here.
+    long_description: >
+      This seed contains the essence of the Briar King himself. It
+      pulses with dark vitality, and if planted, could grow into a
+      new Briar King. Some would destroy it; others would seek to
+      control its power.
+    item_type: material
+    rarity: legendary
+    weight: 2.0
+    value: 2000
+    flags: [no_drop, quest_item]
+
+  - id: crown_of_thorns
+    vnum: 1051
+    name: the Crown of Thorns
+    keywords: [crown, thorns, briar, boss, head]
+    short_description: A crown of living thorns radiates natural power.
+    long_description: >
+      The Briar King's crown, a circlet of ever-growing thorns that
+      mark the ruler of Thornhaven. Wearing it grants command over
+      plant life but slowly transforms the wearer.
+    item_type: armor
+    rarity: legendary
+    weight: 0.5
+    value: 2500
+    level_requirement: 12
+    armor_stats:
+      armor_class: 3
+      slot: head
+      magical_properties:
+        - plant_command: true
+        - regeneration: 5
+        - nature_spellpower: 5
+        - wisdom_bonus: 3
+        - gradual_transformation: plant
+
+  - id: verdant_destroyer
+    vnum: 1052
+    name: the Verdant Destroyer
+    keywords: [verdant, destroyer, greatsword, boss]
+    short_description: A massive sword of living wood lies here.
+    long_description: >
+      This greatsword was the Briar King's own weapon, grown from his
+      throne over centuries. Despite being made of wood, it is harder
+      than any steel and drains life from those it wounds.
+    item_type: weapon
+    rarity: legendary
+    weight: 12.0
+    value: 3000
+    level_requirement: 12
+    weapon_stats:
+      damage_dice: 2d6
+      damage_type: slashing
+      speed: slow
+      two_handed: true
+      magical_properties:
+        - life_drain: 10
+        - nature_damage_bonus: 2d4
+        - entangle_on_hit: true
+        - strength_bonus: 2

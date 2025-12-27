@@ -1,0 +1,169 @@
+# Ravenmoor Guild Halls
+# Class-restricted rooms where players can level up with guild masters
+
+zone_id: ravenmoor
+
+rooms:
+  # ==========================================================================
+  # Warriors' Barracks - Warrior Guild
+  # ==========================================================================
+  - id: ravenmoor_barracks
+    vnum: 150
+    name: Warriors' Barracks
+    short_description: The training grounds of Ravenmoor's finest fighters
+    long_description: >
+      Heavy wooden training dummies line the walls of this expansive hall,
+      many bearing deep gouges from countless practice sessions. The clang
+      of practice swords echoes off stone walls, and the smell of leather
+      and honest sweat fills the air. Battle standards hang from the rafters,
+      each representing a victorious campaign from Ravenmoor's glory days.
+      A grizzled veteran watches over the trainees with a critical eye.
+    exits:
+      south: ravenmoor_training_grounds
+    sector_type: inside
+    flags: [safe, no_combat]
+    class_restriction: warrior
+    mob_spawns:
+      - template_id: captain_ironhelm
+        max_count: 1
+    ambient_messages:
+      - A recruit grunts as he blocks a practice blow.
+      - The captain barks orders at a group of trainees.
+      - Two veterans debate the proper grip for a longsword.
+      - The rhythmic thud of fists against a training dummy fills the air.
+
+  # ==========================================================================
+  # The Arcane Sanctum - Mage Guild
+  # ==========================================================================
+  - id: ravenmoor_mage_tower
+    vnum: 151
+    name: The Arcane Sanctum
+    short_description: A chamber of mystical learning and power
+    long_description: >
+      Towering bookshelves line the curved walls of this circular chamber,
+      reaching upward into shadow. Floating orbs of soft light drift lazily
+      between the shelves, illuminating ancient tomes bound in leather and
+      stranger materials. Arcane circles are etched into the stone floor,
+      faintly glowing with residual magic. The air hums with potential energy,
+      making your skin tingle. At the chamber's center, a robed figure
+      studies a massive grimoire.
+    exits:
+      down: ravenmoor_market_west
+    sector_type: inside
+    flags: [safe, no_combat]
+    class_restriction: mage
+    mob_spawns:
+      - template_id: archmage_vaelith
+        max_count: 1
+    ambient_messages:
+      - A book floats past, pages turning of their own accord.
+      - The magical lights flicker and shift colors momentarily.
+      - You hear the whispered words of a spell being practiced nearby.
+      - An apprentice gasps as a minor spell goes awry.
+
+  # ==========================================================================
+  # Temple of Light - Cleric Guild
+  # ==========================================================================
+  - id: ravenmoor_temple
+    vnum: 152
+    name: Temple of Light
+    short_description: A sanctuary of divine healing and wisdom
+    long_description: >
+      Soft golden light filters through stained glass windows depicting
+      scenes of mercy and healing. The temple's interior is simple but
+      elegant, with polished wooden pews arranged before a marble altar.
+      Candles burn in alcoves dedicated to various aspects of the divine.
+      The air carries the faint scent of incense and healing herbs. Robed
+      priests move quietly between the injured and sick who have come
+      seeking aid.
+    exits:
+      north: ravenmoor_armor_shop
+    sector_type: inside
+    flags: [safe, no_combat]
+    class_restriction: cleric
+    mob_spawns:
+      - template_id: high_priest_aldric
+        max_count: 1
+    ambient_messages:
+      - A soft hymn drifts from somewhere in the temple.
+      - A priest tends to an injured traveler with gentle words.
+      - Candlelight casts dancing shadows on the altar.
+      - The scent of healing herbs grows stronger momentarily.
+
+  # ==========================================================================
+  # The Shadow Den - Rogue Guild
+  # ==========================================================================
+  - id: ravenmoor_thieves_guild
+    vnum: 153
+    name: The Shadow Den
+    short_description: A hidden den of rogues and cutpurses
+    long_description: >
+      Accessed through a nondescript door in a back alley, this dimly lit
+      chamber serves as the headquarters for Ravenmoor's less reputable
+      citizens. Shadows seem to move on their own, and you have the distinct
+      feeling you're being watched from multiple directions. Various tools
+      of the trade - lockpicks, cloaks, and daggers - hang on pegs along
+      the walls. A hooded figure in the corner counts a pile of coins with
+      practiced ease.
+    exits:
+      west: ravenmoor_back_alley
+    sector_type: inside
+    flags: [safe, no_combat]
+    class_restriction: rogue
+    mob_spawns:
+      - template_id: shadowmaster_vexa
+        max_count: 1
+    ambient_messages:
+      - A shadowy figure slips past you without a sound.
+      - You hear the clink of stolen coin being counted.
+      - Someone practices picking a lock in a dark corner.
+      - A whispered conversation abruptly stops as you glance that way.
+
+  # ==========================================================================
+  # The Verdant Lodge - Ranger Guild
+  # ==========================================================================
+  - id: ravenmoor_rangers_lodge
+    vnum: 154
+    name: The Verdant Lodge
+    short_description: A rustic lodge for wilderness trackers
+    long_description: >
+      This lodge sits at the edge of the city, half-built into the ancient
+      trees that grow here. Hunting trophies and maps of distant wilds
+      decorate the wooden walls. The scent of pine and earth mingles with
+      that of curing leather. Bows of various sizes hang from racks, and
+      quivers of arrows lean against the walls. A weathered tracker sits
+      by the fire, sharpening a hunting knife.
+    exits:
+      south: ravenmoor_west_gate
+    sector_type: inside
+    flags: [safe, no_combat]
+    class_restriction: ranger
+    mob_spawns:
+      - template_id: huntmaster_theron
+        max_count: 1
+    ambient_messages:
+      - A hawk perches on a nearby beam, watching you intently.
+      - Someone practices stringing a bow with quick efficiency.
+      - The fire crackles, sending sparks up the chimney.
+      - A ranger returns from the wilds, muddy but successful.
+
+  # ==========================================================================
+  # Connecting Rooms
+  # ==========================================================================
+  - id: ravenmoor_back_alley
+    vnum: 155
+    name: Back Alley
+    short_description: A narrow alley behind the market
+    long_description: >
+      This narrow passage runs behind the market stalls, cluttered with
+      refuse and broken crates. The buildings lean close overhead, blocking
+      most of the light. Those who know where to look might find a certain
+      unmarked door here, though most pass by without noticing.
+    exits:
+      up: ravenmoor_market_east
+      east: ravenmoor_thieves_guild
+    sector_type: city
+    flags: []
+    ambient_messages:
+      - A rat scurries between the refuse.
+      - Someone watches from a darkened window above.

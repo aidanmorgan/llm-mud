@@ -1,0 +1,139 @@
+zone_id: stillwater
+
+rooms:
+  - id: stillwater_gate
+    vnum: 500
+    name: Monastery Gate
+    short_description: The entrance to Stillwater Monastery
+    long_description: >
+      High stone walls surround the monastery, their ancient stones
+      weathered by centuries of mountain winds. A heavy wooden gate
+      stands before you, carved with symbols of peace and wisdom.
+      A monk stands watch, greeting those who have survived the
+      treacherous mountain path.
+    exits:
+      south:
+        destination: ~
+        leads_to_region: mountain_path
+        target_coordinate:
+          x: 0
+          y: 9
+          z: 4
+      north: stillwater_courtyard
+    sector_type: mountain
+    flags: [safe]
+    mob_spawns:
+      - template_id: monastery_guard
+        max_count: 1
+
+  - id: stillwater_courtyard
+    vnum: 501
+    name: Monastery Courtyard
+    short_description: A serene courtyard
+    long_description: >
+      A peaceful courtyard lies within the monastery walls. Carefully
+      raked gravel surrounds islands of carefully pruned trees and
+      bushes. Monks move silently along the covered walkways, their
+      robes rustling softly. The air is thin but clean, and the
+      silence is profound.
+    exits:
+      south: stillwater_gate
+      north: stillwater_main_hall
+      east: stillwater_meditation_garden
+      west: stillwater_training_hall
+    sector_type: inside
+    flags: [safe]
+    ambient_messages:
+      - A soft gong sounds somewhere in the monastery.
+      - The crunch of gravel marks a monk's passage.
+      - Mountain wind whispers over the walls.
+
+  - id: stillwater_main_hall
+    vnum: 502
+    name: Main Hall
+    short_description: The central hall of the monastery
+    long_description: >
+      This great hall serves as the gathering place for the monastery.
+      Rows of meditation cushions face a raised dais where the Abbot
+      gives teachings. Scrolls and tapestries line the walls, depicting
+      the monastery's long history and the wisdom of its founders.
+    exits:
+      south: stillwater_courtyard
+      up: stillwater_abbot_quarters
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: stillwater_monk
+        max_count: 3
+
+  - id: stillwater_meditation_garden
+    vnum: 503
+    name: Meditation Garden
+    short_description: A garden for contemplation
+    long_description: >
+      This exquisite garden is designed for meditation. A small pond
+      reflects the sky, its surface broken only by the occasional
+      ripple from golden koi. Stone benches are placed at strategic
+      points for contemplation. The peace here is almost tangible.
+    exits:
+      west: stillwater_courtyard
+    sector_type: field
+    flags: [safe, no_combat]
+    ambient_messages:
+      - Koi rise to the surface, expecting food.
+      - A leaf drifts slowly onto the pond.
+      - The perfect stillness aids deep reflection.
+
+  - id: stillwater_training_hall
+    vnum: 504
+    name: Training Hall
+    short_description: Where martial arts are taught
+    long_description: >
+      This spacious hall is dedicated to the martial arts practiced
+      by the monastery's monks. The wooden floor is worn smooth by
+      countless feet. Training weapons hang on the walls, and a senior
+      monk oversees practice sessions.
+    exits:
+      east: stillwater_courtyard
+    sector_type: inside
+    flags: [safe]
+    mob_spawns:
+      - template_id: martial_master
+        max_count: 1
+      - template_id: student_monk
+        max_count: 2
+
+  - id: stillwater_abbot_quarters
+    vnum: 505
+    name: Abbot's Quarters
+    short_description: The abbot's private chambers
+    long_description: >
+      Simple but elegant, the Abbot's quarters reflect a life dedicated
+      to wisdom and discipline. A low table holds ancient texts, and
+      a meditation cushion faces a window with a stunning view of the
+      mountains. The Abbot himself sits in quiet contemplation.
+    exits:
+      down: stillwater_main_hall
+      east: stillwater_library
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: stillwater_abbot
+        max_count: 1
+
+  - id: stillwater_library
+    vnum: 506
+    name: Ancient Library
+    short_description: Repository of ancient knowledge
+    long_description: >
+      Shelves reach from floor to ceiling, filled with scrolls and
+      tomes of ancient wisdom. Some texts are so old they must be
+      handled with special gloves. A scholarly monk tends the
+      collection, ready to help seekers of knowledge.
+    exits:
+      west: stillwater_abbot_quarters
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: librarian_monk
+        max_count: 1

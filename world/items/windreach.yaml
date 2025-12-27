@@ -1,0 +1,319 @@
+# Windreach Peaks Items
+# Storm-touched equipment and sky treasures
+
+zone_id: windreach
+
+items:
+  # Common Drops
+  - id: wind_essence
+    name: wind essence
+    keywords: [wind, essence, air, elemental]
+    short_description: Captured wind in a glass vial.
+    long_description: >
+      This vial contains the essence of a wind elemental. It rattles
+      and moves constantly, seeking to escape. Useful in air magic.
+    type: reagent
+    rarity: uncommon
+    value: 50
+    weight: 0.1
+
+  - id: storm_feather
+    name: a storm hawk feather
+    keywords: [storm, hawk, feather, lightning]
+    short_description: A feather that crackles with static electricity.
+    long_description: >
+      This feather came from a storm hawk and still carries electrical
+      charge. It's useful in lightning enchantments and never gets wet.
+    type: reagent
+    rarity: uncommon
+    value: 45
+    weight: 0.1
+
+  - id: hawk_talon
+    name: a storm hawk talon
+    keywords: [hawk, talon, claw, lightning]
+    short_description: A razor-sharp talon that sparks when struck.
+    long_description: >
+      This talon retains the electrical properties of its former owner.
+      It can be used to craft weapons that channel lightning.
+    type: reagent
+    rarity: uncommon
+    value: 60
+    weight: 0.2
+
+  - id: giant_cloudstuff
+    name: cloudstuff
+    keywords: [cloud, stuff, giant, material]
+    short_description: Solid cloud material from a cloud giant.
+    long_description: >
+      Cloud giants are made of condensed clouds, and this material
+      retains some of that nature. It's soft, light, and has strange
+      buoyancy properties.
+    type: reagent
+    rarity: rare
+    value: 100
+    weight: 0.5
+
+  - id: storm_crystal
+    name: a storm crystal
+    keywords: [storm, crystal, lightning, gem]
+    short_description: A crystal charged with lightning.
+    long_description: >
+      This crystal formed in the heart of endless storms. It holds
+      electrical charge and discharges when struck, making it useful
+      but dangerous.
+    type: reagent
+    rarity: rare
+    value: 150
+    weight: 0.3
+
+  - id: sylph_dust
+    name: sylph dust
+    keywords: [sylph, dust, wind, spirit]
+    short_description: Glittering dust from a wind spirit.
+    long_description: >
+      When wind spirits are dispersed, they leave this shimmering dust.
+      It's light as air and useful in flight magic.
+    type: reagent
+    rarity: uncommon
+    value: 55
+    weight: 0.1
+
+  - id: crystal_horn
+    name: a crystal horn
+    keywords: [crystal, horn, goat, mountain]
+    short_description: A horn of crystallized elemental energy.
+    long_description: >
+      The horns of the giant mountain goats have crystallized with
+      elemental power. They're valued for musical instruments and
+      magical focuses.
+    type: reagent
+    rarity: uncommon
+    value: 80
+    weight: 1.0
+
+  - id: mountain_wool
+    name: mountain goat wool
+    keywords: [mountain, wool, goat, warm]
+    short_description: Exceptionally warm wool from a giant goat.
+    long_description: >
+      This wool provides supernatural warmth. Clothing made from it
+      protects against even the coldest mountain winds.
+    type: reagent
+    rarity: common
+    value: 30
+    weight: 0.5
+
+  - id: griffin_feather
+    name: a griffin feather
+    keywords: [griffin, feather, wing, golden]
+    short_description: A golden feather from a griffin's wing.
+    long_description: >
+      Griffin feathers are prized for their beauty and magical
+      properties. This one still holds traces of the creature's
+      aerial abilities.
+    type: reagent
+    rarity: rare
+    value: 120
+    weight: 0.1
+
+  - id: griffin_talon
+    name: a griffin talon
+    keywords: [griffin, talon, claw, sharp]
+    short_description: A wickedly sharp talon from a griffin.
+    long_description: >
+      Griffins' talons are stronger than steel and retain an edge
+      forever. This one could be mounted on a weapon or used in
+      crafting.
+    type: reagent
+    rarity: rare
+    value: 140
+    weight: 0.3
+
+  - id: storm_beads
+    name: storm monk prayer beads
+    keywords: [storm, monk, beads, prayer]
+    short_description: Prayer beads charged with electrical energy.
+    long_description: >
+      These beads were used by a storm monk in meditation. They
+      help focus the mind and channel lightning energy.
+    type: accessory
+    subtype: wrist
+    rarity: uncommon
+    value: 200
+    weight: 0.2
+    magical_properties:
+      - effect: wisdom_bonus
+        value: 1
+        description: Grants +1 wisdom
+
+  - id: monk_sash
+    name: a monk's sash
+    keywords: [monk, sash, belt, cloth]
+    short_description: A sash that flows like wind.
+    long_description: >
+      This sash belonged to a storm monk and moves with the wind.
+      It aids in balance and grants swiftness to its wearer.
+    type: accessory
+    subtype: waist
+    rarity: uncommon
+    value: 180
+    weight: 0.3
+    magical_properties:
+      - effect: dexterity_bonus
+        value: 1
+        description: Grants +1 dexterity
+
+  # Vendor Items
+  - id: wind_cloak
+    name: a cloak of winds
+    keywords: [wind, cloak, flowing, air]
+    short_description: A cloak that catches the wind magically.
+    long_description: >
+      This cloak billows even in still air. It slows falls and aids
+      in climbing, and the wearer seems lighter than normal.
+    type: armor
+    subtype: cloak
+    rarity: rare
+    value: 500
+    weight: 2.0
+    level_requirement: 14
+    armor_stats:
+      armor_bonus: 1
+      slot: back
+    magical_properties:
+      - effect: feather_fall
+        value: 1
+        description: Slows falling speed
+      - effect: climb_bonus
+        value: 3
+        description: Aids in climbing
+
+  - id: storm_staff
+    name: a staff of storms
+    keywords: [storm, staff, lightning, weather]
+    short_description: A staff crackling with electrical energy.
+    long_description: >
+      This staff channels storm energy. It can call lightning and
+      manipulate weather in minor ways, though its main power is
+      direct electrical attacks.
+    type: weapon
+    subtype: staff
+    rarity: rare
+    value: 600
+    weight: 4.0
+    level_requirement: 15
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: bludgeoning
+      to_hit_bonus: 2
+    magical_properties:
+      - effect: lightning_damage
+        value: 1d6
+        description: Deals additional lightning damage
+      - effect: call_weather
+        value: 1
+        description: Can influence local weather
+
+  - id: lightning_rod
+    name: a lightning rod
+    keywords: [lightning, rod, wand, electric]
+    short_description: A wand that attracts and channels lightning.
+    long_description: >
+      This rod absorbs electrical energy and can release it in
+      controlled bursts. It's both a weapon and protection against
+      lightning attacks.
+    type: weapon
+    subtype: wand
+    rarity: rare
+    value: 450
+    weight: 1.0
+    level_requirement: 14
+    weapon_stats:
+      damage_dice: 2d6
+      damage_type: lightning
+      to_hit_bonus: 2
+    magical_properties:
+      - effect: lightning_resistance
+        value: 5
+        description: Grants lightning resistance
+
+  # Boss Drops
+  - id: stormwright_crown
+    name: Crown of the Stormwright
+    keywords: [stormwright, crown, legendary, storm]
+    short_description: A crown of living lightning.
+    long_description: >
+      This crown was part of the Stormwright himself, a ring of
+      eternal lightning that symbolized his dominion over storms.
+      It grants mastery over electrical forces.
+    type: armor
+    subtype: helmet
+    rarity: legendary
+    value: 6000
+    weight: 1.0
+    level_requirement: 22
+    armor_stats:
+      armor_bonus: 3
+      slot: head
+    magical_properties:
+      - effect: lightning_immunity
+        value: 1
+        description: Immune to lightning damage
+      - effect: call_storm
+        value: 1
+        description: Can summon storms
+      - effect: charisma_bonus
+        value: 3
+        description: Grants +3 charisma
+
+  - id: thunderbolt_blade
+    name: Thunderbolt Blade
+    keywords: [thunderbolt, blade, legendary, sword]
+    short_description: A sword forged from a bolt of lightning.
+    long_description: >
+      This blade was crystallized from the Stormwright's most
+      powerful lightning bolt. It moves at the speed of thought
+      and strikes with electrical fury.
+    type: weapon
+    subtype: longsword
+    rarity: legendary
+    value: 7000
+    weight: 3.0
+    level_requirement: 22
+    weapon_stats:
+      damage_dice: 2d8
+      damage_type: slashing
+      to_hit_bonus: 3
+    magical_properties:
+      - effect: lightning_damage
+        value: 2d6
+        description: Deals additional lightning damage
+      - effect: speed_bonus
+        value: 2
+        description: Grants +2 attacks
+
+  - id: eye_of_the_storm
+    name: Eye of the Storm
+    keywords: [eye, storm, legendary, orb]
+    short_description: A crystallized storm core of perfect calm.
+    long_description: >
+      At the heart of every storm is perfect stillness. This orb
+      contains that stillness, granting the bearer calm in any
+      chaos and control over atmospheric forces.
+    type: accessory
+    subtype: held
+    rarity: legendary
+    value: 5500
+    weight: 0.5
+    level_requirement: 22
+    magical_properties:
+      - effect: weather_control
+        value: 1
+        description: Full control over local weather
+      - effect: wisdom_bonus
+        value: 2
+        description: Grants +2 wisdom
+      - effect: fear_immunity
+        value: 1
+        description: Immune to fear effects

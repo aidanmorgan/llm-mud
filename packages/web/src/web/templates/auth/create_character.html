@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Create Character - LLM-MUD{% endblock %}
+
+{% block body_class %}auth-page{% endblock %}
+
+{% block content %}
+<div class="create-container">
+    <h1>Create Character</h1>
+    <form hx-post="/api/create-character" hx-target="#result" hx-swap="innerHTML">
+        <div class="form-group">
+            <label for="name">Character Name</label>
+            <input type="text" id="name" name="name" required
+                   placeholder="3-20 characters" minlength="3" maxlength="20">
+        </div>
+
+        <div class="form-group">
+            <label>Race</label>
+            <div class="option-grid">
+                {% for race in races %}
+                <div class="option-card">
+                    <input type="radio" id="race_{{ race.id }}" name="race_id" value="{{ race.id }}" required>
+                    <label for="race_{{ race.id }}">
+                        <strong>{{ race.name }}</strong>
+                        <span>{{ race.description }}</span>
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Class</label>
+            <div class="option-grid">
+                {% for cls in classes %}
+                <div class="option-card">
+                    <input type="radio" id="class_{{ cls.id }}" name="class_id" value="{{ cls.id }}" required>
+                    <label for="class_{{ cls.id }}">
+                        <strong>{{ cls.name }}</strong>
+                        <span>{{ cls.description }}</span>
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Create Character</button>
+    </form>
+    <div id="result"></div>
+    <a href="/characters" class="btn-back">Back to Characters</a>
+</div>
+{% endblock %}

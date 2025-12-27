@@ -1,0 +1,380 @@
+# Ironvein Mine Zone Items
+# Mining equipment, dungeon loot, and underground-themed gear
+
+zone_id: ironvein
+
+items:
+  # ==========================================================================
+  # Weapons - Mining and Underground
+  # ==========================================================================
+  - id: miners_pickaxe
+    vnum: 3000
+    name: a miner's pickaxe
+    keywords: [pickaxe, pick, mining, miner]
+    short_description: A heavy iron pickaxe lies here.
+    long_description: >
+      This pickaxe was made for breaking rock, but it works equally well on
+      skulls. The iron head is pitted from years of use, and the wooden
+      handle is worn smooth by countless hands.
+    type: weapon
+    rarity: common
+    weight: 6.0
+    value: 15
+    level_requirement: 2
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6"
+      damage_type: piercing
+      weapon_type: axe
+      two_handed: true
+
+  - id: forgemasters_hammer
+    vnum: 3001
+    name: a forgemaster's hammer
+    keywords: [hammer, forge, forgemaster, smith]
+    short_description: A masterwork smithing hammer lies here.
+    long_description: >
+      Once wielded by the master smith of Ironvein, this hammer was forged
+      from ore pulled from the deepest vein. The head is perfectly balanced,
+      and runes of crafting are etched along the handle.
+    type: weapon
+    rarity: rare
+    weight: 5.0
+    value: 200
+    level_requirement: 8
+    slot: main_hand
+    weapon:
+      damage_dice: "1d8+1"
+      damage_type: bludgeoning
+      weapon_type: hammer
+      hit_bonus: 2
+      damage_bonus: 1
+    flags: [magic]
+
+  - id: rusted_shortsword
+    vnum: 3002
+    name: a rusted shortsword
+    keywords: [sword, shortsword, rusted, blade]
+    short_description: A badly rusted shortsword lies discarded here.
+    long_description: >
+      This shortsword was left behind when the mine was abandoned. Years of
+      dampness have corroded the blade, leaving it pitted and dull. It might
+      still serve in a desperate fight.
+    type: weapon
+    rarity: common
+    weight: 2.5
+    value: 5
+    level_requirement: 1
+    slot: main_hand
+    weapon:
+      damage_dice: "1d4"
+      damage_type: slashing
+      weapon_type: sword
+
+  - id: kobold_spear
+    vnum: 3003
+    name: a crude kobold spear
+    keywords: [spear, kobold, crude, primitive]
+    short_description: A crudely made spear lies here.
+    long_description: >
+      The kobolds who infest the upper mines make these spears from whatever
+      they can scavenge - a sharpened piece of scrap metal lashed to a stick.
+      Crude but effective for ambushes.
+    type: weapon
+    rarity: common
+    weight: 3.0
+    value: 2
+    level_requirement: 1
+    slot: main_hand
+    weapon:
+      damage_dice: "1d4"
+      damage_type: piercing
+      weapon_type: spear
+
+  - id: shadow_dagger
+    vnum: 3004
+    name: a shadow dagger
+    keywords: [dagger, shadow, dark, blade, black]
+    short_description: A dagger of pure darkness lies here, drinking the light.
+    long_description: >
+      This dagger seems to be made of solidified shadow. Light bends around
+      it strangely, making it hard to see clearly. It was forged in the
+      Undercroft, where darkness has physical form.
+    type: weapon
+    rarity: epic
+    weight: 0.8
+    value: 500
+    level_requirement: 15
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6+2"
+      damage_type: piercing
+      weapon_type: dagger
+      hit_bonus: 2
+      damage_bonus: 3
+    flags: [magic, dark]
+
+  # ==========================================================================
+  # Armor - Mining and Underground
+  # ==========================================================================
+  - id: miners_hardhat
+    vnum: 3010
+    name: a miner's hardhat
+    keywords: [hardhat, helmet, miner, leather]
+    short_description: A leather miner's hardhat lies here.
+    long_description: >
+      A thick leather cap reinforced with metal bands, designed to protect
+      against falling rocks. A mounting bracket on the front once held a
+      candle or light source.
+    type: armor
+    rarity: common
+    weight: 1.5
+    value: 10
+    level_requirement: 1
+    slot: head
+    armor:
+      armor_bonus: 1
+      armor_type: light
+
+  - id: ironvein_breastplate
+    vnum: 3011
+    name: an Ironvein breastplate
+    keywords: [breastplate, ironvein, armor, iron]
+    short_description: A heavy iron breastplate lies here.
+    long_description: >
+      This breastplate was forged from Ironvein ore, known for its unusual
+      density and resistance to corrosion. The metal has a slight blue
+      tinge and is heavier than it looks.
+    type: armor
+    rarity: rare
+    weight: 30.0
+    value: 350
+    level_requirement: 10
+    slot: torso
+    armor:
+      armor_bonus: 7
+      armor_type: heavy
+
+  - id: cavern_crawler_chitin
+    vnum: 3012
+    name: cavern crawler chitin armor
+    keywords: [chitin, armor, crawler, insect, cave]
+    short_description: Armor made from insect chitin lies here.
+    long_description: >
+      This armor was crafted from the hardened shell of a cavern crawler -
+      a giant insect that dwells in the deep mines. The chitin is
+      surprisingly light and resistant to acid.
+    type: armor
+    rarity: uncommon
+    weight: 12.0
+    value: 180
+    level_requirement: 7
+    slot: torso
+    armor:
+      armor_bonus: 4
+      armor_type: medium
+    flags: [acid_resist]
+
+  - id: glowing_crystal_amulet
+    vnum: 3013
+    name: a glowing crystal amulet
+    keywords: [amulet, crystal, glowing, necklace, light]
+    short_description: A softly glowing crystal hangs from a chain.
+    long_description: >
+      This crystal was harvested from the deeper caves, where strange
+      minerals grow in the darkness. It emits a soft blue glow, providing
+      dim light in a small area.
+    type: armor
+    rarity: uncommon
+    weight: 0.2
+    value: 75
+    level_requirement: 3
+    slot: neck
+    armor:
+      armor_bonus: 0
+      armor_type: light
+    flags: [light_source, magic]
+
+  # ==========================================================================
+  # Consumables - Mining Supplies
+  # ==========================================================================
+  - id: mining_rations
+    vnum: 3020
+    name: preserved mining rations
+    keywords: [rations, food, mining, preserved]
+    short_description: A packet of preserved rations lies here.
+    long_description: >
+      Hard biscuits, dried meat, and a small cheese wrapped in waxed cloth.
+      This was standard fare for miners working long shifts underground.
+      Not tasty, but it keeps forever.
+    type: consumable
+    rarity: common
+    weight: 1.0
+    value: 5
+    consumable:
+      effect_type: food
+      effect_value: 30
+      uses: 1
+
+  - id: cave_moss_poultice
+    vnum: 3021
+    name: a cave moss poultice
+    keywords: [moss, poultice, healing, cave, green]
+    short_description: A damp green poultice wrapped in cloth lies here.
+    long_description: >
+      The phosphorescent moss that grows in the mine's depths has healing
+      properties. When pressed against a wound, it slowly seals the injury.
+      Less effective than potions, but freely available.
+    type: consumable
+    rarity: common
+    weight: 0.3
+    value: 8
+    consumable:
+      effect_type: heal
+      effect_value: 10
+      uses: 1
+
+  - id: darkvision_elixir
+    vnum: 3022
+    name: a darkvision elixir
+    keywords: [elixir, darkvision, potion, purple]
+    short_description: A dark purple elixir sits here.
+    long_description: >
+      This thick purple liquid was developed by alchemists working with the
+      miners. Drinking it grants the ability to see in complete darkness
+      for about an hour.
+    type: consumable
+    rarity: rare
+    weight: 0.2
+    value: 100
+    consumable:
+      effect_type: buff
+      effect_value: 60  # Duration in game ticks
+      uses: 1
+    flags: [magic]
+
+  # ==========================================================================
+  # Ore and Materials
+  # ==========================================================================
+  - id: iron_ore
+    vnum: 3030
+    name: a chunk of iron ore
+    keywords: [ore, iron, rock, metal]
+    short_description: A heavy chunk of iron ore lies here.
+    long_description: >
+      A rough chunk of iron ore, still mixed with stone. It would need to
+      be smelted before the metal could be used. The smiths of Ravenmoor
+      buy such ore for their forges.
+    type: misc
+    rarity: common
+    weight: 5.0
+    value: 10
+    flags: [stackable]
+
+  - id: silver_vein_sample
+    vnum: 3031
+    name: a silver vein sample
+    keywords: [silver, ore, sample, vein, metal]
+    short_description: A chunk of rock shot through with silver lies here.
+    long_description: >
+      This sample of ore contains visible threads of silver running through
+      the stone. The deep veins of Ironvein contain precious metals as well
+      as iron, though they're harder to find.
+    type: misc
+    rarity: uncommon
+    weight: 3.0
+    value: 50
+    flags: [stackable]
+
+  - id: deep_crystal
+    vnum: 3032
+    name: a deep crystal
+    keywords: [crystal, deep, gem, blue]
+    short_description: A faintly glowing blue crystal lies here.
+    long_description: >
+      These crystals form in the deepest parts of the mine, where strange
+      energies seep up from below. They glow with an inner light and are
+      valued by enchanters for their magical properties.
+    type: misc
+    rarity: rare
+    weight: 0.5
+    value: 150
+
+  - id: unstable_ore
+    vnum: 3033
+    name: a chunk of unstable ore
+    keywords: [ore, unstable, glowing, dangerous]
+    short_description: A chunk of ore pulses with unstable energy.
+    long_description: >
+      This strange ore radiates heat and pulses with a sickly glow. The
+      miners called it "doom rock" and refused to work veins where it
+      appeared. It's valuable to certain alchemists, but dangerous to carry.
+    type: misc
+    rarity: rare
+    weight: 2.0
+    value: 200
+    flags: [dangerous]
+
+  # ==========================================================================
+  # Kobold Loot
+  # ==========================================================================
+  - id: kobold_trinket
+    vnum: 3040
+    name: a kobold trinket
+    keywords: [trinket, kobold, shiny, junk]
+    short_description: A worthless kobold trinket lies here.
+    long_description: >
+      Kobolds are attracted to shiny objects. This appears to be a bent
+      spoon tied to a piece of string with broken glass beads. Worthless,
+      but the kobold probably thought it was treasure.
+    type: misc
+    rarity: common
+    weight: 0.1
+    value: 1
+
+  - id: kobold_trap_kit
+    vnum: 3041
+    name: a kobold trap kit
+    keywords: [trap, kit, kobold, parts]
+    short_description: A collection of trap components lies here.
+    long_description: >
+      Kobolds are cunning trap makers. This collection of springs, wires,
+      and sharpened bits could be used to construct a simple trap, or
+      sold to someone who knows how.
+    type: misc
+    rarity: uncommon
+    weight: 2.0
+    value: 25
+
+  # ==========================================================================
+  # Boss Loot - Ironvein Guardian
+  # ==========================================================================
+  - id: guardians_core
+    vnum: 3050
+    name: the Guardian's Core
+    keywords: [core, guardian, gem, heart, power]
+    short_description: A pulsing crystal core lies here, radiating power.
+    long_description: >
+      The power source of the Ironvein Guardian - an ancient construct
+      left to protect the deepest vaults. The crystal pulses with barely
+      contained energy, warm to the touch and humming with power.
+    type: misc
+    rarity: legendary
+    weight: 1.0
+    value: 1000
+    flags: [quest_item, magic]
+
+  - id: golem_plate_fragment
+    vnum: 3051
+    name: a golem plate fragment
+    keywords: [plate, fragment, golem, metal, guardian]
+    short_description: A piece of enchanted metal plating lies here.
+    long_description: >
+      A fragment of the Guardian's outer shell. The metal is unlike
+      anything forged by modern smiths - impossibly light yet stronger
+      than steel, with faint runes still visible on the surface.
+    type: misc
+    rarity: epic
+    weight: 3.0
+    value: 400
+    flags: [magic]

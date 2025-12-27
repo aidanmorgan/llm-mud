@@ -1,0 +1,28 @@
+# The Crucible Zone
+# Dwarven forge-city, eternal flames, master craftsmen
+
+zone_id: crucible
+name: The Crucible
+description: >
+  An ancient dwarven forge-city built into the heart of a volcano. Massive
+  forges powered by the mountain's eternal fires produce weapons and armor
+  of legendary quality. Golem guards patrol the streets, and the rhythmic
+  hammering never stops. The heat is oppressive to outsiders, but the dwarves
+  and their creations thrive in it.
+level_range: [14, 22]
+flags: [indoor, underground, hot, crafting_hub, dwarven]
+coordinate_origin:
+  x: -35
+  y: -10
+  z: -5
+environmental_hazards:
+  - type: heat
+    amount: 1
+    interval: 180
+    message: "The heat from the forges is almost unbearable."
+ambient_messages:
+  - "The rhythmic hammering of a thousand forges fills the air."
+  - "Molten metal flows through channels in the floor."
+  - "A golem patrols past, its metal feet clanking on stone."
+  - "The air shimmers with heat rising from the depths."
+  - "Sparks shower from a nearby forge."

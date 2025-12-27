@@ -1,0 +1,104 @@
+zone_id: willowdale
+
+rooms:
+  - id: willowdale_green
+    vnum: 200
+    name: Village Green
+    short_description: The heart of Willowdale
+    long_description: >
+      A pleasant village green lies at the center of Willowdale. Children
+      play on the grass while elders sit on benches under ancient willow
+      trees. A well stands in the center, its bucket worn smooth by
+      countless hands. The peaceful sound of flowing water comes from
+      the river nearby.
+    exits:
+      east:
+        destination: ~
+        leads_to_region: forest_path
+        target_coordinate:
+          x: -14
+          y: 2
+          z: 0
+      south: willowdale_docks
+      west: willowdale_mill
+      north: willowdale_farmstead
+    sector_type: field
+    flags: [safe]
+    ambient_messages:
+      - Birds sing in the willow branches.
+      - Children's laughter echoes across the green.
+      - A soft breeze rustles through the grass.
+
+  - id: willowdale_docks
+    vnum: 201
+    name: Riverside Docks
+    short_description: Wooden docks along the river
+    long_description: >
+      Simple wooden docks extend into the slow-moving river. Fishing boats
+      bob gently on the water, and nets hang drying on wooden frames.
+      Fishermen mend their equipment or prepare for their next expedition.
+      The smell of fish and river water fills the air.
+    exits:
+      north: willowdale_green
+      west: willowdale_fisher_cottage
+    sector_type: city
+    mob_spawns:
+      - template_id: willowdale_fisherman
+        max_count: 2
+    item_spawns:
+      - template_id: fresh_fish
+        max_count: 3
+
+  - id: willowdale_fisher_cottage
+    vnum: 202
+    name: Fisher's Cottage
+    short_description: A cozy cottage by the river
+    long_description: >
+      This modest cottage belongs to the village's master fisher. Fishing
+      rods, nets, and tackle hang from every available surface. A small
+      hearth keeps the room warm, and the smell of smoked fish lingers
+      in the air. A comfortable chair sits by the window overlooking
+      the river.
+    exits:
+      east: willowdale_docks
+    sector_type: inside
+    flags: [safe]
+    mob_spawns:
+      - template_id: willowdale_master_fisher
+        max_count: 1
+
+  - id: willowdale_mill
+    vnum: 203
+    name: Willowdale Mill
+    short_description: An old water mill
+    long_description: >
+      The village mill sits beside a small stream, its great wooden wheel
+      turning slowly with the current. The sound of grinding grain fills
+      the air, and sacks of flour are stacked near the door. The miller
+      is a busy person, always working to keep up with the village's needs.
+    exits:
+      east: willowdale_green
+    sector_type: inside
+    mob_spawns:
+      - template_id: willowdale_miller
+        max_count: 1
+
+  - id: willowdale_farmstead
+    vnum: 204
+    name: Farmstead
+    short_description: A well-tended farm
+    long_description: >
+      Rows of vegetables grow in neat lines, and a small orchard of fruit
+      trees shades the farmhouse. Chickens scratch in the yard, and a
+      cow grazes in a small pasture. The farmer waves a greeting as
+      they work the soil.
+    exits:
+      south: willowdale_green
+    sector_type: field
+    flags: [safe]
+    mob_spawns:
+      - template_id: willowdale_farmer
+        max_count: 1
+    item_spawns:
+      - template_id: fresh_vegetables
+        max_count: 2

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}{{ character.name }} - LLM-MUD{% endblock %}
+
+{% block body_class %}game-page{% endblock %}
+
+{% block head %}
+<style>
+    body.game-page {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="game-header">
+    <div class="player-info">
+        <span class="stat">Player: <span class="stat-value">{{ character.name }}</span></span>
+        <span class="stat">Level: <span class="stat-value">{{ character.level }}</span></span>
+        <span class="stat">HP: <span class="stat-value" id="hp">{{ character.stats.get('hp', 20) }}/{{ character.stats.get('max_hp', 20) }}</span></span>
+        <span class="stat">Mana: <span class="stat-value" id="mana">{{ character.stats.get('mana', 10) }}/{{ character.stats.get('max_mana', 10) }}</span></span>
+    </div>
+    <div class="nav-links">
+        <a href="/characters">Switch Character</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div id="output" hx-ext="ws" ws-connect="/ws/game">
+    <div class="welcome">
+Welcome to LLM-MUD!
+
+Type 'help' for a list of commands.
+Type 'look' to see your surroundings.
+
+    </div>
+</div>
+
+<div class="input-container">
+    <form id="command-form" hx-post="/api/command" hx-target="#output" hx-swap="beforeend">
+        <input type="text" id="command-input" name="command"
+               placeholder="Enter command..." autocomplete="off" autofocus>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Auto-scroll to bottom when new content arrives
+    const output = document.getElementById('output');
+    const observer = new MutationObserver(() => {
+        output.scrollTop = output.scrollHeight;
+    });
+    observer.observe(output, { childList: true, subtree: true });
+
+    // Clear input after submit
+    document.getElementById('command-form').addEventListener('htmx:afterRequest', function() {
+        document.getElementById('command-input').value = '';
+    });
+
+    // Focus input on any keypress
+    document.addEventListener('keydown', function(e) {
+        const input = document.getElementById('command-input');
+        if (document.activeElement !== input && e.key.length === 1) {
+            input.focus();
+        }
+    });
+</script>
+{% endblock %}

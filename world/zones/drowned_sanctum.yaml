@@ -1,0 +1,21 @@
+# Drowned Sanctum - Underwater temple zone
+zone_id: drowned_sanctum
+name: Drowned Sanctum
+description: >
+  A vast temple complex that sank beneath the waves in ages past, now
+  accessible via the Sunken Causeway from Coral Bay. Air pockets exist
+  in sealed chambers, and bioluminescent life illuminates coral-encrusted
+  halls. The Deep Ones worship ancient sea gods here, and drowned priests
+  maintain rituals that keep the waters calm. The Abyssal Herald, a
+  kraken-touched priest, guards the inner sanctum.
+level_range: [10, 18]
+flags: [dungeon, underwater, pressure_hazard]
+coordinate_origin:
+  x: 20
+  y: 0
+  z: -10
+special_effects:
+  - breath_holding
+  - water_pressure
+  - swimming_movement
+visibility_penalty: 0.6

@@ -1,0 +1,114 @@
+region_id: forest_path
+name: The Whispering Woods
+
+theme:
+  theme_id: ancient_forest
+  description: >
+    A dense, primeval forest between Ravenmoor and Willowdale. Ancient oaks
+    and twisted willows form a thick canopy that filters the light into
+    shifting patterns. The forest is old and holds many secrets.
+
+  room_prompt: >
+    Generate a room description for an ancient, shadowy forest.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: mysterious, atmospheric, hints of old magic, slightly ominous.
+    Include sensory details: sounds, smells, textures of bark and leaves.
+    Vary descriptions - some areas have more light, some are darker.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a forest creature for players around level {target_level}.
+    Room context: {room_description}
+
+    Types to consider: wolves, giant spiders, forest bandits, wild boars,
+    corrupted animals, forest spirits, lost travelers.
+
+    Return JSON with:
+    - name
+    - keywords (list)
+    - short_description (room line)
+    - long_description (detailed)
+    - level
+    - health
+    - damage_dice
+    - behavior (aggressive, passive, territorial)
+    - personality traits
+
+  item_prompt: >
+    Generate a forest-themed item for level {target_level} characters.
+    Rarity: {target_rarity}
+
+    Types: healing herbs, old weapons, traveler's belongings, natural
+    materials, mysterious artifacts.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - moss, fern, oak, willow, shadow, mist, canopy, gnarled
+    - ancient, twisted, primeval, towering, dense
+    - whisper, rustle, creak, echo, silence
+    - bark, root, vine, thorn, flower
+
+  forbidden_words:
+    - desert, sand, ocean, modern, technology, neon, plastic
+    - city, building, car, phone
+
+  sector_types: [forest, field, swamp]
+
+  ambient_messages:
+    - "Leaves rustle overhead in an unfelt breeze."
+    - "A distant bird calls through the canopy."
+    - "Shadows shift between the ancient trees."
+    - "The scent of moss and decay fills the air."
+    - "Something moves in the undergrowth, then falls silent."
+    - "Shafts of light pierce the canopy, revealing dancing motes of dust."
+
+  mob_templates: [forest_wolf, giant_spider, bandit_scout, wild_boar]
+  item_templates: [healing_herb, rusty_dagger, forest_mushroom, traveler_pack]
+
+endpoints:
+  ravenmoor_west_gate:
+    direction: west
+    coordinate:
+      x: -1
+      y: 0
+      z: 0
+  willowdale_green:
+    direction: east
+    coordinate:
+      x: -14
+      y: 2
+      z: 0
+
+waypoints:
+  - x: -5
+    y: 0
+    z: 0
+    name: "Mossy Crossroads"
+    is_required: true
+  - x: -10
+    y: 1
+    z: 0
+    name: "Ancient Oak Hollow"
+    is_required: true
+
+generation:
+  min_rooms: 8
+  max_rooms: 20
+  difficulty_min: 1
+  difficulty_max: 4
+  mob_density: 0.4
+  item_density: 0.15
+  branch_chance: 0.25
+
+primary_sector_type: forest

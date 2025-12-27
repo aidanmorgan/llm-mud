@@ -1,0 +1,517 @@
+# Willowdale Zone Items
+# Riverside/rural equipment, consumables, and loot for the fishing village
+
+zone_id: willowdale
+
+items:
+  # ==========================================================================
+  # Weapons - Farming/Hunting Theme
+  # ==========================================================================
+  - id: hunting_bow
+    vnum: 2100
+    name: a hunting bow
+    keywords: [bow, hunting, wooden, ranged]
+    short_description: A simple hunting bow lies here.
+    long_description: >
+      This sturdy bow is made from local willow wood, prized for its
+      flexibility. It's designed for hunting game in the forests
+      around Willowdale, but serves equally well in combat.
+    type: weapon
+    rarity: common
+    weight: 2.0
+    value: 35
+    level_requirement: 2
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6"
+      damage_type: piercing
+      weapon_type: bow
+      two_handed: true
+
+  - id: fishing_gaff
+    vnum: 2101
+    name: a fishing gaff
+    keywords: [gaff, hook, fishing, weapon]
+    short_description: A wicked fishing gaff lies here.
+    long_description: >
+      This curved hook on a pole is used to haul large fish from the
+      water. In desperation, it makes a serviceable if brutal weapon.
+      The hook is sharp enough to punch through armor.
+    type: weapon
+    rarity: common
+    weight: 4.0
+    value: 20
+    level_requirement: 2
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6"
+      damage_type: piercing
+      weapon_type: spear
+
+  - id: woodsmans_axe
+    vnum: 2102
+    name: a woodsman's axe
+    keywords: [axe, woodsman, chopping, weapon]
+    short_description: A well-used woodsman's axe lies here.
+    long_description: >
+      This practical axe has seen years of service felling trees and
+      splitting wood. The edge is kept razor-sharp, and the balance
+      is perfect for both work and combat.
+    type: weapon
+    rarity: common
+    weight: 5.0
+    value: 30
+    level_requirement: 3
+    slot: main_hand
+    weapon:
+      damage_dice: "1d8"
+      damage_type: slashing
+      weapon_type: axe
+
+  - id: sickle_farmers
+    vnum: 2103
+    name: a farmer's sickle
+    keywords: [sickle, farmer, curved, blade]
+    short_description: A curved farming sickle lies here.
+    long_description: >
+      This crescent-shaped blade is used for harvesting grain, but
+      its sharp edge and hooked shape make it a dangerous weapon
+      in close combat. Many a farmer has defended their home with one.
+    type: weapon
+    rarity: common
+    weight: 2.0
+    value: 15
+    level_requirement: 1
+    slot: main_hand
+    weapon:
+      damage_dice: "1d4"
+      damage_type: slashing
+      weapon_type: dagger
+
+  - id: river_staff
+    vnum: 2104
+    name: a river willow staff
+    keywords: [staff, willow, river, wooden]
+    short_description: A gnarled willow staff lies here.
+    long_description: >
+      Cut from the great willow trees along the river, this staff
+      has been carefully shaped and cured. Elder Willow blessed it,
+      and it seems to hum faintly with natural magic.
+    type: weapon
+    rarity: uncommon
+    weight: 3.0
+    value: 65
+    level_requirement: 4
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6+1"
+      damage_type: bludgeoning
+      weapon_type: staff
+      two_handed: true
+    flags: [magic, nature]
+
+  # ==========================================================================
+  # Armor - Rural Protection
+  # ==========================================================================
+  - id: leather_vest_villager
+    vnum: 2110
+    name: a villager's leather vest
+    keywords: [vest, leather, villager, armor]
+    short_description: A simple leather vest lies here.
+    long_description: >
+      This practical leather vest was made by the village tanner.
+      It's designed to protect against the hazards of farm work
+      but offers decent protection in combat as well.
+    type: armor
+    rarity: common
+    weight: 5.0
+    value: 25
+    level_requirement: 1
+    slot: torso
+    armor:
+      armor_bonus: 2
+      armor_type: light
+
+  - id: woven_reed_hat
+    vnum: 2111
+    name: a woven reed hat
+    keywords: [hat, reed, woven, straw]
+    short_description: A wide-brimmed reed hat lies here.
+    long_description: >
+      This wide-brimmed hat is woven from river reeds. It provides
+      shade from the sun and minimal protection. The villagers
+      favor them for their practicality.
+    type: armor
+    rarity: common
+    weight: 0.5
+    value: 5
+    level_requirement: 1
+    slot: head
+    armor:
+      armor_bonus: 0
+      armor_type: cloth
+
+  - id: fishermans_boots
+    vnum: 2112
+    name: fisherman's wading boots
+    keywords: [boots, fisherman, wading, waterproof]
+    short_description: A pair of tall leather boots stands here.
+    long_description: >
+      These tall boots are designed for wading in the river. The
+      leather is treated with oil to keep water out, and the soles
+      grip well on slippery rocks.
+    type: armor
+    rarity: common
+    weight: 3.0
+    value: 20
+    level_requirement: 2
+    slot: feet
+    armor:
+      armor_bonus: 1
+      armor_type: light
+    flags: [waterproof]
+
+  - id: hunters_cloak
+    vnum: 2113
+    name: a hunter's cloak
+    keywords: [cloak, hunter, green, cape]
+    short_description: A mottled green cloak lies in a heap.
+    long_description: >
+      This cloak is dyed in patterns that help the wearer blend into
+      the forest. Hunters prize them for stalking game, and they're
+      equally useful for avoiding predators - or enemies.
+    type: armor
+    rarity: uncommon
+    weight: 2.0
+    value: 40
+    level_requirement: 3
+    slot: about
+    armor:
+      armor_bonus: 1
+      armor_type: cloth
+    flags: [stealth_bonus]
+
+  - id: bark_armor
+    vnum: 2114
+    name: a suit of bark armor
+    keywords: [armor, bark, wooden, natural]
+    short_description: Armor made of woven bark and vines lies here.
+    long_description: >
+      This unusual armor is made from treated tree bark woven with
+      living vines. It was created by a druid and provides protection
+      while maintaining a connection to nature.
+    type: armor
+    rarity: rare
+    weight: 12.0
+    value: 120
+    level_requirement: 6
+    slot: torso
+    armor:
+      armor_bonus: 4
+      armor_type: medium
+    flags: [magic, nature]
+
+  # ==========================================================================
+  # Consumables - Farm & Forest Goods
+  # ==========================================================================
+  - id: fresh_vegetables
+    vnum: 2120
+    name: a basket of fresh vegetables
+    keywords: [vegetables, basket, fresh, food]
+    short_description: A basket of fresh vegetables sits here.
+    long_description: >
+      Goodman Briggs grows the best vegetables in the region. This
+      basket contains carrots, onions, and potatoes - simple fare
+      but wholesome and filling.
+    type: consumable
+    rarity: common
+    weight: 2.0
+    value: 6
+    consumable:
+      effect_type: food
+      effect_value: 30
+      uses: 3
+
+  - id: fresh_fish
+    vnum: 2121
+    name: a fresh river fish
+    keywords: [fish, fresh, river, food]
+    short_description: A fresh-caught fish lies here.
+    long_description: >
+      This fish was just pulled from the river. It's still fresh
+      and would make an excellent meal when cooked. The scales
+      glisten with river water.
+    type: consumable
+    rarity: common
+    weight: 1.5
+    value: 5
+    consumable:
+      effect_type: food
+      effect_value: 25
+      uses: 1
+
+  - id: healing_herb
+    vnum: 2122
+    name: a bundle of healing herbs
+    keywords: [herbs, healing, medicine, bundle]
+    short_description: A bundle of dried herbs lies here.
+    long_description: >
+      Sage Meadow gathered these herbs from the forest. When applied
+      to wounds or brewed into tea, they speed healing and prevent
+      infection. Every adventurer should carry some.
+    type: consumable
+    rarity: common
+    weight: 0.2
+    value: 10
+    consumable:
+      effect_type: heal
+      effect_value: 10
+      uses: 2
+
+  - id: stamina_tea
+    vnum: 2123
+    name: a flask of stamina tea
+    keywords: [tea, stamina, flask, drink]
+    short_description: A flask of amber tea sits here.
+    long_description: >
+      This tea is brewed from herbs that restore energy and fight
+      fatigue. Farmers drink it during long harvest days, and
+      adventurers find it equally useful on long journeys.
+    type: consumable
+    rarity: uncommon
+    weight: 0.5
+    value: 15
+    consumable:
+      effect_type: restore_stamina
+      effect_value: 25
+      uses: 2
+
+  - id: honey_jar
+    vnum: 2124
+    name: a jar of wild honey
+    keywords: [honey, jar, sweet, food]
+    short_description: A jar of golden honey sits here.
+    long_description: >
+      This honey was gathered from wild bee hives in the forest.
+      It's thick, sweet, and has mild restorative properties.
+      It can be eaten directly or used in cooking.
+    type: consumable
+    rarity: uncommon
+    weight: 0.5
+    value: 12
+    consumable:
+      effect_type: food
+      effect_value: 20
+      uses: 3
+
+  - id: antidote_herb
+    vnum: 2125
+    name: a bundle of antidote herbs
+    keywords: [antidote, herbs, medicine, poison]
+    short_description: A bundle of bitter-smelling herbs lies here.
+    long_description: >
+      These pungent herbs are specifically gathered to counteract
+      poisons. They taste terrible but are remarkably effective
+      against most common venoms and toxins.
+    type: consumable
+    rarity: uncommon
+    weight: 0.2
+    value: 20
+    consumable:
+      effect_type: cure_poison
+      effect_value: 1
+      uses: 1
+
+  # ==========================================================================
+  # Quest Items & Valuables
+  # ==========================================================================
+  - id: elder_blessing
+    vnum: 2130
+    name: Elder Willow's blessing
+    keywords: [blessing, willow, elder, token]
+    short_description: A small token of woven willow bark lies here.
+    long_description: >
+      This small token was blessed by Elder Willow herself. Those
+      who carry it find the natural world more welcoming, and
+      creatures of the forest are less hostile.
+    type: misc
+    rarity: rare
+    weight: 0.1
+    value: 100
+    flags: [quest_item, nature_bonus]
+
+  - id: nixie_tear
+    vnum: 2131
+    name: a nixie's tear
+    keywords: [tear, nixie, crystal, water]
+    short_description: A crystallized tear glimmers with inner light.
+    long_description: >
+      When a nixie weeps, her tears sometimes crystallize into these
+      beautiful gems. They are prized by enchanters for water-based
+      magics and fetch high prices from collectors.
+    type: misc
+    rarity: rare
+    weight: 0.05
+    value: 75
+    flags: [magic]
+
+  - id: river_pearl
+    vnum: 2132
+    name: a river pearl
+    keywords: [pearl, river, white, gem]
+    short_description: A lustrous white pearl gleams here.
+    long_description: >
+      This pearl was found in a river mussel. It's smaller than
+      ocean pearls but has a unique luster prized by jewelers.
+      The nixies sometimes trade these with friendly travelers.
+    type: misc
+    rarity: uncommon
+    weight: 0.05
+    value: 30
+
+  # ==========================================================================
+  # Loot Drops - Riverside Creatures
+  # ==========================================================================
+  - id: snake_skin
+    vnum: 2140
+    name: a river snake skin
+    keywords: [skin, snake, scales]
+    short_description: A shed snake skin lies here.
+    long_description: >
+      This skin was shed by a river snake. The scales are smooth
+      and waterproof, useful to leatherworkers for creating
+      water-resistant goods.
+    type: misc
+    rarity: common
+    weight: 0.3
+    value: 5
+
+  - id: toad_legs
+    vnum: 2141
+    name: giant toad legs
+    keywords: [toad, legs, meat, food]
+    short_description: A pair of giant toad legs lies here.
+    long_description: >
+      These enormous toad legs are considered a delicacy by some.
+      When cooked properly, they're said to taste like chicken.
+      The tavern might pay for these.
+    type: consumable
+    rarity: common
+    weight: 2.0
+    value: 8
+    consumable:
+      effect_type: food
+      effect_value: 20
+      uses: 1
+
+  - id: boar_tusk
+    vnum: 2142
+    name: a wild boar tusk
+    keywords: [tusk, boar, ivory]
+    short_description: A yellowed boar tusk lies here.
+    long_description: >
+      This large tusk came from a wild boar. It's sharp enough to
+      be dangerous and is sometimes carved into ornaments or used
+      as a weapon component.
+    type: misc
+    rarity: common
+    weight: 0.5
+    value: 10
+
+  - id: wisp_essence
+    vnum: 2143
+    name: a wisp essence
+    keywords: [essence, wisp, glowing, magic]
+    short_description: A glowing ball of light floats here.
+    long_description: >
+      This is all that remains of a will-o'-wisp. The glowing
+      essence retains some of the creature's magic and is valued
+      by alchemists and enchanters alike.
+    type: misc
+    rarity: rare
+    weight: 0.1
+    value: 50
+    flags: [magic, light_source]
+
+  - id: troll_blood
+    vnum: 2144
+    name: a vial of troll blood
+    keywords: [blood, troll, vial, green]
+    short_description: A vial of thick green blood sits here.
+    long_description: >
+      This dark green blood came from a forest troll. It retains
+      some of the creature's regenerative properties and is a key
+      ingredient in certain healing potions.
+    type: misc
+    rarity: rare
+    weight: 0.2
+    value: 60
+    flags: [magic, reagent]
+
+  - id: corrupted_heartwood
+    vnum: 2145
+    name: a piece of corrupted heartwood
+    keywords: [heartwood, corrupted, wood, dark]
+    short_description: A blackened piece of wood pulses with dark energy.
+    long_description: >
+      This heartwood came from a corrupted dryad's tree. It's been
+      twisted by dark magic but retains potent power. Dangerous to
+      handle, but valuable to those who practice shadow magic.
+    type: misc
+    rarity: rare
+    weight: 0.5
+    value: 75
+    flags: [magic, cursed]
+
+  # ==========================================================================
+  # Boss Loot - Old Whiskers
+  # ==========================================================================
+  - id: old_whiskers_scale
+    vnum: 2150
+    name: a scale of Old Whiskers
+    keywords: [scale, whiskers, fish, boss]
+    short_description: An enormous iridescent scale lies here.
+    long_description: >
+      This massive scale came from the legendary catfish Old Whiskers.
+      It's as large as a dinner plate and shimmers with all the colors
+      of the river. A trophy beyond compare for any fisherman.
+    type: misc
+    rarity: legendary
+    weight: 2.0
+    value: 500
+    flags: [quest_item, boss_loot]
+
+  - id: river_king_crown
+    vnum: 2151
+    name: the River King's Crown
+    keywords: [crown, river, king, pearls, boss]
+    short_description: A crown of river pearls and gold lies here.
+    long_description: >
+      Legend says Old Whiskers swallowed this crown centuries ago
+      when a river king's barge sank. Now recovered, it's a circlet
+      of gold set with dozens of river pearls.
+    type: armor
+    rarity: legendary
+    weight: 1.0
+    value: 800
+    level_requirement: 8
+    slot: head
+    armor:
+      armor_bonus: 2
+      armor_type: cloth
+    flags: [magic, boss_loot, charisma_bonus]
+
+  - id: lucky_fishing_rod
+    vnum: 2152
+    name: Old Nettie's Lucky Rod
+    keywords: [rod, fishing, lucky, nettie, boss]
+    short_description: An ancient fishing rod radiates good fortune.
+    long_description: >
+      Old Nettie claims this rod was blessed by a river spirit long
+      ago. Whoever carries it seems to have exceptional luck, not
+      just with fishing but in all endeavors.
+    type: misc
+    rarity: rare
+    weight: 2.0
+    value: 300
+    flags: [magic, boss_loot, luck_bonus]

@@ -1,0 +1,188 @@
+# Ravenmoor Guild Masters
+# NPCs who handle level-up advancement for each class
+
+zone_id: ravenmoor
+
+mobs:
+  # ==========================================================================
+  # Captain Ironhelm - Warrior Guild Master
+  # ==========================================================================
+  - id: captain_ironhelm
+    vnum: 160
+    name: Captain Ironhelm
+    keywords: [captain, ironhelm, warrior, guildmaster, master]
+    short_description: Captain Ironhelm watches over the training hall with a critical eye.
+    long_description: >
+      A towering figure in polished plate armor, Captain Ironhelm earned his name
+      from the distinctive helm he always wears - said to have been forged from
+      meteorite iron. Scars crisscross his exposed forearms, testament to countless
+      battles. Despite his age, he moves with the deadly grace of a master warrior,
+      and his voice carries the authority of one who has commanded armies.
+    level: 40
+    health: 800
+    strength: 20
+    dexterity: 16
+    constitution: 20
+    damage_dice: 2d10
+    damage_type: slashing
+    armor_class: 22
+    behavior_type: passive
+    flags: [sentinel, no_wander, guild_master]
+    spawn_room: ravenmoor_barracks
+    is_guild_master: true
+    guild_class: warrior
+    dialogue:
+      greeting: "Well met, warrior. Strength is earned through blood and steel."
+      topics:
+        level: "To advance in rank, you must prove your worth. Bring experience earned in battle."
+        training: "True warriors never stop training. Even I spar with the recruits daily."
+        guild: "The Warriors' Barracks has stood for three centuries. We honor those who came before."
+
+  # ==========================================================================
+  # Archmage Vaelith - Mage Guild Master
+  # ==========================================================================
+  - id: archmage_vaelith
+    vnum: 161
+    name: Archmage Vaelith
+    keywords: [archmage, vaelith, mage, guildmaster, master, wizard]
+    short_description: Archmage Vaelith studies an ancient tome, arcane energy crackling around her.
+    long_description: >
+      An elven woman of indeterminate age, Archmage Vaelith's silver hair floats
+      as if caught in an unseen breeze. Her robes shift colors subtly as she moves,
+      and her eyes glow faintly with accumulated magical power. She speaks rarely,
+      but when she does, even the most powerful sorcerers listen. Ancient tomes
+      orbit her like moons around a planet.
+    level: 45
+    health: 450
+    mana: 500
+    strength: 8
+    dexterity: 14
+    constitution: 12
+    intelligence: 22
+    wisdom: 20
+    damage_dice: 2d8
+    damage_type: arcane
+    armor_class: 18
+    behavior_type: passive
+    flags: [sentinel, no_wander, guild_master]
+    spawn_room: ravenmoor_mage_tower
+    is_guild_master: true
+    guild_class: mage
+    dialogue:
+      greeting: "Knowledge is the truest power. What wisdom do you seek?"
+      topics:
+        level: "Advancement requires not just experience, but understanding. Demonstrate your mastery."
+        magic: "Magic is both art and science. Never stop questioning, never stop learning."
+        guild: "The Arcane Sanctum was built by Vaelith the First. I am the seventh to bear his name."
+
+  # ==========================================================================
+  # High Priest Aldric - Cleric Guild Master
+  # ==========================================================================
+  - id: high_priest_aldric
+    vnum: 162
+    name: High Priest Aldric
+    keywords: [priest, aldric, cleric, guildmaster, master, high]
+    short_description: High Priest Aldric kneels in prayer before the altar.
+    long_description: >
+      A serene man with kind eyes and a gentle demeanor, High Priest Aldric radiates
+      an aura of peace. His simple white robes are immaculate, and a golden sun
+      symbol hangs from a chain around his neck. His hands are calloused from
+      years of healing the sick and wounded. When he speaks, his voice carries
+      the calm certainty of unwavering faith.
+    level: 40
+    health: 500
+    mana: 400
+    strength: 10
+    dexterity: 10
+    constitution: 14
+    intelligence: 14
+    wisdom: 22
+    charisma: 18
+    damage_dice: 1d8
+    damage_type: holy
+    armor_class: 16
+    behavior_type: passive
+    flags: [sentinel, no_wander, guild_master]
+    spawn_room: ravenmoor_temple
+    is_guild_master: true
+    guild_class: cleric
+    dialogue:
+      greeting: "May the light guide your path, child. How may I serve?"
+      topics:
+        level: "To grow in grace, one must serve others. Your deeds speak louder than words."
+        faith: "Faith is not certainty. It is choosing to believe despite uncertainty."
+        guild: "This temple has offered healing to all who seek it for generations."
+
+  # ==========================================================================
+  # Shadowmaster Vexa - Rogue Guild Master
+  # ==========================================================================
+  - id: shadowmaster_vexa
+    vnum: 163
+    name: Shadowmaster Vexa
+    keywords: [shadowmaster, vexa, rogue, guildmaster, master, thief]
+    short_description: Shadowmaster Vexa emerges from the shadows, counting coins.
+    long_description: >
+      You didn't see her arrive, and you likely won't see her leave. Shadowmaster
+      Vexa moves like smoke given form, her face half-hidden by a dark hood. What
+      little you can see reveals sharp features and eyes that miss nothing. Daggers
+      glint at her belt, more than should be possible to carry. When she smiles,
+      it's the smile of a predator.
+    level: 42
+    health: 400
+    strength: 14
+    dexterity: 22
+    constitution: 12
+    intelligence: 16
+    wisdom: 14
+    charisma: 16
+    damage_dice: 2d6
+    damage_type: piercing
+    armor_class: 20
+    behavior_type: passive
+    flags: [sentinel, no_wander, guild_master]
+    spawn_room: ravenmoor_thieves_guild
+    is_guild_master: true
+    guild_class: rogue
+    dialogue:
+      greeting: "You found this place. That's the first test. What else can you find?"
+      topics:
+        level: "To advance, bring me proof of your skills. Gold, secrets, both work."
+        shadows: "The shadows are neither friend nor foe. They simply are. Learn to be one with them."
+        guild: "The Shadow Den has no official existence. Remember that."
+
+  # ==========================================================================
+  # Huntmaster Theron - Ranger Guild Master
+  # ==========================================================================
+  - id: huntmaster_theron
+    vnum: 164
+    name: Huntmaster Theron
+    keywords: [huntmaster, theron, ranger, guildmaster, master, hunter]
+    short_description: Huntmaster Theron tends to his bow by the fire.
+    long_description: >
+      A weathered man whose skin is tanned like leather from years under the sun.
+      Huntmaster Theron moves with the quiet confidence of one who has tracked
+      every beast in these lands. His longbow is never far from reach, and a
+      great wolf lies at his feet, watching visitors with intelligent eyes.
+      Leaves and twigs seem to cling to his clothing of their own accord.
+    level: 42
+    health: 550
+    mana: 200
+    strength: 16
+    dexterity: 20
+    constitution: 16
+    intelligence: 12
+    wisdom: 18
+    damage_dice: 2d6
+    damage_type: piercing
+    armor_class: 18
+    behavior_type: passive
+    flags: [sentinel, no_wander, guild_master]
+    spawn_room: ravenmoor_rangers_lodge
+    is_guild_master: true
+    guild_class: ranger
+    dialogue:
+      greeting: "The wilds recognize their own. I see that in you."
+      topics:
+        level: "Experience in the wild is what matters. Bring tales of your hunts and tracks."
+        nature: "The forest provides all you need if you know how to listen."
+        guild: "We rangers watch the borders. We are the first warning when danger approaches."

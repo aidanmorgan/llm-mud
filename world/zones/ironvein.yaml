@@ -1,0 +1,13 @@
+zone_id: ironvein
+name: Ironvein Mine
+description: >
+  An abandoned mining complex in the hills south of Ravenmoor. Once a
+  prosperous iron mine, it was sealed when creatures from below began
+  attacking the miners. Now it stands empty, though treasure hunters
+  occasionally brave its depths seeking the riches left behind.
+level_range: [3, 8]
+flags: [dungeon]
+coordinate_origin:
+  x: 0
+  y: -8
+  z: -2

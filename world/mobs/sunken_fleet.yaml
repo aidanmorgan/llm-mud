@@ -1,0 +1,424 @@
+# The Sunken Fleet Mobs
+# Drowned sailors and underwater creatures
+
+zone_id: sunken_fleet
+
+mobs:
+  # Common Enemies
+  - id: drowned_sailor
+    vnum: 2700
+    name: a drowned sailor
+    keywords: [drowned, sailor, undead, zombie]
+    short_description: A waterlogged corpse in tattered naval uniform lurches forward.
+    long_description: >
+      This sailor died when the fleet sank and now wanders the wrecks
+      in undeath. Barnacles and coral have grown on its rotting flesh,
+      and seaweed trails from its limbs like tattered streamers.
+    level: 12
+    health: 90
+    strength: 14
+    dexterity: 10
+    constitution: 14
+    damage_dice: 1d8
+    damage_type: bludgeoning
+    armor_class: 12
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 160
+    abilities: [drowning_grip, waterlogged_slam]
+    immunities: [poison, cold]
+    loot_table:
+      - template_id: sailor_trinket
+        drop_chance: 0.25
+      - template_id: corroded_coin
+        drop_chance: 0.4
+
+  - id: reef_shark
+    vnum: 2701
+    name: a reef shark
+    keywords: [reef, shark, fish, predator]
+    short_description: A sleek shark circles, drawn by movement.
+    long_description: >
+      Sharks patrol the outer wrecks, attracted by the disturbances
+      of underwater exploration. This one is aggressive and territorial,
+      attacking anything that enters its hunting ground.
+    level: 11
+    health: 70
+    strength: 14
+    dexterity: 16
+    constitution: 12
+    damage_dice: 1d8
+    damage_type: piercing
+    armor_class: 13
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 140
+    abilities: [bite, blood_frenzy, ram]
+    loot_table:
+      - template_id: shark_tooth
+        drop_chance: 0.4
+      - template_id: shark_fin
+        drop_chance: 0.2
+
+  - id: moray_eel
+    vnum: 2702
+    name: a giant moray eel
+    keywords: [moray, eel, giant, serpent]
+    short_description: A massive eel lurks in the wreckage, jaws agape.
+    long_description: >
+      Giant moray eels nest in the broken masts and hulls of the fleet.
+      They ambush prey from their hiding spots, their razor-sharp teeth
+      tearing through flesh and armor alike.
+    level: 13
+    health: 80
+    strength: 16
+    dexterity: 14
+    constitution: 12
+    damage_dice: 1d10
+    damage_type: piercing
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 3
+    experience_value: 180
+    abilities: [ambush_bite, constrict, retreat_to_den]
+    loot_table:
+      - template_id: eel_skin
+        drop_chance: 0.35
+
+  - id: ghost_sailor
+    vnum: 2703
+    name: a ghost sailor
+    keywords: [ghost, sailor, spirit, phantom]
+    short_description: A spectral sailor goes about duties long forgotten.
+    long_description: >
+      These spirits don't realize they've died. They continue their
+      duties, swabbing decks that no longer exist and following orders
+      from dead captains. They turn hostile when their routines are
+      disturbed.
+    level: 14
+    health: 70
+    strength: 10
+    dexterity: 14
+    constitution: 10
+    damage_dice: 1d8
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 200
+    abilities: [spectral_touch, phase_through, ghostly_wail]
+    immunities: [poison, cold]
+    resistances: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: ectoplasm
+        drop_chance: 0.3
+
+  - id: treasure_guardian
+    vnum: 2704
+    name: a treasure guardian
+    keywords: [treasure, guardian, undead, skeleton]
+    short_description: A skeletal figure guards a pile of gold with single-minded purpose.
+    long_description: >
+      Some sailors died protecting the fleet's treasure and still do
+      so in death. This skeletal guardian attacks anyone who approaches
+      the scattered riches, bound by an oath that transcends death.
+    level: 15
+    health: 100
+    strength: 16
+    dexterity: 12
+    constitution: 14
+    damage_dice: 1d10
+    damage_type: slashing
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 260
+    abilities: [cutlass_fury, treasure_warden, undying_oath]
+    immunities: [poison, cold]
+    vulnerabilities: [bludgeoning]
+    loot_table:
+      - template_id: gold_coins
+        drop_chance: 0.6
+      - template_id: guardian_cutlass
+        drop_chance: 0.15
+
+  - id: giant_crab
+    vnum: 2705
+    name: a giant crab
+    keywords: [giant, crab, crustacean, pincer]
+    short_description: A massive crab scuttles through the wreckage.
+    long_description: >
+      These enormous crabs have made the sunken ships their home.
+      They're territorial and aggressive, their pincers capable of
+      crushing armor. They feast on anything they can catch.
+    level: 14
+    health: 120
+    strength: 18
+    dexterity: 10
+    constitution: 18
+    damage_dice: 2d6
+    damage_type: bludgeoning
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 220
+    abilities: [pincer_crush, armored_shell, bubble_spray]
+    resistances: [bludgeoning, piercing]
+    loot_table:
+      - template_id: crab_shell
+        drop_chance: 0.4
+      - template_id: crab_meat
+        drop_chance: 0.5
+
+  - id: spectral_marine
+    vnum: 2706
+    name: a spectral marine
+    keywords: [spectral, marine, soldier, ghost]
+    short_description: A ghostly soldier in naval armor stands ready.
+    long_description: >
+      The marines died fighting to the last and continue fighting in
+      death. They're more aggressive than regular ghost sailors, still
+      carrying out their final orders to repel boarders.
+    level: 16
+    health: 100
+    strength: 14
+    dexterity: 14
+    constitution: 12
+    damage_dice: 1d10
+    damage_type: necrotic
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 300
+    abilities: [spectral_blade, marine_discipline, ghostly_charge]
+    immunities: [poison, cold]
+    resistances: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: marine_medallion
+        drop_chance: 0.25
+      - template_id: spectral_blade
+        drop_chance: 0.1
+
+  - id: ghost_officer
+    vnum: 2707
+    name: a ghost officer
+    keywords: [ghost, officer, commander, spirit]
+    short_description: A spectral figure in an officer's coat commands phantom troops.
+    long_description: >
+      Officers retain their authority even in death, commanding the
+      ghost sailors with the same stern discipline they showed in life.
+      Their presence strengthens nearby undead.
+    level: 17
+    health: 110
+    strength: 12
+    dexterity: 14
+    constitution: 12
+    intelligence: 16
+    damage_dice: 1d8
+    damage_type: necrotic
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 340
+    abilities: [command_dead, officer_strike, inspiring_presence]
+    immunities: [poison, cold]
+    resistances: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: officer_signet
+        drop_chance: 0.3
+      - template_id: naval_compass
+        drop_chance: 0.2
+
+  - id: battling_ghosts
+    vnum: 2708
+    name: battling ghosts
+    keywords: [battling, ghosts, spirits, fighting]
+    short_description: Two spectral sailors clash in eternal combat.
+    long_description: >
+      These spirits are locked in a battle that began when the ships
+      went down. They attack each other and anyone who gets close,
+      unable to distinguish between enemies.
+    level: 15
+    health: 80
+    strength: 12
+    dexterity: 16
+    constitution: 10
+    damage_dice: 1d8
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 240
+    abilities: [frenzied_combat, spectral_flurry]
+    immunities: [poison, cold]
+    resistances: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: battle_remnant
+        drop_chance: 0.3
+
+  - id: spectral_guard
+    vnum: 2709
+    name: a spectral guard
+    keywords: [spectral, guard, elite, ghost]
+    short_description: An elite phantom guard protects the flagship approach.
+    long_description: >
+      The admiral's personal guard were the finest soldiers in the fleet.
+      In death, they continue their duty with supernatural vigilance,
+      allowing no one to approach the flagship unchallenged.
+    level: 18
+    health: 130
+    strength: 16
+    dexterity: 14
+    constitution: 14
+    damage_dice: 2d6
+    damage_type: necrotic
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 380
+    abilities: [elite_strike, unwavering_guard, spectral_shield]
+    immunities: [poison, cold]
+    resistances: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: guard_insignia
+        drop_chance: 0.25
+      - template_id: spectral_shield
+        drop_chance: 0.1
+
+  - id: ghost_crew
+    vnum: 2710
+    name: ghost crew members
+    keywords: [ghost, crew, sailors, group]
+    short_description: A group of spectral sailors works the phantom deck.
+    long_description: >
+      The flagship's crew works in unison, maintaining a ship that
+      exists only in their memory. They react violently to anyone
+      who disrupts their eternal duties.
+    level: 14
+    health: 90
+    strength: 12
+    dexterity: 14
+    constitution: 12
+    damage_dice: 1d8
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 220
+    abilities: [coordinated_assault, ghostly_labor]
+    immunities: [poison, cold]
+    resistances: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: crew_effects
+        drop_chance: 0.3
+
+  - id: spectral_first_mate
+    vnum: 2711
+    name: the spectral first mate
+    keywords: [first, mate, officer, spectral]
+    short_description: The admiral's right hand commands with ghostly authority.
+    long_description: >
+      The first mate served the admiral faithfully in life and continues
+      to do so in death. He manages the ghost crew and challenges any
+      who seek to enter the admiral's cabin.
+    level: 19
+    health: 150
+    strength: 16
+    dexterity: 14
+    constitution: 14
+    intelligence: 16
+    damage_dice: 2d6
+    damage_type: necrotic
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 420
+    abilities: [captain_strike, rally_crew, ghostly_orders, first_mate_challenge]
+    immunities: [poison, cold]
+    resistances: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: first_mate_saber
+        drop_chance: 0.3
+      - template_id: command_whistle
+        drop_chance: 0.2
+
+  # NPCs
+  - id: phantom_merchant
+    vnum: 2750
+    name: Old Salt's Ghost
+    keywords: [salt, ghost, merchant, vendor]
+    short_description: A friendly ghost tends a spectral market stall.
+    long_description: >
+      Old Salt was a merchant who went down with the fleet. Unlike most,
+      he's made peace with death and now trades with the living, offering
+      underwater equipment and salvaged treasures.
+    level: 15
+    health: 80
+    behavior_type: friendly
+    shop:
+      markup: 1.3
+      markdown: 0.7
+      inventory:
+        - template_id: waterbreathing_charm
+        - template_id: pressure_ring
+        - template_id: salvaged_treasure
+    dialogue:
+      greeting: "Ahoy, living one! Come to trade? I've got trinkets and treasures aplenty!"
+      topics:
+        fleet: "Aye, was the greatest battle ever fought at sea. Both fleets went down together."
+        admiral: "Dreadtide still commands the flagship. Mad as they come now. Best avoid him."
+
+  # Boss
+  - id: admiral_dreadtide
+    vnum: 2799
+    name: Admiral Dreadtide
+    keywords: [admiral, dreadtide, boss, ghost, captain]
+    short_description: The spectral admiral sits at his desk, plotting battles long past.
+    long_description: >
+      Admiral Dreadtide was the fleet's commander, a tactical genius who
+      won a hundred battles before this final one. He went down with his
+      flagship and refuses to accept defeat. His ghost commands the sunken
+      fleet with the same iron will he showed in life, endlessly replaying
+      the battle and seeking victory that will never come.
+    level: 20
+    health: 800
+    strength: 18
+    dexterity: 16
+    constitution: 16
+    intelligence: 20
+    wisdom: 18
+    charisma: 20
+    damage_dice: 3d8
+    damage_type: necrotic
+    armor_class: 19
+    behavior_type: aggressive
+    combat_style: tactician
+    aggro_radius: 8
+    experience_value: 2800
+    gold_min: 400
+    gold_max: 1200
+    abilities: [admirals_command, ghostly_broadside, spectral_cutlass, summon_crew, dreadtide_curse]
+    immunities: [poison, cold, necrotic]
+    resistances: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: dreadtides_tricorn
+        drop_chance: 0.7
+      - template_id: admirals_cutlass
+        drop_chance: 0.5
+      - template_id: fleet_battle_map
+        drop_chance: 0.8
+    dialogue:
+      greeting: "Another boarding party? You'll join my crew soon enough - in DEATH!"
+      topics:
+        battle: "We were winning! WINNING! And then... I don't remember. But we WILL win. I just need more time."
+        defeat: "DEFEAT?! The battle isn't over! It will NEVER be over! Not until I have VICTORY!"
+        crew: "They still serve. They always will. Death is no excuse for dereliction of duty."

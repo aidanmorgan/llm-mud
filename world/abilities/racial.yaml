@@ -1,0 +1,237 @@
+# Racial Abilities
+# Passive and active abilities granted by character race.
+# These integrate with the skills system but are always available.
+
+abilities:
+  # ==========================================================================
+  # Human Abilities
+  # ==========================================================================
+  - ability_id: fast_learner
+    name: Fast Learner
+    description: >
+      Humans learn quickly, gaining bonus experience from all sources.
+      This reflects their adaptability and drive to improve.
+    type: passive
+    effects:
+      - effect_type: experience_bonus
+        value: 10  # 10% bonus XP
+    races: [human]
+
+  - ability_id: versatile
+    name: Versatile
+    description: >
+      Humans can use any equipment regardless of class restrictions.
+      Their adaptability allows them to learn any weapon or armor.
+    type: passive
+    effects:
+      - effect_type: ignore_proficiency_requirements
+        value: true
+    races: [human]
+
+  # ==========================================================================
+  # Elf Abilities
+  # ==========================================================================
+  - ability_id: keen_senses
+    name: Keen Senses
+    description: >
+      Elves have supernaturally sharp senses, granting a bonus to
+      detecting hidden creatures and objects.
+    type: passive
+    effects:
+      - effect_type: detection_bonus
+        value: 25  # +25% chance to detect hidden
+      - effect_type: perception_bonus
+        value: 15  # +15 to perception checks
+    races: [elf]
+
+  - ability_id: magic_affinity
+    name: Magic Affinity
+    description: >
+      Elves are naturally attuned to magical energies, recovering
+      mana more quickly than other races.
+    type: passive
+    effects:
+      - effect_type: mana_regen_bonus
+        value: 25  # +25% mana regeneration
+      - effect_type: spell_power_bonus
+        value: 5   # +5% spell damage/healing
+    races: [elf]
+
+  - ability_id: sleep_immunity
+    name: Trance
+    description: >
+      Elves do not truly sleep, instead entering a meditative trance.
+      They cannot be affected by sleep magic or effects.
+    type: passive
+    effects:
+      - effect_type: immunity
+        damage_type: sleep
+        value: 100
+    races: [elf]
+
+  # ==========================================================================
+  # Dwarf Abilities
+  # ==========================================================================
+  - ability_id: stonecunning
+    name: Stonecunning
+    description: >
+      Dwarves have an innate sense for stonework and can detect
+      hidden doors, traps, and passages in stone construction.
+    type: passive
+    effects:
+      - effect_type: trap_detection_bonus
+        value: 30  # +30% trap detection in stone areas
+      - effect_type: secret_door_detection
+        value: 25  # +25% chance to notice secret doors
+    terrain_types: [underground, mountain, cave]
+    races: [dwarf]
+
+  - ability_id: poison_resist
+    name: Dwarven Resilience
+    description: >
+      Dwarves have hardy constitutions that resist poison and disease.
+      This comes from generations of living near volcanic vents and mines.
+    type: passive
+    effects:
+      - effect_type: resistance
+        damage_type: poison
+        value: 25
+      - effect_type: resistance
+        damage_type: disease
+        value: 25
+    races: [dwarf]
+
+  - ability_id: hardy
+    name: Hardy
+    description: >
+      Dwarves recover from injuries more quickly than other races,
+      their tough bodies healing at an accelerated rate.
+    type: passive
+    effects:
+      - effect_type: health_regen_bonus
+        value: 20  # +20% health regeneration
+      - effect_type: stamina_regen_bonus
+        value: 15  # +15% stamina regeneration
+    races: [dwarf]
+
+  # ==========================================================================
+  # Halfling Abilities
+  # ==========================================================================
+  - ability_id: lucky
+    name: Lucky
+    description: >
+      Halflings are blessed with uncanny luck, granting them bonuses
+      to all saving throws and a chance to avoid critical hits.
+    type: passive
+    effects:
+      - effect_type: saving_throw_bonus
+        value: 10  # +10% to all saves
+      - effect_type: critical_hit_avoidance
+        value: 15  # 15% chance to avoid crits
+    races: [halfling]
+
+  - ability_id: nimble
+    name: Nimble
+    description: >
+      Halflings are exceptionally agile for their size, able to
+      dodge attacks and move through combat with ease.
+    type: passive
+    effects:
+      - effect_type: dodge_bonus
+        value: 10  # +10% dodge chance
+      - effect_type: movement_speed_bonus
+        value: 5   # +5% movement speed
+    races: [halfling]
+
+  - ability_id: brave
+    name: Brave
+    description: >
+      Despite their small stature, Halflings possess great courage
+      and are resistant to fear effects.
+    type: passive
+    effects:
+      - effect_type: resistance
+        damage_type: fear
+        value: 30
+      - effect_type: morale_bonus
+        value: 15  # Bonus to morale checks
+    races: [halfling]
+
+  # ==========================================================================
+  # Orc Abilities
+  # ==========================================================================
+  - ability_id: blood_fury
+    name: Blood Fury
+    description: >
+      When wounded, Orcs enter a battle fury that increases their
+      damage output. The lower their health, the stronger the bonus.
+    type: passive
+    effects:
+      - effect_type: damage_bonus_scaling
+        trigger: health_below_percent
+        thresholds:
+          - health_percent: 75
+            damage_bonus: 5
+          - health_percent: 50
+            damage_bonus: 10
+          - health_percent: 25
+            damage_bonus: 20
+    races: [orc]
+
+  - ability_id: intimidating
+    name: Intimidating Presence
+    description: >
+      Orcs project an aura of menace that can demoralize foes.
+      Enemies in combat may become frightened or hesitate.
+    type: passive
+    effects:
+      - effect_type: intimidation_bonus
+        value: 25  # +25% intimidation success
+      - effect_type: enemy_morale_penalty
+        value: 10  # -10% enemy morale in combat
+    races: [orc]
+
+  - ability_id: savage_charge
+    name: Savage Charge
+    description: >
+      Orcs deal extra damage on their first attack in combat,
+      representing their ferocious opening assault.
+    type: passive
+    effects:
+      - effect_type: first_strike_bonus
+        value: 25  # +25% damage on first hit
+      - effect_type: charge_stun_chance
+        value: 10  # 10% chance to stun on charge
+    races: [orc]
+
+# ==========================================================================
+# Effect Type Definitions (for game system reference)
+# ==========================================================================
+#
+# Passive Effects:
+#   experience_bonus        - Percentage bonus to XP gained
+#   mana_regen_bonus        - Percentage bonus to mana regeneration
+#   health_regen_bonus      - Percentage bonus to health regeneration
+#   stamina_regen_bonus     - Percentage bonus to stamina regeneration
+#   spell_power_bonus       - Percentage bonus to spell damage/healing
+#   detection_bonus         - Percentage bonus to detecting hidden things
+#   perception_bonus        - Flat bonus to perception checks
+#   trap_detection_bonus    - Percentage bonus to trap detection
+#   secret_door_detection   - Percentage bonus to finding secret doors
+#   dodge_bonus             - Percentage bonus to dodge chance
+#   movement_speed_bonus    - Percentage bonus to movement speed
+#   saving_throw_bonus      - Percentage bonus to all saving throws
+#   critical_hit_avoidance  - Percentage chance to avoid critical hits
+#   intimidation_bonus      - Percentage bonus to intimidation
+#   morale_bonus            - Flat bonus to morale checks
+#   enemy_morale_penalty    - Penalty to enemy morale in combat
+#   first_strike_bonus      - Percentage damage bonus on first attack
+#   charge_stun_chance      - Percentage chance to stun on charge
+#
+# Resistance Effects:
+#   resistance              - Percentage reduction to damage type
+#   immunity                - Full immunity to damage/effect type
+#
+# Special Effects:
+#   ignore_proficiency_requirements - Can use any equipment
+#   damage_bonus_scaling    - Damage bonus based on health thresholds

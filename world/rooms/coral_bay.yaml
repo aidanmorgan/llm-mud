@@ -1,0 +1,120 @@
+zone_id: coral_bay
+
+rooms:
+  - id: coral_bay_harbor
+    vnum: 400
+    name: Harbor
+    short_description: The bustling harbor of Coral Bay
+    long_description: >
+      Wooden piers stretch out into the sheltered bay, where fishing boats
+      and trading vessels bob on the gentle waves. The smell of salt and
+      fish fills the air, mixed with exotic spices from distant ports.
+      Sailors and merchants crowd the docks, loading and unloading cargo.
+    exits:
+      west:
+        destination: ~
+        leads_to_region: coastal_road
+        target_coordinate:
+          x: 11
+          y: 0
+          z: 0
+      east: coral_bay_beach
+      north: coral_bay_trading_post
+      south: coral_bay_lighthouse
+    sector_type: city
+    flags: [safe]
+    ambient_messages:
+      - Seagulls cry overhead, circling for scraps.
+      - A ship's bell rings in the distance.
+      - Waves lap gently against the wooden piers.
+
+  - id: coral_bay_beach
+    vnum: 401
+    name: Sandy Beach
+    short_description: A beautiful coral-studded beach
+    long_description: >
+      White sand stretches along the shoreline, dotted with colorful
+      fragments of coral and shells. The clear water reveals glimpses
+      of living coral beneath the surface, home to countless fish.
+      Children play in the shallows while fishermen wade with nets.
+    exits:
+      west: coral_bay_harbor
+      east: coral_bay_reef
+    sector_type: water_shallow
+    ambient_messages:
+      - Waves wash gently onto the shore.
+      - Colorful fish dart between the coral formations.
+      - A hermit crab scuttles across the sand.
+
+  - id: coral_bay_reef
+    vnum: 402
+    name: Coral Reef
+    short_description: Shallow waters over the reef
+    long_description: >
+      The water here is waist-deep over the extensive coral reef. The
+      formations create a maze of passages between towering coral heads.
+      Fish of every color imaginable swim through the clear water. It's
+      beautiful, but navigating can be treacherous.
+    exits:
+      west: coral_bay_beach
+    sector_type: water_shallow
+    mob_spawns:
+      - template_id: reef_crab
+        max_count: 2
+    item_spawns:
+      - template_id: coral_fragment
+        max_count: 2
+      - template_id: pearl
+        max_count: 1
+
+  - id: coral_bay_trading_post
+    vnum: 403
+    name: Trading Post
+    short_description: Where merchants conduct business
+    long_description: >
+      This large wooden building serves as the commercial heart of Coral
+      Bay. Traders from many lands display exotic wares - silks, spices,
+      gems, and curiosities. The air is filled with the buzz of haggling
+      in multiple languages.
+    exits:
+      south: coral_bay_harbor
+    sector_type: inside
+    flags: [safe, no_combat]
+    mob_spawns:
+      - template_id: coral_bay_trader
+        max_count: 2
+
+  - id: coral_bay_lighthouse
+    vnum: 404
+    name: Lighthouse
+    short_description: The old lighthouse of Coral Bay
+    long_description: >
+      A weathered stone lighthouse stands on a rocky promontory, its
+      beam still warning ships away from the treacherous reefs. The
+      lighthouse keeper maintains a lonely vigil, watching the seas
+      day and night.
+    exits:
+      north: coral_bay_harbor
+      up: coral_bay_lighthouse_top
+    sector_type: inside
+    mob_spawns:
+      - template_id: lighthouse_keeper
+        max_count: 1
+
+  - id: coral_bay_lighthouse_top
+    vnum: 405
+    name: Lighthouse Top
+    short_description: The top of the lighthouse
+    long_description: >
+      From here, the view is spectacular. The entire bay spreads out
+      below, with the trading vessels and fishing boats looking like
+      toys. The horizon stretches endlessly to the east, where the
+      sun rises over the endless ocean each morning.
+    exits:
+      down: coral_bay_lighthouse
+    sector_type: inside
+    flags: [safe]
+    ambient_messages:
+      - The wind whistles around the lighthouse.
+      - You can see for miles in every direction.
+      - The great lamp rotates slowly, its beam cutting through the air.

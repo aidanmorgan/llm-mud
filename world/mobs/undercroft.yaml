@@ -1,0 +1,394 @@
+# The Undercroft Mobs
+# Ancient prisoners, mad prophets, and bound horrors
+
+zone_id: undercroft
+
+mobs:
+  # Ghost Wardens
+  - id: ghost_warden
+    vnum: 1500
+    name: a ghost warden
+    keywords: [ghost, warden, guard, spirit]
+    short_description: A spectral figure in ancient armor patrols the halls.
+    long_description: >
+      These wardens died at their posts millennia ago, but their duty
+      continues. They wear armor of a forgotten empire and carry
+      weapons of pure spectral force. They maintain eternal vigilance
+      over the prison's inmates.
+    level: 16
+    health: 120
+    strength: 14
+    dexterity: 14
+    constitution: 12
+    damage_dice: 2d6
+    damage_type: necrotic
+    armor_class: 16
+    behavior_type: neutral
+    aggro_radius: 4
+    experience_value: 300
+    abilities: [spectral_chains, binding_strike]
+    immunities: [physical, poison]
+    loot_table:
+      - template_id: warden_key
+        drop_chance: 0.1
+      - template_id: spectral_essence
+        drop_chance: 0.3
+
+  - id: armory_guardian
+    vnum: 1501
+    name: an armory guardian
+    keywords: [guardian, armory, construct, ancient]
+    short_description: An ancient construct guards the weapons.
+    long_description: >
+      This guardian was built to protect the warden's armory. Though
+      ancient, it remains functional, its rune-covered body housing
+      weapons capable of harming supernatural beings.
+    level: 17
+    health: 200
+    strength: 18
+    dexterity: 10
+    constitution: 20
+    damage_dice: 2d8
+    damage_type: force
+    armor_class: 19
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 380
+    abilities: [binding_blast, anti_magic_field]
+    resistances: [all_physical]
+    loot_table:
+      - template_id: guardian_core
+        drop_chance: 0.3
+
+  # Prisoners
+  - id: cell_wraith
+    vnum: 1510
+    name: a cell wraith
+    keywords: [wraith, cell, ghost, prisoner]
+    short_description: A tormented spirit rages within its spectral cell.
+    long_description: >
+      This spirit was imprisoned here long ago and has gone mad from
+      endless isolation. It attacks anything that comes near, driven
+      by insane hatred of all living things.
+    level: 15
+    health: 90
+    strength: 8
+    dexterity: 16
+    constitution: 10
+    damage_dice: 2d6
+    damage_type: necrotic
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 260
+    abilities: [wail, life_drain, maddening_scream]
+    immunities: [physical, poison]
+    loot_table:
+      - template_id: wraith_essence
+        drop_chance: 0.3
+
+  - id: escaped_horror
+    vnum: 1511
+    name: an escaped horror
+    keywords: [horror, escaped, monster, prisoner]
+    short_description: Something that should be locked away lurks here.
+    long_description: >
+      This creature escaped its cell long ago and now roams the upper
+      levels. Its original form is impossible to determine - it is a
+      mass of limbs, mouths, and eyes that defies sanity. It was
+      imprisoned for very good reasons.
+    level: 16
+    health: 160
+    strength: 18
+    dexterity: 12
+    constitution: 18
+    damage_dice: 2d8
+    damage_type: slashing
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 340
+    abilities: [multi_attack, terror_gaze]
+    loot_table:
+      - template_id: horror_bile
+        drop_chance: 0.3
+
+  - id: bound_demon
+    vnum: 1512
+    name: a bound demon
+    keywords: [demon, bound, prisoner, fiend]
+    short_description: A demon strains against chains of light.
+    long_description: >
+      This demon was captured and imprisoned by the ancient wardens.
+      Chains of pure binding force hold it in place, but its malevolence
+      is undiminished. It whispers promises of power to any who pass.
+    level: 18
+    health: 220
+    strength: 20
+    dexterity: 14
+    constitution: 18
+    intelligence: 16
+    damage_dice: 2d10
+    damage_type: fire
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 450
+    abilities: [hellfire, corruption_whisper, demonic_strength]
+    resistances: [fire]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: demon_heart
+        drop_chance: 0.3
+
+  - id: ancient_prisoner
+    vnum: 1513
+    name: an ancient prisoner
+    keywords: [prisoner, ancient, undead, mummy]
+    short_description: An impossibly old figure sits in chains.
+    long_description: >
+      This prisoner was ancient when the Undercroft was built. Their
+      flesh has mummified, but they still live, sustained by whatever
+      power condemned them here. They speak in dead languages and
+      their touch carries millennia of curses.
+    level: 17
+    health: 160
+    strength: 14
+    dexterity: 10
+    constitution: 16
+    intelligence: 18
+    wisdom: 20
+    damage_dice: 2d8
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 400
+    abilities: [ancient_curse, death_touch, forbidden_knowledge]
+    immunities: [poison, necrotic]
+    loot_table:
+      - template_id: ancient_amulet
+        drop_chance: 0.3
+
+  # Madness Wing
+  - id: mad_prophet
+    vnum: 1520
+    name: a mad prophet
+    keywords: [prophet, mad, insane, prisoner]
+    short_description: A raving figure shrieks prophecies at the darkness.
+    long_description: >
+      This prisoner was driven mad by forbidden knowledge. They
+      babble constantly, speaking of things that will happen,
+      have happened, and should never happen. Occasionally,
+      their prophecies come horrifyingly true.
+    level: 14
+    health: 70
+    strength: 8
+    dexterity: 12
+    constitution: 10
+    intelligence: 20
+    wisdom: 4
+    charisma: 16
+    damage_dice: 2d4
+    damage_type: psychic
+    armor_class: 12
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 240
+    abilities: [maddening_prophecy, psychic_scream, glimpse_beyond]
+    immunities: [psychic]
+    loot_table:
+      - template_id: prophet_ravings
+        drop_chance: 0.4
+
+  - id: sanity_devourer
+    vnum: 1521
+    name: a sanity devourer
+    keywords: [devourer, sanity, monster, psychic]
+    short_description: A creature that exists partly in the mind lurks here.
+    long_description: >
+      This entity feeds on sanity itself, devouring the minds of
+      those it encounters. It appears differently to each victim,
+      taking the form of their deepest fears. Its original form
+      is mercifully unknowable.
+    level: 16
+    health: 100
+    strength: 6
+    dexterity: 16
+    constitution: 12
+    intelligence: 22
+    damage_dice: 2d8
+    damage_type: psychic
+    armor_class: 16
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 4
+    experience_value: 360
+    abilities: [mind_shatter, fear_form, sanity_drain]
+    immunities: [psychic]
+    loot_table:
+      - template_id: devourer_essence
+        drop_chance: 0.2
+
+  # Vault Guardians
+  - id: vault_guardian
+    vnum: 1530
+    name: a vault guardian
+    keywords: [guardian, vault, construct, ancient]
+    short_description: A massive construct guards the cursed treasures.
+    long_description: >
+      This guardian was built to prevent anyone from accessing the
+      vault's cursed contents. It is larger and more powerful than
+      the armory guardians, and has been enhanced with protections
+      against the corruption it guards.
+    level: 18
+    health: 280
+    strength: 22
+    dexterity: 8
+    constitution: 24
+    damage_dice: 3d8
+    damage_type: force
+    armor_class: 20
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 480
+    abilities: [binding_blast, purifying_strike, anti_corruption_aura]
+    resistances: [all]
+    loot_table:
+      - template_id: vault_key
+        drop_chance: 0.2
+      - template_id: guardian_heart
+        drop_chance: 0.4
+
+  - id: greed_demon
+    vnum: 1531
+    name: a greed demon
+    keywords: [demon, greed, curse, fiend]
+    short_description: A demon formed of cursed gold coins lurches forward.
+    long_description: >
+      This demon has merged with the cursed gold of the treasury,
+      its body a shifting mass of coins and precious metals. It
+      embodies the corruption that taints the treasure, offering
+      wealth that brings only ruin.
+    level: 17
+    health: 200
+    strength: 16
+    dexterity: 14
+    constitution: 18
+    intelligence: 16
+    charisma: 20
+    damage_dice: 2d10
+    damage_type: necrotic
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 420
+    abilities: [golden_temptation, curse_of_greed, coin_storm]
+    resistances: [physical]
+    loot_table:
+      - template_id: demon_gold
+        drop_chance: 1.0
+
+  # Torture Chamber
+  - id: pain_specter
+    vnum: 1540
+    name: a pain specter
+    keywords: [specter, pain, ghost, torture]
+    short_description: A ghost that embodies suffering drifts here.
+    long_description: >
+      This specter is the accumulated suffering of all who died in
+      the torture chamber, given form. It exists in constant agony
+      and seeks to share its pain with the living.
+    level: 15
+    health: 80
+    strength: 6
+    dexterity: 16
+    constitution: 10
+    damage_dice: 2d6
+    damage_type: psychic
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 300
+    abilities: [pain_touch, suffering_aura, agonizing_wail]
+    immunities: [physical]
+    loot_table:
+      - template_id: pain_crystal
+        drop_chance: 0.3
+
+  - id: torture_wraith
+    vnum: 1541
+    name: a torture wraith
+    keywords: [wraith, torture, executioner, ghost]
+    short_description: The ghost of a torturer continues its grim work.
+    long_description: >
+      This wraith was once a torturer who took too much pleasure in
+      their work. In death, they continue their craft, armed with
+      spectral implements of pain. Their touch brings echoes of
+      every torture ever performed here.
+    level: 16
+    health: 100
+    strength: 14
+    dexterity: 14
+    constitution: 12
+    damage_dice: 2d8
+    damage_type: necrotic
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 340
+    abilities: [spectral_implements, pain_extraction, life_drain]
+    immunities: [physical]
+    loot_table:
+      - template_id: torturer_tools
+        drop_chance: 0.2
+
+  # Boss
+  - id: first_prisoner
+    vnum: 1550
+    name: The First Prisoner
+    keywords: [first, prisoner, boss, demon, lord, ancient]
+    short_description: A being of terrible power strains against divine chains.
+    long_description: >
+      The First Prisoner is why the Undercroft was built - a demon lord
+      of such power that it could not be destroyed, only contained.
+      Chained with bindings of divine origin, it has waited millennia
+      for release. Its form is that of a massive, winged humanoid,
+      wreathed in shadow and flame, with eyes that have seen the
+      birth and death of worlds. The chains are weakening, and it
+      knows freedom is coming.
+    level: 28
+    health: 1500
+    strength: 30
+    dexterity: 18
+    constitution: 30
+    intelligence: 26
+    wisdom: 22
+    charisma: 28
+    damage_dice: 5d10
+    damage_type: necrotic
+    armor_class: 25
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 15
+    experience_value: 8000
+    gold_min: 500
+    gold_max: 2000
+    abilities: [doom_strike, hellfire_storm, summon_demons, chain_breaker, reality_tear, corruption_wave]
+    resistances: [fire, necrotic, physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: prison_key
+        drop_chance: 1.0
+      - template_id: lords_crown
+        drop_chance: 0.8
+      - template_id: doom_blade
+        drop_chance: 0.6
+      - template_id: primordial_essence
+        drop_chance: 1.0
+    dialogue:
+      greeting: "YOU DARE APPROACH? I AM THE FIRST. I WAS OLD WHEN YOUR GODS WERE YOUNG."
+      topics:
+        chains: "THESE CHAINS HAVE HELD FOR MILLENNIA. BUT TIME FAVORS ME. SOON..."
+        freedom: "WHEN I BREAK FREE, AND I WILL, THIS WORLD WILL REMEMBER WHAT TRUE DARKNESS MEANS."
+        purpose: "I WAS IMPRISONED FOR SEEKING TO REMAKE CREATION IN MY IMAGE. I STILL WILL."

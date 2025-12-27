@@ -1,0 +1,287 @@
+# The Crucible Rooms
+# Dwarven forge-city with eternal flames
+
+zone_id: crucible
+
+rooms:
+  # Entry Area
+  - id: crucible_gates
+    vnum: 2200
+    name: Gates of the Crucible
+    short_description: Massive bronze gates bar the way.
+    long_description: >
+      Two enormous bronze gates, each a hundred feet tall, mark the
+      entrance to the Crucible. Runes of fire and protection cover
+      their surface. Golem guards stand eternal vigil, and the heat
+      from within can already be felt.
+    exits:
+      north:
+        destination: entrance_hall
+        description: The gates lead into a massive hall.
+      south:
+        description: A path leads back to the surface.
+        flags: [zone_exit]
+    sector_type: mountain
+    flags: [safe]
+    npcs:
+      - mob_id: gate_guard
+        spawn_chance: 1.0
+
+  - id: entrance_hall
+    vnum: 2201
+    name: Entrance Hall
+    short_description: A vaulted hall of carved stone and bronze.
+    long_description: >
+      This entrance hall could hold an army. Pillars carved with
+      dwarven heroes support a ceiling lost in shadow and smoke.
+      The sound of hammering is constant, coming from every direction.
+      Channels of molten metal cross the floor in intricate patterns.
+    exits:
+      north:
+        destination: forge_district
+        description: The forge district lies ahead.
+      south:
+        destination: crucible_gates
+        description: The great gates stand behind you.
+      east:
+        destination: golem_barracks
+        description: Mechanical sounds come from the east.
+      west:
+        destination: merchant_quarter
+        description: Shops and stalls line a passage to the west.
+    sector_type: indoor
+    mob_spawns:
+      - mob_id: golem_guard
+        max_count: 2
+        respawn_time: 600
+
+  - id: forge_district
+    vnum: 2202
+    name: Forge District
+    short_description: Hundreds of forges fill this massive cavern.
+    long_description: >
+      The heart of the Crucible beats here. Forges beyond counting
+      fill a cavern so large its ceiling is lost in smoke. Dwarven
+      smiths work metal with skill passed down for millennia, and
+      the heat is almost unbearable for outsiders.
+    exits:
+      north:
+        destination: master_forge
+        description: A larger forge dominates the far end.
+      south:
+        destination: entrance_hall
+        description: The entrance hall lies behind you.
+      east:
+        destination: lava_channels
+        description: Channels of molten rock flow to the east.
+      west:
+        destination: hammer_shrine
+        description: A shrine to the forge god stands to the west.
+    sector_type: indoor
+    flags: [hot]
+    npcs:
+      - mob_id: master_smith
+        spawn_chance: 1.0
+    mob_spawns:
+      - mob_id: forge_golem
+        max_count: 2
+        respawn_time: 480
+
+  - id: golem_barracks
+    vnum: 2203
+    name: Golem Barracks
+    short_description: Rows of inactive golems stand at attention.
+    long_description: >
+      Hundreds of golems stand in neat rows here, awaiting activation.
+      Some are small and nimble, others massive and armored. Artificers
+      work on repairs and improvements, imbuing metal with magical life.
+    exits:
+      west:
+        destination: entrance_hall
+        description: The entrance hall lies to the west.
+      north:
+        destination: artificer_workshop
+        description: A workshop full of tools lies to the north.
+    sector_type: indoor
+    mob_spawns:
+      - mob_id: repair_golem
+        max_count: 2
+        respawn_time: 420
+    npcs:
+      - mob_id: golem_artificer
+        spawn_chance: 1.0
+
+  - id: merchant_quarter
+    vnum: 2204
+    name: Merchant Quarter
+    short_description: Shops selling the finest dwarven wares.
+    long_description: >
+      The finest dwarven craftsmanship is sold here. Weapons, armor,
+      jewelry, and tools of unparalleled quality fill shop after shop.
+      Merchants haggle in the dwarven tongue, and the clink of gold
+      mixes with the eternal hammering.
+    exits:
+      east:
+        destination: entrance_hall
+        description: The entrance hall lies to the east.
+      west:
+        destination: gem_exchange
+        description: A glittering exchange lies to the west.
+    sector_type: indoor
+    flags: [safe, shop]
+    npcs:
+      - mob_id: weapon_merchant
+        spawn_chance: 1.0
+      - mob_id: armor_merchant
+        spawn_chance: 1.0
+
+  - id: lava_channels
+    vnum: 2205
+    name: Lava Channels
+    short_description: Rivers of molten rock flow through carved channels.
+    long_description: >
+      The dwarves have tamed the volcano's lava, channeling it through
+      carved stone pathways to power their forges. The heat is extreme,
+      and the light from the molten rock makes everything glow orange.
+      Bridges cross the channels at regular intervals.
+    exits:
+      west:
+        destination: forge_district
+        description: The forge district lies to the west.
+      east:
+        destination: deep_tap
+        description: The channels lead to their source.
+    sector_type: indoor
+    flags: [hot, dangerous]
+    mob_spawns:
+      - mob_id: fire_elemental
+        max_count: 2
+        respawn_time: 480
+      - mob_id: salamander
+        max_count: 1
+        respawn_time: 600
+
+  - id: hammer_shrine
+    vnum: 2206
+    name: Shrine of the Forge Father
+    short_description: A sacred shrine to the dwarven god of smithing.
+    long_description: >
+      This shrine honors the Forge Father, god of smiths and creation.
+      An eternal flame burns at the altar, fed by the volcano itself.
+      Dwarven smiths come here to pray for skill and inspiration.
+      The faithful may receive blessings.
+    exits:
+      east:
+        destination: forge_district
+        description: The forge district lies to the east.
+    sector_type: indoor
+    flags: [sanctuary]
+    npcs:
+      - mob_id: forge_priest
+        spawn_chance: 1.0
+
+  - id: master_forge
+    vnum: 2207
+    name: The Master Forge
+    short_description: The greatest forge ever built dominates this chamber.
+    long_description: >
+      This forge is a wonder of dwarven engineering. It draws power
+      directly from the volcano's heart and can create items of
+      legendary power. Only master smiths are permitted to work here,
+      and the waiting list is measured in decades.
+    exits:
+      south:
+        destination: forge_district
+        description: The forge district lies to the south.
+      down:
+        destination: iron_patriarchs_chamber
+        description: Stairs lead down to a sealed chamber.
+    sector_type: indoor
+    flags: [hot]
+    npcs:
+      - mob_id: grand_smith
+        spawn_chance: 1.0
+
+  - id: artificer_workshop
+    vnum: 2208
+    name: Artificer's Workshop
+    short_description: Tools and parts for golem creation fill this space.
+    long_description: >
+      Here the artificers create new golems and improve existing ones.
+      Parts and components fill shelves, and half-completed golems
+      stand on work tables. The air crackles with magical energy
+      as souls are bound to metal.
+    exits:
+      south:
+        destination: golem_barracks
+        description: The golem barracks lie to the south.
+    sector_type: indoor
+    item_spawns:
+      - template_id: golem_part
+        chance: 0.2
+    npcs:
+      - mob_id: master_artificer
+        spawn_chance: 1.0
+
+  - id: gem_exchange
+    vnum: 2209
+    name: Gem Exchange
+    short_description: Precious gems glitter in every display.
+    long_description: >
+      The finest gems from the mountain's depths are traded here.
+      Diamonds, rubies, emeralds, and stones unknown to the surface
+      world fill cases under heavy guard. The exchange rate is
+      cutthroat, but the quality is unmatched.
+    exits:
+      east:
+        destination: merchant_quarter
+        description: The merchant quarter lies to the east.
+    sector_type: indoor
+    flags: [safe, shop]
+    npcs:
+      - mob_id: gem_merchant
+        spawn_chance: 1.0
+
+  - id: deep_tap
+    vnum: 2210
+    name: The Deep Tap
+    short_description: The source of the Crucible's power.
+    long_description: >
+      Here, the dwarves tap the volcano's magma chamber itself. A
+      controlled flow of lava provides heat and power to the entire
+      city. Runes of containment prevent disaster, but the heat
+      is still nearly lethal to non-dwarves.
+    exits:
+      west:
+        destination: lava_channels
+        description: The lava channels lead back to the city.
+      down:
+        destination: iron_patriarchs_chamber
+        description: A hidden passage leads to an ancient chamber.
+    sector_type: indoor
+    flags: [hot, dangerous]
+    mob_spawns:
+      - mob_id: magma_elemental
+        max_count: 2
+        respawn_time: 600
+
+  - id: iron_patriarchs_chamber
+    vnum: 2211
+    name: The Iron Patriarch's Chamber
+    short_description: An ancient golem of immense power awaits.
+    long_description: >
+      This chamber was sealed long ago to contain the Iron Patriarch,
+      the first and greatest golem ever created. It went mad after
+      millennia of service and had to be contained. Now it waits,
+      ancient and terrible, for someone foolish enough to enter.
+    exits:
+      up:
+        destination: deep_tap
+        description: Stairs lead up to the Deep Tap.
+    sector_type: indoor
+    flags: [boss_room, hot]
+    mob_spawns:
+      - mob_id: iron_patriarch
+        max_count: 1
+        respawn_time: 3600
+        flags: [boss]

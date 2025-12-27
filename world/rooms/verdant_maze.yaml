@@ -1,0 +1,262 @@
+# The Verdant Maze Rooms
+# Living hedge labyrinth with shifting paths
+
+zone_id: verdant_maze
+
+rooms:
+  # Entry Area
+  - id: maze_entrance
+    vnum: 2500
+    name: Entrance to the Verdant Maze
+    short_description: A towering hedge maze stretches before you.
+    long_description: >
+      The entrance to the Verdant Maze is an archway of living vines
+      and flowers. Beyond, hedge walls rise thirty feet high, forming
+      an impossible labyrinth. A stone marker warns that paths shift
+      without warning.
+    exits:
+      north:
+        destination: outer_maze_south
+        description: The maze begins.
+      south:
+        description: The world outside awaits.
+        flags: [zone_exit]
+    sector_type: forest
+    flags: [safe]
+    npcs:
+      - mob_id: maze_keeper
+        spawn_chance: 1.0
+
+  - id: outer_maze_south
+    vnum: 2501
+    name: Outer Maze - Southern Path
+    short_description: Tall hedges block all but the sky.
+    long_description: >
+      The hedge walls rise impossibly high, blocking all view of the
+      surrounding area. The path is well-maintained here, suggesting
+      you're still in the outer sections. Flowers bloom in the hedge
+      walls, their scents intoxicating.
+    exits:
+      north:
+        destination: hedge_junction
+        description: The path continues forward.
+      south:
+        destination: maze_entrance
+        description: The entrance lies behind you.
+      east:
+        destination: flower_alcove
+        description: A colorful alcove opens in the hedge.
+    sector_type: forest
+    flags: [maze]
+    mob_spawns:
+      - mob_id: hedge_sprite
+        max_count: 2
+        respawn_time: 300
+
+  - id: flower_alcove
+    vnum: 2502
+    name: Flower Alcove
+    short_description: A hidden garden within the hedge.
+    long_description: >
+      This small alcove contains a riot of flowers in impossible
+      colors. A stone bench offers rest, and butterflies the size
+      of hands flutter between blooms. It feels like a sanctuary
+      from the maze's confusion.
+    exits:
+      west:
+        destination: outer_maze_south
+        description: The maze path lies to the west.
+    sector_type: forest
+    flags: [safe]
+    item_spawns:
+      - template_id: rare_flower
+        chance: 0.15
+
+  - id: hedge_junction
+    vnum: 2503
+    name: Hedge Junction
+    short_description: Multiple paths branch from this intersection.
+    long_description: >
+      Several paths branch from this junction, each looking identical
+      to the others. The hedges seem to watch you, leaves rustling
+      without wind. Choosing the wrong path could lead to endless
+      wandering.
+    exits:
+      north:
+        destination: inner_maze_east
+        description: A path leads deeper into the maze.
+      south:
+        destination: outer_maze_south
+        description: The outer path leads south.
+      east:
+        destination: lost_garden
+        description: An overgrown path leads east.
+      west:
+        destination: statue_clearing
+        description: Stone can be glimpsed to the west.
+    sector_type: forest
+    flags: [maze, confusing]
+    mob_spawns:
+      - mob_id: maze_guardian
+        max_count: 1
+        respawn_time: 480
+
+  - id: statue_clearing
+    vnum: 2504
+    name: Statue Clearing
+    short_description: Ancient statues stand among the hedges.
+    long_description: >
+      Stone statues of forgotten figures stand in this clearing.
+      Some are whole, others broken by time or violence. Moss and
+      vines cover them, and flowers grow from cracks. They seem
+      to watch visitors with stone eyes.
+    exits:
+      east:
+        destination: hedge_junction
+        description: The junction lies to the east.
+    sector_type: forest
+    flags: [maze]
+    item_spawns:
+      - template_id: ancient_coin
+        chance: 0.1
+    mob_spawns:
+      - mob_id: stone_guardian
+        max_count: 1
+        respawn_time: 600
+
+  - id: lost_garden
+    vnum: 2505
+    name: The Lost Garden
+    short_description: An overgrown garden lost within the maze.
+    long_description: >
+      This was once a cultivated garden, but the maze has reclaimed
+      it. Plants grow wild, vines strangle ancient trellises, and
+      what might be benches are buried under greenery. The bones
+      of past explorers are visible among the plants.
+    exits:
+      west:
+        destination: hedge_junction
+        description: The hedge junction lies to the west.
+    sector_type: forest
+    flags: [maze, dangerous]
+    mob_spawns:
+      - mob_id: carnivorous_plant
+        max_count: 2
+        respawn_time: 420
+    item_spawns:
+      - template_id: explorer_remains
+        chance: 0.2
+
+  - id: inner_maze_east
+    vnum: 2506
+    name: Inner Maze - Eastern Path
+    short_description: The hedges here seem more alive.
+    long_description: >
+      The inner maze is more dangerous. The hedges actively shift
+      when you're not looking, and the plants themselves seem hostile.
+      Thorny vines reach toward passersby, and the flowers smell of
+      decay.
+    exits:
+      south:
+        destination: hedge_junction
+        description: The junction lies to the south.
+      north:
+        destination: living_wall
+        description: The hedge ahead seems to breathe.
+      west:
+        destination: inner_maze_west
+        description: A narrow path leads west.
+    sector_type: forest
+    flags: [maze, dangerous]
+    mob_spawns:
+      - mob_id: thorny_stalker
+        max_count: 2
+        respawn_time: 360
+
+  - id: inner_maze_west
+    vnum: 2507
+    name: Inner Maze - Western Path
+    short_description: This path feels watched.
+    long_description: >
+      The hedge walls here have developed eyes - or what look like
+      eyes. Flower faces turn to follow your movement, and the rustle
+      of leaves sounds too much like whispers. The center must be
+      near.
+    exits:
+      east:
+        destination: inner_maze_east
+        description: The eastern path lies that way.
+      north:
+        destination: heart_approach
+        description: The center of the maze lies ahead.
+    sector_type: forest
+    flags: [maze, dangerous]
+    mob_spawns:
+      - mob_id: vine_horror
+        max_count: 1
+        respawn_time: 480
+
+  - id: living_wall
+    vnum: 2508
+    name: The Living Wall
+    short_description: A wall of animate vegetation blocks the path.
+    long_description: >
+      This section of hedge has become fully animate, a wall of
+      grasping vines and snapping flowers. It must be fought through
+      or appeased to pass. The maze itself seems to be testing you.
+    exits:
+      south:
+        destination: inner_maze_east
+        description: Retreat lies to the south.
+      north:
+        destination: heart_approach
+        description: The maze center lies beyond.
+        flags: [blocked]
+        blocked_message: The living wall blocks your passage.
+    sector_type: forest
+    flags: [maze, dangerous]
+    mob_spawns:
+      - mob_id: wall_guardian
+        max_count: 1
+        respawn_time: 600
+
+  - id: heart_approach
+    vnum: 2509
+    name: Approach to the Heart
+    short_description: The maze center is close now.
+    long_description: >
+      The path here is perfectly maintained, as if the maze wants
+      you to reach its center. Flowers bloom in precise patterns,
+      and the air smells sweet. The Maze Heart lies just ahead,
+      waiting for those who would claim its secrets.
+    exits:
+      south:
+        destination: inner_maze_west
+        description: The inner maze lies behind you.
+      north:
+        destination: maze_heart
+        description: The heart of the maze awaits.
+    sector_type: forest
+    flags: [maze]
+
+  - id: maze_heart
+    vnum: 2510
+    name: The Maze Heart
+    short_description: The sentient core of the living labyrinth.
+    long_description: >
+      At the very center of the Verdant Maze lies its heart - not
+      just a location but a living entity. A massive flower opens
+      and closes like breathing, vines form a throne, and a face
+      can almost be seen in the patterns of leaves. The Maze Heart
+      is aware, ancient, and not pleased by intruders.
+    exits:
+      south:
+        destination: heart_approach
+        description: The approach path lies to the south.
+    sector_type: forest
+    flags: [boss_room, maze]
+    mob_spawns:
+      - mob_id: maze_heart
+        max_count: 1
+        respawn_time: 3600
+        flags: [boss]

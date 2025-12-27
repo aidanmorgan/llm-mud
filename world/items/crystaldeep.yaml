@@ -1,0 +1,357 @@
+# Crystaldeep Caverns Items
+# Crystal-themed equipment, resonance materials, and magical amplifiers
+
+zone_id: crystaldeep
+
+items:
+  # Crafting Materials
+  - id: raw_crystal
+    vnum: 900
+    name: a raw crystal cluster
+    keywords: [raw, crystal, cluster, gem]
+    short_description: A cluster of uncut crystals lies here.
+    long_description: >
+      This cluster of raw crystals hums faintly when touched. The
+      crystals are uncut and unpolished but still radiate magical
+      potential. Skilled gem cutters can shape them into valuable
+      components.
+    item_type: material
+    rarity: common
+    weight: 1.0
+    value: 25
+
+  - id: resonance_shard
+    vnum: 901
+    name: a resonance shard
+    keywords: [resonance, shard, crystal, vibrating]
+    short_description: A crystal shard vibrates with inner energy.
+    long_description: >
+      This shard has been tuned to resonate at a specific frequency.
+      It vibrates constantly, producing a faint hum. Enchanters use
+      these shards to amplify magical effects.
+    item_type: material
+    rarity: uncommon
+    weight: 0.3
+    value: 80
+
+  - id: memory_crystal
+    vnum: 902
+    name: a memory crystal
+    keywords: [memory, crystal, recording, gem]
+    short_description: A crystal containing captured memories lies here.
+    long_description: >
+      The Crystal Singers use these crystals to store knowledge and
+      memories. Touching it floods the mind with visions of ancient
+      times. Some contain useful information; others hold only echoes.
+    item_type: material
+    rarity: rare
+    weight: 0.2
+    value: 200
+
+  - id: living_crystal
+    vnum: 903
+    name: a living crystal
+    keywords: [living, crystal, growing, gem]
+    short_description: A crystal that seems to grow before your eyes lies here.
+    long_description: >
+      This crystal is alive in some strange way. It grows slowly but
+      perceptibly, and seems to respond to emotions around it. The
+      Crystal Singers treat these as sacred objects.
+    item_type: material
+    rarity: rare
+    weight: 0.5
+    value: 250
+
+  # Weapons
+  - id: crystal_dagger
+    vnum: 910
+    name: a crystal dagger
+    keywords: [crystal, dagger, gem, blade]
+    short_description: A dagger of pure crystal gleams here.
+    long_description: >
+      This dagger was carved from a single large crystal. Despite its
+      brittle appearance, magical reinforcement makes it as strong as
+      steel. It chimes softly when it strikes.
+    item_type: weapon
+    rarity: common
+    weight: 0.8
+    value: 55
+    level_requirement: 12
+    weapon_stats:
+      damage_dice: 1d4
+      damage_type: piercing
+      speed: fast
+      magical_properties:
+        - magic_damage_bonus: 1d2
+
+  - id: resonance_blade
+    vnum: 911
+    name: a resonance blade
+    keywords: [resonance, blade, sword, vibrating]
+    short_description: A sword that hums with vibrational energy lies here.
+    long_description: >
+      This sword was forged around a resonance crystal core. The blade
+      vibrates at a frequency that disrupts magical barriers and
+      shields. Its constant hum can be heard from yards away.
+    item_type: weapon
+    rarity: uncommon
+    weight: 3.5
+    value: 350
+    level_requirement: 14
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: slashing
+      speed: medium
+      magical_properties:
+        - dispel_on_hit: true
+        - magic_resistance_bypass: 25
+
+  - id: crystal_staff
+    vnum: 912
+    name: a Crystal Singer's staff
+    keywords: [crystal, singer, staff, magical]
+    short_description: A staff topped with a singing crystal lies here.
+    long_description: >
+      The Crystal Singers wield these staves to focus their harmonic
+      magic. The crystal atop constantly sings a note just below
+      hearing, amplifying all spells cast through it.
+    item_type: weapon
+    rarity: rare
+    weight: 4.0
+    value: 500
+    level_requirement: 15
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: force
+      speed: medium
+      magical_properties:
+        - spellpower_bonus: 5
+        - mana_efficiency: 15
+        - sonic_damage_bonus: 1d4
+
+  - id: prismatic_wand
+    vnum: 913
+    name: a prismatic wand
+    keywords: [prismatic, wand, crystal, rainbow]
+    short_description: A wand that refracts light into rainbows lies here.
+    long_description: >
+      This wand was crafted from a crystal that perfectly refracts
+      light. Spells cast through it take on prismatic qualities,
+      dealing damage of multiple types simultaneously.
+    item_type: weapon
+    rarity: rare
+    weight: 1.0
+    value: 450
+    level_requirement: 14
+    weapon_stats:
+      damage_dice: 1d4
+      damage_type: force
+      speed: fast
+      magical_properties:
+        - prismatic_damage: true
+        - light_source: true
+        - intelligence_bonus: 2
+
+  # Armor
+  - id: crystal_scale_armor
+    vnum: 920
+    name: crystal scale armor
+    keywords: [crystal, scale, armor, gem]
+    short_description: Armor made of overlapping crystal scales lies here.
+    long_description: >
+      This armor consists of hundreds of crystal scales woven onto a
+      leather backing. Each scale is individually enchanted for
+      durability. The armor chimes musically with movement.
+    item_type: armor
+    rarity: uncommon
+    weight: 18.0
+    value: 400
+    level_requirement: 14
+    armor_stats:
+      armor_class: 15
+      slot: body
+      resistances: [force]
+      magical_properties:
+        - spell_reflection: 10
+
+  - id: resonance_helm
+    vnum: 921
+    name: a resonance helm
+    keywords: [resonance, helm, helmet, crystal]
+    short_description: A helm with crystal spires lies here.
+    long_description: >
+      This helm incorporates resonance crystals that protect the
+      wearer's mind from magical intrusion. The crystals also amplify
+      the wearer's own mental abilities.
+    item_type: armor
+    rarity: rare
+    weight: 4.0
+    value: 380
+    level_requirement: 13
+    armor_stats:
+      armor_class: 3
+      slot: head
+      immunities: [charm, fear]
+      magical_properties:
+        - intelligence_bonus: 2
+        - wisdom_bonus: 1
+
+  - id: crystal_singer_robes
+    vnum: 922
+    name: Crystal Singer robes
+    keywords: [crystal, singer, robes, cloth]
+    short_description: Shimmering robes adorned with tiny crystals lie here.
+    long_description: >
+      These robes identify the wearer as a Crystal Singer. Tiny
+      crystals woven throughout amplify magical resonance, and the
+      fabric itself seems to sing faintly.
+    item_type: armor
+    rarity: rare
+    weight: 3.0
+    value: 420
+    level_requirement: 14
+    armor_stats:
+      armor_class: 11
+      slot: body
+      magical_properties:
+        - spellpower_bonus: 3
+        - mana_regeneration: 2
+        - sonic_resistance: 50
+
+  - id: gem_encrusted_bracers
+    vnum: 923
+    name: gem-encrusted bracers
+    keywords: [gem, encrusted, bracers, crystal]
+    short_description: Bracers set with many small gems lie here.
+    long_description: >
+      These bracers are studded with small crystals of various types.
+      Each crystal adds a minor enchantment, and together they
+      provide significant magical protection.
+    item_type: armor
+    rarity: uncommon
+    weight: 2.0
+    value: 250
+    level_requirement: 12
+    armor_stats:
+      armor_class: 2
+      slot: arms
+      resistances: [fire, cold, lightning]
+
+  # Consumables
+  - id: mana_crystal
+    vnum: 930
+    name: a mana crystal
+    keywords: [mana, crystal, energy, magical]
+    short_description: A crystal pulsing with magical energy lies here.
+    long_description: >
+      This crystal has been charged with pure magical energy. Crushing
+      it releases the stored mana, instantly restoring the user's
+      magical reserves.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.2
+    value: 75
+    consumable_effect:
+      effect_type: restore
+      mana_amount: 50
+
+  - id: clarity_crystal
+    vnum: 931
+    name: a clarity crystal
+    keywords: [clarity, crystal, mind, focus]
+    short_description: A perfectly clear crystal lies here.
+    long_description: >
+      Gazing into this crystal clears the mind of confusion and
+      magical influence. It can be used once to remove all mental
+      effects from the user.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.1
+    value: 60
+    consumable_effect:
+      effect_type: cure
+      cures: [confusion, charm, fear, domination]
+
+  - id: resonance_tuning_fork
+    vnum: 932
+    name: a resonance tuning fork
+    keywords: [resonance, tuning, fork, crystal]
+    short_description: A crystalline tuning fork lies here.
+    long_description: >
+      Striking this fork produces a tone that temporarily aligns the
+      user's magical resonance with the cavern's crystals. Spells
+      become more potent but more mana-intensive.
+    item_type: consumable
+    rarity: rare
+    weight: 0.3
+    value: 100
+    consumable_effect:
+      effect_type: buff
+      duration: 180
+      effects:
+        spellpower_bonus: 25
+        mana_cost_increase: 25
+
+  # Boss Drops
+  - id: resonance_heart
+    vnum: 950
+    name: the Heart of Resonance
+    keywords: [resonance, heart, core, boss]
+    short_description: A massive crystal that sings with perfect harmony lies here.
+    long_description: >
+      This is the core of the Resonance itself, a crystalline entity
+      of pure harmonic magic. It sings constantly with a tone that
+      vibrates in the soul. Its power could reshape magic itself.
+    item_type: material
+    rarity: legendary
+    weight: 3.0
+    value: 3000
+    flags: [no_drop, quest_item]
+
+  - id: crown_of_echoes
+    vnum: 951
+    name: the Crown of Echoes
+    keywords: [crown, echoes, crystal, boss, head]
+    short_description: A crown of perfectly tuned crystals lies here.
+    long_description: >
+      This crown was formed from fragments of the Resonance itself.
+      Each crystal is tuned to amplify a different school of magic.
+      Wearing it grants mastery over magical harmonics.
+    item_type: armor
+    rarity: legendary
+    weight: 1.0
+    value: 3500
+    level_requirement: 18
+    armor_stats:
+      armor_class: 3
+      slot: head
+      magical_properties:
+        - all_spellpower_bonus: 5
+        - mana_regeneration: 5
+        - spell_echo: 15
+        - intelligence_bonus: 4
+
+  - id: harmonic_blade
+    vnum: 952
+    name: the Harmonic Blade
+    keywords: [harmonic, blade, sword, boss, crystal]
+    short_description: A sword made of singing crystal lies here.
+    long_description: >
+      This blade was grown from the Resonance's own body. It sings
+      with every swing, and its vibrations can shatter stone and
+      disrupt magic. In the hands of a master, it can unmake
+      enchantments with a single stroke.
+    item_type: weapon
+    rarity: legendary
+    weight: 3.0
+    value: 4000
+    level_requirement: 18
+    weapon_stats:
+      damage_dice: 2d6
+      damage_type: force
+      speed: medium
+      magical_properties:
+        - sonic_damage_bonus: 2d6
+        - dispel_on_critical: true
+        - shatter_barriers: true
+        - dexterity_bonus: 2

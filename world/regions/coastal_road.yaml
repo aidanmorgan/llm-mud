@@ -1,0 +1,104 @@
+region_id: coastal_road
+name: The Coastal Road
+
+theme:
+  theme_id: coastal_plains
+  description: >
+    A well-traveled road running along the coast from Ravenmoor to Coral
+    Bay. The path offers stunning views of the sea, passing through
+    grassy cliffs, sandy beaches, and small fishing hamlets.
+
+  room_prompt: >
+    Generate a room description for a coastal road.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: windswept, salty air, views of the sea.
+    Vary between clifftop paths, beach sections, and grassy areas.
+    Include maritime details: seabirds, waves, salt spray.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a coastal creature for level {target_level}.
+    Room context: {room_description}
+
+    Types: giant crabs, seabirds (hostile), coastal bandits,
+    smugglers, sea sprites, beach creatures.
+
+    Return JSON with mob details.
+
+  item_prompt: >
+    Generate a coastal-themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: shells, driftwood items, fishing gear, sailor's equipment,
+    smuggled goods, sea treasures.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - cliff, beach, sand, wave, spray, salt, gull
+    - windswept, crashing, rolling, distant, horizon
+    - cry, roar, whistle, splash, rumble
+    - shell, driftwood, seaweed, coral, net
+
+  forbidden_words:
+    - forest, mountain, snow, desert, underground
+
+  sector_types: [field, road, water_shallow]
+
+  ambient_messages:
+    - "Seagulls wheel and cry overhead."
+    - "Waves crash against the cliffs below."
+    - "Salt spray mists the air."
+    - "A distant ship's sail dots the horizon."
+    - "The wind carries the smell of the sea."
+    - "Crabs scuttle among the tide pools."
+
+  mob_templates: [giant_crab, coastal_bandit, angry_gull]
+  item_templates: [pearl_shell, driftwood_staff, fishing_net, sailor_hat]
+
+endpoints:
+  ravenmoor_east_gate:
+    direction: east
+    coordinate:
+      x: 1
+      y: 0
+      z: 0
+  coral_bay_harbor:
+    direction: west
+    coordinate:
+      x: 11
+      y: 0
+      z: 0
+
+waypoints:
+  - x: 4
+    y: 0
+    z: 0
+    name: "Cliff Overlook"
+    is_required: true
+  - x: 8
+    y: 0
+    z: 0
+    name: "Fisherman's Rest"
+    is_required: true
+
+generation:
+  min_rooms: 6
+  max_rooms: 15
+  difficulty_min: 2
+  difficulty_max: 5
+  mob_density: 0.3
+  item_density: 0.15
+  branch_chance: 0.2
+
+primary_sector_type: field

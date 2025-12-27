@@ -1,0 +1,220 @@
+# Crystaldeep Caverns Rooms
+# Living crystal network with resonating formations and memory stones
+
+zone_id: crystaldeep
+
+rooms:
+  - id: crystaldeep_entrance
+    vnum: 1000
+    name: Crystal Cavern Entrance
+    short_description: Where darkness gives way to crystalline light
+    long_description: >
+      The passage from the Fungal Depths opens into a wonderland of light.
+      Crystals of all sizes protrude from the walls, floor, and ceiling,
+      each emitting a soft glow in various colors. The effect is
+      mesmerizing, like standing inside a geode. A faint humming fills
+      the air - the crystals resonating with unseen energies.
+    exits:
+      up:
+        destination: ~
+        leads_to_region: fungal_depths
+      south: crystaldeep_resonance_hall
+    sector_type: cave
+    ambient_messages:
+      - The crystals hum in harmonic frequencies.
+      - Light refracts through countless facets.
+      - A musical tone echoes from somewhere deeper.
+
+  - id: crystaldeep_resonance_hall
+    vnum: 1001
+    name: Resonance Hall
+    short_description: A vast chamber that amplifies every sound
+    long_description: >
+      This enormous cavern is lined with perfectly formed crystals that
+      amplify and reflect sound. Even a whisper echoes endlessly, and
+      striking a crystal produces a tone that reverberates for minutes.
+      The Crystal Singers use this chamber for their rituals, their
+      voices creating cascades of harmonics.
+    exits:
+      north: crystaldeep_entrance
+      east: crystaldeep_memory_chamber
+      west: crystaldeep_crystal_garden
+      south: crystaldeep_singers_sanctum
+    sector_type: cave
+    flags: [resonance_zone]
+    mob_spawns:
+      - template_id: crystal_singer
+        max_count: 2
+    ambient_messages:
+      - Echoes of past conversations whisper through the hall.
+      - A struck crystal creates a cascade of harmonics.
+
+  - id: crystaldeep_memory_chamber
+    vnum: 1002
+    name: Memory Chamber
+    short_description: Crystals that hold echoes of the past
+    long_description: >
+      The crystals here are different - darker, with swirling patterns
+      visible in their depths. These are memory stones, crystals that
+      absorb and preserve experiences. Touch one and you might see
+      visions of ancient events, hear long-dead voices, or feel emotions
+      from ages past. Not all memories are pleasant.
+    exits:
+      west: crystaldeep_resonance_hall
+      east: crystaldeep_echo_maze
+    sector_type: cave
+    flags: [memory_zone]
+    mob_spawns:
+      - template_id: memory_wraith
+        max_count: 2
+    item_spawns:
+      - template_id: memory_crystal
+        max_count: 2
+
+  - id: crystaldeep_crystal_garden
+    vnum: 1003
+    name: Crystal Garden
+    short_description: Formations grow like frozen flowers
+    long_description: >
+      Crystal formations here take shapes reminiscent of plants - delicate
+      flower-like clusters, towering tree-like pillars, spiraling vine
+      patterns. The effect is a frozen garden of light and color. The
+      Crystal Singers tend these formations, encouraging their growth
+      through resonance.
+    exits:
+      east: crystaldeep_resonance_hall
+      south: crystaldeep_mining_site
+    sector_type: cave
+    mob_spawns:
+      - template_id: gem_golem
+        max_count: 1
+      - template_id: crystal_tender
+        max_count: 1
+    item_spawns:
+      - template_id: crystal_flower
+        max_count: 2
+      - template_id: resonance_gem
+        max_count: 1
+
+  - id: crystaldeep_echo_maze
+    vnum: 1004
+    name: Echo Maze
+    short_description: Sound and light create endless confusion
+    long_description: >
+      The crystal formations here create a disorienting maze where sound
+      and light bounce in unpredictable patterns. Your own voice returns
+      from unexpected directions, and reflections make it seem like there
+      are paths where solid crystal stands. Many have become lost here,
+      wandering until exhaustion claims them.
+    exits:
+      west: crystaldeep_memory_chamber
+      south: crystaldeep_geode_chamber
+    sector_type: cave
+    flags: [maze_zone, disorienting]
+    mob_spawns:
+      - template_id: echo_stalker
+        max_count: 2
+
+  - id: crystaldeep_mining_site
+    vnum: 1005
+    name: Crystal Mining Site
+    short_description: Where the Singers harvest their treasures
+    long_description: >
+      Careful extraction has exposed a vein of particularly pure crystals.
+      The Crystal Singers use specialized tools and techniques to harvest
+      without disturbing the resonance of surrounding formations. Rough-cut
+      crystals are stacked for transport, glowing softly in the ambient light.
+    exits:
+      north: crystaldeep_crystal_garden
+      east: crystaldeep_singers_sanctum
+    sector_type: cave
+    mob_spawns:
+      - template_id: crystal_miner
+        max_count: 3
+    item_spawns:
+      - template_id: raw_crystal
+        max_count: 4
+      - template_id: crystal_pick
+        max_count: 1
+
+  - id: crystaldeep_singers_sanctum
+    vnum: 1006
+    name: Singers' Sanctum
+    short_description: The home of the Crystal Singers
+    long_description: >
+      This chamber has been carefully shaped to serve as living quarters
+      for the Crystal Singers - mystics who have devoted their lives to
+      understanding the crystals' resonance. Carved niches hold bedding
+      and personal effects, and a central crystal has been tuned to
+      provide warmth. The Singers welcome peaceful visitors.
+    exits:
+      north: crystaldeep_resonance_hall
+      west: crystaldeep_mining_site
+      south: crystaldeep_deep_vein
+    sector_type: cave
+    flags: [safe_room, no_mob]
+    mob_spawns:
+      - template_id: singer_elder
+        max_count: 1
+      - template_id: crystal_merchant
+        max_count: 1
+
+  - id: crystaldeep_geode_chamber
+    vnum: 1007
+    name: Geode Chamber
+    short_description: A hollow sphere of crystal beauty
+    long_description: >
+      You stand inside an enormous geode - a hollow sphere completely
+      lined with crystals that point inward. The effect is breathtaking,
+      like being at the center of a frozen firework. Light from the
+      crystals creates patterns that seem almost alive, and the resonance
+      here is particularly powerful.
+    exits:
+      north: crystaldeep_echo_maze
+      south: crystaldeep_resonance_core
+    sector_type: cave
+    flags: [magic_amplification]
+    mob_spawns:
+      - template_id: prismatic_elemental
+        max_count: 1
+
+  - id: crystaldeep_deep_vein
+    vnum: 1008
+    name: Deep Vein
+    short_description: The richest crystal deposits lie here
+    long_description: >
+      This vein of crystal runs deep into the earth, the formations here
+      older and more powerful than those above. The crystals pulse with
+      internal light in a slow rhythm, almost like a heartbeat. The
+      miners avoid this place - something about it unsettles them.
+    exits:
+      north: crystaldeep_singers_sanctum
+      down: crystaldeep_resonance_core
+    sector_type: cave
+    flags: [ancient, high_magic]
+    mob_spawns:
+      - template_id: deep_crystal_guardian
+        max_count: 1
+
+  - id: crystaldeep_resonance_core
+    vnum: 1009
+    name: The Resonance Core
+    short_description: The heart of the crystal network
+    long_description: >
+      At the center of the Crystaldeep network stands the Resonance - a
+      massive crystal formation that seems almost aware. It pulses with
+      light and emits a constant harmonic tone that resonates with every
+      other crystal in the caverns. The Crystal Singers believe it is
+      a living entity, the soul of the caves themselves.
+    exits:
+      up: crystaldeep_deep_vein
+      north: crystaldeep_geode_chamber
+    sector_type: cave
+    flags: [boss_room, sacred]
+    mob_spawns:
+      - template_id: the_resonance
+        max_count: 1
+    ambient_messages:
+      - The Resonance pulses with otherworldly awareness.
+      - Harmonics shift and change, almost like speech.
+      - You sense vast intelligence studying you through crystal facets.

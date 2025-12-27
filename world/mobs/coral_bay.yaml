@@ -1,0 +1,426 @@
+zone_id: coral_bay
+
+mobs:
+  # ==========================================================================
+  # Friendly NPCs
+  # ==========================================================================
+  - id: coral_bay_trader
+    vnum: 401
+    name: a foreign trader
+    keywords: [trader, merchant, foreign]
+    short_description: A trader from distant lands examines their wares.
+    long_description: >
+      This merchant wears exotic clothing from a far-off land. They
+      speak with a heavy accent and have many curious items for sale.
+    level: 4
+    health: 60
+    strength: 10
+    dexterity: 12
+    constitution: 10
+    intelligence: 14
+    charisma: 16
+    behavior_type: passive
+    flags: [shopkeeper, no_wander]
+    dialogue:
+      greeting: "Welcome, friend! See anything you like?"
+      is_merchant: true
+      shop_items: [exotic_spices, silk_scarf, sea_charm]
+      topics:
+        wares: "I have goods from across the sea. Spices, silks, curiosities..."
+        home: "My homeland? Many months sailing to the east. A beautiful place."
+    shop:
+      shop_name: "The Eastern Wind"
+      buy_markup: 1.8
+      sell_markdown: 0.4
+      shop_gold: 4000
+
+  - id: lighthouse_keeper
+    vnum: 402
+    name: Old Marcus
+    keywords: [marcus, keeper, lighthouse, old]
+    short_description: Old Marcus maintains his lonely vigil.
+    long_description: >
+      The lighthouse keeper is a weathered old sailor who found his
+      calling on land. His eyes are permanently squinted from years
+      of watching the horizon, and his hands are rough from maintaining
+      the great lamp.
+    level: 5
+    health: 70
+    strength: 12
+    dexterity: 10
+    constitution: 14
+    wisdom: 16
+    behavior_type: passive
+    flags: [sentinel, no_wander]
+    dialogue:
+      greeting: "Ahoy there! Come to see the view, have ye?"
+      topics:
+        ships: "I've seen 'em all pass by. Traders, pirates, even royal ships."
+        lighthouse: "She's old, but she still works. Saved many a ship, she has."
+        storms: "When the storms come, you can hear the spirits in the wind."
+        sanctum: "There's a sunken temple out past the reef. Sailors avoid it."
+
+  - id: harbormaster
+    vnum: 403
+    name: Harbormaster Wells
+    keywords: [wells, harbormaster, dock, official]
+    short_description: Harbormaster Wells reviews shipping manifests.
+    long_description: >
+      A portly man in a naval uniform surveys the harbor with practiced eyes.
+      His brass buttons gleam despite the salt air, and a clipboard never leaves
+      his hand. He knows every ship, every captain, and every cargo.
+    level: 6
+    health: 80
+    strength: 10
+    dexterity: 10
+    constitution: 12
+    intelligence: 14
+    wisdom: 14
+    charisma: 14
+    behavior_type: passive
+    flags: [sentinel, no_wander, quest_giver]
+    dialogue:
+      greeting: "Mind your step on the docks. What business brings you here?"
+      topics:
+        ships: "We see traders from every port. Ravenmoor goods head out, exotic wares come in."
+        pirates: "Pirates? Bah. The Sea Wolves haven't been seen in years."
+        quest: "If you're looking for work, there's always cargo needs loading."
+
+  - id: dock_fisherman
+    vnum: 404
+    name: a dock fisherman
+    keywords: [fisherman, fisher, sailor, dock]
+    short_description: A grizzled fisherman mends nets on the dock.
+    long_description: >
+      This sun-weathered fisherman has spent a lifetime pulling fish from
+      the sea. His hands move automatically through the nets, tying knots
+      without needing to look. Salt crystals sparkle in his beard.
+    level: 2
+    health: 40
+    strength: 12
+    dexterity: 12
+    constitution: 12
+    behavior_type: passive
+    flags: []
+    dialogue:
+      greeting: "Good fishing today. Or was. Hard to say with the sea."
+      topics:
+        fish: "The bay's been strange lately. Fish swimming deeper."
+        sea: "Something's stirring out near the old temple. Makes the nets heavy."
+
+  - id: coastal_smith
+    vnum: 405
+    name: Saltbeard the Smith
+    keywords: [saltbeard, smith, blacksmith, forge]
+    short_description: Saltbeard hammers at a coral-encrusted blade.
+    long_description: >
+      This dwarven smith has adapted his craft to coastal life. His forge
+      burns sea-coal and his specialty is weapons treated to resist salt
+      and rust. His white beard is perpetually salt-encrusted, hence his name.
+    level: 7
+    health: 100
+    strength: 16
+    dexterity: 12
+    constitution: 16
+    behavior_type: passive
+    flags: [sentinel, no_wander, shopkeeper]
+    dialogue:
+      greeting: "Aye, ye need something that won't rust to nothing? I'm yer dwarf."
+      is_merchant: true
+      shop_items: [coral_blade, sea_steel_armor, salt_treated_bow]
+      topics:
+        weapons: "My weapons don't rust. Sea-forged and salt-treated."
+        coral: "I melt coral into the steel. Makes it stronger, they say."
+    shop:
+      shop_name: "Saltbeard's Forge"
+      buy_markup: 1.6
+      sell_markdown: 0.45
+      shop_gold: 6000
+
+  # ==========================================================================
+  # Common Hostile Creatures
+  # ==========================================================================
+  - id: reef_crab
+    vnum: 410
+    name: a reef crab
+    keywords: [crab, reef, creature]
+    short_description: A large crab scuttles across the reef.
+    long_description: >
+      This crab is much larger than normal, its shell encrusted with
+      coral and barnacles. Its claws snap menacingly at anything that
+      comes too close.
+    level: 3
+    health: 40
+    strength: 12
+    dexterity: 10
+    constitution: 14
+    damage_dice: 1d8
+    damage_type: bludgeoning
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 2
+    experience_value: 60
+    loot_table:
+      - template_id: crab_meat
+        drop_chance: 0.5
+      - template_id: crab_shell
+        drop_chance: 0.3
+
+  - id: shore_stalker
+    vnum: 411
+    name: a shore stalker
+    keywords: [stalker, shore, bird, heron]
+    short_description: A massive predatory bird watches from the rocks.
+    long_description: >
+      This enormous heron-like creature stands nearly as tall as a man.
+      Its long beak is wickedly sharp, and its cold eyes track every
+      movement. It hunts more than fish in these waters.
+    level: 4
+    health: 55
+    strength: 10
+    dexterity: 16
+    constitution: 10
+    damage_dice: 1d8
+    damage_type: piercing
+    armor_class: 12
+    behavior_type: aggressive
+    combat_style: skirmisher
+    aggro_radius: 4
+    flee_threshold: 0.25
+    experience_value: 85
+    loot_table:
+      - template_id: stalker_feathers
+        drop_chance: 0.4
+      - template_id: sharp_beak
+        drop_chance: 0.2
+
+  - id: tide_lurker
+    vnum: 412
+    name: a tide lurker
+    keywords: [lurker, tide, octopus, creature]
+    short_description: Tentacles writhe in a tidal pool nearby.
+    long_description: >
+      This small octopus has grown aggressive and territorial. Its skin
+      shifts colors to match the rocks, making it hard to spot until
+      tentacles wrap around an ankle. It seems to have been corrupted
+      by something in the water.
+    level: 4
+    health: 45
+    strength: 14
+    dexterity: 14
+    constitution: 12
+    damage_dice: 2d4
+    damage_type: bludgeoning
+    armor_class: 11
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 2
+    experience_value: 75
+    loot_table:
+      - template_id: tentacle_meat
+        drop_chance: 0.4
+      - template_id: octopus_ink
+        drop_chance: 0.3
+
+  - id: sand_viper
+    vnum: 413
+    name: a sand viper
+    keywords: [viper, snake, sand, serpent]
+    short_description: A sandy-colored serpent coils in the dunes.
+    long_description: >
+      This venomous snake has adapted perfectly to the coastal dunes.
+      Its scales match the sand exactly, and it strikes with lightning
+      speed at anything that disturbs its rest. Its venom causes
+      painful paralysis.
+    level: 5
+    health: 35
+    strength: 8
+    dexterity: 18
+    constitution: 10
+    damage_dice: 1d6
+    damage_type: piercing
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: skirmisher
+    aggro_radius: 2
+    experience_value: 90
+    loot_table:
+      - template_id: viper_venom
+        drop_chance: 0.3
+      - template_id: snake_scales
+        drop_chance: 0.4
+
+  # ==========================================================================
+  # Uncommon/Rare Creatures
+  # ==========================================================================
+  - id: sea_hag
+    vnum: 420
+    name: a sea hag
+    keywords: [hag, sea, witch, crone]
+    short_description: A hideous crone emerges from the waves.
+    long_description: >
+      This repulsive creature was once human, perhaps, but years of dark
+      magic and ocean depths have twisted her into something monstrous.
+      Seaweed hangs from her hair like a shroud, and barnacles encrust
+      her flesh. Her eyes gleam with malevolent intelligence.
+    level: 8
+    health: 130
+    strength: 12
+    dexterity: 12
+    constitution: 14
+    intelligence: 16
+    wisdom: 14
+    damage_dice: 2d6
+    damage_type: cold
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: caster
+    aggro_radius: 5
+    experience_value: 250
+    gold_min: 20
+    gold_max: 80
+    loot_table:
+      - template_id: sea_hag_eye
+        drop_chance: 0.4
+      - template_id: cursed_seaweed
+        drop_chance: 0.3
+      - template_id: dark_pearl
+        drop_chance: 0.15
+    dialogue_style: "Speaks in rhymes and riddles, cackling between words"
+
+  - id: drowned_sailor
+    vnum: 421
+    name: a drowned sailor
+    keywords: [sailor, drowned, undead, zombie]
+    short_description: A waterlogged corpse shambles toward you.
+    long_description: >
+      The remains of some unlucky sailor, risen from the depths. Its
+      flesh is bloated and pale, torn naval uniform hanging in tatters.
+      Seawater drips from its empty eye sockets, and it moans like the
+      wind through rigging.
+    level: 5
+    health: 70
+    strength: 14
+    dexterity: 8
+    constitution: 16
+    damage_dice: 1d8
+    damage_type: bludgeoning
+    armor_class: 11
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 100
+    loot_table:
+      - template_id: tattered_uniform
+        drop_chance: 0.3
+      - template_id: sailors_doubloon
+        drop_chance: 0.5
+      - template_id: rusted_cutlass
+        drop_chance: 0.15
+
+  - id: salt_elemental
+    vnum: 422
+    name: a salt elemental
+    keywords: [elemental, salt, crystal]
+    short_description: A crystalline humanoid form rises from the salt flats.
+    long_description: >
+      This entity appears to be made of pure salt crystals, formed into
+      a roughly humanoid shape. It moves with grinding, scraping sounds,
+      and the air around it is painfully dry. Salt spray follows in its
+      wake, stinging eyes and drying skin.
+    level: 7
+    health: 110
+    strength: 16
+    dexterity: 8
+    constitution: 18
+    damage_dice: 2d6
+    damage_type: slashing
+    armor_class: 16
+    behavior_type: aggressive
+    combat_style: defensive
+    aggro_radius: 3
+    experience_value: 200
+    loot_table:
+      - template_id: salt_crystal_core
+        drop_chance: 0.5
+      - template_id: elemental_salt
+        drop_chance: 0.4
+
+  - id: pirate_ghost
+    vnum: 423
+    name: a spectral pirate
+    keywords: [ghost, pirate, spectral, spirit]
+    short_description: A translucent figure in pirate garb floats menacingly.
+    long_description: >
+      The ghost of a Sea Wolf pirate, bound to this place by greed or
+      violence. Spectral gold glitters in its transparent pockets, and
+      a ghostly cutlass hangs at its side. Its face is a skull's grin
+      beneath a tricorn hat.
+    level: 9
+    health: 90
+    strength: 10
+    dexterity: 16
+    constitution: 10
+    damage_dice: 2d8
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: skirmisher
+    aggro_radius: 5
+    experience_value: 275
+    gold_min: 30
+    gold_max: 100
+    loot_table:
+      - template_id: ghost_doubloon
+        drop_chance: 0.6
+      - template_id: spectral_cutlass
+        drop_chance: 0.1
+      - template_id: pirates_map_fragment
+        drop_chance: 0.2
+    dialogue_style: "Speaks in archaic sailor's cant, laughs ghostly laughs"
+
+  # ==========================================================================
+  # Boss - Coral Bay
+  # ==========================================================================
+  - id: reef_titan
+    vnum: 450
+    name: the Reef Titan
+    keywords: [titan, reef, boss, coral, giant]
+    short_description: A massive creature of living coral towers over you.
+    long_description: >
+      This ancient creature appears to be made of the reef itself - a
+      towering humanoid form encrusted with coral, shells, and the
+      skeletons of countless sea creatures. Crabs and anemones cling to
+      its body, and its eyes are dark tide pools that reflect no light.
+      It has protected these waters for centuries.
+    level: 12
+    health: 400
+    strength: 20
+    dexterity: 8
+    constitution: 22
+    intelligence: 6
+    wisdom: 16
+    damage_dice: 3d8
+    damage_type: bludgeoning
+    armor_class: 18
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 6
+    flee_threshold: 0
+    experience_value: 1200
+    gold_min: 100
+    gold_max: 300
+    is_boss: true
+    loot_table:
+      - template_id: reef_titan_heart
+        drop_chance: 1.0
+      - template_id: living_coral_shard
+        drop_chance: 0.5
+      - template_id: titans_shell_shield
+        drop_chance: 0.3
+      - template_id: pearl_of_the_deep
+        drop_chance: 0.2
+    dialogue:
+      greeting: "*The Reef Titan turns its ancient gaze upon you*"
+      topics:
+        realm: "THESE... WATERS... MINE..."
+        temple: "THE DROWNED... MUST... SLEEP..."

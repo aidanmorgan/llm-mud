@@ -1,0 +1,247 @@
+# Wraithhollow Items
+# Haunted relics and spirit-touched equipment
+
+zone_id: wraithhollow
+
+items:
+  # Common Drops
+  - id: villager_memento
+    name: a villager's memento
+    keywords: [villager, memento, keepsake, old]
+    short_description: A personal item from one of the cursed villagers.
+    long_description: >
+      This small item - a locket, ring, or similar keepsake - belonged
+      to one of Wraithhollow's unfortunate residents. It carries echoes
+      of their life and could be used to lay them to rest.
+    type: treasure
+    rarity: common
+    value: 20
+    weight: 0.1
+
+  - id: shadow_fang
+    name: a shadow hound fang
+    keywords: [shadow, hound, fang, tooth]
+    short_description: A tooth that seems to absorb light.
+    long_description: >
+      This fang came from a shadow hound and retains some of its
+      darkness-absorbing properties. Useful in shadow magic.
+    type: reagent
+    rarity: uncommon
+    value: 40
+    weight: 0.1
+
+  - id: tearstone
+    name: a tearstone
+    keywords: [tearstone, grief, crystal, spirit]
+    short_description: Crystallized grief from a weeping spirit.
+    long_description: >
+      The endless sorrow of the weeping widows sometimes crystallizes
+      into these stones. They're cold and slightly wet, useful in
+      emotional magic and curses.
+    type: reagent
+    rarity: uncommon
+    value: 55
+    weight: 0.1
+
+  - id: widow_veil
+    name: a widow's veil
+    keywords: [widow, veil, ghostly, cloth]
+    short_description: A tattered veil that seems to move on its own.
+    long_description: >
+      This veil belonged to one of the weeping widows. It makes the
+      wearer harder to see and muffles sound around them.
+    type: accessory
+    subtype: head
+    rarity: rare
+    value: 300
+    weight: 0.2
+    magical_properties:
+      - effect: stealth_bonus
+        value: 2
+        description: Grants +2 to stealth
+
+  - id: spectral_toy
+    name: a spectral toy
+    keywords: [spectral, toy, child, ghost]
+    short_description: A ghostly toy that moves when not watched.
+    long_description: >
+      This toy belonged to one of the hollow children. It seems to
+      move slightly when you're not looking directly at it.
+    type: treasure
+    rarity: uncommon
+    value: 45
+    weight: 0.3
+
+  - id: spectral_badge
+    name: a spectral guard badge
+    keywords: [spectral, guard, badge, authority]
+    short_description: A badge that grants authority over lesser spirits.
+    long_description: >
+      This badge marked its wearer as a village guard. The authority
+      it carried persists even in death, giving some power over
+      the village's lesser spirits.
+    type: accessory
+    subtype: trinket
+    rarity: uncommon
+    value: 100
+    weight: 0.2
+    magical_properties:
+      - effect: spirit_influence
+        value: 1
+        description: Minor influence over spirits
+
+  - id: ghost_blade
+    name: a ghost blade
+    keywords: [ghost, blade, spirit, weapon]
+    short_description: A blade that exists between life and death.
+    long_description: >
+      This blade phases between solid and spectral, allowing it to
+      strike incorporeal creatures and occasionally pass through armor.
+    type: weapon
+    subtype: shortsword
+    rarity: rare
+    value: 400
+    weight: 2.0
+    level_requirement: 13
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: necrotic
+      to_hit_bonus: 2
+    magical_properties:
+      - effect: ghost_touch
+        value: 1
+        description: Can harm incorporeal creatures
+
+  - id: corrupted_holy_symbol
+    name: a corrupted holy symbol
+    keywords: [corrupted, holy, symbol, cursed]
+    short_description: A holy symbol twisted by dark magic.
+    long_description: >
+      Once used to bless, this symbol now curses. It can be purified
+      by the truly devout or used to channel dark energies.
+    type: accessory
+    subtype: held
+    rarity: uncommon
+    value: 150
+    weight: 0.3
+    magical_properties:
+      - effect: curse_power
+        value: 2
+        description: Enhances curse effects
+
+  - id: curse_scroll
+    name: a scroll of curses
+    keywords: [curse, scroll, magic, dark]
+    short_description: A scroll detailing various curse rituals.
+    long_description: >
+      This scroll was created by the cursed priest and details the
+      rituals that perpetuate Wraithhollow's curse. It could be
+      used to break curses... or create new ones.
+    type: scroll
+    rarity: rare
+    value: 250
+    weight: 0.2
+    magical_properties:
+      - effect: curse_knowledge
+        value: 1
+        description: Teaches curse rituals
+
+  - id: grave_dirt
+    name: cursed grave dirt
+    keywords: [grave, dirt, cursed, undead]
+    short_description: Soil from Wraithhollow's endless graveyard.
+    long_description: >
+      This dirt was taken from the ever-growing graveyard. It's
+      useful in necromantic rituals and undead creation.
+    type: reagent
+    rarity: common
+    value: 15
+    weight: 0.5
+
+  - id: burial_goods
+    name: burial goods
+    keywords: [burial, goods, treasure, grave]
+    short_description: Items stolen from graves by the digger.
+    long_description: >
+      These items were taken from the buried dead. Some are valuable,
+      others merely sentimental. All carry a faint curse.
+    type: treasure
+    rarity: uncommon
+    value: 80
+    weight: 1.0
+
+  # Boss Drops
+  - id: brides_ring
+    name: The Mourning Bride's Ring
+    keywords: [brides, ring, legendary, cursed]
+    short_description: The engagement ring that started the curse.
+    long_description: >
+      This ring was given to the bride on her doomed wedding day.
+      It's the focal point of Wraithhollow's curse and contains
+      immense power - both to curse and to love eternally.
+    type: accessory
+    subtype: ring
+    rarity: legendary
+    value: 4500
+    weight: 0.1
+    level_requirement: 18
+    magical_properties:
+      - effect: charisma_bonus
+        value: 3
+        description: Grants +3 charisma
+      - effect: curse_resistance
+        value: 5
+        description: Grants resistance to curses
+      - effect: love_eternal
+        value: 1
+        description: Forms unbreakable bonds
+
+  - id: wedding_veil
+    name: The Wedding Veil
+    keywords: [wedding, veil, legendary, bridal]
+    short_description: The veil worn on that fateful day.
+    long_description: >
+      This beautiful veil has been stained with tears for centuries.
+      It grants the wearer the ability to see and speak with the dead
+      and provides protection from spiritual harm.
+    type: armor
+    subtype: helmet
+    rarity: legendary
+    value: 4000
+    weight: 0.5
+    level_requirement: 18
+    armor_stats:
+      armor_bonus: 2
+      slot: head
+    magical_properties:
+      - effect: speak_with_dead
+        value: 1
+        description: Can communicate with spirits
+      - effect: necrotic_resistance
+        value: 5
+        description: Grants resistance to necrotic damage
+
+  - id: heartbreak_gem
+    name: The Heartbreak Gem
+    keywords: [heartbreak, gem, legendary, sorrow]
+    short_description: Crystallized from centuries of grief.
+    long_description: >
+      This gem formed at the Mourning Bride's heart, crystallized
+      from her endless sorrow. It contains devastating emotional
+      magic - the power to break hearts literally.
+    type: accessory
+    subtype: amulet
+    rarity: legendary
+    value: 5000
+    weight: 0.3
+    level_requirement: 18
+    magical_properties:
+      - effect: psychic_damage
+        value: 2d6
+        description: Attacks can deal psychic damage
+      - effect: fear_aura
+        value: 2
+        description: Enemies suffer penalties from fear
+      - effect: wisdom_bonus
+        value: 2
+        description: Grants +2 wisdom

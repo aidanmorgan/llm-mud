@@ -1,0 +1,348 @@
+# Mirehollow Swamp Mobs
+# Toxic creatures, corrupted druids, and swamp horrors
+
+zone_id: mirehollow
+
+mobs:
+  # Common Creatures
+  - id: swamp_leech
+    vnum: 900
+    name: a giant swamp leech
+    keywords: [leech, swamp, giant, worm]
+    short_description: A massive leech writhes through the murky water.
+    long_description: >
+      This leech has grown to monstrous size in the nutrient-rich waters
+      of Mirehollow. Its mouth is a ring of razor-sharp teeth designed
+      to latch onto prey and drain blood until nothing remains.
+    level: 10
+    health: 70
+    strength: 8
+    dexterity: 12
+    constitution: 14
+    damage_dice: 1d6
+    damage_type: piercing
+    armor_class: 10
+    behavior_type: aggressive
+    aggro_radius: 2
+    experience_value: 100
+    abilities: [blood_drain]
+    loot_table:
+      - template_id: leech_teeth
+        drop_chance: 0.3
+
+  - id: bog_crocodile
+    vnum: 901
+    name: a bog crocodile
+    keywords: [crocodile, bog, reptile, gator]
+    short_description: A massive crocodile lurks in the murky water.
+    long_description: >
+      This crocodile is the apex predator of Mirehollow's shallows. Its
+      scales are covered in algae, making it nearly invisible until it
+      strikes. Its bite can crush bone and drag victims under.
+    level: 12
+    health: 150
+    strength: 18
+    dexterity: 10
+    constitution: 16
+    damage_dice: 2d8
+    damage_type: piercing
+    armor_class: 16
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 3
+    experience_value: 200
+    abilities: [death_roll, drowning_grab]
+    loot_table:
+      - template_id: croc_teeth
+        drop_chance: 0.4
+      - template_id: croc_hide
+        drop_chance: 0.3
+
+  - id: mire_horror
+    vnum: 902
+    name: a mire horror
+    keywords: [horror, mire, monster, abomination]
+    short_description: Something terrible rises from the quicksand.
+    long_description: >
+      This creature is a mass of rotting vegetation and drowned corpses,
+      animated by the swamp's dark magic. It lurks in quicksand pools,
+      dragging victims down to join its collection of bodies.
+    level: 14
+    health: 180
+    strength: 16
+    dexterity: 8
+    constitution: 18
+    damage_dice: 2d6
+    damage_type: bludgeoning
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: defender
+    aggro_radius: 4
+    experience_value: 280
+    abilities: [engulf, quicksand_pull]
+    loot_table:
+      - template_id: horror_core
+        drop_chance: 0.2
+
+  # Fungal Creatures
+  - id: fungal_crawler
+    vnum: 910
+    name: a fungal crawler
+    keywords: [crawler, fungal, mushroom, creature]
+    short_description: A creature covered in fungal growths scuttles past.
+    long_description: >
+      This creature was once an animal, but fungal infection has
+      transformed it into a vector for spores. Mushrooms sprout from
+      its back, and its movements are jerky and unnatural.
+    level: 11
+    health: 90
+    strength: 12
+    dexterity: 14
+    constitution: 14
+    damage_dice: 1d8
+    damage_type: slashing
+    armor_class: 13
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 160
+    abilities: [spore_cloud]
+    loot_table:
+      - template_id: fungal_sample
+        drop_chance: 0.4
+      - template_id: spore_sac
+        drop_chance: 0.2
+
+  - id: spore_zombie
+    vnum: 911
+    name: a spore zombie
+    keywords: [zombie, spore, undead, fungal]
+    short_description: A shambling corpse covered in mushrooms lurches forward.
+    long_description: >
+      This was once a person who wandered too deep into the Fungal Grove.
+      Fungal spores took root in their body, animating the corpse even
+      as mushrooms sprouted from every orifice. It seeks only to spread
+      its infection.
+    level: 10
+    health: 100
+    strength: 14
+    dexterity: 6
+    constitution: 16
+    damage_dice: 1d8
+    damage_type: bludgeoning
+    armor_class: 10
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 140
+    abilities: [infectious_touch]
+    immunities: [poison]
+    loot_table:
+      - template_id: glowing_mushroom
+        drop_chance: 0.5
+
+  - id: spore_wraith
+    vnum: 912
+    name: a spore wraith
+    keywords: [wraith, spore, spirit, fungal]
+    short_description: A ghostly form made of swirling spores floats here.
+    long_description: >
+      This entity is the spirit of someone who died in the spore cloud,
+      their essence now bound to the fungal network. It drifts through
+      the mist, spreading hallucinations and confusion.
+    level: 13
+    health: 80
+    strength: 6
+    dexterity: 16
+    constitution: 10
+    intelligence: 12
+    damage_dice: 2d4
+    damage_type: psychic
+    armor_class: 15
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 4
+    experience_value: 220
+    abilities: [hallucination, phase]
+    immunities: [poison, physical]
+    loot_table:
+      - template_id: wraith_essence
+        drop_chance: 0.2
+
+  # Mire Druids
+  - id: mire_druid
+    vnum: 920
+    name: a Mire Druid
+    keywords: [druid, mire, corrupted, caster]
+    short_description: A figure in rotting robes chants dark prayers.
+    long_description: >
+      These druids were once guardians of nature, but the swamp's
+      corruption has twisted them. They now serve darker powers,
+      performing rituals that spread decay and blight. Their eyes
+      glow with sickly green light.
+    level: 12
+    health: 100
+    strength: 10
+    dexterity: 12
+    constitution: 12
+    intelligence: 16
+    wisdom: 16
+    damage_dice: 1d8
+    damage_type: poison
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 200
+    abilities: [poison_spray, entangle, corruption_bolt]
+    loot_table:
+      - template_id: druid_staff
+        drop_chance: 0.2
+      - template_id: corruption_focus
+        drop_chance: 0.3
+
+  - id: mire_priest
+    vnum: 921
+    name: a Mire Priest
+    keywords: [priest, mire, corrupted, leader]
+    short_description: A high-ranking druid radiates dark power.
+    long_description: >
+      This priest has risen high in the corrupted hierarchy, their body
+      partially transformed by the swamp's influence. Fungal growths
+      sprout from their flesh, and their voice carries the whispers
+      of ancient, rotting things.
+    level: 14
+    health: 140
+    strength: 12
+    dexterity: 10
+    constitution: 14
+    intelligence: 18
+    wisdom: 18
+    damage_dice: 2d6
+    damage_type: poison
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 280
+    abilities: [blight, summon_spores, decay_aura]
+    loot_table:
+      - template_id: priest_robe
+        drop_chance: 0.3
+      - template_id: corruption_totem
+        drop_chance: 0.2
+
+  - id: corrupted_treant
+    vnum: 922
+    name: a corrupted treant
+    keywords: [treant, corrupted, tree, monster]
+    short_description: A massive tree-creature oozes with corruption.
+    long_description: >
+      What was once a noble guardian of the forest has been twisted by
+      Mirehollow's taint. Black sap oozes from cracks in its bark, and
+      its branches end in grasping, claw-like appendages. It protects
+      the druids' circle with mindless aggression.
+    level: 13
+    health: 200
+    strength: 20
+    dexterity: 6
+    constitution: 20
+    damage_dice: 2d8
+    damage_type: bludgeoning
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 260
+    abilities: [root_entangle, toxic_sap]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: corrupted_heartwood
+        drop_chance: 0.3
+
+  # Temple Creatures
+  - id: drowned_ghost
+    vnum: 930
+    name: a drowned ghost
+    keywords: [ghost, drowned, spirit, undead]
+    short_description: The translucent form of a drowning victim floats here.
+    long_description: >
+      This is the spirit of someone who drowned in the swamp long ago,
+      their waterlogged ghost condemned to haunt the sunken ruins. They
+      relive their drowning endlessly, reaching for help that never comes.
+    level: 11
+    health: 60
+    strength: 4
+    dexterity: 14
+    constitution: 8
+    damage_dice: 1d8
+    damage_type: cold
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 170
+    abilities: [chilling_touch, drowning_grasp]
+    immunities: [physical, poison]
+    loot_table:
+      - template_id: ghost_essence
+        drop_chance: 0.2
+
+  - id: temple_guardian
+    vnum: 931
+    name: a temple guardian
+    keywords: [guardian, temple, construct, stone]
+    short_description: A statue animated by ancient magic blocks the path.
+    long_description: >
+      This stone guardian was created to protect the sunken temple, and
+      it continues its duty even underwater. Barnacles and coral have
+      encrusted its form, but its movements are still swift and deadly.
+    level: 13
+    health: 180
+    strength: 18
+    dexterity: 8
+    constitution: 20
+    damage_dice: 2d6
+    damage_type: bludgeoning
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 240
+    immunities: [poison]
+    loot_table:
+      - template_id: guardian_stone
+        drop_chance: 0.2
+
+  # Boss
+  - id: bloated_one
+    vnum: 940
+    name: The Bloated One
+    keywords: [bloated, one, toad, boss, undead]
+    short_description: A massive, rotting toad fills the lair.
+    long_description: >
+      The Bloated One was once a giant toad, but death and the swamp's
+      corruption have transformed it into something far worse. Its
+      body is grotesquely swollen, filled with poisonous gases and
+      half-digested prey. Its skin is mottled with decay, and its
+      cavernous mouth can swallow a person whole. Despite being undead,
+      it hungers eternally.
+    level: 18
+    health: 600
+    strength: 24
+    dexterity: 6
+    constitution: 26
+    damage_dice: 3d10
+    damage_type: poison
+    armor_class: 18
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 8
+    experience_value: 2000
+    gold_min: 150
+    gold_max: 600
+    abilities: [swallow_whole, poison_breath, summon_leeches, toxic_aura]
+    immunities: [poison]
+    vulnerabilities: [fire]
+    loot_table:
+      - template_id: bloated_heart
+        drop_chance: 1.0
+      - template_id: corruption_crown
+        drop_chance: 0.5
+      - template_id: toxic_gem
+        drop_chance: 0.7
+    dialogue:
+      greeting: "*CROAAAAK* HUNGER... ENDLESS HUNGER..."

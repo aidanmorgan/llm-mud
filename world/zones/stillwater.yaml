@@ -1,0 +1,13 @@
+zone_id: stillwater
+name: Stillwater Monastery
+description: >
+  A remote monastery perched high in the mountains north of Ravenmoor.
+  The monks here dedicate their lives to contemplation, martial arts,
+  and preserving ancient knowledge. The journey is treacherous, but
+  those who make it find wisdom and training.
+level_range: [5, 10]
+flags: []
+coordinate_origin:
+  x: 0
+  y: 10
+  z: 5

@@ -1,0 +1,144 @@
+zone_id: starter
+
+mobs:
+  - id: village_guard
+    vnum: 1000
+    name: a village guard
+    keywords: [guard, village, soldier]
+    short_description: A village guard stands here, watching for trouble.
+    long_description: >
+      This guard wears simple leather armor and carries a sturdy spear.
+      Though not particularly imposing, they maintain a vigilant watch
+      over the village's safety.
+    level: 5
+    stats:
+      health: 80
+      mana: 20
+      strength: 14
+      dexterity: 12
+      constitution: 14
+      intelligence: 10
+      wisdom: 10
+      charisma: 10
+      armor_class: 13
+    damage_dice: "1d6+2"
+    damage_type: piercing
+    behavior:
+      type: passive
+      combat_style: defensive
+      aggro_radius: 0
+    flags: [sentinel, no_wander]
+    dialogue:
+      greeting: The guard nods. "Stay out of trouble, traveler."
+
+  - id: innkeeper
+    vnum: 1001
+    name: the innkeeper
+    keywords: [innkeeper, bartender, keeper]
+    short_description: The innkeeper stands behind the bar, polishing a mug.
+    long_description: >
+      A portly man with a jolly face and a stained apron, the innkeeper
+      seems perfectly at home among the bustle of the common room. He
+      greets each patron with a warm smile.
+    level: 3
+    stats:
+      health: 40
+      strength: 10
+      charisma: 14
+    behavior:
+      type: passive
+    flags: [merchant, sentinel]
+    dialogue:
+      greeting: "Welcome to the Wanderer's Rest! Can I get you a drink?"
+      farewell: "Safe travels, friend!"
+      rooms: "We have rooms available for 5 gold a night."
+      food: "Our stew is famous throughout the region!"
+
+  - id: shopkeeper
+    vnum: 1002
+    name: the shopkeeper
+    keywords: [shopkeeper, merchant, vendor]
+    short_description: A cheerful merchant minds the store.
+    long_description: >
+      The shopkeeper is a middle-aged woman with keen eyes and a friendly
+      demeanor. She clearly knows every item in her extensive inventory
+      and can find what you need in moments.
+    level: 3
+    stats:
+      health: 35
+      charisma: 15
+    behavior:
+      type: passive
+    flags: [merchant, sentinel]
+    dialogue:
+      greeting: "Welcome! Looking for supplies?"
+
+  - id: forest_wolf
+    vnum: 1010
+    name: a grey wolf
+    keywords: [wolf, grey, gray]
+    short_description: A grey wolf prowls here, yellow eyes gleaming.
+    long_description: >
+      This lean grey wolf watches you with intelligent yellow eyes.
+      Its fur is matted with burrs and twigs from the forest, and
+      its muscles tense, ready to spring at any moment.
+    level: 2
+    stats:
+      health: 25
+      mana: 0
+      strength: 12
+      dexterity: 15
+      constitution: 12
+      intelligence: 3
+      wisdom: 12
+      charisma: 6
+      armor_class: 13
+    damage_dice: "1d6+1"
+    damage_type: piercing
+    behavior:
+      type: aggressive
+      combat_style: opportunist
+      aggro_radius: 2
+      flee_threshold: 0.2
+    loot:
+      gold_min: 0
+      gold_max: 0
+      items:
+        - template_id: wolf_pelt
+          chance: 0.5
+    experience: 50
+
+  - id: giant_spider
+    vnum: 1015
+    name: a giant spider
+    keywords: [spider, giant, large]
+    short_description: A giant spider lurks in the shadows, its many eyes glinting.
+    long_description: >
+      This monstrous spider is the size of a large dog. Its black
+      carapace gleams with a sickly sheen, and venom drips from its
+      mandibles. Thick webs trail from its spinnerets.
+    level: 4
+    stats:
+      health: 45
+      mana: 0
+      strength: 12
+      dexterity: 16
+      constitution: 12
+      intelligence: 2
+      wisdom: 10
+      charisma: 2
+      armor_class: 14
+      attack_bonus: 2
+    damage_dice: "1d8+2"
+    damage_type: piercing
+    behavior:
+      type: aggressive
+      combat_style: ambusher
+      aggro_radius: 1
+    loot:
+      gold_min: 0
+      gold_max: 5
+      items:
+        - template_id: spider_silk
+          chance: 0.4
+    experience: 100

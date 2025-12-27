@@ -1,0 +1,32 @@
+# Wraithhollow Zone
+# Haunted village, eternal night, tragic ghosts
+
+zone_id: wraithhollow
+name: Wraithhollow
+description: >
+  Once a prosperous village, Wraithhollow fell to a terrible curse that killed
+  every inhabitant in a single night. Now the villagers exist as ghosts, trapped
+  in an endless loop of their final day. Eternal darkness shrouds the village,
+  and the living are not welcome. Yet treasures and secrets lie buried here,
+  waiting for those brave enough to face the dead.
+level_range: [12, 20]
+flags: [outdoor, haunted, eternal_night, cursed, ghost_heavy]
+coordinate_origin:
+  x: -40
+  y: 5
+  z: 0
+environmental_hazards:
+  - type: darkness
+    amount: 0
+    interval: 0
+    message: "Supernatural darkness clings to everything here."
+  - type: fear
+    amount: 1
+    interval: 300
+    message: "A chill of supernatural dread runs down your spine."
+ambient_messages:
+  - "A ghostly child runs past, laughing, then vanishes."
+  - "You hear the echo of a town bell that no longer exists."
+  - "Phantom candlelight flickers in an abandoned window."
+  - "The sound of weeping comes from an empty house."
+  - "A spectral dog barks at nothing before fading away."

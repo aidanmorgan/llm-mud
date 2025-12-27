@@ -1,0 +1,22 @@
+# The Undercroft - Deep dungeon zone
+zone_id: undercroft
+name: The Undercroft
+description: >
+  The deepest level of the Ironvein Mine complex - an ancient prison
+  built to contain horrors from before recorded history. Sealed chambers
+  hold creatures that should not exist, and cursed gold lies heaped in
+  forgotten vaults. Ghostly wardens still patrol, their duty unending,
+  while mad prisoners babble prophecies. The First Prisoner, a bound
+  demon lord, strains at chains that have held for millennia.
+level_range: [18, 28]
+flags: [dungeon, dark_zone, curse_zone, hostile]
+coordinate_origin:
+  x: 0
+  y: -15
+  z: -10
+special_effects:
+  - curse_accumulation
+  - sanity_effects
+  - sealed_doors
+light_level: darkness
+curse_intensity: high

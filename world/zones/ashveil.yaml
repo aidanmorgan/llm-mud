@@ -1,0 +1,23 @@
+# Ashveil Wastes - Volcanic badlands zone
+zone_id: ashveil
+name: Ashveil Wastes
+description: >
+  A scorched expanse of volcanic badlands to the west of Ravenmoor. Once
+  fertile farmland, a cataclysmic eruption centuries ago transformed it
+  into a hellscape of ash, obsidian formations, and smoldering vents.
+  The Ashborn nomads eke out an existence here, their skin scarred by
+  constant exposure to heat and cinders.
+level_range: [8, 15]
+flags: [outdoor, hostile, fire_hazard]
+coordinate_origin:
+  x: -20
+  y: 0
+  z: 0
+weather_effects:
+  - ash_storm
+  - heat_wave
+environmental_damage:
+  type: fire
+  amount: 2
+  interval: 60
+  message: "The scorching heat saps your strength."

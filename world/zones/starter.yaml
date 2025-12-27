@@ -1,0 +1,7 @@
+zone_id: starter
+name: The Starting Village
+description: >
+  A peaceful village where new adventurers begin their journey.
+  The village is surrounded by forests and sits near an ancient dungeon.
+level_range: [1, 5]
+flags: [safe_zone]

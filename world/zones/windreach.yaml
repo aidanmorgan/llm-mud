@@ -1,0 +1,35 @@
+# Windreach Peaks Zone
+# Mountain summit, extreme altitude, griffin riders
+
+zone_id: windreach
+name: Windreach Peaks
+description: >
+  The highest peaks in the realm, where the air is thin and the wind never
+  stops. Ancient temples to the storm gods cling to impossible cliffs, and
+  griffin riders patrol the skies. Only the most determined climbers reach
+  the summit, where legends say the Storm God himself once walked.
+level_range: [16, 24]
+flags: [outdoor, mountain, high_altitude, windy, aerial]
+coordinate_origin:
+  x: 5
+  y: 20
+  z: 10
+environmental_hazards:
+  - type: altitude
+    amount: 1
+    interval: 240
+    message: "The thin air makes breathing difficult."
+  - type: wind
+    amount: 1
+    interval: 180
+    message: "Powerful gusts threaten to knock you off balance."
+  - type: cold
+    amount: 1
+    interval: 300
+    message: "The freezing wind cuts through your clothing."
+ambient_messages:
+  - "The wind howls through the peaks like a living thing."
+  - "A griffin's cry echoes across the mountains."
+  - "Snow and ice swirl in the endless wind."
+  - "Far below, clouds obscure the world beneath."
+  - "Prayer flags snap and flutter in the gale."

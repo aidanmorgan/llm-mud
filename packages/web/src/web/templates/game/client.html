@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block title %}LLM-MUD{% endblock %}
+
+{% block body_class %}game-client{% endblock %}
+
+{% block content %}
+<div id="header">
+    <h1>LLM-MUD</h1>
+</div>
+
+<div id="prompt-bar">
+    <span id="hp-display" class="hp">HP: --/--</span> |
+    <span id="mana-display" class="mana">Mana: --/--</span> |
+    <span id="position-display">Standing</span>
+</div>
+
+<div id="output-container">
+    <div id="game-output" hx-ext="ws" ws-connect="/ws/{{ session_id }}"></div>
+</div>
+
+<form id="input-form" hx-post="/command" hx-target="#game-output" hx-swap="beforeend" hx-trigger="submit">
+    <input type="hidden" name="session_id" value="{{ session_id }}">
+    <input type="text" id="game-command-input" name="command" placeholder="Enter command..." autocomplete="off" autofocus>
+    <button type="submit" id="send-button">Send</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Auto-scroll to bottom when new content arrives
+    const outputContainer = document.getElementById('output-container');
+    const output = document.getElementById('game-output');
+    const commandInput = document.getElementById('game-command-input');
+
+    // Observe changes to output and scroll to bottom
+    const observer = new MutationObserver(() => {
+        outputContainer.scrollTop = outputContainer.scrollHeight;
+    });
+    observer.observe(output, { childList: true, subtree: true });
+
+    // Clear input after submit
+    document.getElementById('input-form').addEventListener('htmx:afterRequest', () => {
+        commandInput.value = '';
+        commandInput.focus();
+    });
+
+    // Handle WebSocket messages
+    document.body.addEventListener('htmx:wsMessage', (event) => {
+        try {
+            const data = JSON.parse(event.detail.message);
+            handleGameMessage(data);
+        } catch (e) {
+            // Raw text message
+            appendOutput(event.detail.message, 'main');
+        }
+    });
+
+    function handleGameMessage(msg) {
+        switch (msg.type) {
+            case 'text':
+                appendOutput(msg.payload.text, msg.payload.channel || 'main');
+                break;
+            case 'room':
+                displayRoom(msg.payload);
+                break;
+            case 'prompt':
+                updatePrompt(msg.payload);
+                break;
+            case 'system':
+                appendOutput(msg.payload.text, 'system');
+                break;
+            case 'error':
+                appendOutput('Error: ' + msg.payload.error, 'error');
+                break;
+            case 'combat':
+                appendOutput(msg.payload.message, 'combat');
+                break;
+            default:
+                if (msg.payload && msg.payload.text) {
+                    appendOutput(msg.payload.text, 'main');
+                }
+        }
+    }
+
+    function appendOutput(text, channel) {
+        const div = document.createElement('div');
+        div.className = 'message message-' + channel;
+        div.innerHTML = text;
+        output.appendChild(div);
+    }
+
+    function displayRoom(room) {
+        let html = '<div class="room-name">' + room.name + '</div>';
+        html += '<div class="room-description">' + room.description + '</div>';
+
+        if (room.entities && room.entities.length > 0) {
+            html += '<div class="room-entities">';
+            room.entities.forEach(e => {
+                html += '<div>' + e.short_desc + '</div>';
+            });
+            html += '</div>';
+        }
+
+        if (room.items && room.items.length > 0) {
+            html += '<div class="room-items">';
+            room.items.forEach(i => {
+                html += '<div>' + i.short_desc + '</div>';
+            });
+            html += '</div>';
+        }
+
+        if (room.exits && room.exits.length > 0) {
+            html += '<div class="room-exits">[Exits: ' + room.exits.join(' ') + ']</div>';
+        }
+
+        appendOutput(html, 'room');
+    }
+
+    function updatePrompt(prompt) {
+        const hpEl = document.getElementById('hp-display');
+        const manaEl = document.getElementById('mana-display');
+        const posEl = document.getElementById('position-display');
+
+        const hpPercent = (prompt.hp / prompt.max_hp) * 100;
+        hpEl.textContent = 'HP: ' + prompt.hp + '/' + prompt.max_hp;
+        hpEl.className = hpPercent > 50 ? 'hp' : (hpPercent > 25 ? 'hp-low' : 'hp-critical');
+
+        manaEl.textContent = 'Mana: ' + prompt.mana + '/' + prompt.max_mana;
+        posEl.textContent = prompt.position.charAt(0).toUpperCase() + prompt.position.slice(1);
+
+        if (prompt.combat_target) {
+            posEl.textContent += ' (Fighting: ' + prompt.combat_target + ')';
+        }
+    }
+
+    // Command history
+    let commandHistory = [];
+    let historyIndex = -1;
+
+    commandInput.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (historyIndex < commandHistory.length - 1) {
+                historyIndex++;
+                commandInput.value = commandHistory[commandHistory.length - 1 - historyIndex];
+            }
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (historyIndex > 0) {
+                historyIndex--;
+                commandInput.value = commandHistory[commandHistory.length - 1 - historyIndex];
+            } else if (historyIndex === 0) {
+                historyIndex = -1;
+                commandInput.value = '';
+            }
+        }
+    });
+
+    document.getElementById('input-form').addEventListener('submit', () => {
+        const cmd = commandInput.value.trim();
+        if (cmd) {
+            commandHistory.push(cmd);
+            if (commandHistory.length > 100) commandHistory.shift();
+            historyIndex = -1;
+        }
+    });
+</script>
+{% endblock %}

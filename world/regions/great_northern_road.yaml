@@ -1,0 +1,116 @@
+region_id: great_northern_road
+name: The Great Northern Road
+
+theme:
+  theme_id: ancient_highway
+  description: >
+    An ancient imperial highway that once connected great empires. Now it leads
+    to the Bleached Wastes, an ancient battlefield. The road is cracked and
+    overgrown, with ruins of waystations and monuments to forgotten victories.
+    The further north you travel, the more ominous the atmosphere becomes.
+
+  room_prompt: >
+    Generate a room description for an ancient, decaying highway heading toward
+    a massive battlefield graveyard.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: ominous, historical, decayed grandeur, increasingly desolate.
+    Early rooms: Overgrown road, abandoned structures, faded glory.
+    Middle rooms: Ruined waystations, old battlefields, warning markers.
+    Late rooms: Bone-strewn approaches, ghostly atmosphere, pale sunlight.
+    Include sensory details: cracked stone, bone fragments, eerie silence.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a creature for the ancient northern road for level {target_level}.
+    Room context: {room_description}
+
+    Types early: bandits, scavengers, wild dogs, deserters.
+    Types middle: restless spirits, undead scouts, bone collectors.
+    Types late: skeletal soldiers, ghost warriors, spectral patrols.
+
+    Return JSON with mob details including behavior and personality.
+
+  item_prompt: >
+    Generate a road/battlefield themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: military relics, traveler's abandoned gear, bone fragments,
+    ancient coins, faded maps, rusted weapons, memorial tokens.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - road, highway, stones, path, cracked, worn
+    - monument, milestone, marker, waystation, ruin
+    - bone, skull, ghost, spirit, pale, gray
+    - ancient, forgotten, imperial, grand, decayed
+    - silence, wind, whisper, echo
+
+  forbidden_words:
+    - modern, technology, car, phone, electric
+    - ocean, tropical, lush, vibrant
+
+  sector_types: [road, field, ruins]
+
+  ambient_messages:
+    - "The wind carries whispers from the north."
+    - "A milestone bearing faded writing marks the distance."
+    - "Pale bones have been pushed to the roadside."
+    - "Something watches from the ruins of a waystation."
+    - "The air grows colder as you travel north."
+    - "A ghostly figure appears on the road ahead, then vanishes."
+
+  mob_templates: [road_bandit, spectral_scout, bone_collector, ghost_soldier]
+  item_templates: [ancient_coin, rusted_sword, faded_map, military_medal]
+
+endpoints:
+  ravenmoor_north_gate:
+    direction: north
+    coordinate:
+      x: 0
+      y: 1
+      z: 0
+  bleached_wastes_south:
+    direction: south
+    coordinate:
+      x: 5
+      y: 52
+      z: 0
+
+waypoints:
+  - x: 2
+    y: 12
+    z: 0
+    name: "First Waystation Ruins"
+    is_required: true
+  - x: 3
+    y: 25
+    z: 0
+    name: "Crossroads of the Fallen"
+    is_required: true
+  - x: 4
+    y: 38
+    z: 0
+    name: "Last Warning Marker"
+    is_required: true
+
+generation:
+  min_rooms: 40
+  max_rooms: 60
+  difficulty_min: 5
+  difficulty_max: 15
+  mob_density: 0.35
+  item_density: 0.1
+  branch_chance: 0.2
+
+primary_sector_type: road

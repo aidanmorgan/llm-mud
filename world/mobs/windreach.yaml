@@ -1,0 +1,304 @@
+# Windreach Peaks Mobs
+# Mountain summit creatures and storm elementals
+
+zone_id: windreach
+
+mobs:
+  # Common Enemies
+  - id: wind_elemental
+    vnum: 2400
+    name: a wind elemental
+    keywords: [wind, elemental, air, spirit]
+    short_description: A swirling vortex of air and debris howls past.
+    long_description: >
+      This elemental is pure motion, a living cyclone that tears across
+      the peaks. It is capricious and dangerous, attacking without warning
+      before dancing away on the winds.
+    level: 16
+    health: 90
+    strength: 12
+    dexterity: 22
+    constitution: 10
+    damage_dice: 2d6
+    damage_type: bludgeoning
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 280
+    abilities: [gust_slam, wind_walk, cyclone_form]
+    immunities: [poison]
+    resistances: [physical]
+    vulnerabilities: [lightning]
+    loot_table:
+      - template_id: wind_essence
+        drop_chance: 0.35
+
+  - id: storm_hawk
+    vnum: 2401
+    name: a storm hawk
+    keywords: [storm, hawk, bird, lightning]
+    short_description: A massive hawk crackles with electrical energy.
+    long_description: >
+      These predatory birds have adapted to the constant storms of
+      Windreach, becoming conduits for lightning itself. Their talons
+      carry deadly voltage.
+    level: 15
+    health: 80
+    strength: 14
+    dexterity: 20
+    constitution: 10
+    damage_dice: 1d8
+    damage_type: lightning
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 6
+    experience_value: 250
+    abilities: [diving_strike, lightning_screech, storm_surge]
+    resistances: [lightning]
+    loot_table:
+      - template_id: storm_feather
+        drop_chance: 0.4
+      - template_id: hawk_talon
+        drop_chance: 0.25
+
+  - id: cloud_giant
+    vnum: 2402
+    name: a cloud giant
+    keywords: [cloud, giant, huge, storm]
+    short_description: A massive figure of condensed clouds looms above.
+    long_description: >
+      These giants are formed from the clouds themselves, given life
+      by the elemental energies of the peaks. They are slow but
+      incredibly powerful, and their blows carry the force of storms.
+    level: 18
+    health: 200
+    strength: 22
+    dexterity: 8
+    constitution: 20
+    damage_dice: 2d10
+    damage_type: bludgeoning
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 380
+    abilities: [thunder_stomp, cloud_form, lightning_fist]
+    immunities: [poison]
+    resistances: [lightning, cold]
+    loot_table:
+      - template_id: giant_cloudstuff
+        drop_chance: 0.4
+      - template_id: storm_crystal
+        drop_chance: 0.2
+
+  - id: wind_spirit
+    vnum: 2403
+    name: a wind spirit
+    keywords: [wind, spirit, fey, sylph]
+    short_description: A graceful figure of swirling air dances on the breeze.
+    long_description: >
+      These fey creatures of the air are mischievous but not inherently
+      hostile. They play tricks on travelers, sometimes helpful, sometimes
+      deadly. Their moods change as quickly as the wind.
+    level: 14
+    health: 70
+    strength: 8
+    dexterity: 20
+    constitution: 10
+    damage_dice: 1d6
+    damage_type: slashing
+    armor_class: 17
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 220
+    abilities: [cutting_wind, air_dance, mischief_gust]
+    immunities: [poison]
+    resistances: [physical]
+    loot_table:
+      - template_id: sylph_dust
+        drop_chance: 0.3
+
+  - id: mountain_goat
+    vnum: 2404
+    name: a giant mountain goat
+    keywords: [mountain, goat, giant, beast]
+    short_description: A massive goat with crystalline horns eyes you.
+    long_description: >
+      The goats of Windreach have grown enormous, adapted to the thin
+      air and constant storms. Their horns have crystallized with
+      elemental energy, making them dangerous opponents.
+    level: 14
+    health: 110
+    strength: 18
+    dexterity: 14
+    constitution: 16
+    damage_dice: 1d10
+    damage_type: bludgeoning
+    armor_class: 14
+    behavior_type: neutral
+    aggro_radius: 2
+    experience_value: 200
+    abilities: [charging_ram, sure_footed, crystal_horn_strike]
+    loot_table:
+      - template_id: crystal_horn
+        drop_chance: 0.3
+      - template_id: mountain_wool
+        drop_chance: 0.5
+
+  - id: griffin
+    vnum: 2405
+    name: a griffin
+    keywords: [griffin, beast, eagle, lion]
+    short_description: A majestic beast with eagle wings and lion body soars overhead.
+    long_description: >
+      Griffins nest in the highest peaks of Windreach. They are fiercely
+      territorial and attack any who approach their aeries. Some are
+      tamed by the griffin riders, but most remain wild.
+    level: 17
+    health: 150
+    strength: 18
+    dexterity: 16
+    constitution: 16
+    damage_dice: 2d6
+    damage_type: slashing
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 340
+    abilities: [dive_attack, rending_claws, eagle_screech]
+    loot_table:
+      - template_id: griffin_feather
+        drop_chance: 0.4
+      - template_id: griffin_talon
+        drop_chance: 0.2
+
+  - id: storm_monk
+    vnum: 2406
+    name: a corrupted storm monk
+    keywords: [storm, monk, corrupted, lightning]
+    short_description: A monk crackling with uncontrolled storm energy attacks.
+    long_description: >
+      Some monks who study the storms are consumed by them. This one
+      has lost control, becoming a conduit for raw elemental fury.
+      They attack with lightning-fast strikes and electrical blasts.
+    level: 16
+    health: 100
+    strength: 14
+    dexterity: 18
+    constitution: 12
+    damage_dice: 1d10
+    damage_type: lightning
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 300
+    abilities: [lightning_fist, storm_stance, thunder_kick]
+    resistances: [lightning]
+    loot_table:
+      - template_id: storm_beads
+        drop_chance: 0.3
+      - template_id: monk_sash
+        drop_chance: 0.2
+
+  # NPCs
+  - id: griffin_rider
+    vnum: 2450
+    name: Skywarden Aethel
+    keywords: [aethel, skywarden, griffin, rider]
+    short_description: A warrior in wind-touched armor tends to a griffin.
+    long_description: >
+      Aethel is one of the elite griffin riders who patrol Windreach.
+      She has bonded with her mount and can call upon the winds
+      themselves. She welcomes travelers but warns of the dangers ahead.
+    level: 20
+    health: 160
+    behavior_type: friendly
+    dialogue:
+      greeting: "Greetings, groundwalker. The winds speak of your coming. Seek you the Tempest's blessing, or merely passage?"
+      topics:
+        tempest: "The Stormwright rules the highest peak. An elemental prince of immense power. Few challenge him and live."
+        griffins: "My partner is Swiftwing. We've flown together for fifteen years. The bond is... profound."
+        winds: "Learn to read them and they'll guide you. Ignore them and they'll dash you on the rocks."
+
+  - id: storm_abbot
+    vnum: 2451
+    name: Abbot Thundervoice
+    keywords: [abbot, thunder, monk, master]
+    short_description: An elderly monk meditates despite the howling winds.
+    long_description: >
+      The abbot has mastered the storms so completely that they flow
+      around him in perfect calm. He teaches those who seek to
+      understand the elemental forces of air and lightning.
+    level: 22
+    health: 140
+    behavior_type: friendly
+    dialogue:
+      greeting: "Be still. Even in the storm, there is peace. Do you seek to learn this truth?"
+      topics:
+        training: "The storm is not your enemy. It is your teacher. Learn its rhythms and you will find harmony."
+        corrupted: "Some of our brothers lost their way. The storm consumed them. We pray for their peace."
+        stormwright: "A being of pure elemental fury. To face him, you must be the eye of the storm - calm amidst chaos."
+
+  - id: weather_mage
+    vnum: 2452
+    name: Zephyra the Weather Mage
+    keywords: [zephyra, weather, mage, wizard]
+    short_description: A mage studies swirling magical instruments.
+    long_description: >
+      Zephyra studies the magical properties of storms and sells
+      enchanted items attuned to elemental air. Her instruments
+      can predict the weather with uncanny accuracy.
+    level: 17
+    health: 90
+    behavior_type: friendly
+    shop:
+      markup: 1.3
+      markdown: 0.7
+      inventory:
+        - template_id: wind_cloak
+        - template_id: storm_staff
+        - template_id: lightning_rod
+
+  # Boss
+  - id: stormwright
+    vnum: 2499
+    name: The Stormwright
+    keywords: [stormwright, tempest, boss, elemental, prince]
+    short_description: A titan of living lightning and howling wind dominates the peak.
+    long_description: >
+      The Stormwright is an elemental prince who has claimed Windreach
+      as his domain. He is storm incarnate - a towering figure of
+      crackling lightning, screaming wind, and crushing pressure. His
+      rage shapes the weather for miles around, and his power is
+      nearly godlike.
+    level: 24
+    health: 900
+    strength: 22
+    dexterity: 24
+    constitution: 20
+    intelligence: 18
+    wisdom: 16
+    charisma: 20
+    damage_dice: 3d10
+    damage_type: lightning
+    armor_class: 20
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 10
+    experience_value: 3600
+    gold_min: 350
+    gold_max: 1000
+    abilities: [call_lightning, tornado_form, thunder_god_strike, storm_shield, hurricane_wrath]
+    immunities: [lightning, poison]
+    resistances: [physical, cold]
+    loot_table:
+      - template_id: stormwright_crown
+        drop_chance: 0.6
+      - template_id: thunderbolt_blade
+        drop_chance: 0.5
+      - template_id: eye_of_the_storm
+        drop_chance: 0.7
+    dialogue:
+      greeting: "MORTAL! YOU DARE ASCEND TO MY DOMAIN?! THE STORM WILL TEAR YOU APART!"
+      topics:
+        power: "I AM THE STORM! EVERY LIGHTNING BOLT, EVERY HOWLING GALE - ALL ARE MY WILL MADE MANIFEST!"
+        challenge: "YOU WISH TO CHALLENGE ME? THEN FEEL THE FURY OF A THOUSAND TEMPESTS!"

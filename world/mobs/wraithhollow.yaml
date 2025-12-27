@@ -1,0 +1,308 @@
+# Wraithhollow Mobs
+# Haunted village spirits and cursed inhabitants
+
+zone_id: wraithhollow
+
+mobs:
+  # Common Enemies
+  - id: ghost_villager
+    vnum: 2300
+    name: a ghost villager
+    keywords: [ghost, villager, spirit, peasant]
+    short_description: A spectral villager wanders aimlessly.
+    long_description: >
+      This spirit was once an ordinary villager, caught in the curse
+      that befell Wraithhollow. It wanders the streets, going through
+      motions of a life long ended. Sometimes it seems to notice you.
+    level: 12
+    health: 80
+    strength: 10
+    dexterity: 14
+    constitution: 10
+    damage_dice: 1d6
+    damage_type: necrotic
+    armor_class: 13
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 160
+    abilities: [mournful_wail, cold_touch]
+    immunities: [poison]
+    resistances: [physical]
+    loot_table:
+      - template_id: ectoplasm
+        drop_chance: 0.3
+      - template_id: villager_memento
+        drop_chance: 0.15
+
+  - id: shadow_hound
+    vnum: 2301
+    name: a shadow hound
+    keywords: [shadow, hound, dog, beast]
+    short_description: A dog made of living darkness stalks the streets.
+    long_description: >
+      The village dogs died with their masters and rose again as
+      creatures of shadow. This hound is loyal only to darkness now,
+      hunting the living with cold intelligence.
+    level: 13
+    health: 90
+    strength: 14
+    dexterity: 16
+    constitution: 12
+    damage_dice: 1d8
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 180
+    abilities: [shadow_pounce, pack_tactics]
+    immunities: [poison]
+    resistances: [physical]
+    loot_table:
+      - template_id: shadow_fang
+        drop_chance: 0.25
+
+  - id: weeping_widow
+    vnum: 2302
+    name: a weeping widow
+    keywords: [weeping, widow, ghost, woman]
+    short_description: A sobbing spirit in a tattered dress drifts past.
+    long_description: >
+      This woman lost her family to the curse and now eternally mourns.
+      Her sorrow is so deep it can affect the living, bringing despair
+      and weakness to those who hear her cries.
+    level: 14
+    health: 70
+    strength: 8
+    dexterity: 16
+    constitution: 10
+    damage_dice: 1d8
+    damage_type: psychic
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 200
+    abilities: [despair_aura, soul_drain, wail_of_grief]
+    immunities: [poison, psychic]
+    resistances: [physical]
+    loot_table:
+      - template_id: tearstone
+        drop_chance: 0.2
+      - template_id: widow_veil
+        drop_chance: 0.1
+
+  - id: hollow_child
+    vnum: 2303
+    name: a hollow child
+    keywords: [hollow, child, ghost, spirit]
+    short_description: A small spectral figure giggles in the darkness.
+    long_description: >
+      The children of Wraithhollow became something terrible in death.
+      This hollow-eyed spirit plays cruel games with the living,
+      its innocent laughter masking malevolent intent.
+    level: 13
+    health: 60
+    strength: 6
+    dexterity: 18
+    constitution: 8
+    damage_dice: 1d6
+    damage_type: necrotic
+    armor_class: 16
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 4
+    experience_value: 190
+    abilities: [hide_and_seek, spectral_tantrum, draining_touch]
+    immunities: [poison]
+    resistances: [physical]
+    loot_table:
+      - template_id: spectral_toy
+        drop_chance: 0.3
+
+  - id: wraith_guard
+    vnum: 2304
+    name: a wraith guard
+    keywords: [wraith, guard, soldier, spirit]
+    short_description: An armored wraith patrols with purpose.
+    long_description: >
+      The village guards died defending against something they could
+      not fight. Now they patrol eternally, attacking any they perceive
+      as threats to their long-dead charges.
+    level: 15
+    health: 110
+    strength: 14
+    dexterity: 12
+    constitution: 14
+    damage_dice: 1d10
+    damage_type: necrotic
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 240
+    abilities: [spectral_strike, guard_duty, rally_dead]
+    immunities: [poison]
+    resistances: [physical]
+    loot_table:
+      - template_id: spectral_badge
+        drop_chance: 0.2
+      - template_id: ghost_blade
+        drop_chance: 0.1
+
+  - id: cursed_priest
+    vnum: 2305
+    name: a cursed priest
+    keywords: [cursed, priest, undead, cleric]
+    short_description: A priest whose prayers turned to curses shambles forward.
+    long_description: >
+      This priest tried to save the village through divine intervention.
+      His prayers went unanswered, and his faith curdled into something
+      dark. Now he spreads the curse he once fought.
+    level: 16
+    health: 100
+    strength: 10
+    dexterity: 12
+    constitution: 14
+    intelligence: 16
+    damage_dice: 2d6
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 280
+    abilities: [curse_prayer, unholy_smite, dark_blessing]
+    immunities: [poison, necrotic]
+    loot_table:
+      - template_id: corrupted_holy_symbol
+        drop_chance: 0.3
+      - template_id: curse_scroll
+        drop_chance: 0.2
+
+  - id: grave_digger
+    vnum: 2306
+    name: a grave digger
+    keywords: [grave, digger, undead, ghoul]
+    short_description: A ghoulish figure with a shovel digs endlessly.
+    long_description: >
+      The village grave digger worked day and night when the curse
+      struck. He still digs, though now he seeks to add living bodies
+      to his endless graveyard. His shovel is as deadly as any weapon.
+    level: 14
+    health: 120
+    strength: 16
+    dexterity: 10
+    constitution: 16
+    damage_dice: 1d10
+    damage_type: bludgeoning
+    armor_class: 13
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 220
+    abilities: [grave_strike, bury_alive, unearth_dead]
+    immunities: [poison]
+    loot_table:
+      - template_id: grave_dirt
+        drop_chance: 0.4
+      - template_id: burial_goods
+        drop_chance: 0.2
+
+  # NPCs
+  - id: curse_hunter
+    vnum: 2350
+    name: Marcus the Curse Hunter
+    keywords: [marcus, curse, hunter, traveler]
+    short_description: A grizzled hunter studies the village with grim purpose.
+    long_description: >
+      Marcus has spent years hunting curses and the undead. He came to
+      Wraithhollow to end its blight but found it deeper than expected.
+      He offers guidance to those brave enough to help.
+    level: 18
+    health: 140
+    behavior_type: friendly
+    dialogue:
+      greeting: "Another living soul. I'd say welcome, but there's nothing welcoming here. Looking to help end this curse?"
+      topics:
+        curse: "Started with the wedding. The bride was wronged, and her grief became something terrible."
+        bride: "The Mourning Bride. She waits in the old manor. Killing her might lift the curse... or make it permanent."
+        safety: "Dawn weakens them. If you need rest, find a place with running water - spirits can't cross it easily."
+
+  - id: ghost_child_friendly
+    vnum: 2351
+    name: Little Lily
+    keywords: [lily, child, ghost, friendly]
+    short_description: A small ghost girl clutches a faded doll.
+    long_description: >
+      Unlike the hollow children, Lily retains some of her humanity.
+      She remembers what happened and wants to help end the suffering,
+      though she's too weak to do anything directly.
+    level: 10
+    health: 50
+    behavior_type: friendly
+    dialogue:
+      greeting: "You can see me? Really see me? Most people just walk through... Will you help my friends?"
+      topics:
+        happened: "The pretty lady in the white dress. She was so sad, and then everyone started sleeping and not waking up."
+        bride: "She's in the big house. She cries all the time. I think she's lonely."
+        doll: "My dolly protects me. The other children... they're not nice anymore."
+
+  - id: trapped_soul
+    vnum: 2352
+    name: a trapped soul
+    keywords: [trapped, soul, ghost, merchant]
+    short_description: A spirit strains against invisible bonds.
+    long_description: >
+      This merchant was passing through when the curse struck. His soul
+      is bound here despite having no connection to the village's tragedy.
+      He desperately seeks release.
+    level: 15
+    health: 80
+    behavior_type: friendly
+    dialogue:
+      greeting: "Please, you must help me! I don't belong here - I was just passing through when... when it happened."
+      topics:
+        release: "I need someone to break my binding. The priest... the cursed one... he bound my soul to fuel the curse."
+        reward: "I was a wealthy merchant. Free me, and my fortune is yours - it lies buried beneath the old oak."
+
+  # Boss
+  - id: mourning_bride
+    vnum: 2399
+    name: The Mourning Bride
+    keywords: [mourning, bride, boss, spirit, vengeful]
+    short_description: A beautiful specter in a tattered wedding dress awaits.
+    long_description: >
+      On her wedding day, she discovered her betrothed's betrayal. Her
+      grief and rage consumed her, consuming the entire village in a
+      curse of eternal sorrow. She waits in the manor, reliving her
+      heartbreak eternally, dragging all who enter into her torment.
+    level: 20
+    health: 750
+    strength: 14
+    dexterity: 18
+    constitution: 16
+    intelligence: 18
+    wisdom: 16
+    charisma: 22
+    damage_dice: 2d10
+    damage_type: necrotic
+    armor_class: 18
+    behavior_type: aggressive
+    combat_style: tactician
+    aggro_radius: 8
+    experience_value: 2600
+    gold_min: 200
+    gold_max: 600
+    abilities: [veil_of_sorrow, heartbreak_curse, summon_wedding_guests, grief_storm, loving_embrace]
+    immunities: [poison, necrotic, charm]
+    resistances: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: brides_ring
+        drop_chance: 0.8
+      - template_id: wedding_veil
+        drop_chance: 0.5
+      - template_id: heartbreak_gem
+        drop_chance: 0.6
+    dialogue:
+      greeting: "You came... Did HE send you? Or do you simply wish to share in my sorrow?"
+      topics:
+        betrayal: "He promised forever. FOREVER. And then I found him with HER. So I gave them forever... all of them."
+        curse: "I didn't mean to... I was just so SAD. And now everyone is sad with me. Isn't that fair?"
+        love: "Love is a lie. A beautiful, terrible lie. Let me show you..."

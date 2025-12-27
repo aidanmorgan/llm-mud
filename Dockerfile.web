@@ -1,0 +1,51 @@
+# Multi-stage build for web server
+# FastAPI/HTMX web client
+
+# =============================================================================
+# Stage 1: Builder
+# =============================================================================
+FROM python:3.12-slim AS builder
+
+WORKDIR /app
+
+# Install uv for fast dependency resolution
+RUN pip install uv
+
+# Copy all project files needed for dependency resolution
+# uv workspace requires source packages to exist for proper resolution
+COPY pyproject.toml uv.lock README.md ./
+COPY packages/ packages/
+
+# Create virtual environment and install dependencies
+RUN uv venv /app/.venv
+ENV PATH="/app/.venv/bin:$PATH"
+
+# Install web package and dependencies
+RUN uv sync --frozen --no-dev
+
+# =============================================================================
+# Stage 2: Runtime (Slim)
+# =============================================================================
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Copy virtual environment and source from builder
+COPY --from=builder /app/.venv /app/.venv
+COPY --from=builder /app/packages /app/packages
+
+# Set up Python path
+ENV PATH="/app/.venv/bin:$PATH"
+ENV PYTHONPATH="/app/packages/core/src:/app/packages/game/src:/app/packages/network/src:/app/packages/web/src"
+
+# Environment variables (set at runtime via docker-compose)
+ENV RAY_ADDRESS=""
+ENV REDIS_URL=""
+ENV HOST="0.0.0.0"
+ENV PORT="8000"
+
+# Expose web port
+EXPOSE 8000
+
+# Entrypoint - run uvicorn web server
+ENTRYPOINT ["python", "-m", "uvicorn", "web.server:app", "--host", "0.0.0.0", "--port", "8000"]

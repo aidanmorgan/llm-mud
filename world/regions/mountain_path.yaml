@@ -1,0 +1,109 @@
+region_id: mountain_path
+name: The Pilgrim's Trail
+
+theme:
+  theme_id: mountain_ascent
+  description: >
+    A treacherous mountain path leading from Ravenmoor up to Stillwater
+    Monastery. The trail winds through alpine meadows, rocky switchbacks,
+    and narrow ledges. Only the determined reach the monastery above.
+
+  room_prompt: >
+    Generate a room description for a mountain trail.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: challenging terrain, thin air, stunning vistas.
+    The path ascends - early sections are easier, higher sections more dangerous.
+    Include alpine details: mountain flowers, snow patches, distant peaks.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a mountain creature for level {target_level}.
+    Room context: {room_description}
+
+    Types: mountain goats, wolves, giant eagles, rock creatures,
+    bandits, yetis (higher elevations), lost pilgrims.
+
+    Return JSON with mob details.
+
+  item_prompt: >
+    Generate a mountain-themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: climbing gear, pilgrim's supplies, mountain flowers,
+    cold-weather gear, ancient relics, meditation items.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - peak, cliff, ledge, switchback, boulder, snow, ice
+    - steep, treacherous, narrow, windswept, alpine
+    - howl, whistle, crack, echo, silence
+    - pine, granite, lichen, stream, mist
+
+  forbidden_words:
+    - tropical, ocean, desert, jungle, swamp
+
+  sector_types: [mountain, hills, cave]
+
+  ambient_messages:
+    - "Wind howls between the peaks."
+    - "A mountain goat watches from a distant ledge."
+    - "Loose stones clatter down the slope."
+    - "The thin air makes breathing difficult."
+    - "Snow patches glisten in the sunlight."
+    - "Far below, the world spreads out like a map."
+
+  mob_templates: [mountain_wolf, giant_eagle, mountain_goat, rock_elemental]
+  item_templates: [climbing_rope, warm_cloak, edelweiss_flower, pilgrim_staff]
+
+endpoints:
+  ravenmoor_north_road:
+    direction: north
+    coordinate:
+      x: 0
+      y: 1
+      z: 0
+  stillwater_gate:
+    direction: south
+    coordinate:
+      x: 0
+      y: 9
+      z: 4
+
+waypoints:
+  - x: 0
+    y: 3
+    z: 1
+    name: "First Rest"
+    is_required: true
+  - x: 0
+    y: 5
+    z: 2
+    name: "Eagle's Perch"
+    is_required: true
+  - x: 0
+    y: 7
+    z: 3
+    name: "Pilgrim's Shrine"
+    is_required: true
+
+generation:
+  min_rooms: 8
+  max_rooms: 18
+  difficulty_min: 4
+  difficulty_max: 8
+  mob_density: 0.35
+  item_density: 0.1
+  branch_chance: 0.15
+
+primary_sector_type: mountain

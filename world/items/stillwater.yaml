@@ -1,0 +1,572 @@
+# Stillwater Monastery Zone Items
+# Martial arts equipment, spiritual items, and mountain gear
+
+zone_id: stillwater
+
+items:
+  # ==========================================================================
+  # Weapons - Martial Arts Theme
+  # ==========================================================================
+  - id: monastery_staff
+    vnum: 5000
+    name: a monastery staff
+    keywords: [staff, monastery, wooden, martial]
+    short_description: A polished wooden staff lies here.
+    long_description: >
+      This staff is made from mountain ash and has been used in
+      training for generations. Despite its simplicity, it's
+      perfectly balanced and deceptively effective in skilled hands.
+    type: weapon
+    rarity: common
+    weight: 3.0
+    value: 30
+    level_requirement: 2
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6"
+      damage_type: bludgeoning
+      weapon_type: staff
+      two_handed: true
+
+  - id: iron_fist_wraps
+    vnum: 5001
+    name: iron fist wraps
+    keywords: [wraps, fist, iron, bandages, martial]
+    short_description: Strips of iron-woven cloth lie here.
+    long_description: >
+      These cloth wraps are woven with thin iron threads, protecting
+      the hands while adding devastating weight to punches. Master
+      Iron Palm himself designed them.
+    type: weapon
+    rarity: uncommon
+    weight: 0.5
+    value: 65
+    level_requirement: 5
+    slot: hands
+    weapon:
+      damage_dice: "1d6+1"
+      damage_type: bludgeoning
+      weapon_type: fist
+      hit_bonus: 1
+
+  - id: nunchaku
+    vnum: 5002
+    name: a pair of nunchaku
+    keywords: [nunchaku, chain, martial, weapon]
+    short_description: A pair of wooden nunchaku connected by chain lies here.
+    long_description: >
+      Two hardwood rods connected by a short chain. This weapon
+      requires skill to use effectively but can be devastating in
+      trained hands. The monks use them for training and combat.
+    type: weapon
+    rarity: uncommon
+    weight: 2.0
+    value: 50
+    level_requirement: 4
+    slot: main_hand
+    weapon:
+      damage_dice: "1d8"
+      damage_type: bludgeoning
+      weapon_type: flail
+
+  - id: throwing_stars
+    vnum: 5003
+    name: a set of throwing stars
+    keywords: [stars, throwing, shuriken, martial]
+    short_description: A set of metal throwing stars gleams here.
+    long_description: >
+      These sharp-pointed throwing stars are used by the monastery's
+      more secretive practitioners. Each point is razor-sharp, and
+      they can be thrown with deadly accuracy.
+    type: weapon
+    rarity: uncommon
+    weight: 0.5
+    value: 40
+    level_requirement: 3
+    slot: main_hand
+    weapon:
+      damage_dice: "1d4"
+      damage_type: piercing
+      weapon_type: throwing
+    flags: [stackable]
+
+  - id: ki_blade
+    vnum: 5004
+    name: a ki-infused blade
+    keywords: [blade, ki, sword, martial, glowing]
+    short_description: A sword that glows with inner energy lies here.
+    long_description: >
+      This elegant sword has been infused with ki energy by a master
+      monk. The blade glows faintly with spiritual power and seems
+      to move faster than should be possible.
+    type: weapon
+    rarity: rare
+    weight: 2.5
+    value: 200
+    level_requirement: 8
+    slot: main_hand
+    weapon:
+      damage_dice: "1d8+2"
+      damage_type: slashing
+      weapon_type: sword
+      hit_bonus: 2
+      damage_bonus: 1
+    flags: [magic, ki_enhanced]
+
+  - id: monks_spade
+    vnum: 5005
+    name: a monk's spade
+    keywords: [spade, monk, polearm, weapon]
+    short_description: A crescent-bladed polearm lies here.
+    long_description: >
+      This traditional weapon has a crescent blade on one end and
+      a flat spade on the other. Monks use it for both combat and
+      the practical task of burying the dead with dignity.
+    type: weapon
+    rarity: uncommon
+    weight: 6.0
+    value: 80
+    level_requirement: 6
+    slot: main_hand
+    weapon:
+      damage_dice: "1d10"
+      damage_type: slashing
+      weapon_type: spear
+      two_handed: true
+
+  # ==========================================================================
+  # Armor - Spiritual Protection
+  # ==========================================================================
+  - id: monk_robes
+    vnum: 5010
+    name: monastery robes
+    keywords: [robes, monk, monastery, cloth]
+    short_description: Simple brown robes lie in a neat pile.
+    long_description: >
+      The simple robes worn by the monks of Stillwater. Despite their
+      plain appearance, they're well-made and durable. Some say
+      wearing them grants a measure of the monastery's peace.
+    type: armor
+    rarity: common
+    weight: 2.0
+    value: 20
+    level_requirement: 1
+    slot: torso
+    armor:
+      armor_bonus: 1
+      armor_type: cloth
+
+  - id: meditation_sash
+    vnum: 5011
+    name: a meditation sash
+    keywords: [sash, meditation, silk, belt]
+    short_description: A silk sash with embroidered symbols lies here.
+    long_description: >
+      This silk sash is worn during meditation. The embroidered
+      symbols represent the flow of ki through the body. Wearing
+      it helps focus the mind and channel inner energy.
+    type: armor
+    rarity: uncommon
+    weight: 0.2
+    value: 45
+    level_requirement: 3
+    slot: waist
+    armor:
+      armor_bonus: 0
+      armor_type: cloth
+    flags: [magic, meditation_bonus]
+
+  - id: mountain_boots
+    vnum: 5012
+    name: mountain climbing boots
+    keywords: [boots, mountain, climbing, sturdy]
+    short_description: A pair of sturdy mountain boots stands here.
+    long_description: >
+      These boots are designed for the treacherous mountain paths
+      around Stillwater. The soles grip rock and ice well, and
+      the leather is treated to withstand cold and moisture.
+    type: armor
+    rarity: common
+    weight: 3.0
+    value: 30
+    level_requirement: 2
+    slot: feet
+    armor:
+      armor_bonus: 1
+      armor_type: light
+    flags: [cold_resist]
+
+  - id: ki_bracers
+    vnum: 5013
+    name: ki-channeling bracers
+    keywords: [bracers, ki, metal, arms]
+    short_description: Metal bracers inscribed with symbols lie here.
+    long_description: >
+      These bronze bracers are inscribed with ancient symbols that
+      help focus and channel ki energy. Warriors who master their
+      use find their strikes carry additional force.
+    type: armor
+    rarity: rare
+    weight: 2.0
+    value: 150
+    level_requirement: 7
+    slot: arms
+    armor:
+      armor_bonus: 2
+      armor_type: light
+    flags: [magic, ki_enhanced]
+
+  - id: grandmaster_robes
+    vnum: 5014
+    name: grandmaster's robes
+    keywords: [robes, grandmaster, silk, gold]
+    short_description: Exquisite silk robes with gold trim lie here.
+    long_description: >
+      These robes are worn only by the most accomplished masters
+      of Stillwater. The silk is impossibly light yet stronger
+      than leather, and the gold embroidery channels protective ki.
+    type: armor
+    rarity: rare
+    weight: 1.5
+    value: 300
+    level_requirement: 10
+    slot: torso
+    armor:
+      armor_bonus: 4
+      armor_type: cloth
+    flags: [magic, ki_enhanced, wisdom_bonus]
+
+  # ==========================================================================
+  # Consumables - Spiritual Supplies
+  # ==========================================================================
+  - id: ki_tea
+    vnum: 5020
+    name: a cup of ki tea
+    keywords: [tea, ki, cup, drink]
+    short_description: A cup of fragrant tea steams gently.
+    long_description: >
+      This tea is brewed from herbs that grow only on the highest
+      mountain peaks. Drinking it clears the mind and restores
+      spiritual energy, helping to focus the flow of ki.
+    type: consumable
+    rarity: uncommon
+    weight: 0.3
+    value: 20
+    consumable:
+      effect_type: restore_mana
+      effect_value: 25
+      uses: 1
+
+  - id: meditation_incense
+    vnum: 5021
+    name: a stick of meditation incense
+    keywords: [incense, meditation, stick, fragrant]
+    short_description: A stick of fragrant incense lies here.
+    long_description: >
+      This incense is used during meditation to help focus the
+      mind. Its sweet, calming scent fills the air and promotes
+      a state of inner peace and heightened awareness.
+    type: consumable
+    rarity: common
+    weight: 0.1
+    value: 5
+    consumable:
+      effect_type: buff
+      effect_value: 5
+      duration_seconds: 300
+      buff_stat: wisdom
+    flags: [fragrant]
+
+  - id: monks_rations
+    vnum: 5022
+    name: monastery rations
+    keywords: [rations, food, monastery, simple]
+    short_description: A bundle of simple but nourishing food lies here.
+    long_description: >
+      The monks eat simply - rice, vegetables, and dried fruit.
+      This bundle contains enough for several meals and represents
+      the monastery's philosophy of moderation and balance.
+    type: consumable
+    rarity: common
+    weight: 1.0
+    value: 8
+    consumable:
+      effect_type: food
+      effect_value: 35
+      uses: 3
+
+  - id: healing_poultice
+    vnum: 5023
+    name: a healing poultice
+    keywords: [poultice, healing, medicine, herbs]
+    short_description: A bundle of medicinal herbs wrapped in cloth lies here.
+    long_description: >
+      Sister Lotus prepared this poultice from mountain herbs.
+      When applied to wounds, it speeds healing and prevents
+      infection with remarkable effectiveness.
+    type: consumable
+    rarity: uncommon
+    weight: 0.2
+    value: 25
+    consumable:
+      effect_type: heal
+      effect_value: 30
+      uses: 1
+
+  - id: mountain_spring_water
+    vnum: 5024
+    name: a flask of mountain spring water
+    keywords: [water, spring, mountain, flask]
+    short_description: A flask of crystal-clear water sits here.
+    long_description: >
+      This water comes from a sacred spring near the monastery.
+      It's remarkably pure and seems to have restorative properties
+      beyond simple hydration.
+    type: consumable
+    rarity: common
+    weight: 0.5
+    value: 5
+    consumable:
+      effect_type: drink
+      effect_value: 25
+      uses: 2
+
+  - id: greater_healing_potion
+    vnum: 5025
+    name: a greater healing potion
+    keywords: [potion, healing, greater, red]
+    short_description: A large red potion glows with healing energy.
+    long_description: >
+      This powerful healing potion was crafted by Sister Lotus
+      using rare mountain herbs and ancient recipes. It can heal
+      even serious wounds almost instantly.
+    type: consumable
+    rarity: rare
+    weight: 0.3
+    value: 75
+    consumable:
+      effect_type: heal
+      effect_value: 60
+      uses: 1
+    flags: [magic]
+
+  # ==========================================================================
+  # Quest Items & Valuables
+  # ==========================================================================
+  - id: prayer_beads
+    vnum: 5030
+    name: a string of prayer beads
+    keywords: [beads, prayer, wooden, necklace]
+    short_description: A string of worn wooden beads lies here.
+    long_description: >
+      These simple wooden beads have been used in countless hours
+      of meditation and prayer. They seem to carry a residue of
+      all that spiritual focus, calming the mind of whoever holds them.
+    type: armor
+    rarity: common
+    weight: 0.1
+    value: 15
+    level_requirement: 1
+    slot: neck
+    armor:
+      armor_bonus: 0
+      armor_type: cloth
+    flags: [meditation_bonus]
+
+  - id: sutra_scroll
+    vnum: 5031
+    name: a sutra scroll
+    keywords: [scroll, sutra, ancient, parchment]
+    short_description: An ancient scroll covered in calligraphy lies here.
+    long_description: >
+      This scroll contains ancient wisdom written in an elegant
+      hand. The sutras within teach the paths to enlightenment
+      and contain subtle lessons about the nature of reality.
+    type: misc
+    rarity: uncommon
+    weight: 0.2
+    value: 40
+    flags: [readable]
+
+  - id: masters_seal
+    vnum: 5032
+    name: a master's seal
+    keywords: [seal, master, jade, stamp]
+    short_description: A jade seal carved with the monastery's symbol lies here.
+    long_description: >
+      This jade seal marks documents with the authority of a
+      Stillwater master. Carrying it grants access to certain
+      areas and respect from those who recognize its significance.
+    type: misc
+    rarity: rare
+    weight: 0.2
+    value: 150
+    flags: [quest_item]
+
+  # ==========================================================================
+  # Loot Drops - Mountain Creatures
+  # ==========================================================================
+  - id: goat_horn
+    vnum: 5040
+    name: a mountain goat horn
+    keywords: [horn, goat, mountain, curved]
+    short_description: A curved goat horn lies here.
+    long_description: >
+      This horn came from a mountain goat. It's sturdy and could
+      be used in crafting, or sold to someone who needs horn for
+      their work.
+    type: misc
+    rarity: common
+    weight: 0.5
+    value: 8
+
+  - id: snow_leopard_pelt
+    vnum: 5041
+    name: a snow leopard pelt
+    keywords: [pelt, leopard, snow, fur, white]
+    short_description: A beautiful white and gray spotted pelt lies here.
+    long_description: >
+      This magnificent pelt came from a snow leopard. It's soft,
+      warm, and incredibly valuable. Wearing it would mark you
+      as a skilled hunter indeed.
+    type: misc
+    rarity: rare
+    weight: 3.0
+    value: 100
+
+  - id: ice_crystal
+    vnum: 5042
+    name: an elemental ice crystal
+    keywords: [crystal, ice, elemental, cold, blue]
+    short_description: A blue crystal radiates supernatural cold.
+    long_description: >
+      This crystal formed in the heart of an ice elemental. It's
+      perpetually frozen and cold to the touch. Enchanters prize
+      them for frost-based magic.
+    type: misc
+    rarity: rare
+    weight: 0.5
+    value: 60
+    flags: [magic, cold_damage]
+
+  - id: yeti_fur
+    vnum: 5043
+    name: a patch of yeti fur
+    keywords: [fur, yeti, white, thick]
+    short_description: A patch of thick white fur lies here.
+    long_description: >
+      This fur was taken from a yeti. It's incredibly warm and
+      has natural insulating properties. A skilled tailor could
+      make this into clothing that wards off the coldest weather.
+    type: misc
+    rarity: rare
+    weight: 2.0
+    value: 75
+    flags: [cold_resist]
+
+  - id: corrupted_prayer_beads
+    vnum: 5044
+    name: corrupted prayer beads
+    keywords: [beads, prayer, corrupted, dark, black]
+    short_description: Blackened prayer beads radiate dark energy.
+    long_description: >
+      These prayer beads once belonged to a monk before they fell
+      to corruption. The wooden beads have turned black and seem
+      to absorb light. They still hold power, but it's twisted.
+    type: misc
+    rarity: rare
+    weight: 0.1
+    value: 50
+    flags: [magic, cursed]
+
+  - id: guardian_core
+    vnum: 5045
+    name: a stone guardian's core
+    keywords: [core, guardian, stone, glowing]
+    short_description: A glowing stone sphere pulses with ancient magic.
+    long_description: >
+      This was the animating core of a stone guardian. The magic
+      within it still functions, causing it to glow and hover
+      slightly. It could power other constructs or be studied.
+    type: misc
+    rarity: rare
+    weight: 3.0
+    value: 120
+    flags: [magic]
+
+  # ==========================================================================
+  # Boss Loot - The Shadow Master
+  # ==========================================================================
+  - id: shadow_master_mantle
+    vnum: 5050
+    name: the Shadow Master's Mantle
+    keywords: [mantle, shadow, master, boss, cloak]
+    short_description: A cloak of living shadow ripples here.
+    long_description: >
+      This mantle seems to be woven from shadows themselves. It
+      flows and shifts like smoke, never quite solid. Wearing it
+      grants the ability to blend into darkness and move unseen.
+    type: armor
+    rarity: legendary
+    weight: 0.5
+    value: 1000
+    level_requirement: 12
+    slot: about
+    armor:
+      armor_bonus: 4
+      armor_type: cloth
+    flags: [magic, boss_loot, stealth_bonus, shadow]
+
+  - id: fist_of_shadows
+    vnum: 5051
+    name: the Fist of Shadows
+    keywords: [fist, shadows, wraps, boss, martial]
+    short_description: Dark wraps that seem to devour light lie here.
+    long_description: >
+      These hand wraps are infused with shadow ki. When worn, they
+      grant devastating power to unarmed strikes, and the shadows
+      seem to extend the reach of each blow.
+    type: weapon
+    rarity: legendary
+    weight: 0.3
+    value: 800
+    level_requirement: 12
+    slot: hands
+    weapon:
+      damage_dice: "2d8"
+      damage_type: necrotic
+      weapon_type: fist
+      hit_bonus: 3
+      damage_bonus: 2
+    flags: [magic, boss_loot, shadow]
+
+  - id: dark_ki_crystal
+    vnum: 5052
+    name: a dark ki crystal
+    keywords: [crystal, ki, dark, black, magic]
+    short_description: A crystal of solidified dark ki hovers here.
+    long_description: >
+      This crystal is pure shadow ki given physical form. It hovers
+      slightly and seems to pulse with malevolent energy. It could
+      enhance shadow abilities or be studied by those who dare.
+    type: misc
+    rarity: rare
+    weight: 0.3
+    value: 300
+    flags: [magic, boss_loot, shadow]
+
+  - id: forbidden_sutra
+    vnum: 5053
+    name: the Forbidden Sutra
+    keywords: [sutra, forbidden, scroll, dark, boss]
+    short_description: An ancient scroll wrapped in black silk lies here.
+    long_description: >
+      This is the scroll that corrupted the Shadow Master - the
+      Forbidden Sutra of Shadow Ki. It contains techniques banned
+      by the monastery for their destructive potential. Handle
+      with extreme caution.
+    type: misc
+    rarity: legendary
+    weight: 0.5
+    value: 500
+    flags: [magic, boss_loot, cursed, quest_item]

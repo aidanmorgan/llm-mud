@@ -1,0 +1,13 @@
+zone_id: ravenmoor
+name: Ravenmoor
+description: >
+  A once-grand city now fallen into disrepair. Ravenmoor serves as the starting
+  point for new adventurers, offering basic services, training, and connections
+  to the surrounding lands. The castle still stands, though its glory has faded,
+  and merchants struggle to maintain their shops amid the decay.
+level_range: [1, 5]
+flags: [starting_zone]
+coordinate_origin:
+  x: 0
+  y: 0
+  z: 0

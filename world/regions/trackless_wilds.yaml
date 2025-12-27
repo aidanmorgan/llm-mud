@@ -1,0 +1,116 @@
+region_id: trackless_wilds
+name: The Trackless Wilds
+
+theme:
+  theme_id: untamed_wilderness
+  description: >
+    Between Willowdale and the Shimmerwood lies an expanse of true wilderness.
+    No paths exist here - the forest is dense, the undergrowth thick, and the
+    way is treacherous. As you travel deeper, reality becomes stranger, and
+    fey influences begin to appear.
+
+  room_prompt: >
+    Generate a room description for untamed wilderness transitioning to fey-touched
+    forest.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: wild, disorienting, increasingly magical.
+    Early rooms: Dense forest, thick undergrowth, natural hazards.
+    Middle rooms: Strange plants, unusual sounds, hints of magic.
+    Late rooms: Fey influences, shifting light, reality warping slightly.
+    Include sensory details: wildlife sounds, strange colors, odd sensations.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a wilderness creature for level {target_level}.
+    Room context: {room_description}
+
+    Types early: bears, wolves, boars, natural predators.
+    Types middle: corrupted animals, strange hybrids, lost travelers.
+    Types late: fey scouts, sprites, minor fey creatures.
+
+    Return JSON with mob details including behavior and personality.
+
+  item_prompt: >
+    Generate a wilderness/fey themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: natural materials, survival gear, fey trinkets,
+    strange plants, magical mushrooms, lost traveler belongings.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - wild, dense, thick, tangled, overgrown
+    - path, trail, thicket, clearing, glade
+    - strange, unusual, magical, fey, otherworldly
+    - shimmer, glow, sparkle, dance
+    - beast, predator, creature, spirit
+
+  forbidden_words:
+    - modern, technology, civilization, urban
+    - desert, ice, volcanic, aquatic
+
+  sector_types: [forest, field, hills]
+
+  ambient_messages:
+    - "The forest seems to watch your every move."
+    - "A strange light flickers between the trees."
+    - "Laughter echoes from somewhere nearby, then silence."
+    - "The undergrowth rustles with unseen movement."
+    - "Colors seem more vivid here than they should be."
+    - "You could swear the trees moved when you weren't looking."
+
+  mob_templates: [wild_bear, forest_wolf, fey_sprite, corrupted_boar]
+  item_templates: [healing_herb, strange_mushroom, fey_trinket, survival_gear]
+
+endpoints:
+  willowdale_north:
+    direction: north
+    coordinate:
+      x: -16
+      y: 3
+      z: 0
+  shimmerwood_south:
+    direction: south
+    coordinate:
+      x: -30
+      y: 42
+      z: 0
+
+waypoints:
+  - x: -20
+    y: 12
+    z: 0
+    name: "Old Hunter's Camp"
+    is_required: true
+  - x: -24
+    y: 25
+    z: 0
+    name: "The Wandering Stream"
+    is_required: true
+  - x: -28
+    y: 35
+    z: 0
+    name: "First Fairy Ring"
+    is_required: true
+
+generation:
+  min_rooms: 35
+  max_rooms: 50
+  difficulty_min: 4
+  difficulty_max: 12
+  mob_density: 0.45
+  item_density: 0.12
+  branch_chance: 0.35
+
+primary_sector_type: forest

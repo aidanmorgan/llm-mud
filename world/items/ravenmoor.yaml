@@ -1,0 +1,409 @@
+# Ravenmoor Zone Items
+# Equipment, consumables, and loot for the starting city and surrounding area
+
+zone_id: ravenmoor
+
+items:
+  # ==========================================================================
+  # Weapons - City Quality
+  # ==========================================================================
+  - id: iron_longsword
+    vnum: 2000
+    name: an iron longsword
+    keywords: [sword, longsword, iron, blade]
+    short_description: A well-forged iron longsword lies here.
+    long_description: >
+      This longsword bears the mark of Ravenmoor's smiths - a raven in flight
+      stamped near the crossguard. The blade is straight and true, with a
+      leather-wrapped hilt that provides a secure grip.
+    type: weapon
+    rarity: common
+    weight: 4.5
+    value: 75
+    level_requirement: 3
+    slot: main_hand
+    weapon:
+      damage_dice: "1d8"
+      damage_type: slashing
+      weapon_type: sword
+      hit_bonus: 1
+
+  - id: city_guard_spear
+    vnum: 2001
+    name: a city guard spear
+    keywords: [spear, guard, city, polearm]
+    short_description: A standard-issue city guard spear leans against the wall.
+    long_description: >
+      The spear of the Ravenmoor city watch - an iron head on a sturdy ash
+      shaft. The gray and black livery wrapping identifies its origin. These
+      weapons are common in the city, but still effective.
+    type: weapon
+    rarity: common
+    weight: 5.0
+    value: 40
+    level_requirement: 2
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6"
+      damage_type: piercing
+      weapon_type: spear
+      two_handed: true
+
+  - id: merchants_dagger
+    vnum: 2002
+    name: a merchant's dagger
+    keywords: [dagger, merchant, knife, blade]
+    short_description: A finely balanced dagger rests here.
+    long_description: >
+      This dagger was crafted for the merchants of Ravenmoor - fine enough
+      to impress clients, yet practical enough for self-defense on the roads.
+      The blade is keen and the pommel weighted for throwing.
+    type: weapon
+    rarity: uncommon
+    weight: 1.0
+    value: 60
+    level_requirement: 2
+    slot: main_hand
+    weapon:
+      damage_dice: "1d4+1"
+      damage_type: piercing
+      weapon_type: dagger
+      hit_bonus: 1
+      damage_bonus: 1
+
+  - id: gnarled_staff
+    vnum: 2003
+    name: a gnarled oak staff
+    keywords: [staff, oak, gnarled, wooden]
+    short_description: A twisted oak staff lies on the ground.
+    long_description: >
+      This staff was cut from an ancient oak in the forests near Ravenmoor.
+      The wood is dark and weathered, with natural knots and whorls that
+      seem to form strange patterns. It hums faintly with residual magic.
+    type: weapon
+    rarity: uncommon
+    weight: 3.5
+    value: 80
+    level_requirement: 3
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6"
+      damage_type: bludgeoning
+      weapon_type: staff
+      two_handed: true
+    flags: [magic]
+
+  - id: crossbow_light
+    vnum: 2004
+    name: a light crossbow
+    keywords: [crossbow, bow, ranged, light]
+    short_description: A compact crossbow sits here.
+    long_description: >
+      A light crossbow of Ravenmoor manufacture. The stock is carved from
+      dark walnut, and the mechanism is well-oiled and reliable. Includes
+      a simple iron sight for improved accuracy.
+    type: weapon
+    rarity: common
+    weight: 4.0
+    value: 50
+    level_requirement: 2
+    slot: main_hand
+    weapon:
+      damage_dice: "1d8"
+      damage_type: piercing
+      weapon_type: crossbow
+      two_handed: true
+
+  # ==========================================================================
+  # Armor - City Quality
+  # ==========================================================================
+  - id: chainmail_shirt
+    vnum: 2010
+    name: a chainmail shirt
+    keywords: [chainmail, chain, shirt, armor, mail]
+    short_description: A shirt of interlocked metal rings lies here.
+    long_description: >
+      This chainmail shirt was forged in the armories of Ravenmoor. The rings
+      are small and tightly woven, providing good protection while allowing
+      reasonable flexibility. It bears some signs of repair.
+    type: armor
+    rarity: uncommon
+    weight: 20.0
+    value: 150
+    level_requirement: 5
+    slot: torso
+    armor:
+      armor_bonus: 5
+      armor_type: medium
+
+  - id: iron_helm
+    vnum: 2011
+    name: an iron helm
+    keywords: [helm, helmet, iron, head]
+    short_description: A dented iron helm sits here.
+    long_description: >
+      A simple iron helm with a nasal guard. It has seen use - several dents
+      mark its surface - but the metal is still sound. Leather padding inside
+      provides some comfort.
+    type: armor
+    rarity: common
+    weight: 3.0
+    value: 35
+    level_requirement: 3
+    slot: head
+    armor:
+      armor_bonus: 2
+      armor_type: medium
+
+  - id: leather_boots_sturdy
+    vnum: 2012
+    name: sturdy leather boots
+    keywords: [boots, leather, sturdy, footwear]
+    short_description: A pair of well-made leather boots stands here.
+    long_description: >
+      These boots were made by a skilled cobbler - the leather is thick and
+      waterproofed, the soles reinforced for long travel. Small iron studs
+      provide traction on slippery surfaces.
+    type: armor
+    rarity: common
+    weight: 2.0
+    value: 25
+    level_requirement: 1
+    slot: feet
+    armor:
+      armor_bonus: 1
+      armor_type: light
+
+  - id: guardsman_shield
+    vnum: 2013
+    name: a guardsman's shield
+    keywords: [shield, guard, guardsman, round]
+    short_description: A round shield bearing the Ravenmoor crest lies here.
+    long_description: >
+      This round shield is standard issue for the Ravenmoor city guard. The
+      face displays a faded raven on a gray field. The wood is reinforced
+      with iron bands, and the grip is wrapped in worn leather.
+    type: armor
+    rarity: common
+    weight: 8.0
+    value: 45
+    level_requirement: 3
+    slot: off_hand
+    armor:
+      armor_bonus: 2
+      armor_type: shield
+
+  - id: traveling_cloak
+    vnum: 2014
+    name: a gray traveling cloak
+    keywords: [cloak, gray, grey, traveling, cape]
+    short_description: A heavy gray cloak lies in a heap.
+    long_description: >
+      A practical traveling cloak of heavy gray wool. The hood is deep enough
+      to hide a face, and the fabric has been treated to shed light rain.
+      Several hidden pockets line the interior.
+    type: armor
+    rarity: common
+    weight: 2.5
+    value: 20
+    level_requirement: 1
+    slot: about
+    armor:
+      armor_bonus: 1
+      armor_type: cloth
+
+  # ==========================================================================
+  # Consumables - City Goods
+  # ==========================================================================
+  - id: tavern_stew
+    vnum: 2020
+    name: a bowl of tavern stew
+    keywords: [stew, bowl, food, tavern]
+    short_description: A steaming bowl of stew sits here.
+    long_description: >
+      Marta's famous tavern stew - chunks of mystery meat in a thick brown
+      gravy with root vegetables. It smells better than it looks, and it's
+      surprisingly filling.
+    type: consumable
+    rarity: common
+    weight: 1.0
+    value: 3
+    consumable:
+      effect_type: food
+      effect_value: 25
+      uses: 1
+
+  - id: dark_ale
+    vnum: 2021
+    name: a mug of dark ale
+    keywords: [ale, mug, beer, drink, dark]
+    short_description: A mug of dark ale sits here, foam still fresh.
+    long_description: >
+      Ravenmoor's famous dark ale, brewed in the cellars beneath the tavern.
+      It's thick, bitter, and stronger than it seems. Locals claim it puts
+      hair on your chest.
+    type: consumable
+    rarity: common
+    weight: 0.5
+    value: 2
+    consumable:
+      effect_type: drink
+      effect_value: 15
+      uses: 1
+
+  - id: antidote_vial
+    vnum: 2022
+    name: a vial of antidote
+    keywords: [antidote, vial, potion, cure, green]
+    short_description: A small green vial of antidote sits here.
+    long_description: >
+      This small glass vial contains a murky green liquid that smells of
+      bitter herbs. It will cure most common poisons, though severe
+      envenomation may require multiple doses.
+    type: consumable
+    rarity: uncommon
+    weight: 0.2
+    value: 30
+    consumable:
+      effect_type: cure_poison
+      effect_value: 1
+      uses: 1
+
+  - id: stamina_draught
+    vnum: 2023
+    name: a stamina draught
+    keywords: [stamina, draught, potion, yellow]
+    short_description: A yellow potion bottle sits here.
+    long_description: >
+      This golden-yellow liquid is brewed by the apothecaries of Ravenmoor.
+      Drinking it provides a burst of energy, restoring stamina and fighting
+      fatigue for a short time.
+    type: consumable
+    rarity: uncommon
+    weight: 0.2
+    value: 40
+    consumable:
+      effect_type: restore_stamina
+      effect_value: 20
+      uses: 1
+
+  - id: torch
+    vnum: 2024
+    name: a wooden torch
+    keywords: [torch, light, wooden]
+    short_description: An unlit torch lies here.
+    long_description: >
+      A simple torch - a wooden handle wrapped with cloth and soaked in
+      pitch. It will provide light for about an hour when lit.
+    type: misc
+    rarity: common
+    weight: 1.0
+    value: 1
+    flags: [light_source]
+
+  # ==========================================================================
+  # Quest Items & Valuables
+  # ==========================================================================
+  - id: stewards_seal
+    vnum: 2030
+    name: the Steward's seal
+    keywords: [seal, steward, signet, official]
+    short_description: An official seal bearing the Ravenmoor crest lies here.
+    long_description: >
+      The official seal of the Steward of Ravenmoor - a heavy silver ring
+      bearing the raven sigil. Documents stamped with this seal carry the
+      full authority of the city's ruler.
+    type: misc
+    rarity: rare
+    weight: 0.1
+    value: 500
+    flags: [quest_item, no_drop]
+
+  - id: old_map_fragment
+    vnum: 2031
+    name: an old map fragment
+    keywords: [map, fragment, old, paper, parchment]
+    short_description: A torn piece of old parchment lies here.
+    long_description: >
+      A fragment of an old map, the edges brown and crumbling. It shows part
+      of the Ironvein Mine, with certain passages marked in faded red ink.
+      Something of value may lie at those locations.
+    type: misc
+    rarity: uncommon
+    weight: 0.1
+    value: 25
+    flags: [quest_item]
+
+  - id: ravens_feather
+    vnum: 2032
+    name: a raven's feather
+    keywords: [feather, raven, black]
+    short_description: A glossy black feather lies here.
+    long_description: >
+      A large feather from one of the ravens that give Ravenmoor its name.
+      The black is so deep it seems to absorb light. Some say these feathers
+      bring luck, others that they bring doom.
+    type: misc
+    rarity: common
+    weight: 0.01
+    value: 5
+
+  # ==========================================================================
+  # Loot Drops - Forest/Road Enemies
+  # ==========================================================================
+  - id: bandit_lockpicks
+    vnum: 2040
+    name: a set of lockpicks
+    keywords: [lockpicks, picks, thieves, tools]
+    short_description: A leather pouch of lockpicks lies here.
+    long_description: >
+      A set of thieves' tools wrapped in oiled leather. The picks are of
+      varying sizes and shapes, suitable for most common locks. Possession
+      of these is illegal in most cities.
+    type: misc
+    rarity: uncommon
+    weight: 0.3
+    value: 50
+    flags: [lockpicks]
+
+  - id: bloody_bandana
+    vnum: 2041
+    name: a bloody bandana
+    keywords: [bandana, bloody, red, cloth]
+    short_description: A red bandana stained with blood lies here.
+    long_description: >
+      A red bandana, the kind worn by the bandits who plague the roads near
+      Ravenmoor. It's stained dark with old blood. Perhaps the city guard
+      would pay for proof of bandit deaths.
+    type: misc
+    rarity: common
+    weight: 0.1
+    value: 3
+
+  - id: dire_wolf_fang
+    vnum: 2042
+    name: a dire wolf fang
+    keywords: [fang, tooth, wolf, dire]
+    short_description: A massive wolf fang lies here.
+    long_description: >
+      This fang is as long as a man's finger, wickedly curved and still
+      sharp. It came from a dire wolf - the massive, cunning predators that
+      hunt in the forests around Ravenmoor.
+    type: misc
+    rarity: uncommon
+    weight: 0.2
+    value: 20
+
+  - id: spider_eye_gem
+    vnum: 2043
+    name: a spider eye gem
+    keywords: [gem, eye, spider, crystal, red]
+    short_description: A red crystalline gem gleams here.
+    long_description: >
+      When a giant spider is slain, occasionally its central eye crystallizes
+      into this red gem. Alchemists prize them for certain potions, and some
+      believe they grant night vision when worn.
+    type: misc
+    rarity: rare
+    weight: 0.1
+    value: 75

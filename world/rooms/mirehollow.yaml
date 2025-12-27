@@ -1,0 +1,216 @@
+# Mirehollow Swamp Rooms
+# Toxic wetlands with bioluminescent fungi and hallucinogenic spores
+
+zone_id: mirehollow
+
+rooms:
+  - id: mirehollow_edge
+    vnum: 900
+    name: Edge of the Mire
+    short_description: Where solid ground gives way to swamp
+    long_description: >
+      The ground becomes soft and uncertain here, solid earth giving way
+      to dark, stagnant pools and tufts of sickly vegetation. A perpetual
+      fog hangs low over the water, and the air is thick with the smell
+      of decay. Strange lights flicker in the distance - will-o-wisps or
+      something worse.
+    exits:
+      north:
+        destination: ~
+        leads_to_region: blighted_fen
+      south: mirehollow_shallow_pools
+    sector_type: swamp
+    ambient_messages:
+      - Something splashes in the murky water nearby.
+      - Bioluminescent fungi pulse with sickly light.
+      - The fog seems to move with purpose.
+
+  - id: mirehollow_shallow_pools
+    vnum: 901
+    name: Shallow Pools
+    short_description: Ankle-deep water hides unknown depths
+    long_description: >
+      The water here appears shallow, but the bottom is treacherous mud
+      that can swallow the unwary. Rotting logs provide uncertain footing,
+      and clouds of insects swarm over the surface. Phosphorescent algae
+      coats everything in a sickly glow.
+    exits:
+      north: mirehollow_edge
+      south: mirehollow_fungal_grove
+      east: mirehollow_quicksand_bog
+    sector_type: swamp
+    flags: [difficult_terrain]
+    mob_spawns:
+      - template_id: swamp_leech
+        max_count: 4
+      - template_id: bog_crocodile
+        max_count: 1
+
+  - id: mirehollow_quicksand_bog
+    vnum: 902
+    name: Quicksand Bog
+    short_description: Deceptively solid ground conceals deadly traps
+    long_description: >
+      What appears to be mossy ground is actually quicksand barely covered
+      by a thin layer of vegetation. Bones protrude from some of the pools,
+      evidence of past victims. Local creatures have learned to avoid
+      these patches, but the unwary can find themselves sinking rapidly.
+    exits:
+      west: mirehollow_shallow_pools
+      south: mirehollow_druid_circle
+    sector_type: swamp
+    flags: [trap_zone, dangerous]
+    mob_spawns:
+      - template_id: mire_horror
+        max_count: 1
+
+  - id: mirehollow_fungal_grove
+    vnum: 903
+    name: Fungal Grove
+    short_description: Giant mushrooms tower overhead
+    long_description: >
+      Massive fungi grow here, their caps towering ten feet or more above
+      the murky water. They emit a constant soft glow and release spores
+      that create hallucinogenic effects in those who breathe them. The
+      Mire Druids harvest these fungi for their rituals.
+    exits:
+      north: mirehollow_shallow_pools
+      south: mirehollow_spore_cloud
+      west: mirehollow_sunken_ruins
+    sector_type: swamp
+    flags: [hallucination_zone]
+    mob_spawns:
+      - template_id: fungal_crawler
+        max_count: 2
+      - template_id: spore_zombie
+        max_count: 2
+    item_spawns:
+      - template_id: glowing_mushroom
+        max_count: 3
+
+  - id: mirehollow_druid_circle
+    vnum: 904
+    name: Corrupted Druid Circle
+    short_description: A ring of standing stones, thick with corruption
+    long_description: >
+      Ancient standing stones rise from the murky water, but they've been
+      corrupted by the swamp's dark influence. Strange symbols are carved
+      into them, glowing with sickly green light. The Mire Druids gather
+      here to perform rituals that would horrify their nature-loving kin.
+    exits:
+      north: mirehollow_quicksand_bog
+      west: mirehollow_spore_cloud
+    sector_type: ruin
+    flags: [dark_magic]
+    mob_spawns:
+      - template_id: mire_druid
+        max_count: 2
+      - template_id: corrupted_treant
+        max_count: 1
+
+  - id: mirehollow_sunken_ruins
+    vnum: 905
+    name: Sunken Ruins
+    short_description: The remnants of a drowned civilization
+    long_description: >
+      Crumbling walls and toppled columns rise from the black water, the
+      remains of a city that existed before the swamp claimed this land.
+      Barnacles and moss coat everything, and fish swim through empty
+      window frames. Something valuable might still be hidden in the depths.
+    exits:
+      east: mirehollow_fungal_grove
+      south: mirehollow_temple_approach
+    sector_type: ruin
+    flags: [underwater_access]
+    mob_spawns:
+      - template_id: drowned_ghost
+        max_count: 2
+    item_spawns:
+      - template_id: ancient_coin
+        max_count: 4
+      - template_id: waterlogged_tome
+        max_count: 1
+
+  - id: mirehollow_spore_cloud
+    vnum: 906
+    name: Spore Cloud
+    short_description: A perpetual cloud of hallucinogenic spores
+    long_description: >
+      The air here is thick with drifting spores, making it nearly impossible
+      to see more than a few feet. Strange visions swim at the edge of
+      perception, and it becomes difficult to tell what's real. Many who
+      enter never find their way out, lost in endless hallucinations.
+    exits:
+      north: mirehollow_fungal_grove
+      east: mirehollow_druid_circle
+      south: mirehollow_bloated_lair
+    sector_type: swamp
+    flags: [hallucination_zone, low_visibility]
+    mob_spawns:
+      - template_id: spore_wraith
+        max_count: 2
+
+  - id: mirehollow_temple_approach
+    vnum: 907
+    name: Temple Approach
+    short_description: A causeway of ancient stone leads into the mist
+    long_description: >
+      A raised stone pathway, remarkably intact, leads south through the
+      swamp. Carvings on the surface have been worn smooth by time and
+      water, but hints of an ancient religious imagery remain. The fog
+      thickens ahead, concealing what lies at the path's end.
+    exits:
+      north: mirehollow_sunken_ruins
+      south: mirehollow_bloated_shrine
+    sector_type: ruin
+    flags: [ancient]
+    mob_spawns:
+      - template_id: temple_guardian
+        max_count: 2
+
+  - id: mirehollow_bloated_lair
+    vnum: 908
+    name: The Bloated One's Lair
+    short_description: A massive hollow in the swamp bed
+    long_description: >
+      The swamp opens into a wide, shallow depression dominated by rotting
+      vegetation and the remains of countless creatures. This is the lair
+      of the Bloated One, an undead giant toad that has grown enormous
+      feeding on the swamp's corruption. Bones and half-digested prey
+      litter the murky water.
+    exits:
+      north: mirehollow_spore_cloud
+      east: mirehollow_bloated_shrine
+    sector_type: swamp
+    flags: [boss_room, dangerous]
+    mob_spawns:
+      - template_id: bloated_one
+        max_count: 1
+    ambient_messages:
+      - Something massive shifts in the murky water.
+      - The stench of decay is overwhelming here.
+      - Bubbles rise from the depths with disturbing sounds.
+
+  - id: mirehollow_bloated_shrine
+    vnum: 909
+    name: Shrine of Decay
+    short_description: A temple to rot and corruption
+    long_description: >
+      This ancient shrine has been converted to worship the Bloated One
+      and the swamp's corruption. Offerings of flesh and bone are piled
+      on an altar slick with algae, and the walls are decorated with
+      morbid carvings of bloated creatures and spreading rot. The Mire
+      Druids perform their darkest rituals here.
+    exits:
+      north: mirehollow_temple_approach
+      west: mirehollow_bloated_lair
+    sector_type: ruin
+    flags: [dark_magic]
+    mob_spawns:
+      - template_id: mire_priest
+        max_count: 1
+      - template_id: mire_druid
+        max_count: 2
+    item_spawns:
+      - template_id: corruption_totem
+        max_count: 1

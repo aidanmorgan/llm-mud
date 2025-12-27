@@ -1,0 +1,335 @@
+# Ashveil Wastes Mobs
+# Fire creatures, volcanic monsters, and Ashborn nomads
+
+zone_id: ashveil
+
+mobs:
+  # Common Creatures
+  - id: ash_crawler
+    vnum: 800
+    name: an ash crawler
+    keywords: [crawler, ash, insect, beetle]
+    short_description: A segmented creature scuttles through the ash.
+    long_description: >
+      This insectoid creature has adapted perfectly to life in the wastes.
+      Its segmented body is covered in heat-resistant chitin, and it
+      burrows through the ash seeking carrion and small prey.
+    level: 8
+    health: 80
+    strength: 12
+    dexterity: 14
+    constitution: 14
+    damage_dice: 1d8
+    damage_type: slashing
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 120
+    loot_table:
+      - template_id: ash_chitin
+        drop_chance: 0.4
+      - template_id: fire_gland
+        drop_chance: 0.2
+
+  - id: cinder_beetle
+    vnum: 801
+    name: a cinder beetle
+    keywords: [beetle, cinder, fire, insect]
+    short_description: A beetle glows with internal heat.
+    long_description: >
+      This large beetle generates intense heat within its body, its
+      carapace glowing orange-red. It can spit globs of molten matter
+      at threats and is immune to all but the most intense flames.
+    level: 9
+    health: 90
+    strength: 10
+    dexterity: 12
+    constitution: 16
+    damage_dice: 1d10
+    damage_type: fire
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 140
+    abilities: [fire_spit]
+    loot_table:
+      - template_id: cinder_shell
+        drop_chance: 0.3
+      - template_id: molten_core
+        drop_chance: 0.1
+
+  - id: glass_stalker
+    vnum: 802
+    name: a glass stalker
+    keywords: [stalker, glass, obsidian, creature]
+    short_description: A creature of living obsidian lurks nearby.
+    long_description: >
+      This predator is made of volcanic glass, its body razor-sharp and
+      nearly invisible against the obsidian fields. It moves silently,
+      waiting to slice prey with blades of natural glass.
+    level: 11
+    health: 100
+    strength: 16
+    dexterity: 18
+    constitution: 12
+    damage_dice: 2d6
+    damage_type: slashing
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 3
+    experience_value: 180
+    loot_table:
+      - template_id: obsidian_blade
+        drop_chance: 0.2
+      - template_id: glass_stalker_heart
+        drop_chance: 0.1
+
+  - id: magma_elemental
+    vnum: 803
+    name: a magma elemental
+    keywords: [elemental, magma, lava, fire]
+    short_description: A creature of living molten rock flows here.
+    long_description: >
+      This elemental is a roughly humanoid mass of molten rock, heat
+      radiating from its body in visible waves. Where it walks, stone
+      melts and refreezes in its footsteps.
+    level: 12
+    health: 150
+    strength: 18
+    dexterity: 8
+    constitution: 20
+    damage_dice: 2d8
+    damage_type: fire
+    armor_class: 18
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 250
+    abilities: [lava_splash, heat_aura]
+    immunities: [fire]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: magma_core
+        drop_chance: 0.3
+      - template_id: fire_essence
+        drop_chance: 0.2
+
+  - id: lava_salamander
+    vnum: 804
+    name: a lava salamander
+    keywords: [salamander, lava, fire, lizard]
+    short_description: A fiery salamander basks in the heat.
+    long_description: >
+      This massive salamander thrives in temperatures that would kill
+      most creatures. Its scales are black and cracked like cooled lava,
+      revealing the molten glow beneath. It can survive submersion in
+      molten rock.
+    level: 10
+    health: 110
+    strength: 14
+    dexterity: 12
+    constitution: 16
+    damage_dice: 1d10
+    damage_type: fire
+    armor_class: 15
+    behavior_type: passive
+    aggro_radius: 2
+    experience_value: 160
+    loot_table:
+      - template_id: salamander_scale
+        drop_chance: 0.4
+      - template_id: fire_gland
+        drop_chance: 0.3
+
+  # Ashborn NPCs
+  - id: ashborn_elder
+    vnum: 810
+    name: Elder Kira
+    keywords: [elder, kira, ashborn, nomad]
+    short_description: A scarred elder watches with knowing eyes.
+    long_description: >
+      Elder Kira's skin is a map of burn scars, each telling a story of
+      survival in the wastes. Her eyes are the color of cooled ash, but
+      sharp with wisdom. The Ashborn nomads respect her above all others.
+    level: 15
+    health: 200
+    behavior_type: friendly
+    dialogue:
+      greeting: "The wastes claim the weak, stranger. What brings you here?"
+      topics:
+        wastes: "We have lived here since the Great Burning. The fire took everything, but we remain."
+        slag_mother: "She sleeps in the crater's heart. Do not wake her unless you wish to become ash."
+        survival: "Fire cannot be fought. It can only be endured. Learn this, and you may survive."
+
+  - id: ashborn_trader
+    vnum: 811
+    name: an Ashborn trader
+    keywords: [trader, ashborn, nomad, merchant]
+    short_description: A nomad displays wares resistant to heat.
+    long_description: >
+      This Ashborn has collected items that survive the waste's heat -
+      obsidian tools, fire-resistant cloth, and salvage from the ruins
+      of the old world. They trade eagerly with outsiders who bring
+      goods unavailable in this blasted land.
+    level: 10
+    health: 100
+    behavior_type: friendly
+    shop:
+      markup: 1.2
+      markdown: 0.8
+      inventory:
+        - template_id: heat_cloak
+        - template_id: obsidian_dagger
+        - template_id: fire_ration
+        - template_id: heat_salve
+
+  # Fire Temple Enemies
+  - id: vent_spider
+    vnum: 820
+    name: a vent spider
+    keywords: [spider, vent, fire, creature]
+    short_description: A spider with legs of living flame lurks here.
+    long_description: >
+      This spider has adapted to life around the volcanic vents, its
+      legs trailing wisps of flame and its web made of some heat-resistant
+      fiber. It waits near vents for creatures attracted to the warmth.
+    level: 10
+    health: 85
+    strength: 10
+    dexterity: 16
+    constitution: 12
+    damage_dice: 1d8
+    damage_type: fire
+    armor_class: 14
+    behavior_type: aggressive
+    combat_style: ambusher
+    aggro_radius: 3
+    experience_value: 150
+    abilities: [fire_web]
+    loot_table:
+      - template_id: fire_silk
+        drop_chance: 0.3
+
+  - id: flame_imp
+    vnum: 821
+    name: a flame imp
+    keywords: [imp, flame, fire, demon]
+    short_description: A small demon of pure flame cackles here.
+    long_description: >
+      This minor demon is a creature of pure fire, its form flickering
+      between humanoid and formless flame. It delights in burning things
+      and serves the Slag Mother as scout and messenger.
+    level: 11
+    health: 70
+    strength: 8
+    dexterity: 18
+    constitution: 10
+    intelligence: 12
+    damage_dice: 1d8
+    damage_type: fire
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 5
+    flee_threshold: 0.3
+    experience_value: 170
+    abilities: [fireball, teleport]
+    loot_table:
+      - template_id: imp_essence
+        drop_chance: 0.2
+
+  - id: fire_cultist
+    vnum: 822
+    name: a fire cultist
+    keywords: [cultist, fire, human, priest]
+    short_description: A robed figure chants prayers to flame.
+    long_description: >
+      This human has devoted themselves to the worship of fire, their
+      body covered in ritual burn scars. They serve the Slag Mother
+      willingly, performing sacrifices to keep her slumbering.
+    level: 12
+    health: 90
+    strength: 10
+    dexterity: 12
+    constitution: 12
+    intelligence: 14
+    wisdom: 14
+    damage_dice: 1d6
+    damage_type: fire
+    armor_class: 12
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 180
+    abilities: [flame_bolt, fire_shield]
+    loot_table:
+      - template_id: cultist_robe
+        drop_chance: 0.3
+      - template_id: fire_tome
+        drop_chance: 0.1
+
+  - id: fire_guardian
+    vnum: 823
+    name: a fire guardian
+    keywords: [guardian, fire, golem, construct]
+    short_description: A construct of living flame guards this place.
+    long_description: >
+      This guardian was created by ancient fire mages to protect the
+      relic site. It is a vaguely humanoid mass of contained flame,
+      bound by magical wards into service. It will allow no one to
+      disturb the ruins.
+    level: 13
+    health: 180
+    strength: 16
+    dexterity: 10
+    constitution: 18
+    damage_dice: 2d6
+    damage_type: fire
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 250
+    abilities: [flame_strike, fire_aura]
+    immunities: [fire]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: guardian_core
+        drop_chance: 0.2
+
+  # Boss
+  - id: slag_mother
+    vnum: 830
+    name: The Slag Mother
+    keywords: [slag, mother, elemental, boss, lava]
+    short_description: A massive figure of molten rock rises here.
+    long_description: >
+      The Slag Mother is an ancient lava elemental of immense power, her
+      form a towering mass of molten rock and flowing magma. She has
+      slumbered in the crater for centuries, worshipped by fire cultists.
+      When she wakes, the ground trembles and the temperature rises to
+      deadly levels. Her eyes are pools of white-hot fire.
+    level: 15
+    health: 500
+    strength: 22
+    dexterity: 8
+    constitution: 24
+    intelligence: 14
+    damage_dice: 3d8
+    damage_type: fire
+    armor_class: 20
+    behavior_type: aggressive
+    combat_style: berserker
+    aggro_radius: 8
+    experience_value: 1500
+    gold_min: 100
+    gold_max: 500
+    abilities: [lava_wave, volcanic_eruption, magma_summon, heat_aura]
+    immunities: [fire]
+    vulnerabilities: [cold]
+    loot_table:
+      - template_id: slag_heart
+        drop_chance: 1.0
+      - template_id: magma_crown
+        drop_chance: 0.5
+      - template_id: volcanic_gem
+        drop_chance: 0.7
+    dialogue:
+      greeting: "WHO DISTURBS MY SLUMBER? YOU SHALL BURN!"

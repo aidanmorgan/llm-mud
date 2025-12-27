@@ -1,0 +1,49 @@
+zone_id: starter
+
+portals:
+  - id: forest_dungeon_portal
+    name: The Shifting Gateway
+    keywords: [portal, gateway, shimmer, arch]
+    description: >
+      An ancient stone archway pulses with otherworldly energy.
+      Through the shimmering barrier, you catch glimpses of dark
+      corridors and flickering torchlight.
+    theme_id: ancient_dungeon
+    theme_description: >
+      A crumbling underground complex from a forgotten civilization.
+      Stone walls covered in moss and strange runes. Passages filled
+      with traps, treasure, and creatures that have made the darkness
+      their home. The architecture suggests a once-great empire that
+      fell to some unknown catastrophe.
+    instance:
+      type: dungeon
+      difficulty_min: 1
+      difficulty_max: 5
+      max_rooms: 10
+      max_players: 4
+    requirements:
+      min_level: 1
+    cooldown_s: 1800  # 30 minutes
+
+  - id: dream_portal
+    name: The Dreaming Gate
+    keywords: [portal, dream, mist, silver]
+    description: >
+      Silver mist coalesces into an ethereal doorway. Through it,
+      impossible landscapes shift and change - cities of cloud,
+      forests of crystal, oceans of starlight.
+    theme_id: dreamscape
+    theme_description: >
+      A surreal realm where physics and logic are suggestions.
+      Landscapes that shift based on emotion and thought. Creatures
+      born from nightmares and fantasies alike. Colors that have no
+      names and sounds that can be seen.
+    instance:
+      type: dream
+      difficulty_min: 3
+      difficulty_max: 8
+      max_rooms: 15
+      max_players: 2
+    requirements:
+      min_level: 5
+    cooldown_s: 3600  # 1 hour

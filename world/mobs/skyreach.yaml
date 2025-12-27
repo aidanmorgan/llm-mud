@@ -1,0 +1,278 @@
+# Skyreach Spire Mobs
+# Elemental creatures, scholars, and gravity-defying entities
+
+zone_id: skyreach
+
+mobs:
+  # Elemental Creatures
+  - id: wind_servant
+    vnum: 1300
+    name: a wind servant
+    keywords: [servant, wind, elemental, air]
+    short_description: A swirl of air in humanoid form drifts past.
+    long_description: >
+      This minor air elemental serves the Skybound Scholars, performing
+      simple tasks and keeping the spire's air fresh. Its form is a
+      constant whirl of wind and dust motes.
+    level: 10
+    health: 60
+    strength: 8
+    dexterity: 18
+    constitution: 10
+    damage_dice: 1d6
+    damage_type: bludgeoning
+    armor_class: 15
+    behavior_type: neutral
+    aggro_radius: 2
+    experience_value: 120
+    abilities: [gust]
+    resistances: [physical]
+    vulnerabilities: [lightning]
+    loot_table:
+      - template_id: wind_essence
+        drop_chance: 0.3
+
+  - id: wind_elemental
+    vnum: 1301
+    name: a wind elemental
+    keywords: [elemental, wind, air, storm]
+    short_description: A powerful vortex of wind howls through the chamber.
+    long_description: >
+      This larger air elemental is a living whirlwind, its passage
+      marked by scattered papers and overturned furniture. It serves
+      as both guardian and power source for the spire's enchantments.
+    level: 14
+    health: 120
+    strength: 12
+    dexterity: 20
+    constitution: 14
+    damage_dice: 2d6
+    damage_type: bludgeoning
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 260
+    abilities: [whirlwind, windblast, flight]
+    resistances: [physical]
+    vulnerabilities: [lightning]
+    loot_table:
+      - template_id: wind_core
+        drop_chance: 0.3
+      - template_id: elemental_dust
+        drop_chance: 0.4
+
+  - id: storm_elemental
+    vnum: 1302
+    name: a storm elemental
+    keywords: [elemental, storm, lightning, thunder]
+    short_description: Lightning crackles within a churning cloud.
+    long_description: >
+      This elemental embodies the fury of storms - wind, lightning,
+      and thunder combined into one terrifying entity. It was created
+      or summoned for the spire's defense, and it takes its duty
+      very seriously.
+    level: 16
+    health: 180
+    strength: 16
+    dexterity: 18
+    constitution: 16
+    damage_dice: 2d8
+    damage_type: lightning
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 340
+    abilities: [lightning_bolt, thunder_crash, storm_aura]
+    immunities: [lightning]
+    vulnerabilities: [earth]
+    loot_table:
+      - template_id: storm_core
+        drop_chance: 0.3
+      - template_id: lightning_essence
+        drop_chance: 0.4
+
+  - id: gravity_phantom
+    vnum: 1303
+    name: a gravity phantom
+    keywords: [phantom, gravity, ghost, anomaly]
+    short_description: A distortion in gravity drifts through the hall.
+    long_description: >
+      This entity is less a creature than a living gravity anomaly,
+      the ghost of someone who died falling through shifting gravity
+      zones. It unconsciously manipulates gravity around it, making
+      navigation treacherous.
+    level: 13
+    health: 80
+    strength: 4
+    dexterity: 16
+    constitution: 10
+    damage_dice: 2d4
+    damage_type: force
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 220
+    abilities: [gravity_shift, crush, levitate]
+    immunities: [physical]
+    loot_table:
+      - template_id: gravity_shard
+        drop_chance: 0.3
+
+  # Scholars
+  - id: skybound_scholar
+    vnum: 1310
+    name: a Skybound Scholar
+    keywords: [scholar, skybound, mage, researcher]
+    short_description: A robed figure floats past, nose in a book.
+    long_description: >
+      The Skybound Scholars have devoted their lives to studying
+      the arcane principles that keep the spire aloft. They float
+      effortlessly through the gravity-shifted halls, so used to
+      the anomalies that they barely notice them.
+    level: 12
+    health: 70
+    strength: 6
+    dexterity: 12
+    constitution: 10
+    intelligence: 18
+    wisdom: 14
+    damage_dice: 1d8
+    damage_type: force
+    armor_class: 13
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 180
+    abilities: [arcane_bolt, levitate, shield]
+    loot_table:
+      - template_id: scholar_robe
+        drop_chance: 0.2
+      - template_id: spell_scroll
+        drop_chance: 0.3
+
+  - id: senior_scholar
+    vnum: 1311
+    name: Senior Scholar Aethon
+    keywords: [scholar, aethon, senior, master]
+    short_description: An elderly mage radiates calm wisdom.
+    long_description: >
+      Senior Scholar Aethon has lived in Skyreach for fifty years,
+      mastering the spire's unique magical properties. He welcomes
+      visitors and is happy to share knowledge with those who show
+      proper respect for learning.
+    level: 16
+    health: 120
+    behavior_type: friendly
+    dialogue:
+      greeting: "Welcome to Skyreach. Mind your step - gravity is merely a suggestion here."
+      topics:
+        spire: "The spire was built by the Archmage Ventus, who sought to study the upper atmosphere. It has floated for three centuries."
+        stormwright: "The Stormwright is the spirit of the storm itself, given form and purpose. He keeps the spire aloft and protects us from intruders."
+        gravity: "The gravity enchantments are failing slowly. We estimate perhaps another century before we must find a new solution."
+
+  - id: skybound_merchant
+    vnum: 1312
+    name: a Skybound merchant
+    keywords: [merchant, skybound, trader]
+    short_description: A trader displays arcane wares.
+    long_description: >
+      This merchant specializes in items useful for those dealing
+      with Skyreach's unique challenges - featherfall charms,
+      lightning resistance potions, and scrolls of flight.
+    level: 12
+    health: 80
+    behavior_type: friendly
+    shop:
+      markup: 1.4
+      markdown: 0.6
+      inventory:
+        - template_id: featherfall_charm
+        - template_id: lightning_ward
+        - template_id: scroll_of_flight
+        - template_id: wind_cloak
+
+  - id: star_gazer
+    vnum: 1313
+    name: a star gazer
+    keywords: [gazer, star, astronomer, scholar]
+    short_description: An astronomer peers through a crystal lens.
+    long_description: >
+      These scholars specialize in studying the stars and celestial
+      bodies, which are remarkably clear from the spire's height.
+      They track heavenly events and predict portents, lost in
+      contemplation of the infinite.
+    level: 10
+    health: 50
+    behavior_type: friendly
+    dialogue:
+      greeting: "The stars speak of your coming. They also speak of great change approaching."
+
+  - id: elemental_researcher
+    vnum: 1314
+    name: an elemental researcher
+    keywords: [researcher, elemental, scholar]
+    short_description: A scholar studies captive elemental energies.
+    long_description: >
+      This researcher works to understand and harness elemental
+      forces, conducting experiments that occasionally get out of
+      control. Their robes bear scorch marks and their hair stands
+      on end from electrical exposure.
+    level: 12
+    health: 70
+    strength: 8
+    dexterity: 12
+    constitution: 10
+    intelligence: 16
+    damage_dice: 1d8
+    damage_type: lightning
+    behavior_type: neutral
+    aggro_radius: 3
+    experience_value: 160
+    abilities: [shock, elemental_bolt]
+    loot_table:
+      - template_id: research_notes
+        drop_chance: 0.3
+
+  # Boss
+  - id: the_stormwright
+    vnum: 1320
+    name: The Stormwright
+    keywords: [stormwright, boss, elemental, archmage, storm]
+    short_description: A figure of crackling lightning and howling wind towers here.
+    long_description: >
+      The Stormwright was once an air elemental prince who took human
+      form to study magic with mortal scholars. Over centuries, he
+      became the master of Skyreach Spire, combining elemental might
+      with arcane knowledge. He is a towering figure of storm and wind,
+      lightning playing across his form, his voice the rumble of thunder.
+      He keeps the spire afloat through force of will alone.
+    level: 20
+    health: 650
+    strength: 18
+    dexterity: 22
+    constitution: 20
+    intelligence: 22
+    wisdom: 18
+    damage_dice: 4d8
+    damage_type: lightning
+    armor_class: 21
+    behavior_type: neutral
+    combat_style: tactician
+    aggro_radius: 10
+    experience_value: 2800
+    gold_min: 250
+    gold_max: 900
+    abilities: [storm_call, lightning_barrage, wind_wall, tornado, thunder_voice]
+    immunities: [lightning, wind]
+    vulnerabilities: [earth]
+    loot_table:
+      - template_id: stormwright_heart
+        drop_chance: 1.0
+      - template_id: lightning_crown
+        drop_chance: 0.5
+      - template_id: wind_staff
+        drop_chance: 0.6
+    dialogue:
+      greeting: "I am the storm given form. Why do you disturb my contemplation?"
+      topics:
+        spire: "I have kept this tower aloft for three hundred years. It is my life's work, my meditation."
+        battle: "If you insist on combat, know that the storm does not show mercy. It simply is."

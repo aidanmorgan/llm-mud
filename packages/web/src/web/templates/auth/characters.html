@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Characters - LLM-MUD{% endblock %}
+
+{% block body_class %}auth-page{% endblock %}
+
+{% block content %}
+<div class="characters-container">
+    <h1>Your Characters</h1>
+    <div class="character-list">
+        {% if characters %}
+            {% for char in characters %}
+            <div class="character-card">
+                <div class="char-info">
+                    <span class="char-name">{{ char.name }}</span>
+                    <span class="char-details">
+                        Level {{ char.level }} {{ char.race_id|title }} {{ char.class_id|title }}
+                    </span>
+                </div>
+                <form hx-post="/api/select-character" hx-target="body">
+                    <input type="hidden" name="character_id" value="{{ char.character_id }}">
+                    <button type="submit" class="btn-play">Play</button>
+                </form>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-chars">No characters yet. Create one to start playing!</p>
+        {% endif %}
+    </div>
+    <a href="/create-character" class="btn-create">Create New Character</a>
+    <a href="/logout" class="btn-logout">Logout</a>
+</div>
+{% endblock %}

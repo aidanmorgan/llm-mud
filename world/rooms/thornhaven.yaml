@@ -1,0 +1,224 @@
+# Thornhaven Rooms
+# Overgrown fortress with aggressive plant life and corrupted nature
+
+zone_id: thornhaven
+
+rooms:
+  - id: thornhaven_approach
+    vnum: 1100
+    name: Overgrown Road
+    short_description: A road choked by aggressive vegetation
+    long_description: >
+      What was once a well-maintained road is now barely visible beneath
+      layers of vines, thorns, and creeping plants. The vegetation seems
+      to lean toward you, almost eager. Ahead, the towers of Thornhaven
+      rise above the treeline, their stone walls hidden beneath centuries
+      of plant growth.
+    exits:
+      north:
+        destination: ~
+        leads_to_region: river_road
+      south: thornhaven_outer_wall
+    sector_type: forest
+    flags: [difficult_terrain]
+    mob_spawns:
+      - template_id: thorn_creeper
+        max_count: 3
+    ambient_messages:
+      - Vines twist slightly as you pass.
+      - Thorns seem to reach toward exposed skin.
+
+  - id: thornhaven_outer_wall
+    vnum: 1101
+    name: Outer Wall
+    short_description: The fortress wall, consumed by plant growth
+    long_description: >
+      The outer wall of Thornhaven is barely recognizable as stonework.
+      Vines as thick as tree trunks have woven through every crack, and
+      flowering plants burst from the battlements. What were once murder
+      holes now sprout flowering vines. A gap in the vegetation suggests
+      where the gate once stood.
+    exits:
+      north: thornhaven_approach
+      south: thornhaven_gatehouse
+    sector_type: ruin
+    mob_spawns:
+      - template_id: wall_creeper
+        max_count: 2
+      - template_id: thorn_guardian
+        max_count: 1
+
+  - id: thornhaven_gatehouse
+    vnum: 1102
+    name: Gatehouse Ruins
+    short_description: The fortress entrance, choked with growth
+    long_description: >
+      The gatehouse has collapsed inward, creating a tunnel of twisted
+      metal and stone overgrown with thorny vines. Rusted portcullis bars
+      have been bent and broken by relentless plant growth. Bioluminescent
+      fungi provide dim light in the deepest shadows.
+    exits:
+      north: thornhaven_outer_wall
+      south: thornhaven_courtyard
+      east: thornhaven_guard_quarters
+    sector_type: ruin
+    flags: [dark]
+    mob_spawns:
+      - template_id: vine_horror
+        max_count: 1
+
+  - id: thornhaven_courtyard
+    vnum: 1103
+    name: Overgrown Courtyard
+    short_description: A jungle where a parade ground once stood
+    long_description: >
+      The central courtyard has become a dense thicket. Trees have pushed
+      up through the paving stones, their branches intertwined to form a
+      canopy that blocks most light. Carnivorous plants have established
+      themselves here, their blooms beautiful but deadly. Paths lead in
+      several directions, barely visible through the growth.
+    exits:
+      north: thornhaven_gatehouse
+      east: thornhaven_barracks
+      west: thornhaven_garden
+      south: thornhaven_inner_keep
+    sector_type: forest
+    flags: [dangerous_flora]
+    mob_spawns:
+      - template_id: man_eating_plant
+        max_count: 2
+      - template_id: thornwatch_patrol
+        max_count: 2
+
+  - id: thornhaven_guard_quarters
+    vnum: 1104
+    name: Guard Quarters
+    short_description: Barracks reclaimed by nature
+    long_description: >
+      The guards' quarters have become a greenhouse of aggressive vegetation.
+      Bunks are now planters, armor stands are trellises, and equipment
+      racks support climbing vines. Bones lie scattered about - guards who
+      couldn't escape when the plants awakened.
+    exits:
+      west: thornhaven_gatehouse
+    sector_type: ruin
+    flags: [dangerous_flora]
+    mob_spawns:
+      - template_id: plant_zombie
+        max_count: 3
+    item_spawns:
+      - template_id: guard_sword
+        max_count: 1
+      - template_id: guard_armor
+        max_count: 1
+
+  - id: thornhaven_barracks
+    vnum: 1105
+    name: Barracks
+    short_description: Where soldiers once slept, plants now grow
+    long_description: >
+      This larger barracks building has become a terrarium. Moisture drips
+      from the plant-covered ceiling, and the floor is soft with moss and
+      decay. Fungal growths sprout from rotted bedding, and the remains
+      of the soldiers have become fertilizer for the new growth.
+    exits:
+      west: thornhaven_courtyard
+      south: thornhaven_armory
+    sector_type: ruin
+    flags: [dark, dangerous_flora]
+    mob_spawns:
+      - template_id: fungal_soldier
+        max_count: 2
+      - template_id: spore_carrier
+        max_count: 2
+
+  - id: thornhaven_garden
+    vnum: 1106
+    name: Carnivorous Garden
+    short_description: A beautiful garden of deadly plants
+    long_description: >
+      This was once a formal garden, but the plants here have grown wild
+      and predatory. Massive pitcher plants large enough to swallow a
+      person whole stand alongside venus flytraps the size of dogs. The
+      sweet scent of nectar fills the air - a deadly lure for the unwary.
+    exits:
+      east: thornhaven_courtyard
+      south: thornhaven_greenhouse
+    sector_type: forest
+    flags: [dangerous_flora, trap_zone]
+    mob_spawns:
+      - template_id: pitcher_plant
+        max_count: 2
+      - template_id: snapdragon_beast
+        max_count: 2
+    item_spawns:
+      - template_id: rare_flower
+        max_count: 2
+
+  - id: thornhaven_armory
+    vnum: 1107
+    name: Armory
+    short_description: Weapons and armor, preserved by isolation
+    long_description: >
+      This stone building was better sealed than others, protecting its
+      contents from the worst of the plant invasion. Racks of weapons
+      still stand, though rust claims some and vines have begun to creep
+      through the walls. The Thornwatch guard this place, recognizing
+      the danger these weapons pose to their master's domain.
+    exits:
+      north: thornhaven_barracks
+    sector_type: ruin
+    mob_spawns:
+      - template_id: thornwatch_knight
+        max_count: 2
+    item_spawns:
+      - template_id: thornhaven_sword
+        max_count: 1
+      - template_id: thornhaven_shield
+        max_count: 1
+
+  - id: thornhaven_greenhouse
+    vnum: 1108
+    name: The Greenhouse
+    short_description: Source of the fortress's transformation
+    long_description: >
+      This massive greenhouse was the origin of Thornhaven's fall. An
+      experiment in magical plant cultivation went terribly wrong, creating
+      plants that grew with unstoppable aggression. The glass is mostly
+      broken now, but inside, the original plants still thrive - massive,
+      ancient, and terribly aware.
+    exits:
+      north: thornhaven_garden
+      east: thornhaven_inner_keep
+    sector_type: forest
+    flags: [high_magic, dangerous_flora]
+    mob_spawns:
+      - template_id: ancient_growth
+        max_count: 1
+      - template_id: thorn_elemental
+        max_count: 2
+
+  - id: thornhaven_inner_keep
+    vnum: 1109
+    name: Inner Keep
+    short_description: The heart of the fortress, now the Briar King's throne
+    long_description: >
+      The inner keep has been transformed into a living throne room. Walls
+      of interwoven vines and thorns replace the stone, and a massive
+      throne of twisted wood and flowers dominates the center. Here sits
+      the Briar King, a knight corrupted by the plants, now more vegetation
+      than man, ruling his domain of endless growth.
+    exits:
+      north: thornhaven_courtyard
+      west: thornhaven_greenhouse
+    sector_type: forest
+    flags: [boss_room]
+    mob_spawns:
+      - template_id: briar_king
+        max_count: 1
+      - template_id: thornwatch_champion
+        max_count: 2
+    ambient_messages:
+      - The walls of vines shift and rustle with awareness.
+      - Flowers turn to follow your movement.
+      - The Briar King's throne seems to breathe.

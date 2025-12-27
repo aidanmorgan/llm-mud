@@ -1,0 +1,348 @@
+# Ashveil Wastes Items
+# Fire-themed equipment, volcanic materials, and heat-resistant gear
+
+zone_id: ashveil
+
+items:
+  # Crafting Materials
+  - id: obsidian_shard
+    vnum: 800
+    name: an obsidian shard
+    keywords: [obsidian, shard, volcanic, glass]
+    short_description: A razor-sharp piece of volcanic glass lies here.
+    long_description: >
+      This shard of obsidian was formed when lava cooled rapidly. Its edges
+      are impossibly sharp, capable of slicing through leather with ease.
+      Skilled crafters prize it for weapons and tools.
+    item_type: material
+    rarity: common
+    weight: 0.5
+    value: 15
+
+  - id: fire_crystal
+    vnum: 801
+    name: a fire crystal
+    keywords: [fire, crystal, flame, gem]
+    short_description: A crystal pulses with inner flame.
+    long_description: >
+      This crystallized essence of elemental fire glows with internal heat.
+      It is warm to the touch but does not burn. Enchanters use these to
+      imbue weapons with fire damage.
+    item_type: material
+    rarity: uncommon
+    weight: 0.2
+    value: 75
+
+  - id: slag_ore
+    vnum: 802
+    name: a chunk of slag ore
+    keywords: [slag, ore, metal, volcanic]
+    short_description: A chunk of volcanic metal ore lies here.
+    long_description: >
+      This dense ore was formed in the volcanic depths, a natural alloy of
+      iron and other metals fused by extreme heat. When properly refined,
+      it produces slag steel, prized for its heat resistance.
+    item_type: material
+    rarity: uncommon
+    weight: 3.0
+    value: 50
+
+  - id: ashborn_relic
+    vnum: 803
+    name: an Ashborn relic
+    keywords: [ashborn, relic, artifact, ancient]
+    short_description: An ancient relic of the Ashborn people lies here.
+    long_description: >
+      This artifact from the Ashborn nomads predates the volcanic
+      devastation of the wastes. Strange symbols cover its surface,
+      and it radiates faint warmth even in the coldest conditions.
+    item_type: treasure
+    rarity: rare
+    weight: 1.0
+    value: 200
+
+  # Weapons
+  - id: obsidian_dagger
+    vnum: 810
+    name: an obsidian dagger
+    keywords: [obsidian, dagger, knife, volcanic]
+    short_description: A dagger of volcanic glass gleams darkly.
+    long_description: >
+      This dagger was knapped from pure obsidian by Ashborn craftsmen.
+      Its edge is sharper than steel but more fragile. The blade seems
+      to drink in light, appearing darker than the shadows around it.
+    item_type: weapon
+    rarity: common
+    weight: 1.0
+    value: 45
+    level_requirement: 8
+    weapon_stats:
+      damage_dice: 1d6
+      damage_type: slashing
+      speed: fast
+      crit_bonus: 2
+
+  - id: slag_steel_sword
+    vnum: 811
+    name: a slag steel sword
+    keywords: [slag, steel, sword, volcanic]
+    short_description: A sword of dark volcanic steel lies here.
+    long_description: >
+      Forged from refined slag ore, this sword has a distinctive dark
+      coloration with veins of red running through the metal. It retains
+      heat well and never rusts, making it ideal for desert warfare.
+    item_type: weapon
+    rarity: uncommon
+    weight: 4.0
+    value: 150
+    level_requirement: 10
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: slashing
+      speed: medium
+
+  - id: flamebrand
+    vnum: 812
+    name: a flamebrand sword
+    keywords: [flamebrand, sword, fire, magical]
+    short_description: A sword wreathed in flames lies here.
+    long_description: >
+      This enchanted blade burns with perpetual fire that does not
+      consume the steel. The flames can be willed brighter or dimmer
+      but never extinguished. It is said to have been forged in the
+      heart of the volcano itself.
+    item_type: weapon
+    rarity: rare
+    weight: 4.5
+    value: 500
+    level_requirement: 12
+    weapon_stats:
+      damage_dice: 1d10
+      damage_type: fire
+      speed: medium
+      magical_properties:
+        - fire_damage_bonus: 1d4
+        - light_source: true
+
+  - id: ashwalker_spear
+    vnum: 813
+    name: an Ashwalker's spear
+    keywords: [ashwalker, spear, polearm, tribal]
+    short_description: A tribal spear decorated with ash and bone lies here.
+    long_description: >
+      The Ashborn warriors craft these spears from heat-treated wood
+      and obsidian tips. Decorative ash patterns and bone charms
+      identify the wielder's clan and deeds. This one bears many marks.
+    item_type: weapon
+    rarity: uncommon
+    weight: 5.0
+    value: 120
+    level_requirement: 9
+    weapon_stats:
+      damage_dice: 1d8
+      damage_type: piercing
+      speed: medium
+      two_handed: true
+      reach: true
+
+  # Armor
+  - id: ashborn_leather
+    vnum: 820
+    name: Ashborn leather armor
+    keywords: [ashborn, leather, armor, tribal]
+    short_description: Tribal leather armor treated with volcanic ash lies here.
+    long_description: >
+      This armor was crafted by Ashborn leatherworkers using techniques
+      passed down for generations. The leather is treated with volcanic
+      ash, making it resistant to heat and fire.
+    item_type: armor
+    rarity: common
+    weight: 8.0
+    value: 80
+    level_requirement: 8
+    armor_stats:
+      armor_class: 12
+      slot: body
+      resistances: [fire]
+
+  - id: slag_mail
+    vnum: 821
+    name: a suit of slag mail
+    keywords: [slag, mail, armor, chainmail, volcanic]
+    short_description: Chainmail of dark volcanic steel lies here.
+    long_description: >
+      This chainmail was forged from slag steel rings, each one
+      carefully interlocked. The dark metal absorbs heat rather than
+      conducting it, protecting the wearer from fire damage.
+    item_type: armor
+    rarity: uncommon
+    weight: 25.0
+    value: 300
+    level_requirement: 11
+    armor_stats:
+      armor_class: 15
+      slot: body
+      resistances: [fire]
+      dexterity_penalty: 1
+
+  - id: firewalker_boots
+    vnum: 822
+    name: firewalker boots
+    keywords: [firewalker, boots, fire, magical]
+    short_description: Boots that shimmer with heat-resistant enchantments lie here.
+    long_description: >
+      These boots are enchanted to protect the wearer from extreme heat.
+      The soles never burn, allowing the wearer to walk across hot coals
+      or volcanic rock without harm.
+    item_type: armor
+    rarity: rare
+    weight: 3.0
+    value: 400
+    level_requirement: 10
+    armor_stats:
+      armor_class: 1
+      slot: feet
+      immunities: [fire_terrain]
+      magical_properties:
+        - fire_resistance: 25
+
+  - id: ember_cloak
+    vnum: 823
+    name: an ember cloak
+    keywords: [ember, cloak, fire, magical]
+    short_description: A cloak that smolders with inner heat lies here.
+    long_description: >
+      This cloak is woven from fireproof fibers and enchanted with
+      protective flames. It provides warmth in any cold and protection
+      from fire. Embers occasionally fall from its edges but never
+      burn anything they touch.
+    item_type: armor
+    rarity: rare
+    weight: 2.0
+    value: 350
+    level_requirement: 12
+    armor_stats:
+      armor_class: 1
+      slot: about
+      resistances: [fire, cold]
+
+  # Consumables
+  - id: fire_resistance_potion
+    vnum: 830
+    name: a potion of fire resistance
+    keywords: [potion, fire, resistance, red]
+    short_description: A red potion swirls with inner flames.
+    long_description: >
+      This potion grants temporary immunity to fire damage. The liquid
+      appears to be boiling but is cool to the touch. Ashborn alchemists
+      brew it from fire crystals and volcanic herbs.
+    item_type: consumable
+    rarity: uncommon
+    weight: 0.5
+    value: 50
+    consumable_effect:
+      effect_type: buff
+      duration: 300
+      effects:
+        fire_resistance: 100
+
+  - id: healing_salve
+    vnum: 831
+    name: a volcanic healing salve
+    keywords: [salve, healing, volcanic, medicine]
+    short_description: A jar of dark healing salve lies here.
+    long_description: >
+      This thick salve is made from volcanic minerals and medicinal
+      herbs that grow near hot springs. When applied to wounds, it
+      promotes rapid healing through gentle warmth.
+    item_type: consumable
+    rarity: common
+    weight: 0.3
+    value: 25
+    consumable_effect:
+      effect_type: heal
+      heal_amount: 30
+
+  - id: ashborn_rations
+    vnum: 832
+    name: Ashborn travel rations
+    keywords: [rations, food, ashborn, travel]
+    short_description: A package of dried, smoked food lies here.
+    long_description: >
+      The Ashborn preserve their food by smoking it over volcanic vents.
+      These rations include dried meat, smoked tubers, and ash-cured
+      fruits. They last indefinitely and provide sustenance in the
+      harsh wastes.
+    item_type: consumable
+    rarity: common
+    weight: 1.0
+    value: 10
+    consumable_effect:
+      effect_type: nourish
+      food_value: 50
+
+  # Boss Drops
+  - id: slag_mothers_heart
+    vnum: 850
+    name: the Slag Mother's heart
+    keywords: [slag, mother, heart, boss, crystal]
+    short_description: A massive crystallized heart of molten rock pulses here.
+    long_description: >
+      This is the core of the Slag Mother, a crystallized mass of
+      living magma. It pulses with elemental fire, hot to the touch
+      yet solid as stone. Powerful enchantments could be wrought from
+      such a trophy.
+    item_type: material
+    rarity: legendary
+    weight: 5.0
+    value: 2000
+    flags: [no_drop, quest_item]
+
+  - id: magma_crown
+    vnum: 851
+    name: the Crown of Cinders
+    keywords: [crown, cinders, magma, boss, head]
+    short_description: A crown of solidified magma radiates intense heat.
+    long_description: >
+      This crown was formed from the Slag Mother's own body, a ring
+      of crystallized lava that burns with eternal fire. Wearing it
+      grants command over flames but marks the wearer as a target for
+      fire elementals.
+    item_type: armor
+    rarity: legendary
+    weight: 2.0
+    value: 2500
+    level_requirement: 14
+    armor_stats:
+      armor_class: 2
+      slot: head
+      immunities: [fire]
+      magical_properties:
+        - fire_damage_bonus: 2d6
+        - fire_command: true
+        - strength_bonus: 2
+
+  - id: volcanic_destroyer
+    vnum: 852
+    name: the Volcanic Destroyer
+    keywords: [volcanic, destroyer, greataxe, boss, fire]
+    short_description: A massive axe of living flame lies here.
+    long_description: >
+      This greataxe was forged in the volcano's heart and blessed by
+      the Slag Mother herself. Its blade is perpetually molten, leaving
+      trails of fire with each swing. Few mortals can withstand its
+      weight, let alone wield it effectively.
+    item_type: weapon
+    rarity: legendary
+    weight: 15.0
+    value: 3000
+    level_requirement: 14
+    weapon_stats:
+      damage_dice: 2d8
+      damage_type: fire
+      speed: slow
+      two_handed: true
+      magical_properties:
+        - fire_damage_bonus: 2d6
+        - cleave: true
+        - strength_requirement: 18

@@ -1,0 +1,115 @@
+region_id: deep_ways
+name: The Deep Ways
+
+theme:
+  theme_id: underground_highway
+  description: >
+    Ancient tunnels connect the Crucible to the volcanic Obsidian Depths below.
+    Once a dwarven trade route, these passages have been abandoned for
+    centuries. The heat increases steadily as you descend, and the walls
+    show signs of ancient industry giving way to raw volcanic activity.
+
+  room_prompt: >
+    Generate a room description for ancient dwarven tunnels leading into
+    volcanic depths.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: industrial decay, increasing heat, ominous.
+    Early rooms: Abandoned dwarven works, rusting equipment, dim light.
+    Middle rooms: Collapsed sections, lava glow, heat shimmer.
+    Late rooms: Raw volcanic tunnels, obsidian walls, dangerous heat.
+    Include sensory details: heat, smell of sulfur, echoing sounds.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate an underground/volcanic creature for level {target_level}.
+    Room context: {room_description}
+
+    Types early: cave creatures, abandoned golems, scavengers.
+    Types middle: fire beetles, lava creatures, cult scouts.
+    Types late: fire elementals, obsidian spiders, salamanders.
+
+    Return JSON with mob details including behavior and personality.
+
+  item_prompt: >
+    Generate a dwarven/volcanic themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: dwarven artifacts, mining equipment, volcanic materials,
+    fire-resistant gear, old forge tools, obsidian fragments.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - tunnel, passage, shaft, corridor, cavern
+    - dwarven, stone, metal, carved, ancient
+    - lava, magma, fire, heat, glow, ember
+    - obsidian, volcanic, molten, scorched
+
+  forbidden_words:
+    - forest, ocean, ice, cold, snow
+    - modern, technology, plastic
+
+  sector_types: [underground, volcanic]
+
+  ambient_messages:
+    - "Heat washes over you in waves."
+    - "The distant rumble of volcanic activity echoes through the tunnels."
+    - "Rusted dwarven machinery stands silent and cold."
+    - "The walls here are slick with condensation from the heat."
+    - "An orange glow flickers from somewhere deeper."
+    - "The smell of sulfur grows stronger."
+
+  mob_templates: [fire_beetle, abandoned_golem, obsidian_spider, magma_mephit]
+  item_templates: [dwarven_tool, obsidian_shard, fire_crystal, old_mining_gear]
+
+endpoints:
+  crucible_deep_gate:
+    direction: down
+    coordinate:
+      x: 0
+      y: 0
+      z: -1
+  obsidian_depths_entrance:
+    direction: up
+    coordinate:
+      x: 5
+      y: 5
+      z: -36
+
+waypoints:
+  - x: 1
+    y: 1
+    z: -10
+    name: "Abandoned Forge Station"
+    is_required: true
+  - x: 3
+    y: 3
+    z: -20
+    name: "The Lava Bridge"
+    is_required: true
+  - x: 4
+    y: 4
+    z: -30
+    name: "Obsidian Gateway"
+    is_required: true
+
+generation:
+  min_rooms: 30
+  max_rooms: 45
+  difficulty_min: 12
+  difficulty_max: 20
+  mob_density: 0.4
+  item_density: 0.15
+  branch_chance: 0.25
+
+primary_sector_type: underground

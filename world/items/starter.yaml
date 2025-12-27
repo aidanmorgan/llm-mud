@@ -1,0 +1,200 @@
+zone_id: starter
+
+items:
+  # Weapons
+  - id: rusty_sword
+    vnum: 1000
+    name: a rusty sword
+    keywords: [sword, rusty, blade]
+    short_description: A rusty sword lies here.
+    long_description: >
+      This old iron sword has seen better days. Rust spots the blade,
+      and the leather wrapping on the hilt is worn thin. Still, it
+      looks serviceable enough for a beginning adventurer.
+    type: weapon
+    rarity: common
+    weight: 4.0
+    value: 10
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6"
+      damage_type: slashing
+      weapon_type: sword
+
+  - id: wooden_club
+    vnum: 1001
+    name: a wooden club
+    keywords: [club, wooden, stick]
+    short_description: A crude wooden club lies here.
+    long_description: >
+      Little more than a thick tree branch with one end wrapped in
+      leather for a grip, this club is the most basic of weapons.
+    type: weapon
+    rarity: common
+    weight: 3.0
+    value: 2
+    slot: main_hand
+    weapon:
+      damage_dice: "1d4"
+      damage_type: bludgeoning
+      weapon_type: club
+
+  - id: hunting_bow
+    vnum: 1002
+    name: a hunting bow
+    keywords: [bow, hunting, wooden]
+    short_description: A simple hunting bow lies here.
+    long_description: >
+      This curved wooden bow is well-suited for hunting small game.
+      The string is made of treated gut, and the wood shows signs
+      of careful craftsmanship.
+    type: weapon
+    rarity: common
+    weight: 2.0
+    value: 25
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6"
+      damage_type: piercing
+      weapon_type: bow
+      two_handed: true
+
+  # Armor
+  - id: leather_cap
+    vnum: 1010
+    name: a leather cap
+    keywords: [cap, leather, hat]
+    short_description: A leather cap lies here.
+    long_description: A simple cap made of hardened leather, offering modest protection.
+    type: armor
+    rarity: common
+    weight: 1.0
+    value: 5
+    slot: head
+    armor:
+      armor_bonus: 1
+      armor_type: light
+
+  - id: leather_vest
+    vnum: 1011
+    name: a leather vest
+    keywords: [vest, leather, armor]
+    short_description: A leather vest lies here.
+    long_description: >
+      This sleeveless vest is made of thick leather, offering some
+      protection without restricting movement.
+    type: armor
+    rarity: common
+    weight: 5.0
+    value: 20
+    slot: torso
+    armor:
+      armor_bonus: 2
+      armor_type: light
+
+  # Consumables
+  - id: bread_loaf
+    vnum: 1020
+    name: a loaf of bread
+    keywords: [bread, loaf, food]
+    short_description: A fresh loaf of bread lies here.
+    long_description: A crusty loaf of bread, still slightly warm from the oven.
+    type: consumable
+    rarity: common
+    weight: 0.5
+    value: 1
+    consumable:
+      effect_type: food
+      effect_value: 10
+      uses: 1
+
+  - id: healing_potion
+    vnum: 1021
+    name: a healing potion
+    keywords: [potion, healing, red]
+    short_description: A small red potion sits here.
+    long_description: >
+      This small glass vial contains a swirling red liquid that glows
+      faintly with magical energy. Drinking it will restore health.
+    type: consumable
+    rarity: uncommon
+    weight: 0.2
+    value: 50
+    consumable:
+      effect_type: heal
+      effect_value: 20
+      uses: 1
+
+  - id: mana_potion
+    vnum: 1022
+    name: a mana potion
+    keywords: [potion, mana, blue]
+    short_description: A small blue potion sits here.
+    long_description: >
+      This small glass vial contains a luminescent blue liquid that
+      pulses with arcane energy. Drinking it will restore mana.
+    type: consumable
+    rarity: uncommon
+    weight: 0.2
+    value: 50
+    consumable:
+      effect_type: restore_mana
+      effect_value: 15
+      uses: 1
+
+  - id: healing_herb
+    vnum: 1023
+    name: a healing herb
+    keywords: [herb, healing, plant, green]
+    short_description: A green healing herb grows here.
+    long_description: >
+      This small leafy plant has medicinal properties. Eating it
+      provides a small amount of healing.
+    type: consumable
+    rarity: common
+    weight: 0.1
+    value: 5
+    consumable:
+      effect_type: heal
+      effect_value: 5
+      uses: 1
+
+  # Loot drops
+  - id: wolf_pelt
+    vnum: 1030
+    name: a wolf pelt
+    keywords: [pelt, wolf, fur, grey, gray]
+    short_description: A grey wolf pelt lies here.
+    long_description: >
+      The fur of a grey wolf, roughly skinned. A skilled leatherworker
+      could make something useful from this.
+    type: misc
+    rarity: common
+    weight: 2.0
+    value: 15
+
+  - id: spider_silk
+    vnum: 1031
+    name: some spider silk
+    keywords: [silk, spider, web]
+    short_description: A bundle of spider silk lies here.
+    long_description: >
+      Strong, sticky strands of spider silk, harvested from a giant
+      spider. This material is prized by crafters for its strength.
+    type: misc
+    rarity: uncommon
+    weight: 0.5
+    value: 25
+
+  # Currency/misc
+  - id: gold_coin
+    vnum: 1040
+    name: a gold coin
+    keywords: [coin, gold, money]
+    short_description: A gold coin glints on the ground.
+    long_description: A standard gold coin, the common currency of the realm.
+    type: misc
+    rarity: common
+    weight: 0.01
+    value: 1
+    flags: [stackable]

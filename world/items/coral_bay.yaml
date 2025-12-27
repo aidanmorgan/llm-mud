@@ -1,0 +1,525 @@
+# Coral Bay Zone Items
+# Coastal equipment, consumables, and loot for the harbor town and surrounding areas
+
+zone_id: coral_bay
+
+items:
+  # ==========================================================================
+  # Weapons - Coastal/Naval Theme
+  # ==========================================================================
+  - id: coral_blade
+    vnum: 4000
+    name: a coral-edged cutlass
+    keywords: [cutlass, coral, blade, sword, naval]
+    short_description: A cutlass with a coral-reinforced edge gleams here.
+    long_description: >
+      This unique cutlass has been forged with crushed coral mixed into the
+      steel, creating a distinctive pink-tinged blade. Saltbeard's specialty,
+      it never rusts and the coral edge stays razor-sharp.
+    type: weapon
+    rarity: uncommon
+    weight: 3.5
+    value: 120
+    level_requirement: 5
+    slot: main_hand
+    weapon:
+      damage_dice: "1d8+1"
+      damage_type: slashing
+      weapon_type: sword
+      hit_bonus: 1
+      damage_bonus: 1
+
+  - id: harpoon
+    vnum: 4001
+    name: a fishing harpoon
+    keywords: [harpoon, spear, fishing, weapon]
+    short_description: A wicked fishing harpoon lies here.
+    long_description: >
+      Originally designed for hunting large fish, this harpoon has been
+      adapted for combat. The barbed head is designed to catch and tear,
+      making it difficult to remove once embedded.
+    type: weapon
+    rarity: common
+    weight: 5.0
+    value: 45
+    level_requirement: 3
+    slot: main_hand
+    weapon:
+      damage_dice: "1d8"
+      damage_type: piercing
+      weapon_type: spear
+      two_handed: true
+
+  - id: sailors_cutlass
+    vnum: 4002
+    name: a sailor's cutlass
+    keywords: [cutlass, sailor, sword, naval]
+    short_description: A well-used sailor's cutlass lies here.
+    long_description: >
+      The standard weapon of sailors along this coast. This curved blade
+      is designed for close-quarters fighting on ship decks. The handle
+      is wrapped in sharkskin for grip even when wet.
+    type: weapon
+    rarity: common
+    weight: 3.0
+    value: 40
+    level_requirement: 2
+    slot: main_hand
+    weapon:
+      damage_dice: "1d6"
+      damage_type: slashing
+      weapon_type: sword
+
+  - id: trident
+    vnum: 4003
+    name: a bronze trident
+    keywords: [trident, bronze, spear, weapon]
+    short_description: A three-pronged bronze trident stands here.
+    long_description: >
+      This trident is forged from sea-bronze, an alloy that resists
+      corrosion in salt water. The three tines are wickedly sharp, and
+      the shaft is perfectly balanced for both throwing and thrusting.
+    type: weapon
+    rarity: uncommon
+    weight: 6.0
+    value: 85
+    level_requirement: 5
+    slot: main_hand
+    weapon:
+      damage_dice: "1d10"
+      damage_type: piercing
+      weapon_type: spear
+      two_handed: true
+      hit_bonus: 1
+
+  - id: net_weighted
+    vnum: 4004
+    name: a weighted net
+    keywords: [net, weighted, throwing, fishing]
+    short_description: A weighted fishing net lies in a heap.
+    long_description: >
+      This fishing net has lead weights along its edges. In combat, it
+      can be thrown to entangle opponents, leaving them vulnerable to
+      follow-up attacks. Experienced fighters can use it effectively.
+    type: weapon
+    rarity: uncommon
+    weight: 4.0
+    value: 30
+    level_requirement: 3
+    slot: off_hand
+    weapon:
+      damage_dice: "1d2"
+      damage_type: bludgeoning
+      weapon_type: throwing
+    flags: [entangle]
+
+  # ==========================================================================
+  # Armor - Maritime Protection
+  # ==========================================================================
+  - id: sea_steel_armor
+    vnum: 4010
+    name: sea-steel chain armor
+    keywords: [armor, chain, sea, steel, mail]
+    short_description: A shirt of bluish chain mail lies here.
+    long_description: >
+      This chain armor has been forged from sea-steel, an alloy that
+      incorporates salt-treated iron. It has a distinctive blue-gray
+      sheen and is completely resistant to rust and corrosion.
+    type: armor
+    rarity: rare
+    weight: 18.0
+    value: 250
+    level_requirement: 8
+    slot: torso
+    armor:
+      armor_bonus: 5
+      armor_type: medium
+    flags: [waterproof]
+
+  - id: sharkskin_vest
+    vnum: 4011
+    name: a sharkskin vest
+    keywords: [vest, sharkskin, leather, armor]
+    short_description: A tough vest made of sharkskin lies here.
+    long_description: >
+      This vest is made from the hide of a great shark. The skin is
+      incredibly tough and abrasive, providing protection while also
+      damaging anything that strikes it directly.
+    type: armor
+    rarity: uncommon
+    weight: 8.0
+    value: 90
+    level_requirement: 5
+    slot: torso
+    armor:
+      armor_bonus: 3
+      armor_type: light
+    flags: [thorn_damage]
+
+  - id: captains_coat
+    vnum: 4012
+    name: a captain's weathercoat
+    keywords: [coat, captain, weathercoat, naval, cloak]
+    short_description: A fine captain's coat lies in a heap.
+    long_description: >
+      This heavy coat is made of oiled leather and lined with wool.
+      It offers protection from both weapons and weather, keeping the
+      wearer warm and dry even in the worst storms.
+    type: armor
+    rarity: uncommon
+    weight: 6.0
+    value: 75
+    level_requirement: 4
+    slot: about
+    armor:
+      armor_bonus: 2
+      armor_type: light
+    flags: [weatherproof]
+
+  - id: coral_shield
+    vnum: 4013
+    name: a living coral shield
+    keywords: [shield, coral, living, buckler]
+    short_description: A shield made of living coral sits here.
+    long_description: >
+      This extraordinary shield is made from living coral that has been
+      carefully cultivated into a defensive shape. It slowly regenerates
+      damage and is surprisingly light despite its appearance.
+    type: armor
+    rarity: rare
+    weight: 5.0
+    value: 180
+    level_requirement: 7
+    slot: off_hand
+    armor:
+      armor_bonus: 3
+      armor_type: shield
+    flags: [regenerating, magic]
+
+  - id: sailors_bandana
+    vnum: 4014
+    name: a lucky sailor's bandana
+    keywords: [bandana, sailor, lucky, head]
+    short_description: A faded red bandana lies here.
+    long_description: >
+      This red bandana has seen many voyages and its owner swore it
+      brought luck. Whether through magic or superstition, those who
+      wear it seem to fare better on the water.
+    type: armor
+    rarity: common
+    weight: 0.1
+    value: 15
+    level_requirement: 1
+    slot: head
+    armor:
+      armor_bonus: 0
+      armor_type: cloth
+    flags: [luck_bonus]
+
+  # ==========================================================================
+  # Consumables - Coastal Goods
+  # ==========================================================================
+  - id: salted_fish
+    vnum: 4020
+    name: a bundle of salted fish
+    keywords: [fish, salted, food, bundle]
+    short_description: A bundle of salted fish wrapped in cloth lies here.
+    long_description: >
+      These fish have been salted and dried for preservation. They're
+      a staple food for sailors and travelers, providing sustenance
+      during long voyages. Not the most appetizing, but filling.
+    type: consumable
+    rarity: common
+    weight: 1.0
+    value: 5
+    consumable:
+      effect_type: food
+      effect_value: 30
+      uses: 3
+
+  - id: sea_water_flask
+    vnum: 4021
+    name: a flask of purified sea water
+    keywords: [flask, water, sea, purified, drink]
+    short_description: A flask of crystal-clear water sits here.
+    long_description: >
+      This flask contains sea water that has been purified through
+      alchemical means. It's perfectly safe to drink and has a slight
+      mineral taste that some find refreshing.
+    type: consumable
+    rarity: common
+    weight: 0.5
+    value: 3
+    consumable:
+      effect_type: drink
+      effect_value: 20
+      uses: 2
+
+  - id: oyster_soup
+    vnum: 4022
+    name: a bowl of oyster soup
+    keywords: [soup, oyster, food, bowl]
+    short_description: A steaming bowl of oyster soup sits here.
+    long_description: >
+      This creamy soup is a local specialty, made with fresh oysters,
+      cream, and herbs. It's rich, warming, and said to give strength
+      to those who consume it.
+    type: consumable
+    rarity: uncommon
+    weight: 1.0
+    value: 12
+    consumable:
+      effect_type: food
+      effect_value: 40
+      uses: 1
+
+  - id: seaweed_wrap
+    vnum: 4023
+    name: a medicinal seaweed wrap
+    keywords: [seaweed, wrap, medicine, healing]
+    short_description: A bundle of medicinal seaweed lies here.
+    long_description: >
+      This special seaweed is harvested from the deep waters and has
+      remarkable healing properties. When applied to wounds, it draws
+      out infection and speeds recovery.
+    type: consumable
+    rarity: uncommon
+    weight: 0.3
+    value: 25
+    consumable:
+      effect_type: heal
+      effect_value: 20
+      uses: 1
+
+  - id: rum_bottle
+    vnum: 4024
+    name: a bottle of sailor's rum
+    keywords: [rum, bottle, drink, alcohol]
+    short_description: A bottle of dark rum sits here.
+    long_description: >
+      This strong rum is a sailor's best friend. It warms the body,
+      dulls pain, and grants courage (or foolishness) in battle. The
+      label shows a ship in a storm.
+    type: consumable
+    rarity: common
+    weight: 0.8
+    value: 8
+    consumable:
+      effect_type: drink
+      effect_value: 15
+      uses: 3
+    flags: [alcohol]
+
+  - id: waterbreathing_potion
+    vnum: 4025
+    name: a potion of water breathing
+    keywords: [potion, water, breathing, blue]
+    short_description: A blue potion bubbles gently in its bottle.
+    long_description: >
+      This deep blue potion is essential for exploring the underwater
+      regions near Coral Bay. Drinking it allows the user to breathe
+      underwater for a limited time.
+    type: consumable
+    rarity: rare
+    weight: 0.2
+    value: 75
+    consumable:
+      effect_type: buff
+      effect_value: 1
+      duration_seconds: 600
+      buff_stat: water_breathing
+    flags: [magic]
+
+  # ==========================================================================
+  # Quest Items & Valuables
+  # ==========================================================================
+  - id: pearl_of_the_deep
+    vnum: 4030
+    name: a pearl of the deep
+    keywords: [pearl, deep, rare, valuable]
+    short_description: An enormous black pearl gleams with inner light.
+    long_description: >
+      This rare black pearl is the size of a robin's egg and seems to
+      glow with an inner luminescence. Such pearls are found only in
+      the deepest waters and are worth a fortune to collectors.
+    type: misc
+    rarity: rare
+    weight: 0.1
+    value: 500
+    flags: [quest_item, valuable]
+
+  - id: sea_chart_ancient
+    vnum: 4031
+    name: an ancient sea chart
+    keywords: [chart, map, sea, ancient, parchment]
+    short_description: A yellowed sea chart lies here.
+    long_description: >
+      This ancient sea chart shows coastlines and waters that don't
+      match modern maps. Certain locations are marked with strange
+      symbols, possibly indicating treasure or danger.
+    type: misc
+    rarity: uncommon
+    weight: 0.1
+    value: 40
+    flags: [quest_item]
+
+  - id: captains_spyglass
+    vnum: 4032
+    name: a captain's spyglass
+    keywords: [spyglass, captain, telescope, brass]
+    short_description: A brass spyglass lies here.
+    long_description: >
+      This well-crafted spyglass extends to reveal distant objects
+      with remarkable clarity. The brass is engraved with nautical
+      scenes, and it was clearly once owned by a captain of means.
+    type: misc
+    rarity: uncommon
+    weight: 1.0
+    value: 60
+    flags: [sight_bonus]
+
+  # ==========================================================================
+  # Loot Drops - Coastal Creatures
+  # ==========================================================================
+  - id: crab_meat
+    vnum: 4040
+    name: a portion of crab meat
+    keywords: [crab, meat, food]
+    short_description: A portion of fresh crab meat lies here.
+    long_description: >
+      This sweet, white crab meat is considered a delicacy. It can
+      be eaten raw for sustenance or sold to the local taverns for
+      a decent price.
+    type: consumable
+    rarity: common
+    weight: 0.5
+    value: 8
+    consumable:
+      effect_type: food
+      effect_value: 15
+      uses: 1
+
+  - id: crab_shell
+    vnum: 4041
+    name: a crab shell
+    keywords: [crab, shell, carapace]
+    short_description: A large crab shell lies here.
+    long_description: >
+      This sturdy crab shell might be useful to a crafter. It's hard
+      enough to use in armor-making or could be sold to collectors.
+    type: misc
+    rarity: common
+    weight: 1.0
+    value: 5
+
+  - id: octopus_ink
+    vnum: 4042
+    name: a vial of octopus ink
+    keywords: [ink, octopus, vial, black]
+    short_description: A vial of deep black ink sits here.
+    long_description: >
+      This ink was harvested from a tide lurker. It's prized by
+      scribes for its deep color and by alchemists for its magical
+      properties.
+    type: misc
+    rarity: uncommon
+    weight: 0.2
+    value: 20
+
+  - id: sailors_doubloon
+    vnum: 4043
+    name: a tarnished doubloon
+    keywords: [doubloon, coin, gold, tarnished]
+    short_description: A tarnished gold doubloon lies here.
+    long_description: >
+      This gold coin is ancient, bearing the face of a forgotten king.
+      It's tarnished from years underwater but still valuable. The
+      drowned sailors seem to carry these from their previous lives.
+    type: misc
+    rarity: uncommon
+    weight: 0.1
+    value: 25
+
+  - id: salt_crystal_core
+    vnum: 4044
+    name: a salt elemental's core
+    keywords: [core, salt, crystal, elemental]
+    short_description: A crystalline core pulses with elemental energy.
+    long_description: >
+      This crystal was the heart of a salt elemental. It still pulses
+      with elemental magic and could be used in enchanting or sold
+      to a wizard for a good price.
+    type: misc
+    rarity: rare
+    weight: 0.5
+    value: 75
+    flags: [magic]
+
+  - id: ghost_doubloon
+    vnum: 4045
+    name: a spectral doubloon
+    keywords: [doubloon, ghost, spectral, coin]
+    short_description: A translucent golden coin floats slightly above the ground.
+    long_description: >
+      This coin seems to exist between worlds - solid enough to hold
+      but slightly transparent and cold to the touch. It was taken
+      from a ghost pirate and carries a hint of their curse.
+    type: misc
+    rarity: rare
+    weight: 0.0
+    value: 50
+    flags: [magic, cursed]
+
+  # ==========================================================================
+  # Boss Loot - Reef Titan
+  # ==========================================================================
+  - id: reef_titan_heart
+    vnum: 4050
+    name: the heart of the Reef Titan
+    keywords: [heart, titan, reef, coral, boss]
+    short_description: A massive coral heart pulses with ancient power.
+    long_description: >
+      This enormous coral formation was the heart of the Reef Titan.
+      Even removed from its body, it still pulses with the rhythm of
+      the tides. It radiates ancient ocean magic and is incredibly
+      valuable to those who study such things.
+    type: misc
+    rarity: legendary
+    weight: 10.0
+    value: 1000
+    flags: [quest_item, boss_loot, magic]
+
+  - id: titans_shell_shield
+    vnum: 4051
+    name: the Titan's Shell Shield
+    keywords: [shield, titan, shell, coral, boss]
+    short_description: A massive shield of coral and shell lies here.
+    long_description: >
+      This enormous shield was fashioned from part of the Reef Titan's
+      body. It's surprisingly light for its size and nearly indestructible.
+      The living coral continues to grow, slowly repairing any damage.
+    type: armor
+    rarity: legendary
+    weight: 12.0
+    value: 800
+    level_requirement: 10
+    slot: off_hand
+    armor:
+      armor_bonus: 5
+      armor_type: shield
+    flags: [boss_loot, regenerating, magic]
+
+  - id: living_coral_shard
+    vnum: 4052
+    name: a living coral shard
+    keywords: [coral, shard, living, magic]
+    short_description: A piece of living coral pulses gently.
+    long_description: >
+      This shard of the Reef Titan continues to live even separated
+      from the whole. It pulses gently with the rhythm of distant
+      waves. Alchemists and enchanters would pay well for this.
+    type: misc
+    rarity: rare
+    weight: 0.5
+    value: 150
+    flags: [magic, boss_loot]

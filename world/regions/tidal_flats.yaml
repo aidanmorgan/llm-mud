@@ -1,0 +1,116 @@
+region_id: tidal_flats
+name: The Tidal Flats
+
+theme:
+  theme_id: coastal_descent
+  description: >
+    A passage from Coral Bay leads through exposed seabed and partially
+    submerged tunnels to the Sunken Fleet. The tides are unpredictable here,
+    and what's dry at one moment may flood the next. Ancient sea caves
+    and reef formations create a labyrinthine path to the drowned ships.
+
+  room_prompt: >
+    Generate a room description for tidal caves and exposed seabed
+    leading to an underwater shipwreck graveyard.
+    The room is at coordinates ({x}, {y}, {z}).
+    Distance from nearest static area: {distance} rooms.
+    Nearby static area: {nearest_static}.
+    Adjacent room descriptions: {adjacent_descriptions}
+    Required exits: {required_exits}
+    Forbidden exits: {forbidden_exits}
+
+    Style: coastal, dangerous, alternating wet and dry, marine life.
+    Early rooms: Tidal pools, sea caves, exposed reefs.
+    Middle rooms: Partially flooded passages, sea creature lairs.
+    Late rooms: Increasingly underwater, ship debris, ghostly lights.
+    Include sensory details: salt, seaweed, marine life, water sounds.
+
+    Return JSON with:
+    - short_description (10-15 words)
+    - long_description (40-60 words)
+    - ambient_messages (list of 2-3 atmospheric messages)
+
+  mob_prompt: >
+    Generate a coastal/marine creature for level {target_level}.
+    Room context: {room_description}
+
+    Types early: crabs, sea creatures, coastal scavengers.
+    Types middle: sea serpents, drowned zombies, merfolk.
+    Types late: ghost sailors, underwater predators, spectral sea life.
+
+    Return JSON with mob details including behavior and personality.
+
+  item_prompt: >
+    Generate a coastal/naval themed item for level {target_level}.
+    Rarity: {target_rarity}
+
+    Types: naval debris, waterproofed equipment, sea shells,
+    pearls, coral fragments, sunken treasure pieces.
+
+    Return JSON with item details.
+
+  vocabulary:
+    - tide, wave, water, sea, ocean
+    - cave, tunnel, reef, coral, shell
+    - salt, seaweed, sand, wet, damp
+    - ship, wreck, debris, anchor, mast
+    - ghost, drowned, spectral
+
+  forbidden_words:
+    - desert, mountain, forest, volcanic
+    - modern, technology, plastic
+
+  sector_types: [coastal, underwater, cave]
+
+  ambient_messages:
+    - "Water drips constantly from the ceiling."
+    - "The tide shifts, and water levels begin to change."
+    - "Something large moves in the deeper water."
+    - "The smell of salt and rotting seaweed fills the air."
+    - "A ghostly light flickers in the distance."
+    - "The sound of waves echoes through the passages."
+
+  mob_templates: [giant_crab, sea_serpent, drowned_sailor, reef_shark]
+  item_templates: [pearl, coral_fragment, waterlogged_treasure, naval_debris]
+
+endpoints:
+  coral_bay_depths:
+    direction: east
+    coordinate:
+      x: 14
+      y: 0
+      z: -2
+  sunken_fleet_approach:
+    direction: west
+    coordinate:
+      x: 42
+      y: 5
+      z: -15
+
+waypoints:
+  - x: 22
+    y: 2
+    z: -5
+    name: "Tidal Pool Cavern"
+    is_required: true
+  - x: 32
+    y: 3
+    z: -10
+    name: "The Drowned Gallery"
+    is_required: true
+  - x: 38
+    y: 4
+    z: -12
+    name: "Wreck Approach"
+    is_required: true
+
+generation:
+  min_rooms: 25
+  max_rooms: 40
+  difficulty_min: 8
+  difficulty_max: 16
+  mob_density: 0.45
+  item_density: 0.15
+  branch_chance: 0.3
+
+primary_sector_type: coastal

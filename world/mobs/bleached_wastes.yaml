@@ -1,0 +1,267 @@
+# The Bleached Wastes Mobs
+# Ancient battlefield spirits and bone creatures
+
+zone_id: bleached_wastes
+
+mobs:
+  # Common Enemies
+  - id: skeleton_soldier
+    vnum: 2000
+    name: a skeletal soldier
+    keywords: [skeleton, soldier, bones, undead]
+    short_description: A skeleton in rusted armor marches endlessly.
+    long_description: >
+      This skeleton still wears the armor it died in, rusted and
+      pitted by centuries. It carries a corroded weapon and moves
+      with mindless purpose, patrolling a battlefield that exists
+      only in its hollow skull.
+    level: 15
+    health: 120
+    strength: 14
+    dexterity: 12
+    constitution: 14
+    damage_dice: 1d10
+    damage_type: slashing
+    armor_class: 15
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 240
+    abilities: [shield_bash]
+    immunities: [poison, cold]
+    vulnerabilities: [bludgeoning]
+    loot_table:
+      - template_id: ancient_coin
+        drop_chance: 0.3
+      - template_id: rusted_sword
+        drop_chance: 0.2
+
+  - id: ghost_soldier
+    vnum: 2001
+    name: a ghost soldier
+    keywords: [ghost, soldier, spirit, phantom]
+    short_description: A spectral warrior drifts through the bones.
+    long_description: >
+      This spirit has not realized it died. It marches, fights,
+      and dies again each night, trapped in an endless loop of
+      battle. Its eyes are hollow with grief and rage.
+    level: 16
+    health: 100
+    strength: 12
+    dexterity: 14
+    constitution: 10
+    damage_dice: 1d8
+    damage_type: necrotic
+    armor_class: 14
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 280
+    abilities: [spectral_strike, wail]
+    immunities: [physical, poison]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: ectoplasm
+        drop_chance: 0.4
+
+  - id: bone_golem
+    vnum: 2002
+    name: a bone golem
+    keywords: [bone, golem, construct, giant]
+    short_description: A towering construct of bones lurches forward.
+    long_description: >
+      Countless bones have fused together into this shambling horror.
+      It has no intelligence, only an instinct to destroy the living.
+      Skulls form its head, femurs its limbs, and ribcages its torso.
+    level: 18
+    health: 220
+    strength: 20
+    dexterity: 8
+    constitution: 20
+    damage_dice: 2d8
+    damage_type: bludgeoning
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 380
+    abilities: [bone_shower, reconstruct]
+    immunities: [poison, psychic]
+    vulnerabilities: [bludgeoning]
+    loot_table:
+      - template_id: bone_dust
+        drop_chance: 0.5
+      - template_id: skull_fragment
+        drop_chance: 0.3
+
+  - id: corpse_collector
+    vnum: 2003
+    name: a corpse collector
+    keywords: [corpse, collector, ghoul, undead]
+    short_description: A hunched figure digs through the bones.
+    long_description: >
+      This ghoulish creature collects bones from the battlefield,
+      building nests and hoarding remains. It is territorial and
+      attacks any who disturb its collections with feral savagery.
+    level: 15
+    health: 110
+    strength: 16
+    dexterity: 14
+    constitution: 14
+    damage_dice: 1d8
+    damage_type: slashing
+    armor_class: 13
+    behavior_type: aggressive
+    aggro_radius: 4
+    experience_value: 250
+    abilities: [paralyzing_touch, feast]
+    immunities: [poison]
+    loot_table:
+      - template_id: collected_valuables
+        drop_chance: 0.4
+
+  - id: weapon_specter
+    vnum: 2004
+    name: a weapon specter
+    keywords: [weapon, specter, ghost, sword]
+    short_description: A ghostly weapon floats, wielded by nothing.
+    long_description: >
+      This specter is bound to the weapon it carried in life. The
+      weapon floats in the air, animated by the soldier's spirit.
+      It attacks with the skill of a master, though no hand holds it.
+    level: 16
+    health: 90
+    strength: 6
+    dexterity: 18
+    constitution: 8
+    damage_dice: 2d6
+    damage_type: slashing
+    armor_class: 17
+    behavior_type: aggressive
+    aggro_radius: 3
+    experience_value: 300
+    abilities: [flurry, parry]
+    immunities: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: ancient_weapon
+        drop_chance: 0.15
+
+  - id: phantom_cavalry
+    vnum: 2005
+    name: a phantom cavalry rider
+    keywords: [phantom, cavalry, ghost, rider, horse]
+    short_description: A spectral rider charges through the battlefield.
+    long_description: >
+      Both rider and horse died together and remain together in death.
+      This phantom cavalry charges endlessly across the wastes, lance
+      leveled, fighting a battle that ended centuries ago.
+    level: 18
+    health: 180
+    strength: 16
+    dexterity: 16
+    constitution: 14
+    damage_dice: 2d8
+    damage_type: piercing
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 6
+    experience_value: 360
+    abilities: [charge, trample]
+    immunities: [physical]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: cavalry_saber
+        drop_chance: 0.2
+
+  - id: ghost_commander
+    vnum: 2006
+    name: a ghost commander
+    keywords: [ghost, commander, officer, spirit]
+    short_description: A spectral officer rallies phantom troops.
+    long_description: >
+      This commander led soldiers in life and still leads them in
+      death. It shouts orders that echo through the wastes and
+      commands respect even from the mindless undead. Its tactical
+      mind makes it dangerous.
+    level: 19
+    health: 160
+    strength: 14
+    dexterity: 12
+    constitution: 14
+    intelligence: 18
+    damage_dice: 1d10
+    damage_type: necrotic
+    armor_class: 16
+    behavior_type: aggressive
+    aggro_radius: 5
+    experience_value: 420
+    abilities: [rally_dead, command_strike, tactical_retreat]
+    immunities: [physical, poison]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: officer_medal
+        drop_chance: 0.4
+      - template_id: command_baton
+        drop_chance: 0.2
+
+  # NPCs
+  - id: bone_collector_npc
+    vnum: 2050
+    name: Bones, the Collector
+    keywords: [bones, collector, hermit, scholar]
+    short_description: An elderly figure examines bones with scholarly interest.
+    long_description: >
+      This eccentric scholar has spent decades studying the battlefield.
+      Known simply as "Bones," they can identify any warrior by their
+      remains and know more about the ancient battle than anyone living.
+    level: 20
+    health: 100
+    behavior_type: friendly
+    dialogue:
+      greeting: "Ah, another visitor. Come to learn, or to loot? I can help with both."
+      topics:
+        battle: "The greatest battle ever fought. Two empires destroyed each other here. Neither won."
+        ghosts: "They don't know they're dead, most of them. Still fighting the same battle, every night."
+        treasure: "Oh, there's wealth here. But taking it angers the dead. Worth it? That's your choice."
+
+  # Boss
+  - id: generals_ghost
+    vnum: 2099
+    name: The General's Ghost
+    keywords: [general, ghost, boss, commander, spirit]
+    short_description: Two spectral generals still locked in their final duel.
+    long_description: >
+      Both armies' generals died here, killing each other in single
+      combat. Their spirits remain locked together, eternally fighting.
+      To face one is to face both - united only in their hatred and
+      their desire to destroy all who enter their tomb.
+    level: 23
+    health: 800
+    strength: 20
+    dexterity: 16
+    constitution: 18
+    intelligence: 18
+    wisdom: 16
+    charisma: 20
+    damage_dice: 3d8
+    damage_type: necrotic
+    armor_class: 19
+    behavior_type: aggressive
+    combat_style: tactician
+    aggro_radius: 10
+    experience_value: 3200
+    gold_min: 300
+    gold_max: 1000
+    abilities: [generals_fury, summon_soldiers, tactical_strike, death_command, spectral_charge]
+    immunities: [physical, poison, necrotic]
+    vulnerabilities: [radiant]
+    loot_table:
+      - template_id: generals_blade
+        drop_chance: 0.6
+      - template_id: crown_of_command
+        drop_chance: 0.5
+      - template_id: war_standard
+        drop_chance: 1.0
+    dialogue:
+      greeting: "YOU DARE ENTER OUR TOMB? WE SHALL ADD YOUR BONES TO OUR LEGIONS!"
+      topics:
+        peace: "THERE IS NO PEACE FOR US. ONLY WAR. ETERNAL WAR."
+        victory: "NEITHER OF US WON. BOTH EMPIRES FELL. BUT STILL WE FIGHT!"
